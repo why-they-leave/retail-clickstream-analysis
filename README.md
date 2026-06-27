@@ -52,6 +52,10 @@ Source:
 | `order_items` | 주문 상세 상품 정보 |
 | `reviews` | 상품 리뷰 |
 
+### ERD (Entity-Relationship Diagram)
+
+![Schema ERD](reports/schema_erd.png)
+
 ---
 
 ## 핵심 조인
