@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "da-template"
+name = "retail-clickstream-analysis"
 version = "0.1.0"
-description = "데이터분석·ML 프로젝트 템플릿"
+description = "가상 온라인 리테일 클릭스트림 데이터를 활용해 고객 행동과 전환 패턴을 분석하는 프로젝트"
 requires-python = ">=3.11"
 dependencies = [
     # 데이터
