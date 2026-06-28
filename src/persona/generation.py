@@ -22,10 +22,10 @@ from tqdm import tqdm
 import datasets.MBA as mba_ds
 import llm_connector.Collector as collector
 
-warnings.filterwarnings('ignore')
+warnings.filterwarnings("ignore")
 
-DS_PATH    = '../data/funnel_mba_format.csv'
-OUTPUT_DIR = '../data/funnel_persona_gen/'
+DS_PATH = "../data/funnel_mba_format.csv"
+OUTPUT_DIR = "../data/funnel_persona_gen/"
 
 # ── 프롬프트 ──────────────────────────────────────────────────────────────────
 
@@ -98,12 +98,13 @@ Here are the eight persona sets:
 
 # ── 유틸 ──────────────────────────────────────────────────────────────────────
 
-def call_llm(client, sys_prompt, user_prompt, model='solar-pro'):
+
+def call_llm(client, sys_prompt, user_prompt, model="solar-pro"):
     completion = client.chat.completions.create(
         model=model,
         messages=[
-            {'role': 'system', 'content': sys_prompt},
-            {'role': 'user',   'content': user_prompt},
+            {"role": "system", "content": sys_prompt},
+            {"role": "user", "content": user_prompt},
         ],
     )
     return completion.choices[0].message.content
@@ -112,14 +113,16 @@ def call_llm(client, sys_prompt, user_prompt, model='solar-pro'):
 def parse_persona_list(text):
     """'1. Name - Definition' 형태에서 {name, definition} 리스트 추출"""
     personas = []
-    for line in text.strip().split('\n'):
+    for line in text.strip().split("\n"):
         line = line.strip()
-        m = re.match(r'^\d+\.\s+(.+?)[\s]*[-:]\s+(.+)$', line)
+        m = re.match(r"^\d+\.\s+(.+?)[\s]*[-:]\s+(.+)$", line)
         if m:
-            personas.append({
-                'name':       m.group(1).strip(),
-                'definition': m.group(2).strip(),
-            })
+            personas.append(
+                {
+                    "name": m.group(1).strip(),
+                    "definition": m.group(2).strip(),
+                }
+            )
     return personas
 
 
@@ -129,70 +132,71 @@ def sample_user_descriptions(grouped_df, user_ids, n=100, seed=None):
         random.seed(seed)
     sampled = random.sample(list(user_ids), min(n, len(user_ids)))
     descs = [collector.describe_user(uid, grouped_df) for uid in sampled]
-    return '\n\n'.join(descs)
+    return "\n\n".join(descs)
 
 
 def format_persona_sets(persona_sets):
     """여러 세트를 번호 붙인 문자열로 변환"""
     blocks = []
     for i, ps in enumerate(persona_sets, 1):
-        lines = [f'[Set {i}]']
+        lines = [f"[Set {i}]"]
         for j, p in enumerate(ps, 1):
             lines.append(f"  {j}. {p['name']} - {p['definition']}")
-        blocks.append('\n'.join(lines))
-    return '\n\n'.join(blocks)
+        blocks.append("\n".join(lines))
+    return "\n\n".join(blocks)
 
 
 # ── 3단계 ─────────────────────────────────────────────────────────────────────
 
+
 def step1(client, grouped_df, user_ids, n_iter=40, users_per_iter=100, workers=8):
     """Step 1: 40회 반복, 각 100명 샘플로 20개 후보 생성"""
-    print(f'\n[Step 1] {n_iter}회 반복 실행 중 (모델당 100명 샘플)...')
+    print(f"\n[Step 1] {n_iter}회 반복 실행 중 (모델당 100명 샘플)...")
 
     def single_run(i):
         user_data = sample_user_descriptions(grouped_df, user_ids, n=users_per_iter, seed=i * 7)
-        response  = call_llm(client, STEP1_SYS, STEP1_USER + user_data)
-        personas  = parse_persona_list(response)
-        return {'iter': i, 'personas': personas, 'raw': response}
+        response = call_llm(client, STEP1_SYS, STEP1_USER + user_data)
+        personas = parse_persona_list(response)
+        return {"iter": i, "personas": personas, "raw": response}
 
     results = []
     with ThreadPoolExecutor(max_workers=workers) as ex:
         futures = [ex.submit(single_run, i) for i in range(n_iter)]
-        for f in tqdm(as_completed(futures), total=n_iter, desc='Step 1'):
+        for f in tqdm(as_completed(futures), total=n_iter, desc="Step 1"):
             results.append(f.result())
 
-    results.sort(key=lambda x: x['iter'])
+    results.sort(key=lambda x: x["iter"])
     return results
 
 
 def step2(client, step1_results, n_iter=8, sets_per_sample=5, workers=4):
     """Step 2: 40세트 중 5세트씩 샘플링, 8회 반복으로 정제"""
-    print(f'\n[Step 2] {n_iter}회 반복 실행 중 (5세트씩 샘플링)...')
-    all_sets = [r['personas'] for r in step1_results]
+    print(f"\n[Step 2] {n_iter}회 반복 실행 중 (5세트씩 샘플링)...")
+    all_sets = [r["personas"] for r in step1_results]
 
     def single_run(i):
         random.seed(i * 13)
-        sampled  = random.sample(all_sets, sets_per_sample)
-        context  = format_persona_sets(sampled)
+        sampled = random.sample(all_sets, sets_per_sample)
+        context = format_persona_sets(sampled)
         response = call_llm(client, STEP2_SYS, STEP2_USER + context)
         personas = parse_persona_list(response)
-        return {'iter': i, 'personas': personas, 'raw': response}
+        return {"iter": i, "personas": personas, "raw": response}
 
     results = []
     with ThreadPoolExecutor(max_workers=workers) as ex:
         futures = [ex.submit(single_run, i) for i in range(n_iter)]
-        for f in tqdm(as_completed(futures), total=n_iter, desc='Step 2'):
+        for f in tqdm(as_completed(futures), total=n_iter, desc="Step 2"):
             results.append(f.result())
 
-    results.sort(key=lambda x: x['iter'])
+    results.sort(key=lambda x: x["iter"])
     return results
 
 
 def step3(client, step2_results):
     """Step 3: 8세트(160개) → 최종 20개 페르소나"""
-    print('\n[Step 3] 최종 20개 페르소나 확정 중...')
-    all_sets = [r['personas'] for r in step2_results]
-    context  = format_persona_sets(all_sets)
+    print("\n[Step 3] 최종 20개 페르소나 확정 중...")
+    all_sets = [r["personas"] for r in step2_results]
+    context = format_persona_sets(all_sets)
     response = call_llm(client, STEP3_SYS, STEP3_USER + context)
     personas = parse_persona_list(response)
     return personas, response
@@ -200,43 +204,44 @@ def step3(client, step2_results):
 
 # ── 메인 ──────────────────────────────────────────────────────────────────────
 
+
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    print('데이터 로딩 중...')
+    print("데이터 로딩 중...")
     [mba_df, user_ids, user_num, *_] = mba_ds.MBA_load_data(DS_PATH)
-    grouped_df = mba_df.groupby(['CustomerID', 'Itemname']).agg({'Quantity': 'sum'}).reset_index()
+    grouped_df = mba_df.groupby(["CustomerID", "Itemname"]).agg({"Quantity": "sum"}).reset_index()
 
     client = OpenAI(
-        api_key=os.environ.get('UPSTAGE_API_KEY'),
-        base_url='https://api.upstage.ai/v1',
+        api_key=os.environ.get("UPSTAGE_API_KEY"),
+        base_url="https://api.upstage.ai/v1",
     )
 
     # Step 1
     s1 = step1(client, grouped_df, user_ids)
-    with open(OUTPUT_DIR + 'step1_persona_sets.json', 'w', encoding='utf-8') as f:
+    with open(OUTPUT_DIR + "step1_persona_sets.json", "w", encoding="utf-8") as f:
         json.dump(s1, f, ensure_ascii=False, indent=2)
-    print(f'→ Step 1 저장: {OUTPUT_DIR}step1_persona_sets.json')
+    print(f"→ Step 1 저장: {OUTPUT_DIR}step1_persona_sets.json")
 
     # Step 2
     s2 = step2(client, s1)
-    with open(OUTPUT_DIR + 'step2_persona_sets.json', 'w', encoding='utf-8') as f:
+    with open(OUTPUT_DIR + "step2_persona_sets.json", "w", encoding="utf-8") as f:
         json.dump(s2, f, ensure_ascii=False, indent=2)
-    print(f'→ Step 2 저장: {OUTPUT_DIR}step2_persona_sets.json')
+    print(f"→ Step 2 저장: {OUTPUT_DIR}step2_persona_sets.json")
 
     # Step 3
     final_personas, raw = step3(client, s2)
-    with open(OUTPUT_DIR + 'final_personas.json', 'w', encoding='utf-8') as f:
+    with open(OUTPUT_DIR + "final_personas.json", "w", encoding="utf-8") as f:
         json.dump(final_personas, f, ensure_ascii=False, indent=2)
-    with open(OUTPUT_DIR + 'final_personas_raw.txt', 'w', encoding='utf-8') as f:
+    with open(OUTPUT_DIR + "final_personas_raw.txt", "w", encoding="utf-8") as f:
         f.write(raw)
-    print(f'→ Step 3 저장: {OUTPUT_DIR}final_personas.json')
+    print(f"→ Step 3 저장: {OUTPUT_DIR}final_personas.json")
 
-    print(f'\n=== 최종 페르소나 목록 ({len(final_personas)}개) ===')
+    print(f"\n=== 최종 페르소나 목록 ({len(final_personas)}개) ===")
     for i, p in enumerate(final_personas, 1):
         print(f"{i:2d}. {p['name']}")
         print(f"     {p['definition']}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

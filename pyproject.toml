@@ -65,6 +65,12 @@ ignore = ["E501"]
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"
+exclude = [
+    "src/baselines/**",
+    "src/random_walker/**",
+    "src/llm_connector/**",
+    "src/datasets/MBA.py",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
