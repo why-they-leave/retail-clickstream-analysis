@@ -1,9 +1,7 @@
 import json
-import numpy as np
 import random as rd
-import importlib
 
-import dense2sparse
+import numpy as np
 from dense2sparse import propagation_matrix, propagation_matrix_tri
 
 
@@ -44,12 +42,12 @@ def read_data_tri(path_u2t, path_t2p, path_u2p,):
     for item in range(item_num):
         for persona in t2p_data[item]:
             interactions_t2p.append((item, persona))
-    
+
     # shuffle for randomness
     rd.shuffle(interactions_u2t) # [TODO] uncontrolled shuffle
     rd.shuffle(interactions_u2p)
     rd.shuffle(interactions_t2p)
-    
+
     return(u2t_data, interactions_u2t, interactions_u2p, interactions_t2p, user_num, item_num)
 
 def read_bases(path, fre_u, fre_v):
@@ -92,18 +90,18 @@ def read_all_data_tri(all_para, approximate=False):
         path_u2p = DIR + 'tri_graph_uidx2pidx.json'
     # [train_data, train_data_interaction, user_num, item_num] = read_data_tri(path_u2t, path_t2p)
     [train_data, train_data_interaction, interactions_u2p, interactions_t2p, user_num, item_num] = read_data_tri(path_u2t, path_t2p, path_u2p)
-    
+
     ## load test data
     test_vali_path = DIR + 'tri_graph_uidx2tidx_valid.json' if TEST_VALIDATION == 'Validation' else DIR + 'tri_graph_uidx2tidx_test.json'
     test_data = read_data_tri(test_vali_path, path_t2p, path_u2p)[0]
-    
+
     if DATASET == 'MBA':
         persona_num = 20 # 20, for MBA
     elif DATASET == 'Instacart':
         persona_num = 51 # 51, fixed for Instacart
     elif DATASET == 'Instacart_full':
         persona_num = 51
-    
+
     # graph_embeddings_2d_path = DIR + 'graph_embeddings_2d.json'                         # 2d graph embeddings
 
     if MODEL in ['LGCN', 'LGCN_tri']:
@@ -129,7 +127,7 @@ def read_all_data_tri(all_para, approximate=False):
             sparse_propagation_matrix = propagation_matrix(train_data_interaction, user_num, item_num, 'sym_norm')
         elif MODEL == 'GCMC':
             sparse_propagation_matrix = propagation_matrix(train_data_interaction, user_num, item_num, 'left_norm')
-    
+
     pre_train_feature_path = DIR + 'pre_train_feature' + str(EMB_DIM) + '.json'         # pretrained latent factors
     ## load pre-trained embeddings for all deep models
     if IF_PRETRAIN:

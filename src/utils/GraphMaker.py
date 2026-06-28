@@ -1,8 +1,12 @@
 import sys
+
 sys.path.append('../')
 from typing import Dict
-import random_walker.Evaluation as eva
+
 import numpy as np
+
+import random_walker.Evaluation as eva
+
 
 def make_app(
     sampled_GT,     # {idx:[str]}
@@ -16,7 +20,7 @@ def make_app(
 
     multi_labels_approach = {}  # {uidx: ps}
     tri_graph_uidx2pidx_approach = {}   # remap from the
-    
+
     multi_labels_approach.update(sampled_GT)
     persona_predictions = np.argsort(persona_probs, axis=1) # small to large
     unlabeled_uidxs_2_prediction = eva.make_unlabeled_uidxs_2_prediction(unlabeled_uidxs)

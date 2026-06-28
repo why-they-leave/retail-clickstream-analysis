@@ -1,5 +1,7 @@
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
 from tqdm import tqdm
+
 
 ## user persona collections
 def describe_user(uid, df, train_items=[]):
@@ -29,7 +31,7 @@ def assign_user_labels(
 ) -> dict:
 
     transaction_data = describe_users([uid], grouped_item_df)
-    
+
     prompt_user_tail = f"""Here is the data of user {uid}'s transaction data for you to analyze:{transaction_data}
     Remind one more time that you can only select from the given 20 personas' list and only use the exactly given persona, you cannot use other words to describe.
     You do not need to explain how you get the result, so please respond no more than the required format.
@@ -64,7 +66,7 @@ def assign_user_labels(
 def from_json_to_obj(uid, answer_str, defined_persona_set, persona_fix_map):
     start_idx = 0
     end_idx = len(answer_str)
-    
+
     # case 1: contains keyword 'json'
     json_index = answer_str.find('json')
     if json_index != -1:
@@ -74,9 +76,9 @@ def from_json_to_obj(uid, answer_str, defined_persona_set, persona_fix_map):
     elif answer_str.startswith("```"):
         start_idx = 3
         end_idx = -3
-    
+
     res = eval(answer_str[start_idx:end_idx])
-    
+
     assert type(res) == dict, 'oqweiuhd'
     assert res.get(uid) is not None, 'rtyuiold'
 
@@ -88,9 +90,9 @@ def from_json_to_obj(uid, answer_str, defined_persona_set, persona_fix_map):
         else:
             fixed_ps.append(persona_fix_map[p])
     assert fixed_ps, 'empty'
-    
+
     res = {uid: fixed_ps}
-    
+
     return res
 
 
@@ -108,7 +110,7 @@ def query_for_single_item(client, system_prompt, user_prompt, itemname):
         )
 
         response_result = ""
-        
+
         if completion.choices[0].message:
             response_result += completion.choices[0].message.content
 
@@ -125,11 +127,11 @@ def query_all_items(client, system_prompt, user_prompt, itemnames, workers=12):
     # collect procedure
     results = []
     print(f"Total items: {len(itemnames)}, start collecting...")
-    
+
     with ThreadPoolExecutor(max_workers=workers) as executor: # avg. 0.13s per item
-        
+
         future_results = [executor.submit(query_for_single_item, client, system_prompt, user_prompt, tname) for tname in itemnames]
-    
+
         for future in tqdm(as_completed(future_results), total=len(itemnames), desc="Processing Items"):
             result = future.result()
             results.append(result)

@@ -1,5 +1,6 @@
 from numpy import *
 
+
 def evaluation_F1(order, top_k, positive_item):
     epsilon = 0.1 ** 10
     top_k_items = set(order[0: top_k])
@@ -13,7 +14,7 @@ def evaluation_NDCG(order, top_k, positive_item):
     top_k_item = order[0: top_k]
     epsilon = 0.1**10
     DCG = 0
-    iDCG = 0 
+    iDCG = 0
     for i in range(top_k):
         if top_k_item[i] in positive_item:
             DCG += 1 / log2(i + 2)

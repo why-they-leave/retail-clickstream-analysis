@@ -1,5 +1,6 @@
-import tensorflow as tf
 import numpy as np
+import tensorflow as tf
+
 
 def propagation_matrix(graph, user_num, item_num, norm):
     print('Constructing the sparse graph...')
@@ -22,12 +23,12 @@ def propagation_matrix(graph, user_num, item_num, norm):
 def propagation_matrix_tri(graph, user_num, item_num, persona_num, norm):
     print('Constructing the tripartite sparse graph...')
     [uidx2tidx_graph, uidx2pidx_graph, tidx2pidx_graph] = graph # parse the 3 subgraphs
-    
+
     eps = 0.1 ** 10
     user_degreeNum = np.zeros(user_num)
     item_degreeNum = np.zeros(item_num)
     persona_degreeNum = np.zeros(persona_num)
-    
+
     for (user, item) in uidx2tidx_graph:
         user_degreeNum[user] += 1
         item_degreeNum[item] += 1
@@ -35,7 +36,7 @@ def propagation_matrix_tri(graph, user_num, item_num, persona_num, norm):
     for (user, persona) in uidx2pidx_graph:
         user_degreeNum[user] += 1
         persona_degreeNum[persona] += 1
-    
+
     for (item, persona) in tidx2pidx_graph:
         item_degreeNum[item] += 1
         persona_degreeNum[persona] += 1
@@ -52,5 +53,5 @@ def propagation_matrix_tri(graph, user_num, item_num, persona_num, norm):
             val += [1 / (max(np.sqrt(item_degreeNum[item] * persona_degreeNum[persona]), eps))] * 2
             idx += [[item + user_num, persona + user_num + item_num], [persona + user_num + item_num, item + user_num]]
         return tf.SparseTensor(indices=idx, values=val, dense_shape=[user_num + item_num + persona_num, user_num + item_num + persona_num])
-    
+
     else: assert False, f'Not supported: {norm}'

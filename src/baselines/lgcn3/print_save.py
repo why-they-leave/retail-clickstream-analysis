@@ -1,7 +1,8 @@
-import pandas as pd
-from openpyxl import load_workbook
-from openpyxl import Workbook
 import os
+
+import pandas as pd
+from openpyxl import Workbook
+
 
 def print_params(para_name, para):
     for i in range(len(para)):
@@ -33,7 +34,7 @@ def save_params(para_name,para,path_excel):
     # wb.close()
 
 def save_value(df_list, path_excel, first_sheet=False):
-    # df_list: [[F1_df, 'F1'], [NDCG_df, 'NDCG']], 
+    # df_list: [[F1_df, 'F1'], [NDCG_df, 'NDCG']],
     if not os.path.exists(path_excel):
         df = pd.DataFrame()
         df.to_excel(path_excel)

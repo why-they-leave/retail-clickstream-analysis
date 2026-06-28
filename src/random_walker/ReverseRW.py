@@ -1,16 +1,12 @@
 import heapq
-from copy import deepcopy
-import sys
-import importlib
-import json
 import random
-from tqdm import tqdm
+import sys
 import time
+from copy import deepcopy
 
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 import scipy
+from tqdm import tqdm
 
 sys.path.append('../')
 import random_walker.PageRank as pagerank
@@ -84,7 +80,7 @@ def construct_graph(unlabeled_uidxs, labeled_uidxs, tri_graph_uidx2pidx, tri_gra
     nodes_dict = {}
     unlabeled_uidxs_set = set(unlabeled_uidxs)
     labeled_uidxs_set = set(labeled_uidxs)
-    
+
     # for layer 3: unlabled users
     for uidx in unlabeled_uidxs:
         make_node('u'+str(uidx), NTYP_U, 3, all_nodes, nodes_dict)
@@ -124,7 +120,7 @@ def construct_graph(unlabeled_uidxs, labeled_uidxs, tri_graph_uidx2pidx, tri_gra
             user_node1 = nodes_dict['l'+str(uidx)]
         else: # flag = 2
             continue # omit
-        
+
         # update items
         update_tnodes = []
         for tidx in items:
@@ -141,7 +137,7 @@ def construct_graph(unlabeled_uidxs, labeled_uidxs, tri_graph_uidx2pidx, tri_gra
         user_node1.add_in_nodes(update_tnodes)
         if flag == 0:
             user_node2.add_out_nodes(update_tnodes)
-    
+
     return graph(all_nodes)
 
 class max_heapq:
@@ -150,7 +146,7 @@ class max_heapq:
         self.data = [] # stores tuples in the form of [(value, nid),]
         self.entry_finder = {} # only traces the alive entries
         self.REMOVED = '<removed-task>'
-    
+
     def push(self, nid, p):
         if self.entry_finder.get(nid) is not None:
             # update the original value: remove + repush
@@ -244,7 +240,7 @@ class reverse_rw_3:
             self.P[w_nid] = 0
         # pushing end, read S for the approximated results
         return deepcopy(self.S)
-    
+
     def reverse_random_walk_all(self, e, persona_order, unlabeled_uidxs):
         # -> a matrix ordered same as the persona, U*P, simulates the walk_probs
         results_S = []
@@ -262,8 +258,8 @@ class reverse_rw_3:
         affinities = np.array(affinities)
         # print(affinities.shape)
         assert affinities.shape == (len(unlabeled_uidxs), len(persona_order))
-        return affinities       
-         
+        return affinities
+
 # def rev_rw_unit_test():
     ## unit test
     ## test graph
@@ -338,18 +334,18 @@ class Iterative_Sampler_rev:
     def update_labeled_uidxs(self,):
         self.labeled_uidxs = list(self.labeled_GT.keys())
         self.labeled_uidxs.sort()
-    
+
     def update_known_items(self,):
         # should be called after self.update_labeled_uidxs()
         for uidx in self.labeled_uidxs:
             self.known_items.update(self.G_user[uidx])
-    
+
     def trivial_rank(self,):
         # randomly shuffle as a baseline
         unlabeled_uidx = np.setdiff1d(self.sample_scope, list(self.labeled_GT.keys()))
         random.shuffle(unlabeled_uidx)
         return unlabeled_uidx
-    
+
     def criteria_rank_1(self,):
         # rank the unlabeled users according to the new-item coverage
         # -> rank_res: [uidx]; ordered list of unlabeled users, most previous most important
@@ -372,10 +368,10 @@ class Iterative_Sampler_rev:
         # -> rank_res: [uidx]; ordered list of unlabeled users, most previous most important
 
         if self.labeled_GT == {}: return self.trivial_rank() # if no seed then randomly sample some as the seed
-        
+
         unlabeled_uidx = np.setdiff1d(self.sample_scope, list(self.labeled_GT.keys()))
         current_dict = {p:0 for p in self.predefined_persona_list}
-        
+
         # make current persona distribution
         for uidx, ps in self.labeled_GT.items():
             for p in ps:
@@ -385,7 +381,7 @@ class Iterative_Sampler_rev:
         assert np.isclose(np.sum(current_distribution), 1.0) # check
 
         current_label_matrix, p_list, p2idx = pagerank.assemble_label_matrix(self.labeled_GT, self.labeled_uidxs)
-        
+
         ### replaced
         # # make persona distribution for each user
         # pageranker = PageRank(self.R, unlabeled=unlabeled_uidx)
@@ -404,7 +400,7 @@ class Iterative_Sampler_rev:
         # refine the label matrix-2 (optional)
         # making label_matrix_tuned
         label_matrix_tuned = deepcopy(current_label_matrix)
-        
+
         col_refine = self.col_refine
         if col_refine > 0:
             col_sums = np.sum(label_matrix_tuned, axis=0, keepdims=True)
@@ -419,7 +415,7 @@ class Iterative_Sampler_rev:
             # the order of p_list align with p2idx's keys
             if p not in p_list: continue # skip, keep all values 0.0
             whole_scores[:,i] = scores[:, p2idx[p]]
-        
+
         whole_scores /= np.sum(whole_scores, axis=1, keepdims=True) # normalize each row, U*C'
 
         # calculate the KL divergence
@@ -434,7 +430,7 @@ class Iterative_Sampler_rev:
         rank_res = unlabeled_uidx[sorted_ii]
 
         return rank_res
-    
+
     def run(self, sample_amount, chunk_size, seed_amount=0, criteria=3):
 
         # seeding sample
@@ -443,7 +439,7 @@ class Iterative_Sampler_rev:
             seed_GT = self.oracle.query(random_rank[:seed_amount])
             self.labeled_GT.update(seed_GT)
             sample_amount -= seed_amount
-        
+
         for i in range(sample_amount // chunk_size):
             # update the decision variables first before decision
             self.update_labeled_uidxs() # 3: update labeled uidx
@@ -501,7 +497,7 @@ def persona_prediction_rev(
         tuning_factor = tuning_factor / np.min(tuning_factor)
         tuning_factor = tuning_factor ** col_refine
         scores = scores * tuning_factor
-    
+
     # fined results
     persona_probs = scores
     if timer:

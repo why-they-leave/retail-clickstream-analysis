@@ -1,9 +1,10 @@
 import random
+from copy import deepcopy
 
 import numpy as np
 import scipy
-from copy import deepcopy
 from tqdm import tqdm
+
 
 def sparse_multiply(A, B):
     # A @ B for sparse matrix A and B
@@ -35,7 +36,7 @@ def graph2transP(G_user_denoise, G_item_denoise, debug=False, sparse=False):
         U2I[uidx,bought_items] = trans_p
         if debug and uidx%(user_num//10) == 0: print('.', end='')
     # assert np.all(np.isclose(np.sum(U2I, axis=1), 1.0)) # check
-    
+
     # make I2U
     if not sparse:
         I2U = np.zeros([item_num, user_num])
@@ -54,7 +55,7 @@ def graph2transP(G_user_denoise, G_item_denoise, debug=False, sparse=False):
             I2U[tidx,:] = 1/user_num
         if debug and tidx%(item_num//10) == 0: print('.', end='')
     # assert np.all(np.isclose(np.sum(I2U, axis=1), 1.0)) # check
-    
+
     # make P
     if not sparse:
         P = U2I @ I2U
@@ -62,7 +63,7 @@ def graph2transP(G_user_denoise, G_item_denoise, debug=False, sparse=False):
         P = sparse_multiply(U2I, I2U).toarray()
     if debug: assert np.all(np.isclose(np.sum(P, axis=1), 1.0)) # check
     if debug: print('\nGet P')
-    
+
     # make R
     beta = 0.999 # hyper parameter
     v = np.ones([user_num,1])
@@ -83,7 +84,7 @@ class PageRank:
         self.R = deepcopy(R)
         self.N = R.shape[0]
         self.U = len(unlabeled) # number of unlabeled users
-        
+
         self.pi = np.zeros([self.N, self.U]) # N*U, starting probabilities for each unlabeled user
         self.unlabeled = np.array(unlabeled)
         self.pi[self.unlabeled, np.arange(self.U)] = 1 # pi is sparse
@@ -122,7 +123,7 @@ class Persona_Oracle:
             assert 'Unrepresentable' not in p_s, p_s # check
 
             response[uidx] = p_s
-            
+
         return response
 
 
@@ -196,13 +197,13 @@ class Iterative_Sampler:
         being_focused = {uidx: len(G_user[uidx]) for uidx in unlabeled_uidx if len(G_user[uidx]) >= 0} # the smaller the better
         rank = sorted(being_focused, key=lambda x:being_focused[x],)
         self.sample_scope = deepcopy(rank[:-remove_amount]) # avoiding the too common user
-    
+
     def trivial_rank(self,):
         # randomly shuffle as a baseline
         unlabeled_uidx = np.setdiff1d(self.sample_scope, list(self.labeled_GT.keys()))
         random.shuffle(unlabeled_uidx)
         return unlabeled_uidx
-    
+
     def criteria_rank_1(self,):
         # rank the unlabeled users according to the new-item coverage
         # -> rank_res: [uidx]; ordered list of unlabeled users, most previous most important
@@ -229,10 +230,10 @@ class Iterative_Sampler:
         # -> rank_res: [uidx]; ordered list of unlabeled users, most previous most important
 
         if self.labeled_GT == {}: return self.trivial_rank() # if no seed then randomly sample some as the seed
-        
+
         unlabeled_uidx = np.setdiff1d(self.sample_scope, list(self.labeled_GT.keys()))
         current_dict = {p:0 for p in self.predefined_persona_list}
-        
+
         # make current persona distribution
         for uidx, ps in self.labeled_GT.items():
             for p in ps:
@@ -261,7 +262,7 @@ class Iterative_Sampler:
             # the order of p_list align with p2idx's keys
             if p not in p_list: continue # skip, keep all values 0.0
             whole_scores[:,i] = scores[:, p2idx[p]]
-        
+
         whole_scores /= np.sum(whole_scores, axis=1, keepdims=True) # normalize each row, U*C'
 
         # calculate the KL divergence
@@ -280,7 +281,7 @@ class Iterative_Sampler:
     #     # aggregate the ranks
     #     # abandon
     #     pass
-    
+
     def run(self, sample_amount, chunk_size, remove_overf=0, seed_amount=0, criteria=3):
         # remove overly focused
         if remove_overf > 0:
@@ -292,12 +293,12 @@ class Iterative_Sampler:
             seed_GT = self.oracle.query(random_rank[:seed_amount])
             self.labeled_GT.update(seed_GT)
             sample_amount -= seed_amount
-        
+
         for i in range(sample_amount // chunk_size):
             # update the decision variables first before decision
             self.update_labeled_uidxs() # 3: update labeled uidx
             self.update_known_items() # 1: update known items
-            
+
             # new rank
             if criteria == 3:
                 rank_res = self.criteria_rank_3()
@@ -344,7 +345,7 @@ def persona_prediction(
         tuning_factor = tuning_factor / np.min(tuning_factor)
         tuning_factor = tuning_factor ** col_refine
         label_matrix_tuned = label_matrix_tuned * tuning_factor
-    
+
     # Page Rank execution
     pageranker = PageRank(R, unlabeled=unlabeled_uidxs)
     rank_res = pageranker.run(max_itr=1)
@@ -355,7 +356,7 @@ def persona_prediction(
     rank_res_labeled = rank_res_labeled.T # NL*L
 
     # apply KNN (optional)
-    if knn_k > 0: 
+    if knn_k > 0:
         k=knn_k
         knn_indices = np.argsort(rank_res_labeled, axis=1)[:, -k:] # NL*K, select nearest neighbors with highest trans probability
         row_indices = np.arange(rank_res_labeled.shape[0])[:, None] # NL*1, indices
@@ -364,7 +365,7 @@ def persona_prediction(
         rank_res_labeled = rank_res_labeled * knn_mask # removes all other probabilities except the K-nearest neighbors
         rank_res_labeled = rank_res_labeled / np.sum(rank_res_labeled, axis=1, keepdims=True) # normalize each row (for each non-labeled sample)
         assert np.all(np.isclose(np.sum(rank_res_labeled, axis=1), 1.0)) # check
-    
+
     # fined results
     persona_probs = rank_res_labeled @ label_matrix_tuned
     return persona_probs, label_matrix, persona_list, persona2idx

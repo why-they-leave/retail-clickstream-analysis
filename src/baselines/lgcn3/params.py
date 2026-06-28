@@ -14,11 +14,11 @@ MODEL = MODEL_list[model]
 
 ## hyperparameters of all models
 ## we simply copy all the hyper-parameters for MBA same as the Amazon dataset
-# learning rate, no big change 
+# learning rate, no big change
 LR_list = [[0.05, 0.0002,  0.001,  0.0001,  0.0001, 0.0001,  0.005,  0.0005, 0.0005, 0.0005, 0.0005, 0.005, 0.005,],
            [0.02, 0.00001, 0.0002, 0.00005, 0.0001, 0.00002, 0.0005, 0.0005, 0.0005, 0.0005, 0.0005, 0.0005, 0.0005,],
            [0.05, 0.0002,  0.001,  0.0001,  0.0001, 0.0001,  0.005,  0.0005, 0.0005, 0.0005, 0.0005, 0.005, 0.005,],
-           [0.05, 0.0002,  0.001,  0.0001,  0.0001, 0.0001,  0.005,  0.0005, 0.0005, 0.0005, 0.0005, 0.005, 0.005,], 
+           [0.05, 0.0002,  0.001,  0.0001,  0.0001, 0.0001,  0.005,  0.0005, 0.0005, 0.0005, 0.0005, 0.005, 0.005,],
            [0.05, 0.0002,  0.001,  0.0001,  0.0001, 0.0001,  0.005,  0.0005, 0.00025, 0.0005, 0.00025, 0.005, 0.005,], ]
 
 # regularization factor, this is quite a tunable hyperparameter
@@ -71,7 +71,7 @@ if POOLING == 'Concat': EMB_DIM = int(pred_dim/(LAYER+1))
 ## parameters about model setting (selective for model LGCN)
 PROP_DIM = 128
 PROP_EMB = ['RM', 'SF', 'PE'][1]
-IF_NORM = [False, True][0] 
+IF_NORM = [False, True][0]
 
 ## parameters for afd
 AFD_ALPHA = args.afd_alpha

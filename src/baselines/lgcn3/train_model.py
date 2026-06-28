@@ -1,17 +1,16 @@
-import os
 import random as rd
 import time
 
-import tensorflow as tf
 import numpy as np
 import pandas as pd
+import tensorflow as tf
+import test_model
+from model_LGCN_afd_tri import model_LGCN_afd_tri  # LGCN AFD tri-partite version
+from model_LGCN_tri import model_LGCN_tri  # LGCN tri-partite version
+from print_save import save_value
+from test_model import test_model, test_model_store
 from tqdm import tqdm
 
-import test_model
-from test_model import test_model, test_model_train, test_model_store
-from print_save import print_value, save_value
-from model_LGCN_tri import model_LGCN_tri # LGCN tri-partite version
-from model_LGCN_afd_tri import model_LGCN_afd_tri # LGCN AFD tri-partite version
 
 def train_model(para, data, path_excel, results_save_path=''):
     ## data and hyperparameters
@@ -68,7 +67,7 @@ def train_model(para, data, path_excel, results_save_path=''):
                     sample_num = 0
                     while sample_num < (SAMPLE_RATE if (MODEL in ['LGCN', 'LGCN_tri', 'LGCN_AFD_tri', 'LGCN_AFD']) else 1):
                         neg_item = int(rd.uniform(0, item_num)) # sample random exclusive items as the negative
-                        if not (neg_item in train_data[user]):
+                        if neg_item not in train_data[user]:
                             sample_num += 1
                             train_batch_data.append([user, pos_item, neg_item])
                 train_batch_data = np.array(train_batch_data)
@@ -91,10 +90,10 @@ def train_model(para, data, path_excel, results_save_path=''):
             if loss > 10 ** 10: break
     t2 = time.perf_counter()
     print('time cost:', (t2 - t1) / 200)
-    
+
     if results_save_path:
         print('Saving results...')
         test_model_store(sess, model, para_test, results_save_path)
         print('Well saved.')
-    
+
     return F1_max

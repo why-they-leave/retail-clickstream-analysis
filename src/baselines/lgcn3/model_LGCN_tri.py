@@ -1,5 +1,6 @@
 import tensorflow as tf
 
+
 class model_LGCN_tri(object):
     def __init__(self, n_users, n_items, n_personas, lr, lamda, emb_dim, layer, pre_train_latent_factor, graph_embeddings, graph_conv,
                  prediction, loss_function, generalization, optimization, if_pretrain, if_transformation, activation, pooling):

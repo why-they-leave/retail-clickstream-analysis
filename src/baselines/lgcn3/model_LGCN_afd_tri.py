@@ -1,6 +1,7 @@
 import tensorflow as tf
 from afd_utils import calculate_correlation
 
+
 class model_LGCN_afd_tri(object):
     def __init__(self, n_users, n_items, n_personas, lr, lamda, emb_dim, layer, pre_train_latent_factor, graph_embeddings, graph_conv,
                  prediction, loss_function, generalization, optimization, if_pretrain, if_transformation, activation, pooling, afd_alpha,):
@@ -133,7 +134,7 @@ class model_LGCN_afd_tri(object):
         if self.loss_function == 'MSE': self.loss = self.mse_loss(self.pos_scores, self.neg_scores)
         # calculates the sum of l2-norms
         if 'Regularization' in self.generalization: self.loss += self.lamda * self.regularization(self.reg_list)
-        
+
         # now we add the afd loss
         afd_u, afd_i, afd_p = self.afd_loss([self.all_embeddings])
         self.loss += afd_u + afd_i + afd_p
@@ -204,11 +205,11 @@ class model_LGCN_afd_tri(object):
             user_layer_correlations.append(calculate_correlation(user_embeddings))
             item_layer_correlations.append(calculate_correlation(item_embeddings))
             persona_layer_correlations.append(calculate_correlation(persona_embeddings))
-        
+
         user_layer_correlations = tf.convert_to_tensor(user_layer_correlations)
         item_layer_correlations = tf.convert_to_tensor(item_layer_correlations)
         persona_layer_correlations = tf.convert_to_tensor(persona_layer_correlations)
-        
+
         user_layer_correlations_coef = (1 / user_layer_correlations) / tf.reduce_sum(1 / user_layer_correlations)
         item_layer_correlations_coef = (1 / item_layer_correlations) / tf.reduce_sum(1 / item_layer_correlations)
         persona_layer_correlations_coef = (1 / persona_layer_correlations) / tf.reduce_sum(1 / persona_layer_correlations)

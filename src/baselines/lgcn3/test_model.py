@@ -1,10 +1,11 @@
 import json
 import random as rd
 
-from numpy import *
 import numpy as np
+from numpy import *
 
 from evaluation import evaluation_F1, evaluation_NDCG
+
 
 def test_one_user(user, top_item, para_test_one_user):
     [test_data, TOP_K] = para_test_one_user
@@ -35,7 +36,7 @@ def test_model(sess, model, para_test):
         for u_index, user in enumerate(user_batch):
             for item in train_data[user]:
                 # items_in_train_data: score with a very large negative value, to rank the items bought by the user the training set to the tail, avoiding recommend them
-                items_in_train_data[u_index, item] = score_min 
+                items_in_train_data[u_index, item] = score_min
         user_top_items_batch = sess.run(model.top_items, feed_dict={model.users: user_batch, model.keep_prob: 1, model.items_in_train_data: items_in_train_data, model.top_k: max(TOP_K)})
         user_top_items[u1: u2] = user_top_items_batch
     result = []
@@ -64,7 +65,7 @@ def test_model_store(sess, model, para_test, save_path):
         for u_index, user in enumerate(user_batch):
             for item in train_data[user]:
                 # items_in_train_data: score with a very large negative value, to rank the items bought by the user the training set to the tail, avoiding recommend them
-                items_in_train_data[u_index, item] = score_min 
+                items_in_train_data[u_index, item] = score_min
         user_top_items_batch = sess.run(model.top_items, feed_dict={model.users: user_batch, model.keep_prob: 1, model.items_in_train_data: items_in_train_data, model.top_k: max(TOP_K)})
         user_top_items[u1: u2] = user_top_items_batch
     results = {}

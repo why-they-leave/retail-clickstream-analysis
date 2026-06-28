@@ -1,5 +1,7 @@
-import numpy as np
 from copy import deepcopy
+
+import numpy as np
+
 
 def make_persona2idx_whole(persona2idx, predefined_persona_list):
     persona2idx_whole = {}
@@ -82,9 +84,9 @@ def persona_prediction_eval(
     # start evaluation for each test gt
     for uidx, ps in gt.items():
         gt_personas = [persona2idx_whole[p] for p in ps] # ground truth personas, may include external labels
-        
+
         assert gt_personas, user_ids[uidx] # gt_personas should be non-empty
-        
+
         pidx = unlabeled_uidxs_2_prediction[uidx] # prediction matrix index
         pred_personas = predictions[pidx][::-1] # reorder from the largest membership to the least
         if trivial:
@@ -106,9 +108,9 @@ def persona_prediction_eval(
         for i in range(compare_len):
             if pred_personas[i] in gt_personas: # gt_personas has no order, pred_personas has
                 tmp += 1 # the overlap size
-        
+
         correct_rate = tmp / compare_len
-        
+
         # for persona-lenth sta
         if sta_s.get(gt_len) is None:
             sta_s[gt_len] = []
@@ -119,11 +121,11 @@ def persona_prediction_eval(
             f1s = f1score(gt_personas, pred_personas[:f1score_k])
             f1scores[gt_len].append(f1s)
             all_f1.append(f1s)
-        
+
         if recall_k > 0:
             rcl = recall(gt_personas, pred_personas[:recall_k])
             all_recall.append(rcl)
-        
+
         # p-statistics: for different persona classes
         for p in gt_personas:
             if p in pred_personas[:compare_len]:
@@ -165,7 +167,7 @@ def persona_prediction_eval(
     sta_s_avg = {}
     for gt_len in sta_s.keys():
         sta_s_avg[gt_len] = [np.mean(sta_s[gt_len]), len(sta_s[gt_len])] # problematic
-    
+
     f1scores_avg = {}
     for gt_len in f1scores.keys():
         f1scores_avg[gt_len] = [np.mean(f1scores[gt_len]), len(f1scores[gt_len])]
@@ -184,7 +186,7 @@ def persona_prediction_eval(
         whole_acc = (acc*count + 1.0*count2)/(count+count2)
         print(f'{gt_l}-persona Acc: {acc :f} (total {count}) | {whole_acc :f} (total {count+count2})')
         res1.append((acc, whole_acc))
-        
+
         # if f1score_k > 0:
         #     print(f'{gt_l}-persona F1: {f1scores[gt_l][0] :f} (total {f1scores[gt_l][1]})')
         #     res3.append((acc, whole_acc))

@@ -1,19 +1,16 @@
-import sys
-import os
 # builtin
-import importlib
 from datetime import datetime
+
+import params
+
 # internal
 import read_data
-import train_model
-import params
-from params import DATASET, MODEL, LR, LAMDA, LAYER, BATCH_SIZE, OPTIMIZATION, AFD_ALPHA
-from tqdm.contrib.concurrent import process_map
+
 # external
-import pandas as pd
-import numpy as np
 # import matplotlib.pyplot as plt
 import tensorflow as tf
+import train_model
+from params import AFD_ALPHA, BATCH_SIZE, DATASET, LAMDA, LAYER, LR, MODEL, OPTIMIZATION
 
 tf.compat.v1.disable_eager_execution() # to disable the eager mode
 
