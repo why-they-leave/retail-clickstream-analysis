@@ -9,6 +9,7 @@
 
 ### 기타
 
+- 템플릿 설정 동기화 ([7559d2a](https://github.com/JungYeoni/da-template/commit/7559d2ac249dab475f0a7701f2d05c9b21e9592b))
 - 기존 템플릿 업데이트 사항 ([d792410](https://github.com/JungYeoni/da-template/commit/d7924109054aa27f8f2a08746f9f97582f26cc02))
 - Notebook-smoke-test 제거 및 issue-helper 워크플로우 추가 ([c7d43fc](https://github.com/JungYeoni/da-template/commit/c7d43fc7f3ff3d30445e50adf369cd6b5c9e2048))
 - READEME에 데이터 다운로드 방법 추가 ([6ba348b](https://github.com/JungYeoni/da-template/commit/6ba348b4a1643a3b09e1e6cc4d0a80256735fd4e))
@@ -17,6 +18,7 @@
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([f09c87d](https://github.com/JungYeoni/da-template/commit/f09c87d75bccf9520efae3f4eab94b5114b1a437))
 - CHANGELOG 자동 업데이트 [skip ci] ([692e949](https://github.com/JungYeoni/da-template/commit/692e949ede553c3699b865477c56034b5a5ba404))
 - CHANGELOG 자동 업데이트 [skip ci] ([c63e500](https://github.com/JungYeoni/da-template/commit/c63e50024621979e023d3be37832e9fdf3d98142))
 - GPLR 페르소나 생성 파이프라인 리포트 추가 및 MBA.py 복원 #1 ([be367c4](https://github.com/JungYeoni/da-template/commit/be367c4c9fb4b5dd8a280226ad5b51eb2336189f))
