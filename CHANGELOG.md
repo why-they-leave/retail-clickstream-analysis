@@ -17,6 +17,7 @@
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([692e949](https://github.com/JungYeoni/da-template/commit/692e949ede553c3699b865477c56034b5a5ba404))
 - CHANGELOG 자동 업데이트 [skip ci] ([c63e500](https://github.com/JungYeoni/da-template/commit/c63e50024621979e023d3be37832e9fdf3d98142))
 - GPLR 페르소나 생성 파이프라인 리포트 추가 및 MBA.py 복원 #1 ([be367c4](https://github.com/JungYeoni/da-template/commit/be367c4c9fb4b5dd8a280226ad5b51eb2336189f))
 - CHANGELOG 자동 업데이트 [skip ci] ([237313d](https://github.com/JungYeoni/da-template/commit/237313d13868268a17a4d71904da8f309ebe5639))
@@ -33,6 +34,7 @@
 
 ### 새 기능
 
+- 데이터 불러오기 코드 주석 처리 #2 ([3493967](https://github.com/JungYeoni/da-template/commit/349396708b1bda7b156c7f386abae7dc559b14e8))
 - @eric010314-sys 작업 내용 transfer #1 ([37fae63](https://github.com/JungYeoni/da-template/commit/37fae630bbc760e447f35c1d7f6f3d9510d4930a))
 
 
