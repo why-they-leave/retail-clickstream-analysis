@@ -4,17 +4,17 @@
 MBA 포맷 (세미콜론 구분):
   BillNo;Itemname;Quantity;Date;Price;CustomerID;Country
 
-입력 (퍼널데이터셋 최종/):
-  orders.csv, order_items.csv, products.csv, customers.csv
+입력:
+  data/raw/orders.csv, order_items.csv, products.csv
 
 출력:
-  ../data/funnel_mba_format.csv
+  data/interim/funnel_mba_format.csv
 """
 
 import pandas as pd
 
-FUNNEL_DIR = "../../퍼널데이터셋 최종"
-OUTPUT_PATH = "../../data/funnel_mba_format.csv"
+FUNNEL_DIR = "../../data/raw"
+OUTPUT_PATH = "../../data/interim/funnel_mba_format.csv"
 
 
 def load_and_merge(funnel_dir: str) -> pd.DataFrame:

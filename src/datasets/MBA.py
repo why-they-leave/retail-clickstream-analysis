@@ -2,7 +2,7 @@ import pandas as pd
 from tqdm import tqdm
 
 
-def MBA_load_data(ds_path='../ds/MBA/data.csv', debug=False):
+def MBA_load_data(ds_path='../data/interim/funnel_mba_format.csv', debug=False):
     # -> [mba_df, user_ids, user_num, user_ids_kv, item_names, item_num, items_kv, G_user, G_item]
     # 원본 구매 로그 CSV를 읽어서, 이후 알고리즘이 쓰기 쉬운 user-item bipartite graph로 바꾼다.
     """

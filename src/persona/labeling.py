@@ -25,9 +25,9 @@ import llm_connector.Collector as collector
 
 warnings.filterwarnings("ignore")
 
-DS_PATH = "../data/funnel_mba_format.csv"
-PERSONA_PATH = "../data/funnel_persona_gen/final_personas.json"
-OUTPUT_DIR = "../data/funnel_persona_gen/"
+DS_PATH = "../data/interim/funnel_mba_format.csv"
+PERSONA_PATH = "../data/interim/funnel_persona_gen/final_personas.json"
+OUTPUT_DIR = "../data/interim/funnel_persona_gen/"
 MODEL = "solar-pro"
 
 # ── 페르소나 로딩 ──────────────────────────────────────────────────────────────

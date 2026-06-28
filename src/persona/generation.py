@@ -24,8 +24,8 @@ import llm_connector.Collector as collector
 
 warnings.filterwarnings("ignore")
 
-DS_PATH = "../data/funnel_mba_format.csv"
-OUTPUT_DIR = "../data/funnel_persona_gen/"
+DS_PATH = "../data/interim/funnel_mba_format.csv"
+OUTPUT_DIR = "../data/interim/funnel_persona_gen/"
 
 # ── 프롬프트 ──────────────────────────────────────────────────────────────────
 
