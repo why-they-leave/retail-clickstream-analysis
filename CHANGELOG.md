@@ -17,6 +17,7 @@
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([c63e500](https://github.com/JungYeoni/da-template/commit/c63e50024621979e023d3be37832e9fdf3d98142))
 - GPLR 페르소나 생성 파이프라인 리포트 추가 및 MBA.py 복원 #1 ([be367c4](https://github.com/JungYeoni/da-template/commit/be367c4c9fb4b5dd8a280226ad5b51eb2336189f))
 - CHANGELOG 자동 업데이트 [skip ci] ([237313d](https://github.com/JungYeoni/da-template/commit/237313d13868268a17a4d71904da8f309ebe5639))
 - CHANGELOG 자동 업데이트 [skip ci] ([e513fa5](https://github.com/JungYeoni/da-template/commit/e513fa5c39eb5c948d8120698a2e6a8e4012a08f))
