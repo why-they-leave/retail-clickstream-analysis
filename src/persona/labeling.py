@@ -16,7 +16,6 @@ import random
 import re
 import warnings
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from copy import deepcopy
 
 from openai import OpenAI
 from tqdm import tqdm
@@ -221,8 +220,8 @@ def main():
     for uidx in G_user:
         items = list(G_user[uidx])
         random.shuffle(items)
-        l      = len(items)
-        ltrain = max(int(0.8 * l), 1)
+        n_items = len(items)
+        ltrain = max(int(0.8 * n_items), 1)
         tri_graph_uidx2tidx_train[uidx] = items[:ltrain]
         tri_graph_uidx2tidx_test[uidx]  = items[ltrain:]
 

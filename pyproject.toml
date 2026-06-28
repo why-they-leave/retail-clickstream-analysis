@@ -56,6 +56,12 @@ target-version = "py311"
 select = ["E", "F", "I", "W"]
 ignore = ["E501"]
 
+[tool.ruff.lint.per-file-ignores]
+"src/baselines/**" = ["E", "F", "W"]
+"src/random_walker/**" = ["E", "F", "W"]
+"src/llm_connector/**" = ["E", "F", "W"]
+"src/datasets/MBA.py" = ["E", "F", "W"]
+
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"

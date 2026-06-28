@@ -21,7 +21,6 @@ def load_and_merge(funnel_dir: str) -> pd.DataFrame:
     orders      = pd.read_csv(f'{funnel_dir}/orders.csv')
     order_items = pd.read_csv(f'{funnel_dir}/order_items.csv')
     products    = pd.read_csv(f'{funnel_dir}/products.csv')
-    customers   = pd.read_csv(f'{funnel_dir}/customers.csv')
 
     # order_items + orders -> 고객 ID, 날짜, 국가
     df = order_items.merge(orders[['order_id', 'customer_id', 'order_time', 'country']],
