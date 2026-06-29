@@ -164,8 +164,7 @@ def validate(df: pd.DataFrame, expected_rows: int, label: str) -> None:
             errors.append(f"{col} 음수 존재")
 
     if errors:
-        print(f"[{label}] 검증 실패:")
-        for e in errors:
-            print(f"  - {e}")
+        details = "\n".join(f"  -{e}" for e in errors)
+        raise ValueError(f"[{label}] 검증 실패: \n{details}")  # 예외 전파 추가
     else:
         print(f"[{label}] 검증 통과  (rows={len(df):,})")
