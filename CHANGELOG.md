@@ -22,6 +22,7 @@
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([65e072e](https://github.com/JungYeoni/da-template/commit/65e072e9eb9d9316ef876b5a54b85ed874f0073c))
 - Report 잘못된 문장 수정 (#5) ([28eac1f](https://github.com/JungYeoni/da-template/commit/28eac1f986160e36fac9d79810389bf2ac8618f1))
 - US 고객 분석은 반드시 customers 테이블 기준 US 임을 명시 (#5) ([3c68807](https://github.com/JungYeoni/da-template/commit/3c688078d95dee61006aa923adb750c542eabf73))
 - 데이터 카탈로그 문서 추가 (#5) ([a1cebad](https://github.com/JungYeoni/da-template/commit/a1cebad0ff7525032df5225805502dc3b55c7fa7))
@@ -44,6 +45,7 @@
 
 ### 새 기능
 
+- 빈 커밋 ([45193b4](https://github.com/JungYeoni/da-template/commit/45193b4de69066b7ea135c6800a5c54fbb704677))
 - 실제 저장 파일명에 맞게 수정 (#5) ([736ef22](https://github.com/JungYeoni/da-template/commit/736ef22979c8031cf766a2753c7c3d66b9ee05ee))
 - 상대경로 수정 및 고객 수 하드코딩 제거 (#5) ([001e5c9](https://github.com/JungYeoni/da-template/commit/001e5c9bf566296a622c6f74980695ef1a73250f))
 - 무결성 검증 예외 전파 추가 (#5) ([2a6657d](https://github.com/JungYeoni/da-template/commit/2a6657df71c5fffcf93e1003511d161b8a3ded99))
