@@ -40,6 +40,9 @@
 - 국가: 17개국, 상위 5개 — US(3,648), IN(1,589), GB(1,585), BR(1,421), DE(1,397)
 - 마케팅 동의: True 55.6% / False 44.4%
 
+**US cohort 정의**  
+US 고객 분석은 반드시 `customers.country == 'US'` 기준으로 cohort를 먼저 정의한 뒤, 해당 고객들의 세션/이벤트/주문을 따라간다. `sessions.country` 또는 `orders.country`로 필터링하지 않는다.
+
 ---
 
 ### sessions
