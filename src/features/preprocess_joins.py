@@ -2,8 +2,8 @@
 raw 테이블을 조인해 중간 테이블을 생성한다.
 
 출력:
-    data/interim/session_events.csv   — sessions + events + products
-    data/interim/order_details.csv    — orders + order_items + products
+    data/interim/session_events_products.csv   — sessions + events + products
+    data/interim/orders_items_products.csv    — orders + order_items + products
 """
 
 from pathlib import Path
