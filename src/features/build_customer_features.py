@@ -82,8 +82,10 @@ def _order_features(customer_ids: pd.Series, order_details: pd.DataFrame) -> pd.
     df = order_details[order_details["customer_id"].isin(customer_ids)].copy()
     df["order_time"] = pd.to_datetime(df["order_time"])
 
+    order_level = df.drop_duplicates(subset=["customer_id", "order_id"])  # 중복 집계 제거
+
     order_agg = (
-        df.groupby("customer_id")
+        order_level.groupby("customer_id")
         .agg(
             last_order=("order_time", "max"),
             order_count=("order_id", "nunique"),
