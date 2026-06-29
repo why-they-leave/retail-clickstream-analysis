@@ -15,9 +15,10 @@ import pandas as pd
 import preprocess_joins as pj
 from build_customer_features import build_customer_features, validate
 
-RAW_DIR = Path("../../data/raw")
-INTERIM_DIR = Path("../../data/interim")
-OUTPUT_DIR = Path("../../data/processed")
+ROOT_DIR = Path(__file__).resolve().parents[2]  # 스크립트 파일 자체의 위치
+RAW_DIR = ROOT_DIR / "data" / "raw"
+INTERIM_DIR = ROOT_DIR / "data" / "interim"
+OUTPUT_DIR = ROOT_DIR / "data" / "processed"
 
 
 def main():
@@ -49,7 +50,7 @@ def main():
         customers["country"] == "US", "customer_id"
     ]  # customers 테이블 기준으로 country 필터링
     df_us = build_customer_features(us_ids, session_events, order_details)
-    validate(df_us, expected_rows=3648, label="US-only")
+    validate(df_us, expected_rows=len(us_ids), label="US-only")  # US 고객 수 하드코딩 x
     df_us.to_csv(OUTPUT_DIR / "customer_features_us_customers.csv", index=False)
     print(f"  저장: {OUTPUT_DIR / 'customer_features_us_customers.csv'}")
 
