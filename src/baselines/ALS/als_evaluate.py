@@ -5,10 +5,11 @@ ALS 추천 모델 평가 코드
 - 가중치(pkl)와 테스트 데이터(csv) 경로는 상단 경로 설정에서 변경
 '''
 
-import pandas as pd
-import numpy as np
-import pickle
 import os
+import pickle
+
+import numpy as np
+import pandas as pd
 
 # ============================================================
 # 경로 설정 (자주 바꾸는 경우 여기만 수정)

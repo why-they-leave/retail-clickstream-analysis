@@ -7,12 +7,13 @@ ALS 기반 메인 화면 개인화 추천 모델(ALS 학습 코드)
 - 유저별 추천 상위 50개 추출 및 저장
 '''
 
-import pandas as pd
-import numpy as np
-import scipy.sparse as sparse
-import implicit
-import pickle
 import os
+import pickle
+
+import implicit
+import numpy as np
+import pandas as pd
+import scipy.sparse as sparse
 
 # 경로 설정 
 MART_PATH  = "data/processed/als_datamart.csv"
