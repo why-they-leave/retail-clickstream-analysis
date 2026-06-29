@@ -84,8 +84,8 @@ def build_sparse_matrix(train_df: pd.DataFrame):
 def train_als(matrix: sparse.csr_matrix):
     """
     implicit 라이브러리 ALS 학습
-    - factors   : 유저/아이템 임베딩 차원
-    - iterations: 반복 횟수
+    - factors   : 유저/아이템 임베딩 차원. 높을수록 표현력↑, 과적합 위험↑
+    - iterations: 반복 횟수(U 고정→V 풀기, V 고정→U 풀기를 몇 번 반복할지)
     - alpha     : confidence 스케일 파라미터 (점수 * alpha = confidence)
                   alpha가 너무 크면 높은 score의 (user, item) 쌍에 과하게 편향되어
                   추천 다양성이 떨어짐. total_score에 이미 가중치가 반영된 경우
@@ -94,7 +94,7 @@ def train_als(matrix: sparse.csr_matrix):
     model = implicit.als.AlternatingLeastSquares(
         factors=64,
         iterations=20,
-        alpha=3,          # total_score에 가중치가 반영되어 있으므로 1부터 시작
+        alpha=1,          # total_score에 가중치가 반영되어 있으므로 1부터 시작
         random_state=42
     )
     model.fit(matrix)
