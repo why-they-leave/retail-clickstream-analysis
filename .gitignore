@@ -27,9 +27,12 @@ credentials/
 data/raw/
 data/interim/
 data/processed/
+data/outputs/ALS/*
 !data/raw/.gitkeep
 !data/interim/.gitkeep
 !data/processed/.gitkeep
+!data/outputs/.gitkeep
+!data/outputs/ALS/.gitkeep
 
 # 모델 아티팩트
 models/
