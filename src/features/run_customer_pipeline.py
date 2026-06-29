@@ -45,7 +45,9 @@ def main():
 
     # ── Step 4: US 고객 기준 집계 ────────────────────────────────────────────
     print("\n=== Step 4: US-only 피처 생성 ===")
-    us_ids = customers.loc[customers["country"] == "US", "customer_id"]
+    us_ids = customers.loc[
+        customers["country"] == "US", "customer_id"
+    ]  # customers 테이블 기준으로 country 필터링
     df_us = build_customer_features(us_ids, session_events, order_details)
     validate(df_us, expected_rows=3648, label="US-only")
     df_us.to_csv(OUTPUT_DIR / "customer_features_us_customers.csv", index=False)
