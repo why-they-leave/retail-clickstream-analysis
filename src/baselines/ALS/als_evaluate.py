@@ -13,10 +13,10 @@ import os
 # ============================================================
 # 경로 설정 (자주 바꾸는 경우 여기만 수정)
 # ============================================================
-# MODEL_PATH = "src/baselines/ALS/weights/als_model.pkl"
-MODEL_PATH = "src/baselines/ALS/weights/als_model_us_alpha3.pkl"
-# TEST_PATH  = "data/outputs/ALS/als_test.csv"
-TEST_PATH  = "data/outputs/ALS/als_test_us.csv"
+MODEL_PATH = "src/baselines/ALS/weights/als_model.pkl"
+# MODEL_PATH = "src/baselines/ALS/weights/als_model_us.pkl"
+TEST_PATH  = "data/outputs/ALS/als_test.csv"
+# TEST_PATH  = "data/outputs/ALS/als_test_us.csv"
 
 # ============================================================
 # 상수 설정

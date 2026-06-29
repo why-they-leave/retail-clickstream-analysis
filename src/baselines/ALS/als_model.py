@@ -15,8 +15,8 @@ import pickle
 import os
 
 # 경로 설정 
-# MART_PATH  = "data/processed/als_datamart.csv"
-MART_PATH  = "data/processed/als_datamart_us.csv"
+MART_PATH  = "data/processed/als_datamart.csv"
+# MART_PATH  = "data/processed/als_datamart_us.csv"
 OUTPUT_DIR = "data/outputs/ALS"
 MODEL_DIR  = "src/baselines/ALS"
 
@@ -188,14 +188,14 @@ def save_outputs(
     os.makedirs(weights_dir, exist_ok=True)
 
     # 추천 결과 저장
-    # rec_path = os.path.join(output_dir, "PRED_MAIN_RECOMMEND.csv")
-    rec_path = os.path.join(output_dir, "PRED_MAIN_RECOMMEND_US_alpha3.csv")
+    rec_path = os.path.join(output_dir, "PRED_MAIN_RECOMMEND.csv")
+    # rec_path = os.path.join(output_dir, "PRED_MAIN_RECOMMEND_US.csv")
     df_rec.to_csv(rec_path, index=False)
     print(f"[저장] 추천 결과 → {rec_path}")
 
     # 모델 및 인코더 저장 (추후 추론 시 재사용)
-    # model_path = os.path.join(weights_dir, "als_model.pkl")
-    model_path = os.path.join(weights_dir, "als_model_us_alpha3.pkl")
+    model_path = os.path.join(weights_dir, "als_model.pkl")
+    # model_path = os.path.join(weights_dir, "als_model_us.pkl")
     with open(model_path, "wb") as f:
         pickle.dump({
             "model"   : model,
@@ -252,8 +252,8 @@ if __name__ == "__main__":
     ]
     print(f"[필터링 후] test 레코드: {len(test_df_filtered):,}개")
 
-    # test_path = os.path.join(OUTPUT_DIR, "als_test.csv")
-    test_path = os.path.join(OUTPUT_DIR, "als_test_us.csv")
+    test_path = os.path.join(OUTPUT_DIR, "als_test.csv")
+    # test_path = os.path.join(OUTPUT_DIR, "als_test_us.csv")
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     test_df_filtered.to_csv(test_path, index=False)
     print(f"[저장] 테스트 데이터 → {test_path}")
