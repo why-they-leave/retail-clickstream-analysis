@@ -12,7 +12,6 @@
 from pathlib import Path
 
 import pandas as pd
-
 import preprocess_joins as pj
 from build_customer_features import build_customer_features, validate
 
@@ -31,8 +30,8 @@ def main():
     # ── Step 2: 중간 테이블 로드 ─────────────────────────────────────────────
     print("\n=== Step 2: 중간 테이블 로드 ===")
     session_events = pd.read_csv(INTERIM_DIR / "sessions_events_products.csv")
-    order_details  = pd.read_csv(INTERIM_DIR / "orders_items_products.csv")
-    customers      = pd.read_csv(RAW_DIR / "customers.csv")
+    order_details = pd.read_csv(INTERIM_DIR / "orders_items_products.csv")
+    customers = pd.read_csv(RAW_DIR / "customers.csv")
     print(f"  session_events: {len(session_events):,}행")
     print(f"  order_details:  {len(order_details):,}행")
 

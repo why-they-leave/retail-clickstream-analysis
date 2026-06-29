@@ -40,8 +40,7 @@ def _session_features(customer_ids: pd.Series, session_events: pd.DataFrame) -> 
     df["start_time"] = pd.to_datetime(df["start_time"])
 
     agg = (
-        df
-        .groupby("customer_id")
+        df.groupby("customer_id")
         .agg(last_session=("start_time", "max"), session_count=("session_id", "nunique"))
         .reset_index()
     )
@@ -72,8 +71,7 @@ def _event_features(customer_ids: pd.Series, session_events: pd.DataFrame) -> pd
         .reset_index(name="cnt")
         .sort_values(["customer_id", "cnt", "category"], ascending=[True, False, True])
         .drop_duplicates("customer_id")
-        .rename(columns={"category": "top_view_category"})
-        [["customer_id", "top_view_category"]]
+        .rename(columns={"category": "top_view_category"})[["customer_id", "top_view_category"]]
     )
 
     return counts.merge(top_view, on="customer_id", how="left")
@@ -85,8 +83,7 @@ def _order_features(customer_ids: pd.Series, order_details: pd.DataFrame) -> pd.
     df["order_time"] = pd.to_datetime(df["order_time"])
 
     order_agg = (
-        df
-        .groupby("customer_id")
+        df.groupby("customer_id")
         .agg(
             last_order=("order_time", "max"),
             order_count=("order_id", "nunique"),
@@ -98,22 +95,26 @@ def _order_features(customer_ids: pd.Series, order_details: pd.DataFrame) -> pd.
     order_agg["avg_order_value"] = order_agg["total_spend"] / order_agg["order_count"]
 
     top_purchase = (
-        df
-        .groupby(["customer_id", "category"])["quantity"]
+        df.groupby(["customer_id", "category"])["quantity"]
         .sum()
         .reset_index()
         .sort_values(["customer_id", "quantity", "category"], ascending=[True, False, True])
         .drop_duplicates("customer_id")
-        .rename(columns={"category": "top_purchase_category"})
-        [["customer_id", "top_purchase_category"]]
+        .rename(columns={"category": "top_purchase_category"})[
+            ["customer_id", "top_purchase_category"]
+        ]
     )
 
-    return (
-        order_agg
-        .merge(top_purchase, on="customer_id", how="left")
-        [["customer_id", "recency_order_days", "order_count", "total_spend",
-          "avg_order_value", "top_purchase_category"]]
-    )
+    return order_agg.merge(top_purchase, on="customer_id", how="left")[
+        [
+            "customer_id",
+            "recency_order_days",
+            "order_count",
+            "total_spend",
+            "avg_order_value",
+            "top_purchase_category",
+        ]
+    ]
 
 
 def build_customer_features(
@@ -125,8 +126,7 @@ def build_customer_features(
     base = pd.DataFrame({"customer_id": customer_ids})
 
     result = (
-        base
-        .merge(_session_features(customer_ids, session_events), on="customer_id", how="left")
+        base.merge(_session_features(customer_ids, session_events), on="customer_id", how="left")
         .merge(_event_features(customer_ids, session_events), on="customer_id", how="left")
         .merge(_order_features(customer_ids, order_details), on="customer_id", how="left")
     )
@@ -148,7 +148,13 @@ def validate(df: pd.DataFrame, expected_rows: int, label: str) -> None:
         errors.append(f"row count {len(df):,} != expected {expected_rows:,}")
     if df["customer_id"].duplicated().any():
         errors.append("customer_id 중복 존재")
-    for col in ["session_count", "page_view_count", "add_to_cart_count", "order_count", "total_spend"]:
+    for col in [
+        "session_count",
+        "page_view_count",
+        "add_to_cart_count",
+        "order_count",
+        "total_spend",
+    ]:
         if (df[col] < 0).any():
             errors.append(f"{col} 음수 존재")
     for col in ["recency_session_days", "recency_order_days"]:

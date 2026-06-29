@@ -16,9 +16,9 @@ INTERIM_DIR = Path("../../data/interim")
 
 def build_session_events(raw_dir: Path) -> pd.DataFrame:
     """sessions → events → products 조인."""
-    sessions    = pd.read_csv(raw_dir / "sessions.csv")
-    events      = pd.read_csv(raw_dir / "events.csv")
-    products    = pd.read_csv(raw_dir / "products.csv")
+    sessions = pd.read_csv(raw_dir / "sessions.csv")
+    events = pd.read_csv(raw_dir / "events.csv")
+    products = pd.read_csv(raw_dir / "products.csv")
 
     df = (
         sessions[["session_id", "customer_id", "start_time"]]
@@ -38,9 +38,9 @@ def build_session_events(raw_dir: Path) -> pd.DataFrame:
 
 def build_order_details(raw_dir: Path) -> pd.DataFrame:
     """orders → order_items → products 조인."""
-    orders      = pd.read_csv(raw_dir / "orders.csv")
+    orders = pd.read_csv(raw_dir / "orders.csv")
     order_items = pd.read_csv(raw_dir / "order_items.csv")
-    products    = pd.read_csv(raw_dir / "products.csv")
+    products = pd.read_csv(raw_dir / "products.csv")
 
     df = (
         orders[["order_id", "customer_id", "order_time", "total_usd"]]
