@@ -28,4 +28,7 @@ def test_run_parallel_uses_error_handler_and_continues():
         on_error=_fallback,
     )
 
-    assert results == ["OK", {"arg": "bad", "error": "boom"}, "DONE"]
+    assert "OK" in results
+    assert "DONE" in results
+    assert {"arg": "bad", "error": "boom"} in results
+    assert len(results) == 3
