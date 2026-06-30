@@ -14,8 +14,8 @@ def describe_user(
 ) -> str:  # [fix#2] mutable default → None
     """유저 구매이력과 행동 컨텍스트를 LLM 프롬프트용 텍스트로 변환."""
     user_df = df[df["CustomerID"] == uid]
-    items = dict(user_df[["Itemname", "Quantity"]].values)
-    if train_items:
+    items = user_df.groupby("Itemname")["Quantity"].sum().to_dict()
+    if train_items is not None: # 빈 리스트 처리 
         items = {k: v for k, v in items.items() if k in train_items}
 
     items_desc = "; ".join([f"{item}, {count} times" for item, count in items.items()])
