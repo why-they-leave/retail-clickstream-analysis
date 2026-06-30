@@ -226,6 +226,7 @@ def main():
         json.dump(persona2idx, f, ensure_ascii=False, indent=2)
 
     # Train / Test 분할 (80 / 20)
+    # 날짜 기반이 아닌 per-user 아이템 shuffle split (stratify 없음)
     random_state = int(sample["random_state"])
     train_ratio = float(persona_cfg["train_ratio"])
     random.seed(random_state)
