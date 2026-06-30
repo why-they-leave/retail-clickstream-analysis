@@ -11,7 +11,6 @@ Step 3 (1회):  8세트(160개)         → LLM → 최종 20개 페르소나
 
 import json
 import logging
-import os
 import random
 import re
 import warnings
@@ -21,6 +20,7 @@ from openai import OpenAI
 
 import datasets.MBA as mba_ds
 from llm_connector.client import call_llm, run_parallel
+from llm_connector.env import get_required_env
 from llm_connector.formatter import describe_user
 from persona.config import load_persona_config
 
@@ -100,6 +100,11 @@ Here are the eight persona sets:
 # ── 유틸 ──────────────────────────────────────────────────────────────────────
 
 
+def clean_persona_name(name: str) -> str:
+    """Persona 식별자에서 Markdown 마크업과 불필요한 공백을 제거."""
+    return re.sub(r"\*+", "", name).strip()
+
+
 def parse_persona_list(text):
     """'1. Name - Definition' 형태에서 {name, definition} 리스트 추출."""
     personas = []
@@ -107,7 +112,9 @@ def parse_persona_list(text):
         line = line.strip()
         m = re.match(r"^\d+\.\s+(.+?)[\s]*[-:]\s+(.+)$", line)
         if m:
-            personas.append({"name": m.group(1).strip(), "definition": m.group(2).strip()})
+            personas.append(
+                {"name": clean_persona_name(m.group(1)), "definition": m.group(2).strip()}
+            )
     return personas
 
 
@@ -194,16 +201,19 @@ def main():
     paths = config["paths"]
     llm = config["llm"]
     persona = config["persona"]
+    sample = config["sample"]
 
     output_dir = paths["output_dir"]
     output_dir.mkdir(parents=True, exist_ok=True)
 
     logger.info("데이터 로딩 중...")
-    [mba_df, user_ids, user_num, *_] = mba_ds.MBA_load_data(str(paths["input"]))
+    [mba_df, user_ids, user_num, *_] = mba_ds.MBA_load_data(
+        str(paths["input"]), country=sample.get("country")
+    )
     grouped_df = mba_df.groupby(["CustomerID", "Itemname"]).agg({"Quantity": "sum"}).reset_index()
 
     client = OpenAI(
-        api_key=os.environ.get("UPSTAGE_API_KEY"),
+        api_key=get_required_env("UPSTAGE_API_KEY"),
         base_url="https://api.upstage.ai/v1",
     )
 

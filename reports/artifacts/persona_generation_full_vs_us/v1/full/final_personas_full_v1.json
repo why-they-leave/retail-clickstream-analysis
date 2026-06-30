@@ -1,0 +1,82 @@
+[
+  {
+    "name": "E-book Enthusiast",
+    "definition": "Purchases multiple e-books (often in bulk or across genres) with minimal other products."
+  },
+  {
+    "name": "Fitness Enthusiast",
+    "definition": "Buys fitness gear (dumbbells, yoga mats, sneakers) and apparel for workouts."
+  },
+  {
+    "name": "Beauty & Skincare Enthusiast",
+    "definition": "Purchases 2+ beauty items (lipsticks, moisturizers, serums, shampoos)."
+  },
+  {
+    "name": "Apparel & Footwear Buyer",
+    "definition": "Buys clothing (hoodies, jeans, sneakers, dresses) and accessories."
+  },
+  {
+    "name": "Home Appliance Shopper",
+    "definition": "Purchases kitchen or cleaning appliances (air fryers, vacuums, blenders)."
+  },
+  {
+    "name": "Bookworm",
+    "definition": "Frequently buys e-books, hardcovers, or paperbacks (often in bulk)."
+  },
+  {
+    "name": "Gadget & Tech User",
+    "definition": "Purchases electronics (monitors, mice, keyboards, webcams) for upgrades."
+  },
+  {
+    "name": "Kid-Focused Shopper",
+    "definition": "Buys toys (dolls, action figures, building blocks) for children."
+  },
+  {
+    "name": "Repetitive Purchaser",
+    "definition": "Repurchases the same product (e.g., sneakers, moisturizers, water bottles)."
+  },
+  {
+    "name": "Puzzle & Game Enthusiast",
+    "definition": "Purchases puzzles, board games, or building blocks."
+  },
+  {
+    "name": "Single-Item Shopper",
+    "definition": "Focuses on one unique product per transaction (e.g., SSD, hoodie, lamp)."
+  },
+  {
+    "name": "Skincare & Haircare User",
+    "definition": "Buys sunscreens, shampoos, serums, or conditioners."
+  },
+  {
+    "name": "Diverse General Shopper",
+    "definition": "Purchases 3–6+ unique items across unrelated categories."
+  },
+  {
+    "name": "Lipstick Collector",
+    "definition": "Buys multiple lipsticks in different shades (often with beauty items)."
+  },
+  {
+    "name": "Frequent Repurchaser (Skincare/Apparel)",
+    "definition": "Repeats purchases of specific items (e.g., jeans, sneakers, serums)."
+  },
+  {
+    "name": "Color-Specific Collector",
+    "definition": "Purchases items (apparel, toys, books) in varied or consistent colors."
+  },
+  {
+    "name": "Outdoor & Casual Gear Buyer",
+    "definition": "Buys water bottles, cycling helmets, or tennis rackets."
+  },
+  {
+    "name": "Miscellaneous Shopper",
+    "definition": "Buys unrelated products without clear patterns."
+  },
+  {
+    "name": "Health & Wellness Seeker",
+    "definition": "Purchases fitness gear, water bottles, or sunscreen."
+  },
+  {
+    "name": "Frequent Toy Buyer",
+    "definition": "Buys 2+ children’s toys (action figures, dolls, building blocks)."
+  }
+]

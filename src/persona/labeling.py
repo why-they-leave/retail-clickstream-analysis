@@ -23,6 +23,7 @@ from openai import OpenAI
 
 import datasets.MBA as mba_ds
 from llm_connector.client import call_llm, run_parallel
+from llm_connector.env import get_required_env
 from llm_connector.formatter import describe_user
 from llm_connector.parser import parse_item_response, parse_user_response
 from persona.config import load_persona_config
@@ -203,7 +204,7 @@ def main():
     logger.info("데이터 로딩 중...")
     global item_names  # assign_user_label에서 사용
     [mba_df, user_ids, user_num, user_ids_kv, item_names, item_num, items_kv, G_user, G_item] = (
-        mba_ds.MBA_load_data(str(paths["input"]))
+        mba_ds.MBA_load_data(str(paths["input"]), country=sample.get("country"))
     )
     grouped_df = mba_df.groupby(["CustomerID", "Itemname"]).agg({"Quantity": "sum"}).reset_index()
 
@@ -246,7 +247,7 @@ def main():
     logger.info("Train/Test 분할 저장 완료")
 
     client = OpenAI(
-        api_key=os.environ.get("UPSTAGE_API_KEY"),
+        api_key=get_required_env("UPSTAGE_API_KEY"),
         base_url="https://api.upstage.ai/v1",
     )
     sys_u, usr_u = make_user_prompts(personas)

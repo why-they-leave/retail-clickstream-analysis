@@ -27,6 +27,8 @@ dependencies = [
     # 설정
     "pyyaml>=6.0",
     "python-dotenv>=1.0",
+    # LLM API
+    "openai>=1,<2",
 ]
 
 [project.optional-dependencies]

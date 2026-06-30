@@ -1,11 +1,12 @@
 sample:
   ratio: 0.10
   random_state: 42
+  country: US
 
 paths:
-  input: data/interim/funnel_mba_format_us.csv
+  input: data/interim/funnel_627_mba.csv
   output_dir: data/interim/funnel_persona_gen_us
-  persona: data/interim/funnel_persona_gen_us/final_personas.json
+  persona: data/interim/funnel_persona_gen/final_personas.json
   customer_features: data/processed/customer_features_us_customers.csv
 
 llm:
