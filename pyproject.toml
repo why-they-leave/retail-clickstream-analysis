@@ -56,6 +56,9 @@ target-version = "py311"
 select = ["E", "F", "I", "W"]
 ignore = ["E501"]
 
+[tool.ruff.lint.isort]
+known-first-party = ["datasets", "llm_connector", "persona"]
+
 [tool.ruff.lint.per-file-ignores]
 "src/baselines/**" = ["E", "F", "W"]
 "src/random_walker/**" = ["E", "F", "W"]

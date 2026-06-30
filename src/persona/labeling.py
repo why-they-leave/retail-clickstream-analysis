@@ -18,12 +18,13 @@ import re
 import warnings
 from argparse import ArgumentParser
 
-import datasets.MBA as mba_ds
 import pandas as pd
+from openai import OpenAI
+
+import datasets.MBA as mba_ds
 from llm_connector.client import call_llm, run_parallel
 from llm_connector.formatter import describe_user
 from llm_connector.parser import parse_item_response, parse_user_response
-from openai import OpenAI
 from persona.config import load_persona_config
 
 warnings.filterwarnings("ignore")

@@ -17,10 +17,11 @@ import re
 import warnings
 from argparse import ArgumentParser
 
+from openai import OpenAI
+
 import datasets.MBA as mba_ds
 from llm_connector.client import call_llm, run_parallel
 from llm_connector.formatter import describe_user
-from openai import OpenAI
 from persona.config import load_persona_config
 
 warnings.filterwarnings("ignore")
