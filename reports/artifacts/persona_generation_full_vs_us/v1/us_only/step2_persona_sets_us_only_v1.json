@@ -1,0 +1,690 @@
+[
+  {
+    "iter": 0,
+    "personas": [
+      {
+        "name": "**Single-Product Specialist**",
+        "definition": "Buys only one unique product (e.g., a lamp, webcam, or toaster)."
+      },
+      {
+        "name": "**Minimalist Mixer**",
+        "definition": "Purchases 2–3 distinct products in different categories (e.g., moisturizer + water bottle)."
+      },
+      {
+        "name": "**Frequency-Driven Buyer**",
+        "definition": "Repeatedly buys the same item (e.g., 3+ board games, sneakers, or hoodies)."
+      },
+      {
+        "name": "**Health & Beauty Enthusiast**",
+        "definition": "Focuses on skincare (moisturizer, sunscreen, serum) and cosmetics (lipstick)."
+      },
+      {
+        "name": "**Home & Lifestyle Enthusiast**",
+        "definition": "Buys home decor (lamps, cookware) and appliances (vacuum, coffee maker)."
+      },
+      {
+        "name": "**Fitness Gear User**",
+        "definition": "Purchases fitness-related products (yoga mat, dumbbell, water bottle)."
+      },
+      {
+        "name": "**Book & Puzzle Lover**",
+        "definition": "Buys books (hardcover/paperback) and puzzles frequently."
+      },
+      {
+        "name": "**Electronics & Tech Buyer**",
+        "definition": "Prioritizes gadgets (webcam, smartwatch, SSD) and accessories (keyboard, mouse)."
+      },
+      {
+        "name": "**Kids & Toys Shopper**",
+        "definition": "Purchases toys (building blocks, dolls, action figures, plush toys)."
+      },
+      {
+        "name": "**Fashion & Apparel Buyer**",
+        "definition": "Buys clothing (dresses, t-shirts, jeans, sneakers) in varied colors."
+      },
+      {
+        "name": "**Variety-Seeking Shopper**",
+        "definition": "Buys 4–7+ diverse products across categories (e.g., coffee maker + lamp + mouse)."
+      },
+      {
+        "name": "**Gadget & Accessory Buyer**",
+        "definition": "Purchases tech accessories (keyboard, mouse, SSD) in bulk or multiple variants."
+      },
+      {
+        "name": "**Diverse Book Reader**",
+        "definition": "Buys multiple paperback or e-book titles, sometimes with repeats."
+      },
+      {
+        "name": "**Puzzle & Game Collector**",
+        "definition": "Buys puzzles and board games in bulk."
+      },
+      {
+        "name": "**Luxury & Unique Item Buyer**",
+        "definition": "Buys one high-value or distinctive product (e.g., a single smartwatch)."
+      },
+      {
+        "name": "**Mixed-Category Shopper**",
+        "definition": "Purchases 3+ items across 3+ distinct categories."
+      },
+      {
+        "name": "**Frequent Repurchaser**",
+        "definition": "Buys the same item 3+ times, with 0–2 other items."
+      },
+      {
+        "name": "**Tech & Lifestyle Blender**",
+        "definition": "Purchases 1–2 tech items (e.g., webcam) with 1–2 non-tech items."
+      },
+      {
+        "name": "**Fitness & Lifestyle Buyer**",
+        "definition": "Buys 1+ fitness items (e.g., yoga mat) with 1–2 non-fitness items."
+      },
+      {
+        "name": "**Beauty & Minimalist**",
+        "definition": "Buys 1–2 beauty items (e.g., lipstick, moisturizer) with 0–1 non-beauty items."
+      }
+    ],
+    "raw": "Here are the 20 most representative personas, synthesized and merged from the 100 provided, focusing on unique, non-overlapping categories and the most distinct behaviors:  \n\n1. **Single-Product Specialist** - Buys only one unique product (e.g., a lamp, webcam, or toaster).  \n2. **Minimalist Mixer** - Purchases 2–3 distinct products in different categories (e.g., moisturizer + water bottle).  \n3. **Frequency-Driven Buyer** - Repeatedly buys the same item (e.g., 3+ board games, sneakers, or hoodies).  \n4. **Health & Beauty Enthusiast** - Focuses on skincare (moisturizer, sunscreen, serum) and cosmetics (lipstick).  \n5. **Home & Lifestyle Enthusiast** - Buys home decor (lamps, cookware) and appliances (vacuum, coffee maker).  \n6. **Fitness Gear User** - Purchases fitness-related products (yoga mat, dumbbell, water bottle).  \n7. **Book & Puzzle Lover** - Buys books (hardcover/paperback) and puzzles frequently.  \n8. **Electronics & Tech Buyer** - Prioritizes gadgets (webcam, smartwatch, SSD) and accessories (keyboard, mouse).  \n9. **Kids & Toys Shopper** - Purchases toys (building blocks, dolls, action figures, plush toys).  \n10. **Fashion & Apparel Buyer** - Buys clothing (dresses, t-shirts, jeans, sneakers) in varied colors.  \n11. **Variety-Seeking Shopper** - Buys 4–7+ diverse products across categories (e.g., coffee maker + lamp + mouse).  \n12. **Gadget & Accessory Buyer** - Purchases tech accessories (keyboard, mouse, SSD) in bulk or multiple variants.  \n13. **Diverse Book Reader** - Buys multiple paperback or e-book titles, sometimes with repeats.  \n14. **Puzzle & Game Collector** - Buys puzzles and board games in bulk.  \n15. **Luxury & Unique Item Buyer** - Buys one high-value or distinctive product (e.g., a single smartwatch).  \n16. **Mixed-Category Shopper** - Purchases 3+ items across 3+ distinct categories.  \n17. **Frequent Repurchaser** - Buys the same item 3+ times, with 0–2 other items.  \n18. **Tech & Lifestyle Blender** - Purchases 1–2 tech items (e.g., webcam) with 1–2 non-tech items.  \n19. **Fitness & Lifestyle Buyer** - Buys 1+ fitness items (e.g., yoga mat) with 1–2 non-fitness items.  \n20. **Beauty & Minimalist** - Buys 1–2 beauty items (e.g., lipstick, moisturizer) with 0–1 non-beauty items.  \n\nThis list merges overlapping personas (e.g., \"Fitness Gear User\" and \"Yoga & Fitness Gear User\" into one) and prioritizes broad, non-duplicative categories while retaining key behaviors like single-product focus, frequency buying, and cross-category diversity."
+  },
+  {
+    "iter": 1,
+    "personas": [
+      {
+        "name": "**Book Enthusiast**",
+        "definition": "Frequently purchases multiple hardcover/paperback books."
+      },
+      {
+        "name": "**Beauty Product Collector**",
+        "definition": "Buys diverse lipsticks, serums, or moisturizers in varying colors."
+      },
+      {
+        "name": "**Fitness Gear Buyer**",
+        "definition": "Buys dumbbells, yoga mats, or cycling helmets for home workouts."
+      },
+      {
+        "name": "**Toy & Game Collector**",
+        "definition": "Buys building blocks, dolls, or board games, often with multiple color variants."
+      },
+      {
+        "name": "**E-book Enthusiast**",
+        "definition": "Frequently purchases multiple e-books, often focusing on specific genres or colors."
+      },
+      {
+        "name": "**Doll Collector**",
+        "definition": "Repeatedly buys dolls in various colors or styles."
+      },
+      {
+        "name": "**Lipstick Collector**",
+        "definition": "Buys multiple lipstick shades or frequently."
+      },
+      {
+        "name": "**Action Figure Enthusiast**",
+        "definition": "Buys multiple action figures, sometimes with repeated purchases of the same type."
+      },
+      {
+        "name": "**Kitchen Appliance Shopper**",
+        "definition": "Purchases coffee makers, blenders, or air fryers, sometimes in sets."
+      },
+      {
+        "name": "**Puzzle Solver**",
+        "definition": "Purchases puzzles repeatedly, often in different colors or themes."
+      },
+      {
+        "name": "**Dress Enthusiast**",
+        "definition": "Buys dresses in specific colors repeatedly (3+ times)."
+      },
+      {
+        "name": "**Building Blocks Parent/Enthusiast**",
+        "definition": "Purchases building blocks in multiple colors for children or as a collector."
+      },
+      {
+        "name": "**Frequent Sunscreen Buyer**",
+        "definition": "Purchases sunscreen 2+ times, often with other casual items."
+      },
+      {
+        "name": "**Smartwatch & Tech User**",
+        "definition": "Purchases smartwatches 1+ times, often with tech accessories."
+      },
+      {
+        "name": "**Single-Product Buyer**",
+        "definition": "Purchases only one unique product, typically clothing or accessories."
+      },
+      {
+        "name": "**Electronics Upgrader**",
+        "definition": "Buys 3+ unique electronics (monitors, SSDs, webcams, etc.) once each."
+      },
+      {
+        "name": "**Water Bottle Collector**",
+        "definition": "Purchases water bottles in different colors, sometimes with fitness gear."
+      },
+      {
+        "name": "**Household Appliance Shopper**",
+        "definition": "Purchases cookware, blenders, or vacuums for home use."
+      },
+      {
+        "name": "**Frequent Personal Care Buyer**",
+        "definition": "Repeatedly purchases moisturizers, shampoos, or sunscreens (3+ times)."
+      },
+      {
+        "name": "**Diverse Product Explorer**",
+        "definition": "Buys 5+ unique products across varied categories."
+      }
+    ],
+    "raw": "Here are the 20 most representative personas selected from the 100 provided, focusing on distinctness, recurring patterns, and breadth of product categories:\n\n1. **Book Enthusiast** - Frequently purchases multiple hardcover/paperback books.  \n2. **Beauty Product Collector** - Buys diverse lipsticks, serums, or moisturizers in varying colors.  \n3. **Fitness Gear Buyer** - Buys dumbbells, yoga mats, or cycling helmets for home workouts.  \n4. **Toy & Game Collector** - Buys building blocks, dolls, or board games, often with multiple color variants.  \n5. **E-book Enthusiast** - Frequently purchases multiple e-books, often focusing on specific genres or colors.  \n6. **Doll Collector** - Repeatedly buys dolls in various colors or styles.  \n7. **Lipstick Collector** - Buys multiple lipstick shades or frequently.  \n8. **Action Figure Enthusiast** - Buys multiple action figures, sometimes with repeated purchases of the same type.  \n9. **Kitchen Appliance Shopper** - Purchases coffee makers, blenders, or air fryers, sometimes in sets.  \n10. **Puzzle Solver** - Purchases puzzles repeatedly, often in different colors or themes.  \n11. **Dress Enthusiast** - Buys dresses in specific colors repeatedly (3+ times).  \n12. **Building Blocks Parent/Enthusiast** - Purchases building blocks in multiple colors for children or as a collector.  \n13. **Frequent Sunscreen Buyer** - Purchases sunscreen 2+ times, often with other casual items.  \n14. **Smartwatch & Tech User** - Purchases smartwatches 1+ times, often with tech accessories.  \n15. **Single-Product Buyer** - Purchases only one unique product, typically clothing or accessories.  \n16. **Electronics Upgrader** - Buys 3+ unique electronics (monitors, SSDs, webcams, etc.) once each.  \n17. **Water Bottle Collector** - Purchases water bottles in different colors, sometimes with fitness gear.  \n18. **Household Appliance Shopper** - Purchases cookware, blenders, or vacuums for home use.  \n19. **Frequent Personal Care Buyer** - Repeatedly purchases moisturizers, shampoos, or sunscreens (3+ times).  \n20. **Diverse Product Explorer** - Buys 5+ unique products across varied categories.  \n\n*Note: Merged similar personas (e.g., \"Building Blocks Parent\" and \"Building Blocks Enthusiast\") and prioritized broader categories (e.g., \"Beauty Product Collector\" over specific lipstick/serum personas). Excluded redundancies (e.g., multiple \"Single-Product\" variations).*"
+  },
+  {
+    "iter": 2,
+    "personas": [
+      {
+        "name": "**Frequent Action Figure Buyer**",
+        "definition": "Purchases action figures 4+ times, often with diverse colors."
+      },
+      {
+        "name": "**Book Enthusiast**",
+        "definition": "Purchases hardcover, paperback, or e-books 1–4+ times, often in bulk or across formats."
+      },
+      {
+        "name": "**Fitness & Wellness Seeker**",
+        "definition": "Purchases fitness gear (dumbbells, yoga mats) and wellness items (water bottles, sunscreen)."
+      },
+      {
+        "name": "**Skincare & Beauty Collector**",
+        "definition": "Buys cosmetics (lipsticks, sunscreen) and skincare (serums, moisturizers) across categories."
+      },
+      {
+        "name": "**Doll & Children’s Toy Collector**",
+        "definition": "Purchases dolls, building blocks, or puzzles, often in diverse colors/styles."
+      },
+      {
+        "name": "**Frequent Replenisher**",
+        "definition": "Repurchases the same item 2–5+ times (e.g., moisturizer, hoodie, sunscreen)."
+      },
+      {
+        "name": "**Clothing & Apparel Shopper**",
+        "definition": "Buys clothing (dresses, jeans, sneakers, hoodies) as primary categories."
+      },
+      {
+        "name": "**Kitchen & Home Appliance Buyer**",
+        "definition": "Purchases small appliances (coffee makers, blenders, air fryers) and home items (vacuums, lamps)."
+      },
+      {
+        "name": "**Single-Product Specialist**",
+        "definition": "Purchases only one unique product (e.g., single tech accessory, e-book, or single lipstick)."
+      },
+      {
+        "name": "**Gaming & Entertainment Fan**",
+        "definition": "Buys action figures, board games, or puzzles, often paired with other categories."
+      },
+      {
+        "name": "**Tech Accessory Lover**",
+        "definition": "Purchases electronics (monitors, webcams, mice) or smartwatches."
+      },
+      {
+        "name": "**Frequent Hoodie Buyer**",
+        "definition": "Repeatedly buys the same hoodie color (3+ times) or multiple styles."
+      },
+      {
+        "name": "**Frequent Puzzle & Board Game Buyer**",
+        "definition": "Purchases puzzles or board games 1–3+ times, often in combination."
+      },
+      {
+        "name": "**Color-Centric Shopper**",
+        "definition": "Buys multiple items in the same or diverse colors (e.g., sneakers, dolls, action figures)."
+      },
+      {
+        "name": "**Hybrid Category Buyer**",
+        "definition": "Combines categories (e.g., skincare + books, fitness + apparel, or board games + personal care)."
+      },
+      {
+        "name": "**Diverse Kitchenware Collector**",
+        "definition": "Buys 1+ cookware, blender, or air fryer alongside non-kitchen items."
+      },
+      {
+        "name": "**E-Book Devotee**",
+        "definition": "Buys multiple e-books on varied topics, often in high frequency."
+      },
+      {
+        "name": "**Lipstick & Cosmetic Connoisseur**",
+        "definition": "Purchases multiple lipstick shades/brands or diverse formulas."
+      },
+      {
+        "name": "**Sports & Outdoor Enthusiast**",
+        "definition": "Purchases tennis rackets, cycling helmets, or outdoor gear (sunscreen, water bottles)."
+      },
+      {
+        "name": "**Miscellaneous Bulk Buyer**",
+        "definition": "Buys 4+ of the same product (e.g., air fryers, books, or unconnected items in bulk)."
+      }
+    ],
+    "raw": "Here are the 20 most representative personas, selected and merged for clarity and breadth of categories:  \n\n1. **Frequent Action Figure Buyer** - Purchases action figures 4+ times, often with diverse colors.  \n2. **Book Enthusiast** - Purchases hardcover, paperback, or e-books 1–4+ times, often in bulk or across formats.  \n3. **Fitness & Wellness Seeker** - Purchases fitness gear (dumbbells, yoga mats) and wellness items (water bottles, sunscreen).  \n4. **Skincare & Beauty Collector** - Buys cosmetics (lipsticks, sunscreen) and skincare (serums, moisturizers) across categories.  \n5. **Doll & Children’s Toy Collector** - Purchases dolls, building blocks, or puzzles, often in diverse colors/styles.  \n6. **Frequent Replenisher** - Repurchases the same item 2–5+ times (e.g., moisturizer, hoodie, sunscreen).  \n7. **Clothing & Apparel Shopper** - Buys clothing (dresses, jeans, sneakers, hoodies) as primary categories.  \n8. **Kitchen & Home Appliance Buyer** - Purchases small appliances (coffee makers, blenders, air fryers) and home items (vacuums, lamps).  \n9. **Single-Product Specialist** - Purchases only one unique product (e.g., single tech accessory, e-book, or single lipstick).  \n10. **Gaming & Entertainment Fan** - Buys action figures, board games, or puzzles, often paired with other categories.  \n11. **Tech Accessory Lover** - Purchases electronics (monitors, webcams, mice) or smartwatches.  \n12. **Frequent Hoodie Buyer** - Repeatedly buys the same hoodie color (3+ times) or multiple styles.  \n13. **Frequent Puzzle & Board Game Buyer** - Purchases puzzles or board games 1–3+ times, often in combination.  \n14. **Color-Centric Shopper** - Buys multiple items in the same or diverse colors (e.g., sneakers, dolls, action figures).  \n15. **Hybrid Category Buyer** - Combines categories (e.g., skincare + books, fitness + apparel, or board games + personal care).  \n16. **Diverse Kitchenware Collector** - Buys 1+ cookware, blender, or air fryer alongside non-kitchen items.  \n17. **E-Book Devotee** - Buys multiple e-books on varied topics, often in high frequency.  \n18. **Lipstick & Cosmetic Connoisseur** - Purchases multiple lipstick shades/brands or diverse formulas.  \n19. **Sports & Outdoor Enthusiast** - Purchases tennis rackets, cycling helmets, or outdoor gear (sunscreen, water bottles).  \n20. **Miscellaneous Bulk Buyer** - Buys 4+ of the same product (e.g., air fryers, books, or unconnected items in bulk).  \n\nThis list merges overlapping personas (e.g., \"Doll Collector\" with \"Children’s Toy Buyer\") and prioritizes frequency, category diversity, and unique behavior patterns."
+  },
+  {
+    "iter": 3,
+    "personas": [
+      {
+        "name": "**Single-Item Tech Buyer**",
+        "definition": "Purchases only one tech accessory (e.g., mouse, webcam, or SSD)."
+      },
+      {
+        "name": "**Frequent Moisturizer Buyer**",
+        "definition": "Repurchases the same moisturizer (5+ times)."
+      },
+      {
+        "name": "**Frequent Paperback Buyer**",
+        "definition": "Purchases paperbacks multiple times in different colors."
+      },
+      {
+        "name": "**Dress & Sneaker Pair Buyer**",
+        "definition": "Purchases dresses and sneakers in the same transaction."
+      },
+      {
+        "name": "**Action Figure Enthusiast**",
+        "definition": "Purchases action figures (3+ times) with minimal other category overlap."
+      },
+      {
+        "name": "**Skincare & Beauty Collector**",
+        "definition": "Buys moisturizers, sunscreens, lipsticks, serums, or shampoos alongside other categories."
+      },
+      {
+        "name": "**Frequent Hoodie Shopper**",
+        "definition": "Repeatedly buys the same hoodie color (3+ times)."
+      },
+      {
+        "name": "**Fitness Gear User**",
+        "definition": "Purchases yoga mats, dumbbells, or water bottles for fitness routines."
+      },
+      {
+        "name": "**Book & Puzzle Lover**",
+        "definition": "Buys hardcover/paperback books and puzzles frequently."
+      },
+      {
+        "name": "**Electronics & Tech Buyer**",
+        "definition": "Prioritizes gadgets (webcam, smartwatch, mouse, SSD) or multiple electronics (2+)."
+      },
+      {
+        "name": "**Sneaker Collector**",
+        "definition": "Purchases sneakers in various colors (3+ times) or as a hybrid with fitness/apparel."
+      },
+      {
+        "name": "**Frequent Board Game Buyer**",
+        "definition": "Buys board games (3+ times) with puzzles or family entertainment items."
+      },
+      {
+        "name": "**Diverse Kitchenware Collector**",
+        "definition": "Buys cookware, blenders, or air fryers alongside non-kitchen items."
+      },
+      {
+        "name": "**Kids & Toy Shopper**",
+        "definition": "Purchases building blocks, dolls, or action figures for children."
+      },
+      {
+        "name": "**Fashion & Apparel Buyer**",
+        "definition": "Buys dresses, jeans, hoodies, or sneakers as primary categories."
+      },
+      {
+        "name": "**Cosmetics Explorer**",
+        "definition": "Tries different lipstick shades, skincare variants, or serums."
+      },
+      {
+        "name": "**Single-Product Specialist**",
+        "definition": "Focuses on one unique product (e.g., lamp, webcam, dress, or puzzle)."
+      },
+      {
+        "name": "**Home Appliances Collector**",
+        "definition": "Buys vacuums, coffee makers, or air fryers."
+      },
+      {
+        "name": "**E-Book & Paperback Reader**",
+        "definition": "Purchases e-books and paperbacks (1–4+ times) across genres."
+      },
+      {
+        "name": "**Variety-Seeking Shopper**",
+        "definition": "Buys 5+ diverse products across unrelated categories (e.g., coffee maker + lamp + mouse)."
+      }
+    ],
+    "raw": "Here are the 20 most representative personas selected across all sets, merged and refined for uniqueness and comprehensiveness:  \n\n1. **Single-Item Tech Buyer** - Purchases only one tech accessory (e.g., mouse, webcam, or SSD).  \n2. **Frequent Moisturizer Buyer** - Repurchases the same moisturizer (5+ times).  \n3. **Frequent Paperback Buyer** - Purchases paperbacks multiple times in different colors.  \n4. **Dress & Sneaker Pair Buyer** - Purchases dresses and sneakers in the same transaction.  \n5. **Action Figure Enthusiast** - Purchases action figures (3+ times) with minimal other category overlap.  \n6. **Skincare & Beauty Collector** - Buys moisturizers, sunscreens, lipsticks, serums, or shampoos alongside other categories.  \n7. **Frequent Hoodie Shopper** - Repeatedly buys the same hoodie color (3+ times).  \n8. **Fitness Gear User** - Purchases yoga mats, dumbbells, or water bottles for fitness routines.  \n9. **Book & Puzzle Lover** - Buys hardcover/paperback books and puzzles frequently.  \n10. **Electronics & Tech Buyer** - Prioritizes gadgets (webcam, smartwatch, mouse, SSD) or multiple electronics (2+).  \n11. **Sneaker Collector** - Purchases sneakers in various colors (3+ times) or as a hybrid with fitness/apparel.  \n12. **Frequent Board Game Buyer** - Buys board games (3+ times) with puzzles or family entertainment items.  \n13. **Diverse Kitchenware Collector** - Buys cookware, blenders, or air fryers alongside non-kitchen items.  \n14. **Kids & Toy Shopper** - Purchases building blocks, dolls, or action figures for children.  \n15. **Fashion & Apparel Buyer** - Buys dresses, jeans, hoodies, or sneakers as primary categories.  \n16. **Cosmetics Explorer** - Tries different lipstick shades, skincare variants, or serums.  \n17. **Single-Product Specialist** - Focuses on one unique product (e.g., lamp, webcam, dress, or puzzle).  \n18. **Home Appliances Collector** - Buys vacuums, coffee makers, or air fryers.  \n19. **E-Book & Paperback Reader** - Purchases e-books and paperbacks (1–4+ times) across genres.  \n20. **Variety-Seeking Shopper** - Buys 5+ diverse products across unrelated categories (e.g., coffee maker + lamp + mouse).  \n\n---  \n**Notes on Selection:**  \n- Merged overlapping themes (e.g., \"Skincare & Beauty Collector\" consolidates serum, moisturizer, and lipstick personas).  \n- Prioritized personas with distinct behavior patterns (e.g., \"Single-Item Tech Buyer\" vs. \"Electronics & Tech Buyer\").  \n- Excluded overly niche or redundant personas (e.g., \"Tennis Racket Player\" or \"Lamp User\" were absorbed into broader categories).  \n- Focused on frequency, product diversity, and cross-category combinations for representativeness."
+  },
+  {
+    "iter": 4,
+    "personas": [
+      {
+        "name": "**Bookworm**",
+        "definition": "Buys 2+ hardcovers, e-books, or paperbacks, often repeating titles."
+      },
+      {
+        "name": "**Fitness Enthusiast**",
+        "definition": "Purchases exercise-related items like dumbbells, yoga mats, or cycling helmets."
+      },
+      {
+        "name": "**Beauty Minimalist**",
+        "definition": "Buys 1-2 beauty products (serum, moisturizer, or lipstick) without other categories."
+      },
+      {
+        "name": "**Kid-Focused Shopper**",
+        "definition": "Purchases action figures, dolls, or building blocks."
+      },
+      {
+        "name": "**Puzzle & Game Lover**",
+        "definition": "Buys 2+ puzzles, board games, or similar leisure items."
+      },
+      {
+        "name": "**Gadget Collector**",
+        "definition": "Purchases 2+ tech items (monitors, webcams, or mice) in a single transaction."
+      },
+      {
+        "name": "**Apparel Generalist**",
+        "definition": "Buys 2+ clothing items (hoodies, jeans, or t-shirts) without other categories."
+      },
+      {
+        "name": "**Single-Item Buyer**",
+        "definition": "Purchases only one product, regardless of category."
+      },
+      {
+        "name": "**Hair & Skincare Buyer**",
+        "definition": "Purchases 2+ shampoos, conditioners, serums, or moisturizers."
+      },
+      {
+        "name": "**Repetitive Buyer**",
+        "definition": "Buys the same product 3+ times (regardless of category)."
+      },
+      {
+        "name": "**Home Appliance Buyer**",
+        "definition": "Buys 1-2 home appliances (coffee makers, toasters, or blenders)."
+      },
+      {
+        "name": "**E-book Enthusiast**",
+        "definition": "Frequently purchases multiple e-books across genres."
+      },
+      {
+        "name": "**Action Figure Collector**",
+        "definition": "Purchases 2+ different action figures, often with non-toy items."
+      },
+      {
+        "name": "**Outdoor & Leisure**",
+        "definition": "Buys 1+ sunscreen, water bottles, or outdoor apparel."
+      },
+      {
+        "name": "**Frequent Repurchaser**",
+        "definition": "Buys the same item 3+ times, with 0–2 other items."
+      },
+      {
+        "name": "**Mixed-Category Shopper**",
+        "definition": "Purchases 3+ items from different categories."
+      },
+      {
+        "name": "**Building Block Enthusiast**",
+        "definition": "Buys multiple types of building blocks, often in bulk."
+      },
+      {
+        "name": "**Sunscreen Buyer**",
+        "definition": "Frequently repurchases sunscreen, sometimes in bulk."
+      },
+      {
+        "name": "**Diverse Generalist**",
+        "definition": "Purchases 5+ unique products across 3+ categories."
+      },
+      {
+        "name": "**Lipstick Enthusiast**",
+        "definition": "Buys 2+ lipsticks in a single transaction or repeatedly."
+      }
+    ],
+    "raw": "Here are the 20 most representative personas selected from the 100 provided, merging or prioritizing the most illustrative descriptions while avoiding redundancy:\n\n1. **Bookworm** - Buys 2+ hardcovers, e-books, or paperbacks, often repeating titles.  \n2. **Fitness Enthusiast** - Purchases exercise-related items like dumbbells, yoga mats, or cycling helmets.  \n3. **Beauty Minimalist** - Buys 1-2 beauty products (serum, moisturizer, or lipstick) without other categories.  \n4. **Kid-Focused Shopper** - Purchases action figures, dolls, or building blocks.  \n5. **Puzzle & Game Lover** - Buys 2+ puzzles, board games, or similar leisure items.  \n6. **Gadget Collector** - Purchases 2+ tech items (monitors, webcams, or mice) in a single transaction.  \n7. **Apparel Generalist** - Buys 2+ clothing items (hoodies, jeans, or t-shirts) without other categories.  \n8. **Single-Item Buyer** - Purchases only one product, regardless of category.  \n9. **Hair & Skincare Buyer** - Purchases 2+ shampoos, conditioners, serums, or moisturizers.  \n10. **Repetitive Buyer** - Buys the same product 3+ times (regardless of category).  \n11. **Home Appliance Buyer** - Buys 1-2 home appliances (coffee makers, toasters, or blenders).  \n12. **E-book Enthusiast** - Frequently purchases multiple e-books across genres.  \n13. **Action Figure Collector** - Purchases 2+ different action figures, often with non-toy items.  \n14. **Outdoor & Leisure** - Buys 1+ sunscreen, water bottles, or outdoor apparel.  \n15. **Frequent Repurchaser** - Buys the same item 3+ times, with 0–2 other items.  \n16. **Mixed-Category Shopper** - Purchases 3+ items from different categories.  \n17. **Building Block Enthusiast** - Buys multiple types of building blocks, often in bulk.  \n18. **Sunscreen Buyer** - Frequently repurchases sunscreen, sometimes in bulk.  \n19. **Diverse Generalist** - Purchases 5+ unique products across 3+ categories.  \n20. **Lipstick Enthusiast** - Buys 2+ lipsticks in a single transaction or repeatedly.  \n\n*Note: Merged or excluded personas with overlapping traits (e.g., \"Mouse User\" and \"Gadget Collector\" were combined under tech-focused categories). Prioritized personas with broader or unique behavioral patterns.*"
+  },
+  {
+    "iter": 5,
+    "personas": [
+      {
+        "name": "**Building Blocks Enthusiast**",
+        "definition": "Frequently buys multiple Building Blocks variants, often in bulk."
+      },
+      {
+        "name": "**Diverse E-book Reader**",
+        "definition": "Purchases a wide range of E-books across genres, often in small quantities."
+      },
+      {
+        "name": "**Paperback Collector**",
+        "definition": "Buys multiple Paperback titles, sometimes with repeated purchases of the same color/style."
+      },
+      {
+        "name": "**Yoga & Fitness Gear User**",
+        "definition": "Purchases Yoga Mats, Dumbbells, or related fitness items."
+      },
+      {
+        "name": "**Doll & Toy Lover**",
+        "definition": "Regularly buys Dolls, Puzzles, or other toys, often in single purchases."
+      },
+      {
+        "name": "**Hardcover Book Hoarder**",
+        "definition": "Buys multiple Hardcover books, sometimes with repeated purchases of the same title."
+      },
+      {
+        "name": "**Single-Category Shopper**",
+        "definition": "Focuses on one product category (e.g., only 1–2 unique items purchased)."
+      },
+      {
+        "name": "**Kitchen Appliance Buyer**",
+        "definition": "Purchases Air Fryers, Blenders, Coffee Makers, or Toasters."
+      },
+      {
+        "name": "**Beauty & Grooming User**",
+        "definition": "Buys Moisturizers, Shampoos, Sunscreens, or Lipsticks."
+      },
+      {
+        "name": "**Action Figure Collector**",
+        "definition": "Frequently purchases Action Figures, sometimes in bulk."
+      },
+      {
+        "name": "**Tech Accessory Shopper**",
+        "definition": "Buys SSDs, Monitors, Keyboards, or Mice."
+      },
+      {
+        "name": "**Clothing & Apparel Buyer**",
+        "definition": "Purchases T-shirts, Hoodies, or Jeans."
+      },
+      {
+        "name": "**Board Game & Puzzle Fan**",
+        "definition": "Buys Board Games or Puzzles, often in small quantities."
+      },
+      {
+        "name": "**Serum & Skincare User**",
+        "definition": "Purchases Serums, Conditioners, or related skincare products."
+      },
+      {
+        "name": "**Lamp & Lighting Enthusiast**",
+        "definition": "Buys multiple Lamps, sometimes with repeated purchases of the same style."
+      },
+      {
+        "name": "**Frequent Socks Buyer**",
+        "definition": "Purchases multiple pairs of Socks, often in bulk."
+      },
+      {
+        "name": "**Vacuum & Cleaning Product Buyer**",
+        "definition": "Purchases Vacuums or related cleaning items."
+      },
+      {
+        "name": "**E-book Heavy Reader**",
+        "definition": "Buys the same E-book title multiple times or reads intensively."
+      },
+      {
+        "name": "**Multi-Product Tester**",
+        "definition": "Purchases 4–7 unique items across diverse categories without clear dominance."
+      },
+      {
+        "name": "**Frequent Repurchaser**",
+        "definition": "Buys the same item 3+ times, with 0–2 other items."
+      }
+    ],
+    "raw": "Here are the 20 most representative personas from the 100 provided, merged and refined for uniqueness and clarity:\n\n1. **Building Blocks Enthusiast** - Frequently buys multiple Building Blocks variants, often in bulk.  \n2. **Diverse E-book Reader** - Purchases a wide range of E-books across genres, often in small quantities.  \n3. **Paperback Collector** - Buys multiple Paperback titles, sometimes with repeated purchases of the same color/style.  \n4. **Yoga & Fitness Gear User** - Purchases Yoga Mats, Dumbbells, or related fitness items.  \n5. **Doll & Toy Lover** - Regularly buys Dolls, Puzzles, or other toys, often in single purchases.  \n6. **Hardcover Book Hoarder** - Buys multiple Hardcover books, sometimes with repeated purchases of the same title.  \n7. **Single-Category Shopper** - Focuses on one product category (e.g., only 1–2 unique items purchased).  \n8. **Kitchen Appliance Buyer** - Purchases Air Fryers, Blenders, Coffee Makers, or Toasters.  \n9. **Beauty & Grooming User** - Buys Moisturizers, Shampoos, Sunscreens, or Lipsticks.  \n10. **Action Figure Collector** - Frequently purchases Action Figures, sometimes in bulk.  \n11. **Tech Accessory Shopper** - Buys SSDs, Monitors, Keyboards, or Mice.  \n12. **Clothing & Apparel Buyer** - Purchases T-shirts, Hoodies, or Jeans.  \n13. **Board Game & Puzzle Fan** - Buys Board Games or Puzzles, often in small quantities.  \n14. **Serum & Skincare User** - Purchases Serums, Conditioners, or related skincare products.  \n15. **Lamp & Lighting Enthusiast** - Buys multiple Lamps, sometimes with repeated purchases of the same style.  \n16. **Frequent Socks Buyer** - Purchases multiple pairs of Socks, often in bulk.  \n17. **Vacuum & Cleaning Product Buyer** - Purchases Vacuums or related cleaning items.  \n18. **E-book Heavy Reader** - Buys the same E-book title multiple times or reads intensively.  \n19. **Multi-Product Tester** - Purchases 4–7 unique items across diverse categories without clear dominance.  \n20. **Frequent Repurchaser** - Buys the same item 3+ times, with 0–2 other items.  \n\n*(Note: Duplicates like \"Action Figure Collector\" or \"Bookworm\" were merged into the most descriptive version. Personas with overlapping themes (e.g., \"Fitness Enthusiast\" from multiple sets) were consolidated into broader categories like \"Yoga & Fitness Gear User.\")*"
+  },
+  {
+    "iter": 6,
+    "personas": [
+      {
+        "name": "**Doll Collector**",
+        "definition": "Regularly buys multiple dolls, often in different colors or in bulk."
+      },
+      {
+        "name": "**Frequent Book Buyer**",
+        "definition": "Purchases hardcovers, paperbacks, or e-books 2+ times, often across genres."
+      },
+      {
+        "name": "**Fitness Enthusiast**",
+        "definition": "Buys fitness-related items like dumbbells, yoga mats, or tennis rackets."
+      },
+      {
+        "name": "**Board Game & Puzzle Enthusiast**",
+        "definition": "Frequently purchases board games or puzzles, often in bulk or across types."
+      },
+      {
+        "name": "**Beauty & Skincare Enthusiast**",
+        "definition": "Regularly buys lipsticks, serums, moisturizers, or skincare items."
+      },
+      {
+        "name": "**Home Appliance Buyer**",
+        "definition": "Purchases household items like coffee makers, air fryers, or blenders."
+      },
+      {
+        "name": "**Fashion-Focused Shopper**",
+        "definition": "Buys clothing like dresses, jeans, jackets, or hoodies."
+      },
+      {
+        "name": "**Kids’ Toy Buyer**",
+        "definition": "Purchases building blocks, action figures, or puzzles for children."
+      },
+      {
+        "name": "**Electronics & Tech Hobbyist**",
+        "definition": "Buys tech accessories like smartwatches, monitors, or SSDs."
+      },
+      {
+        "name": "**Single-Item Buyer**",
+        "definition": "Consistently purchases only one unique product per transaction."
+      },
+      {
+        "name": "**Color-Centric Shopper**",
+        "definition": "Buys multiple items in the same or different color variants."
+      },
+      {
+        "name": "**Repetitive Buyer**",
+        "definition": "Frequently repurchases the same product, like a specific puzzle or yoga mat."
+      },
+      {
+        "name": "**Lipstick Variety Buyer**",
+        "definition": "Purchases 1–2+ different lipstick shades, often in bulk."
+      },
+      {
+        "name": "**Serum Skincare User**",
+        "definition": "Buys 1–2+ serums, sometimes in multiple colors or brands."
+      },
+      {
+        "name": "**Sunscreen & Water Bottle Buyer**",
+        "definition": "Purchases sunscreen, water bottles, or daily essentials."
+      },
+      {
+        "name": "**Diverse/Miscellaneous Bulk Buyer**",
+        "definition": "Buys a wide range of unconnected products, often in bulk."
+      },
+      {
+        "name": "**Action Figure & Toy Collector**",
+        "definition": "Purchases action figures, dolls, or other collectibles 1–4+ times."
+      },
+      {
+        "name": "**DIY/Home Decorator**",
+        "definition": "Buys lamps, vacuums, or building blocks for home use."
+      },
+      {
+        "name": "**Sports Enthusiast**",
+        "definition": "Purchases tennis rackets, sneakers, or cycling gear."
+      },
+      {
+        "name": "**Seasonal/Trend-Driven Shopper**",
+        "definition": "Aligns purchases with trends, like sunscreen or winter apparel."
+      }
+    ],
+    "raw": "Here are the 20 most representative personas, selected and merged for clarity and breadth:\n\n1. **Doll Collector** - Regularly buys multiple dolls, often in different colors or in bulk.  \n2. **Frequent Book Buyer** - Purchases hardcovers, paperbacks, or e-books 2+ times, often across genres.  \n3. **Fitness Enthusiast** - Buys fitness-related items like dumbbells, yoga mats, or tennis rackets.  \n4. **Board Game & Puzzle Enthusiast** - Frequently purchases board games or puzzles, often in bulk or across types.  \n5. **Beauty & Skincare Enthusiast** - Regularly buys lipsticks, serums, moisturizers, or skincare items.  \n6. **Home Appliance Buyer** - Purchases household items like coffee makers, air fryers, or blenders.  \n7. **Fashion-Focused Shopper** - Buys clothing like dresses, jeans, jackets, or hoodies.  \n8. **Kids’ Toy Buyer** - Purchases building blocks, action figures, or puzzles for children.  \n9. **Electronics & Tech Hobbyist** - Buys tech accessories like smartwatches, monitors, or SSDs.  \n10. **Single-Item Buyer** - Consistently purchases only one unique product per transaction.  \n11. **Color-Centric Shopper** - Buys multiple items in the same or different color variants.  \n12. **Repetitive Buyer** - Frequently repurchases the same product, like a specific puzzle or yoga mat.  \n13. **Lipstick Variety Buyer** - Purchases 1–2+ different lipstick shades, often in bulk.  \n14. **Serum Skincare User** - Buys 1–2+ serums, sometimes in multiple colors or brands.  \n15. **Sunscreen & Water Bottle Buyer** - Purchases sunscreen, water bottles, or daily essentials.  \n16. **Diverse/Miscellaneous Bulk Buyer** - Buys a wide range of unconnected products, often in bulk.  \n17. **Action Figure & Toy Collector** - Purchases action figures, dolls, or other collectibles 1–4+ times.  \n18. **DIY/Home Decorator** - Buys lamps, vacuums, or building blocks for home use.  \n19. **Sports Enthusiast** - Purchases tennis rackets, sneakers, or cycling gear.  \n20. **Seasonal/Trend-Driven Shopper** - Aligns purchases with trends, like sunscreen or winter apparel.  \n\n*(Merged/eliminated redundancies: e.g., \"Dumbbell Buyer\" and \"Yoga Mat User\" into \"Fitness Enthusiast,\" and \"E-book Reader\" with \"Frequent Book Buyer.\")*"
+  },
+  {
+    "iter": 7,
+    "personas": [
+      {
+        "name": "**Frequent Toaster Buyer**",
+        "definition": "Purchases the same toaster model 4+ times."
+      },
+      {
+        "name": "**Diverse Book Enthusiast**",
+        "definition": "Buys 3+ different book types (hardcover, paperback, e-book) in a single session."
+      },
+      {
+        "name": "**Board Game Collector**",
+        "definition": "Purchases 2+ unique board games, with at least one bought 3+ times."
+      },
+      {
+        "name": "**Single-Item Specialists**",
+        "definition": "Buys only 1 unique product in their entire purchase history."
+      },
+      {
+        "name": "**Serum & Sunscreen Buyer**",
+        "definition": "Purchases 1+ serum and 1+ sunscreen, with at least one product bought 3+ times."
+      },
+      {
+        "name": "**Building Blocks Enthusiast**",
+        "definition": "Buys 2+ different building block sets, with at least one bought 3+ times."
+      },
+      {
+        "name": "**Frequent Water Bottle User**",
+        "definition": "Purchases the same water bottle 3+ times."
+      },
+      {
+        "name": "**Frequent Paperback Buyer**",
+        "definition": "Purchases the same paperback 3+ times."
+      },
+      {
+        "name": "**Doll & E-Book Combination**",
+        "definition": "Buys 1+ doll and 1+ e-book, with at least one product bought 3+ times."
+      },
+      {
+        "name": "**Frequent Hoodie Buyer**",
+        "definition": "Purchases the same hoodie 3+ times."
+      },
+      {
+        "name": "**Lipstick Collector**",
+        "definition": "Buys multiple lipstick shades or frequently."
+      },
+      {
+        "name": "**Cycling Enthusiast**",
+        "definition": "Purchases cycling helmets or related gear."
+      },
+      {
+        "name": "**Skincare Minimalist**",
+        "definition": "Purchases 1-2 skincare items (moisturizer, conditioner, or serum)."
+      },
+      {
+        "name": "**Household Appliance Shopper**",
+        "definition": "Purchases cookware, blenders, or vacuums for home use."
+      },
+      {
+        "name": "**Frequent Shampoo User**",
+        "definition": "Buys shampoo or conditioner multiple times."
+      },
+      {
+        "name": "**Casual Fashion Buyer**",
+        "definition": "Purchases jeans, jackets, or t-shirts occasionally."
+      },
+      {
+        "name": "**E-book Reader**",
+        "definition": "Purchases multiple e-books but no physical books."
+      },
+      {
+        "name": "**Beauty Care Buyer**",
+        "definition": "Purchases conditioners, moisturizers, serums, or lipsticks regularly."
+      },
+      {
+        "name": "**Single-Category Shopper**",
+        "definition": "Consistently purchases only one product type (e.g., cookware, SSD)."
+      },
+      {
+        "name": "**Multipurpose Shopper**",
+        "definition": "Buys 1 item from 5+ distinct categories (e.g., a hoodie, sunscreen, e-book, puzzle, and jacket)."
+      }
+    ],
+    "raw": "Here are the 20 most representative personas selected from the 100 provided, merging or prioritizing the most distinctive and non-redundant definitions:  \n\n1. **Frequent Toaster Buyer** - Purchases the same toaster model 4+ times.  \n2. **Diverse Book Enthusiast** - Buys 3+ different book types (hardcover, paperback, e-book) in a single session.  \n3. **Board Game Collector** - Purchases 2+ unique board games, with at least one bought 3+ times.  \n4. **Single-Item Specialists** - Buys only 1 unique product in their entire purchase history.  \n5. **Serum & Sunscreen Buyer** - Purchases 1+ serum and 1+ sunscreen, with at least one product bought 3+ times.  \n6. **Building Blocks Enthusiast** - Buys 2+ different building block sets, with at least one bought 3+ times.  \n7. **Frequent Water Bottle User** - Purchases the same water bottle 3+ times.  \n8. **Frequent Paperback Buyer** - Purchases the same paperback 3+ times.  \n9. **Doll & E-Book Combination** - Buys 1+ doll and 1+ e-book, with at least one product bought 3+ times.  \n10. **Frequent Hoodie Buyer** - Purchases the same hoodie 3+ times.  \n11. **Lipstick Collector** - Buys multiple lipstick shades or frequently.  \n12. **Cycling Enthusiast** - Purchases cycling helmets or related gear.  \n13. **Skincare Minimalist** - Purchases 1-2 skincare items (moisturizer, conditioner, or serum).  \n14. **Household Appliance Shopper** - Purchases cookware, blenders, or vacuums for home use.  \n15. **Frequent Shampoo User** - Buys shampoo or conditioner multiple times.  \n16. **Casual Fashion Buyer** - Purchases jeans, jackets, or t-shirts occasionally.  \n17. **E-book Reader** - Purchases multiple e-books but no physical books.  \n18. **Beauty Care Buyer** - Purchases conditioners, moisturizers, serums, or lipsticks regularly.  \n19. **Single-Category Shopper** - Consistently purchases only one product type (e.g., cookware, SSD).  \n20. **Multipurpose Shopper** - Buys 1 item from 5+ distinct categories (e.g., a hoodie, sunscreen, e-book, puzzle, and jacket).  \n\n---  \n**Note**: Sets with fewer than 20 personas or irrelevant entries were ignored. Duplicates (e.g., frequent lipstick or hoodie buyers) were merged into broader categories where possible, prioritizing personas with unique behavior or combinations. Occurrence counts were not used as a selection criterion."
+  }
+]

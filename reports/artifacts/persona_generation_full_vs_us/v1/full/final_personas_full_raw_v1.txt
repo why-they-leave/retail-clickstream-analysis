@@ -1,0 +1,24 @@
+Here are the 20 most representative and distinct personas selected from the 160 provided, prioritizing frequency across sets and broad user coverage:
+
+1. **E-book Enthusiast** - Purchases multiple e-books (often in bulk or across genres) with minimal other products.  
+2. **Fitness Enthusiast** - Buys fitness gear (dumbbells, yoga mats, sneakers) and apparel for workouts.  
+3. **Beauty & Skincare Enthusiast** - Purchases 2+ beauty items (lipsticks, moisturizers, serums, shampoos).  
+4. **Apparel & Footwear Buyer** - Buys clothing (hoodies, jeans, sneakers, dresses) and accessories.  
+5. **Home Appliance Shopper** - Purchases kitchen or cleaning appliances (air fryers, vacuums, blenders).  
+6. **Bookworm** - Frequently buys e-books, hardcovers, or paperbacks (often in bulk).  
+7. **Gadget & Tech User** - Purchases electronics (monitors, mice, keyboards, webcams) for upgrades.  
+8. **Kid-Focused Shopper** - Buys toys (dolls, action figures, building blocks) for children.  
+9. **Repetitive Purchaser** - Repurchases the same product (e.g., sneakers, moisturizers, water bottles).  
+10. **Puzzle & Game Enthusiast** - Purchases puzzles, board games, or building blocks.  
+11. **Single-Item Shopper** - Focuses on one unique product per transaction (e.g., SSD, hoodie, lamp).  
+12. **Skincare & Haircare User** - Buys sunscreens, shampoos, serums, or conditioners.  
+13. **Diverse General Shopper** - Purchases 3–6+ unique items across unrelated categories.  
+14. **Lipstick Collector** - Buys multiple lipsticks in different shades (often with beauty items).  
+15. **Frequent Repurchaser (Skincare/Apparel)** - Repeats purchases of specific items (e.g., jeans, sneakers, serums).  
+16. **Color-Specific Collector** - Purchases items (apparel, toys, books) in varied or consistent colors.  
+17. **Outdoor & Casual Gear Buyer** - Buys water bottles, cycling helmets, or tennis rackets.  
+18. **Miscellaneous Shopper** - Buys unrelated products without clear patterns.  
+19. **Health & Wellness Seeker** - Purchases fitness gear, water bottles, or sunscreen.  
+20. **Frequent Toy Buyer** - Buys 2+ children’s toys (action figures, dolls, building blocks).  
+
+These personas capture the most common behaviors (e.g., repurchasing, bulk buying, category focus) while avoiding redundancy and ensuring broad coverage of shopping habits.
