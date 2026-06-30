@@ -11,14 +11,14 @@
 
 **시스템 프롬프트**
 
-```
+```text
 You are an assistant skilled at summarizing, capable of deducing
 high-level consumer keywords based on a user's purchases.
 ```
 
 **번역**
 
-```
+```text
 당신은 요약에 능숙하고, 유저의 구매 내역을 바탕으로
 고수준 소비자 키워드를 추론할 수 있는 어시스턴트입니다.
 ```
@@ -27,7 +27,7 @@ high-level consumer keywords based on a user's purchases.
 
 **유저 프롬프트**
 
-```
+```text
 Take a deep breath and work according to the instructions step by step.
 Now you will conduct a series of analyses on a Funnel E-commerce dataset.
 This dataset contains data from an online retailer where each user's purchasing
@@ -54,7 +54,7 @@ User purchasing data:
 
 **번역**
 
-```
+```text
 천천히 숨을 고르고 지시에 따라 단계별로 작업하세요.
 이제 Funnel E-commerce 데이터셋을 분석합니다.
 이 데이터셋은 온라인 리테일러에서 각 유저의 구매 거래와 구매 상품이 기록된 것입니다.
@@ -79,7 +79,7 @@ User purchasing data:
 
 **시스템 프롬프트** (Step 3과 동일)
 
-```
+```text
 You are an assistant skilled at reading, observing and summarizing, capable of
 finding similar or repeated descriptions of user personas, and good at finding
 the most representative ones.
@@ -87,7 +87,7 @@ the most representative ones.
 
 **번역**
 
-```
+```text
 당신은 읽기, 관찰, 요약에 능숙하고, 유사하거나 중복된 유저 페르소나 설명을 찾아내며
 가장 대표적인 것을 선별하는 데 뛰어난 어시스턴트입니다.
 ```
@@ -96,7 +96,7 @@ the most representative ones.
 
 **유저 프롬프트**
 
-```
+```text
 Take a deep breath and work according to the instructions step by step.
 I will give you 5 persona sets (each containing 20 personas), totaling 100 personas.
 Select the 20 most representative personas from these 100.
@@ -115,7 +115,7 @@ Here are the five persona sets:
 
 **번역**
 
-```
+```text
 천천히 숨을 고르고 지시에 따라 단계별로 작업하세요.
 20개씩 구성된 5개의 페르소나 세트, 총 100개의 페르소나를 제공합니다.
 이 100개 중 가장 대표적인 20개를 선택하세요.
@@ -130,7 +130,7 @@ Here are the five persona sets:
 
 **유저 프롬프트**
 
-```
+```text
 Take a deep breath and work according to the instructions step by step.
 I will give you 8 persona sets (each containing 20 personas), totaling 160 personas.
 Select the 20 most representative and distinct final personas from these 160.
@@ -147,7 +147,7 @@ Here are the eight persona sets:
 
 **번역**
 
-```
+```text
 20개씩 구성된 8개의 페르소나 세트, 총 160개의 페르소나를 제공합니다.
 이 중 가장 대표적이고 구분되는 최종 20개를 선택하세요.
 여러 세트에서 가장 자주 등장하고 가장 넓은 유저 기반을 커버하는 페르소나를 우선시하세요.
@@ -161,7 +161,7 @@ Here are the eight persona sets:
 
 **시스템 프롬프트**
 
-```
+```text
 Now you are an intelligent e-commerce domain assistant.
 You are skilled at summarizing, and capable of assigning high-level
 consumer personas based on a user's purchase behavior.
@@ -169,7 +169,7 @@ consumer personas based on a user's purchase behavior.
 
 **번역**
 
-```
+```text
 당신은 지능적인 이커머스 도메인 어시스턴트입니다.
 요약에 능숙하고, 유저의 구매 행동을 기반으로 고수준 소비자 페르소나를 부여할 수 있습니다.
 ```
@@ -178,7 +178,7 @@ consumer personas based on a user's purchase behavior.
 
 **유저 프롬프트**
 
-```
+```text
 Take a deep breath and work according to the instructions step by step.
 Your goal is to identify users' shopping behaviors based on products they have bought
 and label them with a given set of personas. Select at least one persona, at most 5 personas
@@ -212,7 +212,7 @@ Only output valid JSON. No markdown. No explanation.
 
 **번역**
 
-```
+```text
 천천히 숨을 고르고 지시에 따라 단계별로 작업하세요.
 목표: 유저가 구매한 상품을 기반으로 쇼핑 행동을 파악하고 주어진 페르소나 세트에서 라벨을 부여하세요.
 주어진 목록에서 최소 1개, 최대 5개의 페르소나를 선택하세요.
@@ -230,7 +230,7 @@ Only output valid JSON. No markdown. No explanation.
 
 **시스템 프롬프트**
 
-```
+```text
 Now you are an intelligent e-commerce domain assistant.
 You have a good understanding of various customer personas,
 and are skilled at connecting products with personas most likely to be interested in them.
@@ -238,7 +238,7 @@ and are skilled at connecting products with personas most likely to be intereste
 
 **번역**
 
-```
+```text
 당신은 지능적인 이커머스 도메인 어시스턴트입니다.
 다양한 고객 페르소나를 잘 이해하고 있으며,
 상품과 관심을 가질 가능성이 높은 페르소나를 연결하는 데 뛰어납니다.
@@ -248,7 +248,7 @@ and are skilled at connecting products with personas most likely to be intereste
 
 **유저 프롬프트**
 
-```
+```text
 Take a deep breath and work according to the instructions step by step.
 
 I will provide a product name and a set of customer personas.
@@ -275,7 +275,7 @@ Product name: {상품명}
 
 **번역**
 
-```
+```text
 상품명과 고객 페르소나 세트를 제공합니다.
 해당 상품을 구매할 가능성이 높은 페르소나 부분 집합을 연결하는 것이 목표입니다.
 
@@ -293,7 +293,7 @@ Product name: {상품명}
 
 ### 기본 형식 (M1 — 구매 상품명 + 횟수)
 
-```
+```text
 The user 12345 has totally purchased 5 unique products.
 Each product name is followed by its purchased times:
 PRODUCT_A, 3 times; PRODUCT_B, 1 time.
@@ -303,7 +303,7 @@ PRODUCT_A, 3 times; PRODUCT_B, 1 time.
 
 `customer_features`가 전달된 경우 아래 블록이 추가된다.
 
-```
+```text
 The user 12345 has totally purchased 5 unique products.
 Each product name is followed by its purchased times:
 PRODUCT_A, 3 times; PRODUCT_B, 1 time.
