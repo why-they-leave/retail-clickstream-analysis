@@ -26,6 +26,8 @@
 
 ### 문서
 
+- Full vs US 페르소나 생성 EDA 추가 #4 ([c23fe47](https://github.com/JungYeoni/da-template/commit/c23fe47d0f6c5eb9df8196484707dcbf0366c170))
+- CHANGELOG 자동 업데이트 [skip ci] ([dbadaa8](https://github.com/JungYeoni/da-template/commit/dbadaa833b63c519198ffaca2d39251c851b2737))
 - 작업 레포트 및 구현 단계 문서 추가 (#8) ([317e382](https://github.com/JungYeoni/da-template/commit/317e382e972a93ce6e1e340e844bb2dd6ae40794))
 - 프롬프트 문서 추가 (#8) ([6b9f967](https://github.com/JungYeoni/da-template/commit/6b9f967fd7114bf7243c48117204f3e2b44258cd))
 - CHANGELOG 자동 업데이트 [skip ci] ([fc17a29](https://github.com/JungYeoni/da-template/commit/fc17a299d2b1f9b591694b9580065d95657b6cf5))
@@ -47,6 +49,10 @@
 
 ### 버그 수정
 
+- CodeRabbit 리뷰 반영 #4 ([1773f1b](https://github.com/JungYeoni/da-template/commit/1773f1bcaf33940cbcb85d0cd510a8172a65f1db))
+- LLM 실행 의존성 추가 #4 ([6fef7a2](https://github.com/JungYeoni/da-template/commit/6fef7a29111d42adce2ec6f7fb7e80652f22e4f6))
+- LLM 실행 시 dotenv 로드 #4 ([302bf29](https://github.com/JungYeoni/da-template/commit/302bf29ed3aa2139da640307d5b81995de8d4166))
+- US-only 페르소나 비교 설정 보정 #4 ([ed597d0](https://github.com/JungYeoni/da-template/commit/ed597d00f6e4826c7d4d2a6b6f71ea373131f819))
 - 코드 펜스에 언어 추가 (#8) ([6189d1d](https://github.com/JungYeoni/da-template/commit/6189d1d0e4e09ed64516a38bf98b56334b0ce26a))
 - 코드 팬스에 언어 추가 (#8) ([cf360e0](https://github.com/JungYeoni/da-template/commit/cf360e00b971149e3d5da6e59452283c0fee3be3))
 - 동일 상품 여러 행이 있으면 마지막 Qunatity만 남기는 경우 수정 (#8) ([19650ac](https://github.com/JungYeoni/da-template/commit/19650ac4fcffbfa14a6eb0ad864611749702aac1))
@@ -60,6 +66,7 @@
 
 ### 새 기능
 
+- 전체 데이터 vs US-only 페르소나 설정 추가 #4 ([5aa617a](https://github.com/JungYeoni/da-template/commit/5aa617ae711b01f363f65e273e633197df0e3b3d))
 - Llm conector test 구현 (#8) ([3902d5e](https://github.com/JungYeoni/da-template/commit/3902d5edf5d75ff9040a8cec07ad87d516f940ca))
 - 현재 구현된 코드에 맞게 라이브러리 및 경로 수정 (#8) ([9a3387f](https://github.com/JungYeoni/da-template/commit/9a3387f13d54271c767ca68816f0ee87a31dceb6))
 - LLM 파이프라인 병렬화 (#8) ([d1397ed](https://github.com/JungYeoni/da-template/commit/d1397edffafe5650a2d6948414734bb57cdebc70))
