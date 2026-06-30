@@ -2,7 +2,7 @@ import pandas as pd
 from tqdm import tqdm
 
 
-def MBA_load_data(ds_path='../data/interim/funnel_mba_format.csv', debug=False):
+def MBA_load_data(ds_path='../data/interim/funnel_mba_format.csv', country=None, debug=False):
     # -> [mba_df, user_ids, user_num, user_ids_kv, item_names, item_num, items_kv, G_user, G_item]
     # 원본 구매 로그 CSV를 읽어서, 이후 알고리즘이 쓰기 쉬운 user-item bipartite graph로 바꾼다.
     """
@@ -31,6 +31,11 @@ def MBA_load_data(ds_path='../data/interim/funnel_mba_format.csv', debug=False):
     ## load dataset and basic clean
     mba_df = pd.read_csv(ds_path, sep=';')
     if debug: print(mba_df.head())
+
+    # country 필터링
+    if country is not None:
+        mba_df = mba_df[mba_df['Country'] == country]
+        print(f'country filter applied: {country} → {len(mba_df)} rows')
 
     # 설명: CustomerID나 item명이 비어 있으면 제거한다.
     # clean nan rows

@@ -194,12 +194,15 @@ def main():
     paths = config["paths"]
     llm = config["llm"]
     persona = config["persona"]
+    sample = config["sample"]
 
     output_dir = paths["output_dir"]
     output_dir.mkdir(parents=True, exist_ok=True)
 
     logger.info("데이터 로딩 중...")
-    [mba_df, user_ids, user_num, *_] = mba_ds.MBA_load_data(str(paths["input"]))
+    [mba_df, user_ids, user_num, *_] = mba_ds.MBA_load_data(
+        str(paths["input"]), country=sample.get("country")
+    )
     grouped_df = mba_df.groupby(["CustomerID", "Itemname"]).agg({"Quantity": "sum"}).reset_index()
 
     client = OpenAI(

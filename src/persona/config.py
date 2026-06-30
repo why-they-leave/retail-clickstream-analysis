@@ -12,6 +12,7 @@ DEFAULT_CONFIG = {
     "sample": {
         "ratio": 0.025,
         "random_state": 42,
+        "country": None,
     },
     "paths": {
         "input": "data/interim/funnel_mba_format.csv",

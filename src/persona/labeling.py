@@ -203,7 +203,7 @@ def main():
     logger.info("데이터 로딩 중...")
     global item_names  # assign_user_label에서 사용
     [mba_df, user_ids, user_num, user_ids_kv, item_names, item_num, items_kv, G_user, G_item] = (
-        mba_ds.MBA_load_data(str(paths["input"]))
+        mba_ds.MBA_load_data(str(paths["input"]), country=sample.get("country"))
     )
     grouped_df = mba_df.groupby(["CustomerID", "Itemname"]).agg({"Quantity": "sum"}).reset_index()
 
