@@ -46,5 +46,7 @@ def parse_item_response(answer_str: str, itemname: str, defined_persona_set: set
     res = _parse_json_block(answer_str)
     if not res:
         return []
-    val = list(res.values())[0]
+    val = res.get(itemname) or res.get(str(itemname)) # itemkey만 조회하도록 수정 
+    if not isinstance(val, list):
+        return []
     return [p for p in val if p in defined_persona_set]
