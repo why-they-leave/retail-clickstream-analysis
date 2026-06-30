@@ -29,7 +29,7 @@
 
 ### Before
 
-```
+```text
 src/llm_connector/
 └── Collector.py       ← 텍스트 변환 + LLM 호출 + 파싱 혼재
 
@@ -40,7 +40,7 @@ src/persona/
 
 ### After
 
-```
+```text
 src/llm_connector/
 ├── formatter.py       ← describe_user() (텍스트 변환 전담)
 ├── client.py          ← call_llm(), run_parallel() (호출 + 병렬 중앙화)
@@ -61,7 +61,7 @@ src/persona/
 `customer_features=None`이면 기존 동작 유지 (하위 호환).
 `customer_features`가 전달되면 아래 블록 추가:
 
-```
+```text
 Behavioral context:
 - Sessions: 15
 - Page views: 45, Add-to-carts: 8 (ATC/PV: 17.8%)
@@ -76,7 +76,7 @@ Behavioral context:
 
 아래 두 구문을 유저/상품 라벨링 프롬프트에 추가:
 
-```
+```text
 Select only exact persona names from the given list.
 Do not rename, paraphrase, abbreviate, or create new personas.
 
@@ -93,7 +93,7 @@ Only output valid JSON. No markdown. No explanation.
 
 ### 1단계 — 모듈 구조 확인
 
-```
+```text
 src/llm_connector/formatter.py   ← describe_user() 시그니처 및 Behavioral context 블록
 src/llm_connector/client.py      ← call_llm(), run_parallel() 구현
 src/llm_connector/parser.py      ← parse_user_response(), parse_item_response()
@@ -116,7 +116,7 @@ src/llm_connector/Collector.py   ← shim 확인 (import 목록만 있어야 함
 
 ### 4단계 — 프롬프트 문서
 
-```
+```text
 docs/PROMPT_CATALOG.md   ← 원문/번역 대조 확인
 ```
 
