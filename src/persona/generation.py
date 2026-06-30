@@ -11,7 +11,6 @@ Step 3 (1회):  8세트(160개)         → LLM → 최종 20개 페르소나
 
 import json
 import logging
-import os
 import random
 import re
 import warnings
@@ -21,6 +20,7 @@ from openai import OpenAI
 
 import datasets.MBA as mba_ds
 from llm_connector.client import call_llm, run_parallel
+from llm_connector.env import get_required_env
 from llm_connector.formatter import describe_user
 from persona.config import load_persona_config
 
@@ -206,7 +206,7 @@ def main():
     grouped_df = mba_df.groupby(["CustomerID", "Itemname"]).agg({"Quantity": "sum"}).reset_index()
 
     client = OpenAI(
-        api_key=os.environ.get("UPSTAGE_API_KEY"),
+        api_key=get_required_env("UPSTAGE_API_KEY"),
         base_url="https://api.upstage.ai/v1",
     )
 

@@ -23,6 +23,7 @@ from openai import OpenAI
 
 import datasets.MBA as mba_ds
 from llm_connector.client import call_llm, run_parallel
+from llm_connector.env import get_required_env
 from llm_connector.formatter import describe_user
 from llm_connector.parser import parse_item_response, parse_user_response
 from persona.config import load_persona_config
@@ -246,7 +247,7 @@ def main():
     logger.info("Train/Test 분할 저장 완료")
 
     client = OpenAI(
-        api_key=os.environ.get("UPSTAGE_API_KEY"),
+        api_key=get_required_env("UPSTAGE_API_KEY"),
         base_url="https://api.upstage.ai/v1",
     )
     sys_u, usr_u = make_user_prompts(personas)
