@@ -1,4 +1,4 @@
-"""Persona pipeline configuration helpers."""
+"""페르소나 파이프라인 설정 로딩 유틸리티."""
 
 from pathlib import Path
 
@@ -11,7 +11,7 @@ DEFAULT_CONFIG_PATH = PROJECT_ROOT / "configs/persona/params.yaml"
 DEFAULT_CONFIG = {
     "sample": {
         "ratio": 0.025,
-        "random_state": 191,
+        "random_state": 42,
     },
     "paths": {
         "input": "data/interim/funnel_mba_format.csv",
@@ -53,6 +53,8 @@ def load_persona_config(config_path: str | Path | None = None) -> dict:
     """Load persona pipeline config with conservative defaults."""
     path = resolve_path(config_path) if config_path else DEFAULT_CONFIG_PATH
     loaded = {}
+    if config_path and not path.exists():
+        raise FileNotFoundError(f"config 파일을 찾을 수 없음: {path}")
     if path.exists():
         with open(path, "r", encoding="utf-8") as f:
             loaded = yaml.safe_load(f) or {}
