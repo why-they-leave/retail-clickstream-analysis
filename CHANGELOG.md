@@ -10,6 +10,7 @@
 
 ### 기타
 
+- 코덱스 설정 업데이트 ([6d7727b](https://github.com/JungYeoni/da-template/commit/6d7727b6c642d44cb1e7c9f0837dce96787b1975))
 - 불필요한 패키지 삭제 및 패키지 추가 (#8) ([cf0c7c6](https://github.com/JungYeoni/da-template/commit/cf0c7c6ea0bed5913289d68b6b054ac3ff1a3b13))
 - Gitignore에 로컬 실행 설정 파일 추가 (#8) ([092d24e](https://github.com/JungYeoni/da-template/commit/092d24e447961db2c08540ca7dc341569c030117))
 - 코드래빗 한글 설정 (#8) ([4fcea59](https://github.com/JungYeoni/da-template/commit/4fcea5999408a430aeb159b2cc66cd80599afb6c))
@@ -26,6 +27,7 @@
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([90b0b76](https://github.com/JungYeoni/da-template/commit/90b0b76860e435cc92059432d5ef7a9307d88616))
 - Full vs US 페르소나 생성 EDA 추가 #4 ([c23fe47](https://github.com/JungYeoni/da-template/commit/c23fe47d0f6c5eb9df8196484707dcbf0366c170))
 - CHANGELOG 자동 업데이트 [skip ci] ([dbadaa8](https://github.com/JungYeoni/da-template/commit/dbadaa833b63c519198ffaca2d39251c851b2737))
 - 작업 레포트 및 구현 단계 문서 추가 (#8) ([317e382](https://github.com/JungYeoni/da-template/commit/317e382e972a93ce6e1e340e844bb2dd6ae40794))
