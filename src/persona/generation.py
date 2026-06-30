@@ -100,6 +100,11 @@ Here are the eight persona sets:
 # ── 유틸 ──────────────────────────────────────────────────────────────────────
 
 
+def clean_persona_name(name: str) -> str:
+    """Persona 식별자에서 Markdown 마크업과 불필요한 공백을 제거."""
+    return re.sub(r"\*+", "", name).strip()
+
+
 def parse_persona_list(text):
     """'1. Name - Definition' 형태에서 {name, definition} 리스트 추출."""
     personas = []
@@ -107,7 +112,9 @@ def parse_persona_list(text):
         line = line.strip()
         m = re.match(r"^\d+\.\s+(.+?)[\s]*[-:]\s+(.+)$", line)
         if m:
-            personas.append({"name": m.group(1).strip(), "definition": m.group(2).strip()})
+            personas.append(
+                {"name": clean_persona_name(m.group(1)), "definition": m.group(2).strip()}
+            )
     return personas
 
 

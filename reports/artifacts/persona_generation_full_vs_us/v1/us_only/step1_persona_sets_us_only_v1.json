@@ -3,83 +3,83 @@
     "iter": 0,
     "personas": [
       {
-        "name": "**Fitness Enthusiast**",
+        "name": "Fitness Enthusiast",
         "definition": "Purchases yoga mats, dumbbells, and cycling helmets."
       },
       {
-        "name": "**Bookworm**",
+        "name": "Bookworm",
         "definition": "Frequently buys e-books and hardcovers."
       },
       {
-        "name": "**Home Appliance Shopper**",
+        "name": "Home Appliance Shopper",
         "definition": "Purchases coffee makers, toasters, and air fryers."
       },
       {
-        "name": "**Fashion & Accessory Lover**",
+        "name": "Fashion & Accessory Lover",
         "definition": "Buys jeans, t-shirts, hoodies, and socks."
       },
       {
-        "name": "**Electronics Hobbyist**",
+        "name": "Electronics Hobbyist",
         "definition": "Purchases monitors, keyboards, mice, and webcams."
       },
       {
-        "name": "**Beauty & Grooming Enthusiast**",
+        "name": "Beauty & Grooming Enthusiast",
         "definition": "Buys moisturizers, shampoos, and sunscreens."
       },
       {
-        "name": "**Toy & Kids Collector**",
+        "name": "Toy & Kids Collector",
         "definition": "Purchases dolls, action figures, and building blocks."
       },
       {
-        "name": "**Puzzle & Game Player**",
+        "name": "Puzzle & Game Player",
         "definition": "Buys puzzles and board games."
       },
       {
-        "name": "**Frequent Repeater**",
+        "name": "Frequent Repeater",
         "definition": "Repurchases the same item multiple times."
       },
       {
-        "name": "**Diverse General Shopper**",
+        "name": "Diverse General Shopper",
         "definition": "Buys a wide variety of unrelated products."
       },
       {
-        "name": "**Sports Equipment Buyer**",
+        "name": "Sports Equipment Buyer",
         "definition": "Purchases tennis rackets, yoga mats, and water bottles."
       },
       {
-        "name": "**Paperback Devourer**",
+        "name": "Paperback Devourer",
         "definition": "Buys multiple paperback books."
       },
       {
-        "name": "**Gadget & Appliance Upgrader**",
+        "name": "Gadget & Appliance Upgrader",
         "definition": "Purchases sunscreen, speakers, and smartwatches."
       },
       {
-        "name": "**Single-Product Buyer**",
+        "name": "Single-Product Buyer",
         "definition": "Purchases only one unique product per transaction."
       },
       {
-        "name": "**Kitchenware Collector**",
+        "name": "Kitchenware Collector",
         "definition": "Buys cookware, blenders, and toasters."
       },
       {
-        "name": "**Lipstick & Cosmetic Enthusiast**",
+        "name": "Lipstick & Cosmetic Enthusiast",
         "definition": "Purchases multiple lipstick shades."
       },
       {
-        "name": "**Action Figure Enthusiast**",
+        "name": "Action Figure Enthusiast",
         "definition": "Buys multiple action figures."
       },
       {
-        "name": "**Building Blocks & Puzzle Lover**",
+        "name": "Building Blocks & Puzzle Lover",
         "definition": "Purchases building blocks and puzzles."
       },
       {
-        "name": "**Hardcover Collector**",
+        "name": "Hardcover Collector",
         "definition": "Buys multiple hardcover books."
       },
       {
-        "name": "**Serum & Skincare User**",
+        "name": "Serum & Skincare User",
         "definition": "Purchases serum and moisturizers."
       }
     ],
@@ -89,83 +89,83 @@
     "iter": 1,
     "personas": [
       {
-        "name": "**Frequent Sunscreen User**",
+        "name": "Frequent Sunscreen User",
         "definition": "Purchases sunscreen 3+ times, often with minimal other skincare purchases."
       },
       {
-        "name": "**Lipstick Collector**",
+        "name": "Lipstick Collector",
         "definition": "Buys 3+ distinct lipstick shades, often with fewer complementary beauty products."
       },
       {
-        "name": "**Yoga Enthusiast**",
+        "name": "Yoga Enthusiast",
         "definition": "Purchases yoga mats (3+ times) and related fitness items like dumbbells."
       },
       {
-        "name": "**E-Book Reader**",
+        "name": "E-Book Reader",
         "definition": "Buys 3+ distinct e-books, with minimal purchases in other categories."
       },
       {
-        "name": "**Hardcover Collector**",
+        "name": "Hardcover Collector",
         "definition": "Purchases 3+ distinct hardcover books, often with paperbacks or e-books."
       },
       {
-        "name": "**Skincare Routine User**",
+        "name": "Skincare Routine User",
         "definition": "Buys moisturizers (3+ times) or shampoo (3+ times) with complementary items."
       },
       {
-        "name": "**Action Figure Enthusiast**",
+        "name": "Action Figure Enthusiast",
         "definition": "Purchases action figures (3+ times) with minimal other category overlap."
       },
       {
-        "name": "**Dress Frequent Buyer**",
+        "name": "Dress Frequent Buyer",
         "definition": "Buys dresses (3+ times) with occasional complementary clothing or accessories."
       },
       {
-        "name": "**Water Bottle User**",
+        "name": "Water Bottle User",
         "definition": "Purchases water bottles (2+ times) with fitness or outdoor-themed items."
       },
       {
-        "name": "**Puzzle Solver**",
+        "name": "Puzzle Solver",
         "definition": "Buys puzzles (3+ times), often with games or brain-teasers."
       },
       {
-        "name": "**Dumbbell Fitness User**",
+        "name": "Dumbbell Fitness User",
         "definition": "Purchases dumbbells (3+ times) with yoga mats or water bottles."
       },
       {
-        "name": "**Hoodie Lover**",
+        "name": "Hoodie Lover",
         "definition": "Buys hoodies (3+ times) with occasional fitness or casual wear items."
       },
       {
-        "name": "**Building Blocks Parent**",
+        "name": "Building Blocks Parent",
         "definition": "Purchases building blocks (3+ times) with toys or children’s items."
       },
       {
-        "name": "**Board Game Player**",
+        "name": "Board Game Player",
         "definition": "Buys board games (3+ times) with puzzles or family entertainment items."
       },
       {
-        "name": "**Mouse Tech User**",
+        "name": "Mouse Tech User",
         "definition": "Purchases mice (3+ times) with tech accessories like keyboards or monitors."
       },
       {
-        "name": "**Serum Skincare User**",
+        "name": "Serum Skincare User",
         "definition": "Buys serums (3+ times) with moisturizers or shampoos."
       },
       {
-        "name": "**Paperback Reader**",
+        "name": "Paperback Reader",
         "definition": "Purchases 3+ distinct paperbacks, often with hardcovers or e-books."
       },
       {
-        "name": "**Jeans Buyer**",
+        "name": "Jeans Buyer",
         "definition": "Buys jeans (3+ times) with occasional complementary clothing items."
       },
       {
-        "name": "**Sneaker Collector**",
+        "name": "Sneaker Collector",
         "definition": "Purchases 3+ distinct sneakers, often with fitness or casual wear."
       },
       {
-        "name": "**Lamp User**",
+        "name": "Lamp User",
         "definition": "Buys lamps (2+ times) with minimal overlap in other home goods categories."
       }
     ],
@@ -175,83 +175,83 @@
     "iter": 2,
     "personas": [
       {
-        "name": "**Single-Doll Shopper**",
+        "name": "Single-Doll Shopper",
         "definition": "Purchases only doll items with minimal frequency."
       },
       {
-        "name": "**Diverse Minimalist**",
+        "name": "Diverse Minimalist",
         "definition": "Buys 2–3 unique products across unrelated categories."
       },
       {
-        "name": "**Action Figure Enthusiast**",
+        "name": "Action Figure Enthusiast",
         "definition": "Frequently purchases action figures (1+ times)."
       },
       {
-        "name": "**Beauty & Personal Care Buyer**",
+        "name": "Beauty & Personal Care Buyer",
         "definition": "Purchases conditioners, moisturizers, or serums."
       },
       {
-        "name": "**Book Collector**",
+        "name": "Book Collector",
         "definition": "Focuses on hardcovers or paperbacks with occasional repeats."
       },
       {
-        "name": "**Fitness Gear User**",
+        "name": "Fitness Gear User",
         "definition": "Buys dumbbells, yoga mats, or fitness apparel."
       },
       {
-        "name": "**Home Appliance Shopper**",
+        "name": "Home Appliance Shopper",
         "definition": "Purchases cookware, coffee makers, or toasters."
       },
       {
-        "name": "**Casual Apparel Buyer**",
+        "name": "Casual Apparel Buyer",
         "definition": "Buys t-shirts, jackets, or jeans in single transactions."
       },
       {
-        "name": "**Puzzle & Toy Lover**",
+        "name": "Puzzle & Toy Lover",
         "definition": "Purchases puzzles, building blocks, or dolls."
       },
       {
-        "name": "**Electronics Accessory Purchaser**",
+        "name": "Electronics Accessory Purchaser",
         "definition": "Buys keyboards, mice, or webcams."
       },
       {
-        "name": "**Lipstick & Cosmetic User**",
+        "name": "Lipstick & Cosmetic User",
         "definition": "Purchases lipstick or skincare products."
       },
       {
-        "name": "**Tennis Racket Enthusiast**",
+        "name": "Tennis Racket Enthusiast",
         "definition": "Buys multiple types of tennis rackets."
       },
       {
-        "name": "**Lamp & Decor Shopper**",
+        "name": "Lamp & Decor Shopper",
         "definition": "Focuses on lamps or home decor items."
       },
       {
-        "name": "**Vacuum & Cleaning Product Buyer**",
+        "name": "Vacuum & Cleaning Product Buyer",
         "definition": "Purchases vacuums or cleaning tools."
       },
       {
-        "name": "**Multi-Color Dress Buyer**",
+        "name": "Multi-Color Dress Buyer",
         "definition": "Buys dresses in varied colors but limited frequency."
       },
       {
-        "name": "**Hardcover Book Specialist**",
+        "name": "Hardcover Book Specialist",
         "definition": "Purchases hardcovers exclusively or predominantly."
       },
       {
-        "name": "**Socks & Footwear Buyer**",
+        "name": "Socks & Footwear Buyer",
         "definition": "Buys socks or sneakers in single transactions."
       },
       {
-        "name": "**E-book Reader**",
+        "name": "E-book Reader",
         "definition": "Purchases e-books with occasional repeats."
       },
       {
-        "name": "**Water Bottle Collector**",
+        "name": "Water Bottle Collector",
         "definition": "Buys multiple water bottles in varied colors."
       },
       {
-        "name": "**Sunscreen & Outdoor Gear Buyer**",
+        "name": "Sunscreen & Outdoor Gear Buyer",
         "definition": "Purchases sunscreen or cycling helmets."
       }
     ],
@@ -261,83 +261,83 @@
     "iter": 3,
     "personas": [
       {
-        "name": "**Diverse E-Reader**",
+        "name": "Diverse E-Reader",
         "definition": "Purchases multiple e-books or hardcovers in a single transaction."
       },
       {
-        "name": "**Fitness Enthusiast**",
+        "name": "Fitness Enthusiast",
         "definition": "Buys exercise-related items like dumbbells, yoga mats, or vacuums."
       },
       {
-        "name": "**Beauty Minimalist**",
+        "name": "Beauty Minimalist",
         "definition": "Purchases 1-2 beauty products (serum, moisturizer, or lipstick) with no other categories."
       },
       {
-        "name": "**Gadget Collector**",
+        "name": "Gadget Collector",
         "definition": "Buys 2+ tech items (monitors, webcams, or smartwatches) in a single transaction."
       },
       {
-        "name": "**Kid-Focused Shopper**",
+        "name": "Kid-Focused Shopper",
         "definition": "Purchases action figures, dolls, or building blocks."
       },
       {
-        "name": "**Bookworm**",
+        "name": "Bookworm",
         "definition": "Buys 2+ hardcovers, e-books, or paperbacks."
       },
       {
-        "name": "**Apparel Generalist**",
+        "name": "Apparel Generalist",
         "definition": "Purchases 2+ clothing items (hoodies, jeans, or t-shirts) with no other categories."
       },
       {
-        "name": "**Home Appliance Buyer**",
+        "name": "Home Appliance Buyer",
         "definition": "Buys 1-2 home appliances (coffee makers, toasters, or blenders)."
       },
       {
-        "name": "**Puzzle & Game Lover**",
+        "name": "Puzzle & Game Lover",
         "definition": "Purchases 2+ puzzles, board games, or similar items."
       },
       {
-        "name": "**Lipstick Enthusiast**",
+        "name": "Lipstick Enthusiast",
         "definition": "Buys 2+ lipsticks in a single transaction."
       },
       {
-        "name": "**Single-Item Buyer**",
+        "name": "Single-Item Buyer",
         "definition": "Purchases only one product, regardless of category."
       },
       {
-        "name": "**Outdoor & Leisure**",
+        "name": "Outdoor & Leisure",
         "definition": "Buys 1+ sunscreen, water bottles, or outdoor apparel."
       },
       {
-        "name": "**Hair & Skincare**",
+        "name": "Hair & Skincare",
         "definition": "Purchases 2+ shampoos, conditioners, or serums."
       },
       {
-        "name": "**Mixed-Category Shopper**",
+        "name": "Mixed-Category Shopper",
         "definition": "Buys 3+ items from different categories (e.g., apparel, tech, and home goods)."
       },
       {
-        "name": "**Frequent Replenisher**",
+        "name": "Frequent Replenisher",
         "definition": "Buys a product 2+ times in a single transaction."
       },
       {
-        "name": "**Furniture & Decor**",
+        "name": "Furniture & Decor",
         "definition": "Purchases lamps, vacuums, or similar home items."
       },
       {
-        "name": "**Gym & Wellness**",
+        "name": "Gym & Wellness",
         "definition": "Buys 1+ beauty items (serum, moisturizer) and 1+ fitness items."
       },
       {
-        "name": "**Clothing & Accessory**",
+        "name": "Clothing & Accessory",
         "definition": "Purchases 1+ clothing item and 1+ accessory (e.g., jacket + sneakers)."
       },
       {
-        "name": "**Tech & Apparel**",
+        "name": "Tech & Apparel",
         "definition": "Buys 1+ tech item (mouse, monitor) and 1+ clothing item."
       },
       {
-        "name": "**Hobbyist**",
+        "name": "Hobbyist",
         "definition": "Purchases 1+ board game, puzzle, or similar leisure item with no other categories."
       }
     ],
@@ -347,83 +347,83 @@
     "iter": 4,
     "personas": [
       {
-        "name": "**E-book Enthusiast**",
+        "name": "E-book Enthusiast",
         "definition": "Frequent buyer of multiple e-books, often in different colors."
       },
       {
-        "name": "**Toaster Collector**",
+        "name": "Toaster Collector",
         "definition": "Purchases toasters in varying colors, sometimes with multiple units."
       },
       {
-        "name": "**Serum & Skincare Buyer**",
+        "name": "Serum & Skincare Buyer",
         "definition": "Buys skincare products like serums and moisturizers, often in sets."
       },
       {
-        "name": "**Building Blocks Aficionado**",
+        "name": "Building Blocks Aficionado",
         "definition": "Regularly purchases building blocks in multiple colors, sometimes in bulk."
       },
       {
-        "name": "**Action Figure Collector**",
+        "name": "Action Figure Collector",
         "definition": "Buys action figures in different colors, often with repeated purchases."
       },
       {
-        "name": "**Dress & Apparel Shopper**",
+        "name": "Dress & Apparel Shopper",
         "definition": "Purchases dresses, t-shirts, and jeans in varied colors."
       },
       {
-        "name": "**Hardcover Book Reader**",
+        "name": "Hardcover Book Reader",
         "definition": "Buys single hardcover books in unique colors."
       },
       {
-        "name": "**Fitness Gear User**",
+        "name": "Fitness Gear User",
         "definition": "Purchases fitness-related items like dumbbells, yoga mats, and sneakers."
       },
       {
-        "name": "**Lipstick & Cosmetic Buyer**",
+        "name": "Lipstick & Cosmetic Buyer",
         "definition": "Buys lipsticks and cosmetic items in multiple shades."
       },
       {
-        "name": "**Paperback Reader**",
+        "name": "Paperback Reader",
         "definition": "Purchases paperback books in varied colors, sometimes multiple copies."
       },
       {
-        "name": "**Vacuum & Home Appliance Buyer**",
+        "name": "Vacuum & Home Appliance Buyer",
         "definition": "Buys vacuums and other home appliances."
       },
       {
-        "name": "**Puzzle & Game Enthusiast**",
+        "name": "Puzzle & Game Enthusiast",
         "definition": "Purchases puzzles and board games, often in bulk."
       },
       {
-        "name": "**Mouse & Tech Accessory Buyer**",
+        "name": "Mouse & Tech Accessory Buyer",
         "definition": "Buys computer mice and tech accessories."
       },
       {
-        "name": "**Sunscreen & Personal Care Shopper**",
+        "name": "Sunscreen & Personal Care Shopper",
         "definition": "Purchases sunscreen and personal care items."
       },
       {
-        "name": "**Jacket & Outerwear Buyer**",
+        "name": "Jacket & Outerwear Buyer",
         "definition": "Buys jackets in different colors and styles."
       },
       {
-        "name": "**Conditioner & Hair Care User**",
+        "name": "Conditioner & Hair Care User",
         "definition": "Purchases conditioners and shampoos in varied shades."
       },
       {
-        "name": "**Tennis Racket & Sports Gear Enthusiast**",
+        "name": "Tennis Racket & Sports Gear Enthusiast",
         "definition": "Buys tennis rackets and sports equipment."
       },
       {
-        "name": "**Doll Collector**",
+        "name": "Doll Collector",
         "definition": "Purchases dolls in multiple colors, sometimes in bulk."
       },
       {
-        "name": "**Blender & Kitchen Appliance Buyer**",
+        "name": "Blender & Kitchen Appliance Buyer",
         "definition": "Buys blenders and kitchen appliances."
       },
       {
-        "name": "**Sneaker & Footwear Shopper**",
+        "name": "Sneaker & Footwear Shopper",
         "definition": "Purchases sneakers in varied colors and styles."
       }
     ],
@@ -433,83 +433,83 @@
     "iter": 5,
     "personas": [
       {
-        "name": "**Frequent Toaster Buyer**",
+        "name": "Frequent Toaster Buyer",
         "definition": "Purchases the same toaster model 4+ times."
       },
       {
-        "name": "**Diverse Book Enthusiast**",
+        "name": "Diverse Book Enthusiast",
         "definition": "Buys 3+ different book types (hardcover, paperback, e-book) in a single session."
       },
       {
-        "name": "**Board Game Collector**",
+        "name": "Board Game Collector",
         "definition": "Purchases 2+ unique board games, with at least one bought 3+ times."
       },
       {
-        "name": "**Single-Item Specialists**",
+        "name": "Single-Item Specialists",
         "definition": "Buys only 1 unique product in their entire purchase history."
       },
       {
-        "name": "**Serum & Sunscreen Buyer**",
+        "name": "Serum & Sunscreen Buyer",
         "definition": "Purchases 1+ serum and 1+ sunscreen, with at least one product bought 3+ times."
       },
       {
-        "name": "**Building Blocks Enthusiast**",
+        "name": "Building Blocks Enthusiast",
         "definition": "Buys 2+ different building block sets, with at least one bought 3+ times."
       },
       {
-        "name": "**Frequent Water Bottle User**",
+        "name": "Frequent Water Bottle User",
         "definition": "Purchases the same water bottle 3+ times."
       },
       {
-        "name": "**Frequent Paperback Buyer**",
+        "name": "Frequent Paperback Buyer",
         "definition": "Purchases the same paperback 3+ times."
       },
       {
-        "name": "**Doll & E-Book Combination**",
+        "name": "Doll & E-Book Combination",
         "definition": "Buys 1+ doll and 1+ e-book, with at least one product bought 3+ times."
       },
       {
-        "name": "**Frequent Hoodie Buyer**",
+        "name": "Frequent Hoodie Buyer",
         "definition": "Purchases the same hoodie 3+ times."
       },
       {
-        "name": "**Frequent Lipstick Buyer**",
+        "name": "Frequent Lipstick Buyer",
         "definition": "Purchases the same lipstick 2+ times."
       },
       {
-        "name": "**Frequent Tennis Racket Buyer**",
+        "name": "Frequent Tennis Racket Buyer",
         "definition": "Purchases the same tennis racket 2+ times."
       },
       {
-        "name": "**Frequent Headphone Buyer**",
+        "name": "Frequent Headphone Buyer",
         "definition": "Purchases the same headphone 3+ times."
       },
       {
-        "name": "**Frequent Moisturizer Buyer**",
+        "name": "Frequent Moisturizer Buyer",
         "definition": "Purchases the same moisturizer 3+ times."
       },
       {
-        "name": "**Frequent Shampoo Buyer**",
+        "name": "Frequent Shampoo Buyer",
         "definition": "Purchases the same shampoo 3+ times."
       },
       {
-        "name": "**Frequent Blender Buyer**",
+        "name": "Frequent Blender Buyer",
         "definition": "Purchases 2+ different blender models."
       },
       {
-        "name": "**Frequent Coffee Maker Buyer**",
+        "name": "Frequent Coffee Maker Buyer",
         "definition": "Purchases the same coffee maker 3+ times."
       },
       {
-        "name": "**Frequent Lamp Buyer**",
+        "name": "Frequent Lamp Buyer",
         "definition": "Purchases 2+ different lamp models."
       },
       {
-        "name": "**Frequent Cycling Helmet Buyer**",
+        "name": "Frequent Cycling Helmet Buyer",
         "definition": "Purchases 2+ different cycling helmets, with at least one bought 3+ times."
       },
       {
-        "name": "**Frequent Vacuum Buyer**",
+        "name": "Frequent Vacuum Buyer",
         "definition": "Purchases the same vacuum 4+ times."
       }
     ],
@@ -519,83 +519,83 @@
     "iter": 6,
     "personas": [
       {
-        "name": "**Board Game Collector**",
+        "name": "Board Game Collector",
         "definition": "Frequently purchases multiple board games, often with repeated buys of specific titles."
       },
       {
-        "name": "**Puzzle Enthusiast**",
+        "name": "Puzzle Enthusiast",
         "definition": "Buys puzzles in bulk, often purchasing several different puzzle types or repeating the same puzzle."
       },
       {
-        "name": "**Doll Collector**",
+        "name": "Doll Collector",
         "definition": "Regularly buys dolls, often multiple dolls in a single transaction or across purchases."
       },
       {
-        "name": "**E-book Reader**",
+        "name": "E-book Reader",
         "definition": "Purchases multiple e-books, often exploring different genres or topics."
       },
       {
-        "name": "**Fitness Enthusiast**",
+        "name": "Fitness Enthusiast",
         "definition": "Buys fitness-related items like dumbbells, yoga mats, or cycling helmets."
       },
       {
-        "name": "**Cosmetic Shopper**",
+        "name": "Cosmetic Shopper",
         "definition": "Frequently purchases lipsticks or skincare products like serums or sunscreens."
       },
       {
-        "name": "**Home Appliance Buyer**",
+        "name": "Home Appliance Buyer",
         "definition": "Buys household items such as coffee makers, air fryers, or toasters."
       },
       {
-        "name": "**Fashion Focused**",
+        "name": "Fashion Focused",
         "definition": "Purchases clothing items like dresses, jeans, or t-shirts."
       },
       {
-        "name": "**Book Lover**",
+        "name": "Book Lover",
         "definition": "Buys a variety of books, including hardcovers, paperbacks, and e-books."
       },
       {
-        "name": "**Kids’ Toy Buyer**",
+        "name": "Kids’ Toy Buyer",
         "definition": "Purchases building blocks, action figures, or puzzles for children."
       },
       {
-        "name": "**Electronics Hobbyist**",
+        "name": "Electronics Hobbyist",
         "definition": "Buys tech accessories like keyboards, mice, smartwatches, or SSDs."
       },
       {
-        "name": "**Beauty & Skincare Enthusiast**",
+        "name": "Beauty & Skincare Enthusiast",
         "definition": "Regularly purchases conditioners, shampoos, or moisturizers."
       },
       {
-        "name": "**Occasional Fitness Gear Buyer**",
+        "name": "Occasional Fitness Gear Buyer",
         "definition": "Purchases yoga mats, dumbbells, or tennis rackets but not in bulk."
       },
       {
-        "name": "**Occasional Cosmetic Buyer**",
+        "name": "Occasional Cosmetic Buyer",
         "definition": "Buys one or two lipsticks or skincare items per transaction."
       },
       {
-        "name": "**Diverse Shopper**",
+        "name": "Diverse Shopper",
         "definition": "Purchases a wide range of unconnected products across categories."
       },
       {
-        "name": "**Single-Item Buyer**",
+        "name": "Single-Item Buyer",
         "definition": "Consistently purchases only one unique product per transaction."
       },
       {
-        "name": "**Repetitive Buyer**",
+        "name": "Repetitive Buyer",
         "definition": "Buys the same product multiple times, such as a specific puzzle or yoga mat."
       },
       {
-        "name": "**Seasonal Shopper**",
+        "name": "Seasonal Shopper",
         "definition": "Purchases items aligned with seasonal trends, like sunscreen or winter apparel."
       },
       {
-        "name": "**Limited-Interest Buyer**",
+        "name": "Limited-Interest Buyer",
         "definition": "Focuses on 2–3 product categories but doesn’t purchase in bulk."
       },
       {
-        "name": "**Luxury or Niche Product Buyer**",
+        "name": "Luxury or Niche Product Buyer",
         "definition": "Purchases specialty items like high-end skincare or rare electronics."
       }
     ],
@@ -605,83 +605,83 @@
     "iter": 7,
     "personas": [
       {
-        "name": "**Doll Enthusiast**",
+        "name": "Doll Enthusiast",
         "definition": "Purchases dolls in multiple colors, often in higher quantities."
       },
       {
-        "name": "**Action Figure Collector**",
+        "name": "Action Figure Collector",
         "definition": "Buys action figures in various colors, sometimes with multiple purchases."
       },
       {
-        "name": "**Bookworm (Hardcover)**",
+        "name": "Bookworm (Hardcover)",
         "definition": "Primarily buys hardcover books, often in different colors."
       },
       {
-        "name": "**E-Book Reader**",
+        "name": "E-Book Reader",
         "definition": "Purchases e-books, sometimes in combination with other items."
       },
       {
-        "name": "**Fitness Enthusiast**",
+        "name": "Fitness Enthusiast",
         "definition": "Buys fitness-related items like dumbbells, yoga mats, or cycling helmets."
       },
       {
-        "name": "**Skincare & Cosmetics User**",
+        "name": "Skincare & Cosmetics User",
         "definition": "Purchases moisturizers, sunscreens, or lipsticks."
       },
       {
-        "name": "**Puzzle & Game Lover**",
+        "name": "Puzzle & Game Lover",
         "definition": "Buys puzzles, board games, or other games, often in higher quantities."
       },
       {
-        "name": "**Kitchen Appliance Buyer**",
+        "name": "Kitchen Appliance Buyer",
         "definition": "Purchases kitchen items like air fryers, blenders, or toasters."
       },
       {
-        "name": "**Clothing & Accessory Shopper**",
+        "name": "Clothing & Accessory Shopper",
         "definition": "Buys clothing (jeans, jackets) or accessories (bags, sneakers)."
       },
       {
-        "name": "**Electronics & Gadget Buyer**",
+        "name": "Electronics & Gadget Buyer",
         "definition": "Purchases tech items like SSDs, webcams, or headphones."
       },
       {
-        "name": "**Paperback Reader**",
+        "name": "Paperback Reader",
         "definition": "Buys paperback books, often in different colors."
       },
       {
-        "name": "**Building Blocks & Toys Buyer**",
+        "name": "Building Blocks & Toys Buyer",
         "definition": "Purchases building blocks or similar toys, sometimes in bulk."
       },
       {
-        "name": "**Serum & Conditioner User**",
+        "name": "Serum & Conditioner User",
         "definition": "Buys serums, conditioners, or shampoos."
       },
       {
-        "name": "**Single-Item Buyer (Doll)**",
+        "name": "Single-Item Buyer (Doll)",
         "definition": "Purchases only one type of item, usually a doll, in high quantity."
       },
       {
-        "name": "**Single-Item Buyer (Non-Doll)**",
+        "name": "Single-Item Buyer (Non-Doll)",
         "definition": "Purchases only one type of non-doll item, like a blender or moody."
       },
       {
-        "name": "**Diverse Purchaser (4+ Items)**",
+        "name": "Diverse Purchaser (4+ Items)",
         "definition": "Buys 4+ unique items across different categories."
       },
       {
-        "name": "**Diverse Purchaser (2-3 Items)**",
+        "name": "Diverse Purchaser (2-3 Items)",
         "definition": "Buys 2-3 unique items, often from different categories."
       },
       {
-        "name": "**Lipstick & Color Enthusiast**",
+        "name": "Lipstick & Color Enthusiast",
         "definition": "Purchases multiple lipsticks in different colors."
       },
       {
-        "name": "**Repetitive Puzzle Buyer**",
+        "name": "Repetitive Puzzle Buyer",
         "definition": "Buys the same puzzle multiple times."
       },
       {
-        "name": "**Color-Specific Buyer**",
+        "name": "Color-Specific Buyer",
         "definition": "Purchases items in a single or preferred color across categories."
       }
     ],
@@ -691,83 +691,83 @@
     "iter": 8,
     "personas": [
       {
-        "name": "**E-book Enthusiast**",
+        "name": "E-book Enthusiast",
         "definition": "Purchases multiple e-books across various genres."
       },
       {
-        "name": "**Hardcover Collector**",
+        "name": "Hardcover Collector",
         "definition": "Buys several hardcover books, often in different colors."
       },
       {
-        "name": "**Skincare Routine User**",
+        "name": "Skincare Routine User",
         "definition": "Purchases moisturizers, serums, or sunscreens repeatedly."
       },
       {
-        "name": "**Fitness Gear Buyer**",
+        "name": "Fitness Gear Buyer",
         "definition": "Buys dumbbells, yoga mats, or cycling helmets."
       },
       {
-        "name": "**Board Game & Puzzle Lover**",
+        "name": "Board Game & Puzzle Lover",
         "definition": "Purchases board games and puzzles frequently."
       },
       {
-        "name": "**Doll & Toy Collector**",
+        "name": "Doll & Toy Collector",
         "definition": "Focuses on dolls, action figures, or building blocks."
       },
       {
-        "name": "**Occasional Apparel Shopper**",
+        "name": "Occasional Apparel Shopper",
         "definition": "Buys t-shirts, hoodies, or jeans in single purchases."
       },
       {
-        "name": "**Electronics & Accessories Buyer**",
+        "name": "Electronics & Accessories Buyer",
         "definition": "Purchases SSDs, webcams, or monitors."
       },
       {
-        "name": "**Hobbyist & DIYer**",
+        "name": "Hobbyist & DIYer",
         "definition": "Buys puzzles, board games, or sunscreens in bulk."
       },
       {
-        "name": "**Cosmetics Explorer**",
+        "name": "Cosmetics Explorer",
         "definition": "Purchases lipsticks or moisturizers in varied shades."
       },
       {
-        "name": "**Single-Product Specialist**",
+        "name": "Single-Product Specialist",
         "definition": "Makes repeat purchases of one specific item."
       },
       {
-        "name": "**Home & Kitchen Shopper**",
+        "name": "Home & Kitchen Shopper",
         "definition": "Buys cookware, blenders, or coffee makers."
       },
       {
-        "name": "**Paperback Reader**",
+        "name": "Paperback Reader",
         "definition": "Purchases multiple paperbacks across genres."
       },
       {
-        "name": "**Outdoor & Sports Gear User**",
+        "name": "Outdoor & Sports Gear User",
         "definition": "Buys tennis rackets, sneakers, or cycling gear."
       },
       {
-        "name": "**Vacuum & Cleaning Enthusiast**",
+        "name": "Vacuum & Cleaning Enthusiast",
         "definition": "Purchases vacuums or cleaning supplies."
       },
       {
-        "name": "**Random Multi-Category Buyer**",
+        "name": "Random Multi-Category Buyer",
         "definition": "Shops across 6+ unrelated categories."
       },
       {
-        "name": "**Color-Varied Product Buyer**",
+        "name": "Color-Varied Product Buyer",
         "definition": "Purchases the same product in multiple colors."
       },
       {
-        "name": "**Lipstick & Skincare User**",
+        "name": "Lipstick & Skincare User",
         "definition": "Combines lipstick purchases with moisturizers."
       },
       {
-        "name": "**Frequent Low-Volume Shopper**",
+        "name": "Frequent Low-Volume Shopper",
         "definition": "Buys 1–2 unique items per transaction."
       },
       {
-        "name": "**High-Variety Bulk Buyer**",
+        "name": "High-Variety Bulk Buyer",
         "definition": "Purchases 7+ unique items in one session."
       }
     ],
@@ -777,83 +777,83 @@
     "iter": 9,
     "personas": [
       {
-        "name": "**E-book Collector**",
+        "name": "E-book Collector",
         "definition": "Purchases multiple distinct e-books (2+ unique titles) without bulk buys."
       },
       {
-        "name": "**Single-Item Buyer**",
+        "name": "Single-Item Buyer",
         "definition": "Makes only one unique purchase, typically a low-frequency item (1-time)."
       },
       {
-        "name": "**Frequent Personal Care Buyer**",
+        "name": "Frequent Personal Care Buyer",
         "definition": "Repeatedly purchases moisturizers, shampoos, or sunscreens (3+ times)."
       },
       {
-        "name": "**Doll Enthusiast**",
+        "name": "Doll Enthusiast",
         "definition": "Buys 2+ unique dolls, often in varied colors."
       },
       {
-        "name": "**Paperback Reader**",
+        "name": "Paperback Reader",
         "definition": "Purchases multiple distinct paperback books (2+ unique titles)."
       },
       {
-        "name": "**Electronics Upgrader**",
+        "name": "Electronics Upgrader",
         "definition": "Buys 3+ unique electronics (monitors, SSDs, webcams, etc.) once each."
       },
       {
-        "name": "**Building Blocks Collector**",
+        "name": "Building Blocks Collector",
         "definition": "Acquires 2+ unique building block sets."
       },
       {
-        "name": "**Hoodie Variety Seeker**",
+        "name": "Hoodie Variety Seeker",
         "definition": "Buys 2+ distinct hoodies in different colors."
       },
       {
-        "name": "**Fitness Gear User**",
+        "name": "Fitness Gear User",
         "definition": "Purchases dumbbells, yoga mats, or cycling helmets."
       },
       {
-        "name": "**Vacuum Multi-Buyer**",
+        "name": "Vacuum Multi-Buyer",
         "definition": "Buys 2+ unique vacuum cleaners."
       },
       {
-        "name": "**Lipstick Repeat Buyer**",
+        "name": "Lipstick Repeat Buyer",
         "definition": "Repurchases the same lipstick (3+ times)."
       },
       {
-        "name": "**Action Figure Acquirer**",
+        "name": "Action Figure Acquirer",
         "definition": "Buys 2+ unique action figures."
       },
       {
-        "name": "**Board Game Player**",
+        "name": "Board Game Player",
         "definition": "Purchases 2+ distinct board games."
       },
       {
-        "name": "**Puzzle Solver**",
+        "name": "Puzzle Solver",
         "definition": "Buys 2+ unique puzzles."
       },
       {
-        "name": "**Color-Consistent Dress Buyer**",
+        "name": "Color-Consistent Dress Buyer",
         "definition": "Purchases dresses in the same color (e.g., RoyalBlue)."
       },
       {
-        "name": "**Keyboard/Smartwatch Buyer**",
+        "name": "Keyboard/Smartwatch Buyer",
         "definition": "Purchases keyboards or smartwatches (1+ unique items)."
       },
       {
-        "name": "**Serum Tester**",
+        "name": "Serum Tester",
         "definition": "Buys 2+ distinct serums."
       },
       {
-        "name": "**Conditioner Repurchaser**",
+        "name": "Conditioner Repurchaser",
         "definition": "Repurchases the same conditioner (3+ times)."
       },
       {
-        "name": "**Toaster Variety Buyer**",
+        "name": "Toaster Variety Buyer",
         "definition": "Purchases toasters in different colors."
       },
       {
-        "name": "**Jacket Color Explorer**",
+        "name": "Jacket Color Explorer",
         "definition": "Buys jackets in 2+ distinct colors."
       }
     ],
@@ -863,83 +863,83 @@
     "iter": 10,
     "personas": [
       {
-        "name": "**Frequent E-book Reader**",
+        "name": "Frequent E-book Reader",
         "definition": "Buys multiple E-books across genres with occasional repeats of favorites."
       },
       {
-        "name": "**Beauty Care Buyer**",
+        "name": "Beauty Care Buyer",
         "definition": "Purchases conditioners, moisturizers, serums, or lipsticks regularly."
       },
       {
-        "name": "**Casual Hoodie Collector**",
+        "name": "Casual Hoodie Collector",
         "definition": "Buys 2–3 hoodies in varying colors without repetition."
       },
       {
-        "name": "**Single-Category Shopper**",
+        "name": "Single-Category Shopper",
         "definition": "Consistently purchases only one product type (e.g., cookware, SSD)."
       },
       {
-        "name": "**Water Bottle Variety Seeker**",
+        "name": "Water Bottle Variety Seeker",
         "definition": "Buys multiple distinct water bottles in different colors."
       },
       {
-        "name": "**Hardcover Book Enthusiast**",
+        "name": "Hardcover Book Enthusiast",
         "definition": "Focuses on hardcover books, sometimes repeating titles."
       },
       {
-        "name": "**Board Game Enthusiast**",
+        "name": "Board Game Enthusiast",
         "definition": "Buys multiple board games, occasionally repeating favorites."
       },
       {
-        "name": "**Action Figure Collector**",
+        "name": "Action Figure Collector",
         "definition": "Acquires diverse action figures across styles."
       },
       {
-        "name": "**Sunscreen & Outdoor Gear Buyer**",
+        "name": "Sunscreen & Outdoor Gear Buyer",
         "definition": "Purchases sunscreens and cycling helmets/sneakers."
       },
       {
-        "name": "**Paperback Diversity Reader**",
+        "name": "Paperback Diversity Reader",
         "definition": "Buys paperbacks across genres with occasional repeats."
       },
       {
-        "name": "**Shampoo & Hair Care Loyalist**",
+        "name": "Shampoo & Hair Care Loyalist",
         "definition": "Repeats favorite shampoos or buys multiple variants."
       },
       {
-        "name": "**Building Blocks Explorer**",
+        "name": "Building Blocks Explorer",
         "definition": "Collects diverse building blocks with occasional repeats."
       },
       {
-        "name": "**Lipstick Repeater**",
+        "name": "Lipstick Repeater",
         "definition": "Frequently repurchases specific lipstick shades."
       },
       {
-        "name": "**Puzzle Collector**",
+        "name": "Puzzle Collector",
         "definition": "Acquires puzzles in varying themes or repeats favorites."
       },
       {
-        "name": "**Yoga & Fitness Gear User**",
+        "name": "Yoga & Fitness Gear User",
         "definition": "Buys yoga mats, dumbbells, or sneakers."
       },
       {
-        "name": "**Lamp Variety Buyer**",
+        "name": "Lamp Variety Buyer",
         "definition": "Purchases lamps in multiple designs or colors."
       },
       {
-        "name": "**Dress & Apparel Shopper**",
+        "name": "Dress & Apparel Shopper",
         "definition": "Buys dresses or jackets alongside accessories."
       },
       {
-        "name": "**Keyboard & Tech Accessory User**",
+        "name": "Keyboard & Tech Accessory User",
         "definition": "Purchases keyboards, SSDs, or mice."
       },
       {
-        "name": "**Coffee Maker Enthusiast**",
+        "name": "Coffee Maker Enthusiast",
         "definition": "Buys multiple coffee makers in different styles."
       },
       {
-        "name": "**Vacuum & Home Appliance Buyer**",
+        "name": "Vacuum & Home Appliance Buyer",
         "definition": "Acquires vacuums and air fryers."
       }
     ],
@@ -949,83 +949,83 @@
     "iter": 11,
     "personas": [
       {
-        "name": "**Book Enthusiast**",
+        "name": "Book Enthusiast",
         "definition": "Frequently purchases multiple hardcover/paperback books."
       },
       {
-        "name": "**Beauty Minimalist**",
+        "name": "Beauty Minimalist",
         "definition": "Buys occasional lipstick or moisturizer but no other beauty items."
       },
       {
-        "name": "**Fitness Gear Collector**",
+        "name": "Fitness Gear Collector",
         "definition": "Purchases yoga mats, dumbbells, or socks for fitness."
       },
       {
-        "name": "**Electronics Upgrader**",
+        "name": "Electronics Upgrader",
         "definition": "Buys monitors, webcams, or air fryers for home/tech upgrades."
       },
       {
-        "name": "**Kids & Toys Shopper**",
+        "name": "Kids & Toys Shopper",
         "definition": "Purchases building blocks, action figures, or board games."
       },
       {
-        "name": "**Single-Product Buyer**",
+        "name": "Single-Product Buyer",
         "definition": "Only buys one unique product in their entire history."
       },
       {
-        "name": "**Health & Wellness User**",
+        "name": "Health & Wellness User",
         "definition": "Buys sunscreen, moisturizer, or serum for skincare."
       },
       {
-        "name": "**Household Appliance Shopper**",
+        "name": "Household Appliance Shopper",
         "definition": "Purchases cookware, blenders, or vacuums for home use."
       },
       {
-        "name": "**Frequent Shampoo User**",
+        "name": "Frequent Shampoo User",
         "definition": "Buys shampoo or conditioner multiple times."
       },
       {
-        "name": "**Casual Fashion Buyer**",
+        "name": "Casual Fashion Buyer",
         "definition": "Purchases jeans, jackets, or t-shirts occasionally."
       },
       {
-        "name": "**Board Game Aficionado**",
+        "name": "Board Game Aficionado",
         "definition": "Buys multiple board games or puzzles."
       },
       {
-        "name": "**E-book Reader**",
+        "name": "E-book Reader",
         "definition": "Purchases multiple e-books but no physical books."
       },
       {
-        "name": "**Air Fryer Lover**",
+        "name": "Air Fryer Lover",
         "definition": "Buys air fryers multiple times or frequently."
       },
       {
-        "name": "**Cycling Enthusiast**",
+        "name": "Cycling Enthusiast",
         "definition": "Purchases cycling helmets or related gear."
       },
       {
-        "name": "**Lipstick Collector**",
+        "name": "Lipstick Collector",
         "definition": "Buys multiple lipstick shades or frequently."
       },
       {
-        "name": "**Doll & Toy Collector**",
+        "name": "Doll & Toy Collector",
         "definition": "Purchases dolls or action figures multiple times."
       },
       {
-        "name": "**Paperback Reader**",
+        "name": "Paperback Reader",
         "definition": "Buys multiple paperback books but no hardcovers."
       },
       {
-        "name": "**Home Organization Buyer**",
+        "name": "Home Organization Buyer",
         "definition": "Purchases water bottles, coffee makers, or organizers."
       },
       {
-        "name": "**Sunscreen Regular**",
+        "name": "Sunscreen Regular",
         "definition": "Buys sunscreen multiple times or as part of skincare."
       },
       {
-        "name": "**Hoodie & Apparel Shopper**",
+        "name": "Hoodie & Apparel Shopper",
         "definition": "Purchases hoodies or t-shirts occasionally."
       }
     ],
@@ -1035,83 +1035,83 @@
     "iter": 12,
     "personas": [
       {
-        "name": "**Frequent Action Figure Buyer**",
+        "name": "Frequent Action Figure Buyer",
         "definition": "Purchases action figures 4+ times, often with diverse colors."
       },
       {
-        "name": "**Building Blocks Enthusiast**",
+        "name": "Building Blocks Enthusiast",
         "definition": "Repeatedly buys building blocks, often 2–4 times."
       },
       {
-        "name": "**Sunscreen & Water Bottle Collector**",
+        "name": "Sunscreen & Water Bottle Collector",
         "definition": "Buys sunscreen and water bottles 2–3 times each."
       },
       {
-        "name": "**Dress & Jeans Shopper**",
+        "name": "Dress & Jeans Shopper",
         "definition": "Purchases 1–2 dresses and 1 pair of jeans."
       },
       {
-        "name": "**Lipstick Variety Buyer**",
+        "name": "Lipstick Variety Buyer",
         "definition": "Buys 1–2 different lipstick shades."
       },
       {
-        "name": "**Hardcover Book Lover**",
+        "name": "Hardcover Book Lover",
         "definition": "Purchases hardcover books 1–4 times."
       },
       {
-        "name": "**Dumbbell Fitness Enthusiast**",
+        "name": "Dumbbell Fitness Enthusiast",
         "definition": "Buys 1–4 dumbbells."
       },
       {
-        "name": "**E-book & Paperback Reader**",
+        "name": "E-book & Paperback Reader",
         "definition": "Purchases e-books and paperbacks 1–4 times."
       },
       {
-        "name": "**Puzzle Solver**",
+        "name": "Puzzle Solver",
         "definition": "Buys 1–3 puzzles."
       },
       {
-        "name": "**Conditioner & Moisturizer User**",
+        "name": "Conditioner & Moisturizer User",
         "definition": "Buys 1–3 conditioners or moisturizers."
       },
       {
-        "name": "**Single-Product Specialist**",
+        "name": "Single-Product Specialist",
         "definition": "Purchases only one unique product."
       },
       {
-        "name": "**Jacket & Hoodie Wearer**",
+        "name": "Jacket & Hoodie Wearer",
         "definition": "Buys 1–2 jackets or hoodies."
       },
       {
-        "name": "**Serum Skincare User**",
+        "name": "Serum Skincare User",
         "definition": "Purchases 1–2 serums."
       },
       {
-        "name": "**Coffee Maker & Blender Owner**",
+        "name": "Coffee Maker & Blender Owner",
         "definition": "Buys 1–2 coffee makers or blenders."
       },
       {
-        "name": "**Doll Collector**",
+        "name": "Doll Collector",
         "definition": "Purchases 1–4 dolls."
       },
       {
-        "name": "**Yoga Mat & Smartwatch User**",
+        "name": "Yoga Mat & Smartwatch User",
         "definition": "Buys yoga mats or smartwatches 1–2 times."
       },
       {
-        "name": "**Tennis Racket & Sneakers Buyer**",
+        "name": "Tennis Racket & Sneakers Buyer",
         "definition": "Purchases 1–2 tennis rackets or sneakers."
       },
       {
-        "name": "**Air Fryer Owner**",
+        "name": "Air Fryer Owner",
         "definition": "Buys 1–4 air fryers."
       },
       {
-        "name": "**Board Game & Monitor Gamer**",
+        "name": "Board Game & Monitor Gamer",
         "definition": "Purchases 1–3 board games or monitors."
       },
       {
-        "name": "**Vacuum & Lamp Buyer**",
+        "name": "Vacuum & Lamp Buyer",
         "definition": "Purchases 1–4 vacuums or lamps."
       }
     ],
@@ -1121,83 +1121,83 @@
     "iter": 13,
     "personas": [
       {
-        "name": "**Single-Item Tech Buyer**",
+        "name": "Single-Item Tech Buyer",
         "definition": "Purchases only one tech accessory (e.g., mouse, webcam, or SSD)."
       },
       {
-        "name": "**Frequent Hoodie Shopper**",
+        "name": "Frequent Hoodie Shopper",
         "definition": "Repeatedly buys the same hoodie color (3+ times)."
       },
       {
-        "name": "**Diverse Kitchenware Collector**",
+        "name": "Diverse Kitchenware Collector",
         "definition": "Buys 1+ cookware, blender, or air fryer alongside non-kitchen items."
       },
       {
-        "name": "**Board Game & Conditioner Hybrid**",
+        "name": "Board Game & Conditioner Hybrid",
         "definition": "Purchases board games and personal care items (conditioner, serum)."
       },
       {
-        "name": "**Jeans & Doll Enthusiast**",
+        "name": "Jeans & Doll Enthusiast",
         "definition": "Buys multiple jeans and dolls in different colors."
       },
       {
-        "name": "**Hardcover & Sneaker Repeat Buyer**",
+        "name": "Hardcover & Sneaker Repeat Buyer",
         "definition": "Frequently repurchases hardcover books and sneakers (4+ times)."
       },
       {
-        "name": "**E-book & Fitness Gear Mix**",
+        "name": "E-book & Fitness Gear Mix",
         "definition": "Combines e-books with yoga mats, dumbbells, or water bottles."
       },
       {
-        "name": "**Skincare & Beauty Collector**",
+        "name": "Skincare & Beauty Collector",
         "definition": "Buys moisturizers, sunscreens, or lipsticks alongside other categories."
       },
       {
-        "name": "**Action Figure & Paperback Lover**",
+        "name": "Action Figure & Paperback Lover",
         "definition": "Purchases action figures and multiple paperback books."
       },
       {
-        "name": "**Diverse Electronics Shopper**",
+        "name": "Diverse Electronics Shopper",
         "definition": "Buys 2+ distinct electronics (e.g., coffee maker, webcam, mouse)."
       },
       {
-        "name": "**Single-Category Specializer**",
+        "name": "Single-Category Specializer",
         "definition": "Focuses on one product type (e.g., puzzles, building blocks, or cycling helmets)."
       },
       {
-        "name": "**Frequent Moisturizer Buyer**",
+        "name": "Frequent Moisturizer Buyer",
         "definition": "Repurchases the same moisturizer (5+ times)."
       },
       {
-        "name": "**Dress & Sneaker Pair Buyer**",
+        "name": "Dress & Sneaker Pair Buyer",
         "definition": "Purchases dresses and sneakers in the same transaction."
       },
       {
-        "name": "**Hoodie & Fitness Combo**",
+        "name": "Hoodie & Fitness Combo",
         "definition": "Buys hoodies and fitness items (yoga mats, water bottles)."
       },
       {
-        "name": "**Dumbbell & Water Bottle Enthusiast**",
+        "name": "Dumbbell & Water Bottle Enthusiast",
         "definition": "Combines fitness equipment with hydration gear."
       },
       {
-        "name": "**Building Blocks & E-book Hybrid**",
+        "name": "Building Blocks & E-book Hybrid",
         "definition": "Buys building blocks and e-books in the same session."
       },
       {
-        "name": "**Vacuum & Paperback Collector**",
+        "name": "Vacuum & Paperback Collector",
         "definition": "Purchases vacuums and multiple paperback books."
       },
       {
-        "name": "**Serum & Shampoo Regular**",
+        "name": "Serum & Shampoo Regular",
         "definition": "Buys serums, shampoos, or conditioners across transactions."
       },
       {
-        "name": "**Dress & Hardcover Pair Buyer**",
+        "name": "Dress & Hardcover Pair Buyer",
         "definition": "Purchases dresses and hardcover books together."
       },
       {
-        "name": "**Multi-Color Sneaker Collector**",
+        "name": "Multi-Color Sneaker Collector",
         "definition": "Buys sneakers in different colors but no repeats."
       }
     ],
@@ -1207,83 +1207,83 @@
     "iter": 14,
     "personas": [
       {
-        "name": "**E-book Enthusiast**",
+        "name": "E-book Enthusiast",
         "definition": "Frequently purchases multiple e-books, often focusing on specific genres or colors."
       },
       {
-        "name": "**Beauty Product Collector**",
+        "name": "Beauty Product Collector",
         "definition": "Buys diverse lipsticks, serums, or moisturizers in varying colors."
       },
       {
-        "name": "**Puzzle Solver**",
+        "name": "Puzzle Solver",
         "definition": "Purchases puzzles repeatedly, often in different colors or themes."
       },
       {
-        "name": "**Fitness Gear Buyer**",
+        "name": "Fitness Gear Buyer",
         "definition": "Buys dumbbells, yoga mats, or cycling helmets for home workouts."
       },
       {
-        "name": "**Bookworm**",
+        "name": "Bookworm",
         "definition": "Purchases paperbacks or hardcovers in bulk, often with repeated purchases of the same type."
       },
       {
-        "name": "**Toy & Game Collector**",
+        "name": "Toy & Game Collector",
         "definition": "Buys building blocks, dolls, or board games, often with multiple color variants."
       },
       {
-        "name": "**Kitchen Appliance Shopper**",
+        "name": "Kitchen Appliance Shopper",
         "definition": "Purchases coffee makers, blenders, or air fryers, sometimes in sets."
       },
       {
-        "name": "**Frequent Lipstick Buyer**",
+        "name": "Frequent Lipstick Buyer",
         "definition": "Buys multiple lipsticks in different shades within a short period."
       },
       {
-        "name": "**Doll Collector**",
+        "name": "Doll Collector",
         "definition": "Repeatedly buys dolls in various colors or styles."
       },
       {
-        "name": "**Shampoo & Moisturizer User**",
+        "name": "Shampoo & Moisturizer User",
         "definition": "Purchases shampoos or moisturizers in bulk, often the same product type."
       },
       {
-        "name": "**Action Figure Enthusiast**",
+        "name": "Action Figure Enthusiast",
         "definition": "Buys multiple action figures, sometimes with repeated purchases of the same type."
       },
       {
-        "name": "**Sunscreen & Serum Buyer**",
+        "name": "Sunscreen & Serum Buyer",
         "definition": "Purchases sunscreens or serums, often in different colors or formulations."
       },
       {
-        "name": "**Headphone Hobbyist**",
+        "name": "Headphone Hobbyist",
         "definition": "Buys headphones, sometimes in multiple colors or styles."
       },
       {
-        "name": "**Vacuum & Cleaning Appliance Buyer**",
+        "name": "Vacuum & Cleaning Appliance Buyer",
         "definition": "Purchases vacuums or cleaning tools, sometimes with repeated buys."
       },
       {
-        "name": "**Paperback Variety Reader**",
+        "name": "Paperback Variety Reader",
         "definition": "Buys diverse paperbacks in different colors or genres."
       },
       {
-        "name": "**Single-Product Specialist**",
+        "name": "Single-Product Specialist",
         "definition": "Purchases only one unique product per transaction, rarely diversifying."
       },
       {
-        "name": "**Hoodie Collector**",
+        "name": "Hoodie Collector",
         "definition": "Buys multiple hoodies in different colors or styles."
       },
       {
-        "name": "**Jeans & Apparel Shopper**",
+        "name": "Jeans & Apparel Shopper",
         "definition": "Purchases jeans or t-shirts, often with color variations."
       },
       {
-        "name": "**Building Blocks Enthusiast**",
+        "name": "Building Blocks Enthusiast",
         "definition": "Buys multiple sets of building blocks, sometimes in bulk."
       },
       {
-        "name": "**Lamp & Lighting Buyer**",
+        "name": "Lamp & Lighting Buyer",
         "definition": "Purchases lamps in different colors or styles for home decor."
       }
     ],
@@ -1293,83 +1293,83 @@
     "iter": 15,
     "personas": [
       {
-        "name": "**Diverse Taster**",
+        "name": "Diverse Taster",
         "definition": "Purchases 1 of each product across multiple categories (e.g., cookware, sports, apparel)."
       },
       {
-        "name": "**Frequent Dress & Sneaker Buyer**",
+        "name": "Frequent Dress & Sneaker Buyer",
         "definition": "Repeatedly buys dresses and sneakers (2+ times each)."
       },
       {
-        "name": "**Coffee & Skincare Enthusiast**",
+        "name": "Coffee & Skincare Enthusiast",
         "definition": "Buys coffee makers (2+ times) and skincare products (moisturizers/sunscreens)."
       },
       {
-        "name": "**Action Figure & Cycling Gear Collector**",
+        "name": "Action Figure & Cycling Gear Collector",
         "definition": "Purchases multiple action figures and cycling helmets (2+ times)."
       },
       {
-        "name": "**E-book & Paperback Reader**",
+        "name": "E-book & Paperback Reader",
         "definition": "Buys multiple e-books or paperbacks (4+ times)."
       },
       {
-        "name": "**Single-Item Coffee Maker User**",
+        "name": "Single-Item Coffee Maker User",
         "definition": "Purchases only coffee makers (2+ times)."
       },
       {
-        "name": "**Minimalist T-shirt Buyer**",
+        "name": "Minimalist T-shirt Buyer",
         "definition": "Purchases only one t-shirt."
       },
       {
-        "name": "**Family & Toy Shoppers**",
+        "name": "Family & Toy Shoppers",
         "definition": "Buys building blocks, dolls, or action figures (3+ types)."
       },
       {
-        "name": "**Skincare & Sunscreen User**",
+        "name": "Skincare & Sunscreen User",
         "definition": "Buys moisturizers, serums, or sunscreens (3+ types)."
       },
       {
-        "name": "**Hardcover & Paperback Hybrid Reader**",
+        "name": "Hardcover & Paperback Hybrid Reader",
         "definition": "Buys both hardcovers and paperbacks (2+ each)."
       },
       {
-        "name": "**Frequent Tennis Racket Player**",
+        "name": "Frequent Tennis Racket Player",
         "definition": "Buys tennis rackets (3+ times)."
       },
       {
-        "name": "**Dress & Jeans Fashionista**",
+        "name": "Dress & Jeans Fashionista",
         "definition": "Buys multiple dresses or jeans (2+ types)."
       },
       {
-        "name": "**Blender & Home Appliance Lover**",
+        "name": "Blender & Home Appliance Lover",
         "definition": "Buys blenders (4+ times) or other kitchen appliances."
       },
       {
-        "name": "**Puzzle & Board Game Enthusiast**",
+        "name": "Puzzle & Board Game Enthusiast",
         "definition": "Buys puzzles or board games (3+ types)."
       },
       {
-        "name": "**Mouse & Tech Peripheral Buyer**",
+        "name": "Mouse & Tech Peripheral Buyer",
         "definition": "Buys mice or tech accessories (4+ times)."
       },
       {
-        "name": "**Sunscreen & Outdoor Product User**",
+        "name": "Sunscreen & Outdoor Product User",
         "definition": "Buys sunscreens (3+ times) or outdoor gear."
       },
       {
-        "name": "**Lipstick & Cosmetic Collector**",
+        "name": "Lipstick & Cosmetic Collector",
         "definition": "Buys multiple lipsticks (2+ types)."
       },
       {
-        "name": "**Building Blocks & Toy Buyer**",
+        "name": "Building Blocks & Toy Buyer",
         "definition": "Buys building blocks (4+ times) or child toys."
       },
       {
-        "name": "**Lamp & Home Decor Enthusiast**",
+        "name": "Lamp & Home Decor Enthusiast",
         "definition": "Buys lamps (3+ times) or home decor items."
       },
       {
-        "name": "**Jeans & Apparel Specialist**",
+        "name": "Jeans & Apparel Specialist",
         "definition": "Buys jeans (4+ times) or multiple apparel items."
       }
     ],
@@ -1379,83 +1379,83 @@
     "iter": 16,
     "personas": [
       {
-        "name": "**Frequent Paperback Buyer**",
+        "name": "Frequent Paperback Buyer",
         "definition": "Purchases paperbacks multiple times in different colors."
       },
       {
-        "name": "**Dress Enthusiast**",
+        "name": "Dress Enthusiast",
         "definition": "Buys dresses in specific colors repeatedly (3+ times)."
       },
       {
-        "name": "**Keyboard Collector**",
+        "name": "Keyboard Collector",
         "definition": "Frequently purchases keyboards in \"OldLace\" or \"Chocolate\"."
       },
       {
-        "name": "**Puzzle Solver**",
+        "name": "Puzzle Solver",
         "definition": "Buys puzzles in various colors, often with multiple purchases."
       },
       {
-        "name": "**Lipstick Variety Shopper**",
+        "name": "Lipstick Variety Shopper",
         "definition": "Purchases lipsticks in different shades, sometimes in bulk."
       },
       {
-        "name": "**Hardcover Book Lover**",
+        "name": "Hardcover Book Lover",
         "definition": "Buys hardcover books in multiple colors."
       },
       {
-        "name": "**Speaker Aficionado**",
+        "name": "Speaker Aficionado",
         "definition": "Repeatedly purchases \"Speaker Chocolate\" or other speaker variants."
       },
       {
-        "name": "**Doll Collector**",
+        "name": "Doll Collector",
         "definition": "Buys dolls in different colors, sometimes in bulk."
       },
       {
-        "name": "**Building Blocks Parent**",
+        "name": "Building Blocks Parent",
         "definition": "Purchases building blocks in multiple colors for children."
       },
       {
-        "name": "**Moisturizer Tester**",
+        "name": "Moisturizer Tester",
         "definition": "Tries different moisturizer shades or brands."
       },
       {
-        "name": "**Sneaker Hoarder**",
+        "name": "Sneaker Hoarder",
         "definition": "Buys sneakers in various colors, often repeatedly."
       },
       {
-        "name": "**Serum Enthusiast**",
+        "name": "Serum Enthusiast",
         "definition": "Purchases serums in multiple shades or brands."
       },
       {
-        "name": "**Conditioner Regular**",
+        "name": "Conditioner Regular",
         "definition": "Buys conditioners in specific colors or brands."
       },
       {
-        "name": "**Yoga Mat Collector**",
+        "name": "Yoga Mat Collector",
         "definition": "Purchases yoga mats in different colors."
       },
       {
-        "name": "**Single-Product Shopper (Dress/Puzzle)**",
+        "name": "Single-Product Shopper (Dress/Puzzle)",
         "definition": "Buys only one product type (dress or puzzle)."
       },
       {
-        "name": "**Tennis Racket Player**",
+        "name": "Tennis Racket Player",
         "definition": "Purchases tennis rackets in multiple colors."
       },
       {
-        "name": "**Water Bottle Collector**",
+        "name": "Water Bottle Collector",
         "definition": "Buys water bottles in different colors."
       },
       {
-        "name": "**SSD Upgrader**",
+        "name": "SSD Upgrader",
         "definition": "Purchases SSDs in bulk or multiple variants."
       },
       {
-        "name": "**Dumbbell Fitness Buff**",
+        "name": "Dumbbell Fitness Buff",
         "definition": "Buys dumbbells in different colors."
       },
       {
-        "name": "**E-book Explorer**",
+        "name": "E-book Explorer",
         "definition": "Purchases e-books in multiple genres or colors."
       }
     ],
@@ -1465,83 +1465,83 @@
     "iter": 17,
     "personas": [
       {
-        "name": "**Single-Product Book Buyer**",
+        "name": "Single-Product Book Buyer",
         "definition": "Purchases only one hardcover or paperback book."
       },
       {
-        "name": "**Frequent Yoga Mat User**",
+        "name": "Frequent Yoga Mat User",
         "definition": "Buys the same yoga mat multiple times."
       },
       {
-        "name": "**Building Block Enthusiast**",
+        "name": "Building Block Enthusiast",
         "definition": "Purchases multiple types of building blocks, often in bulk."
       },
       {
-        "name": "**Action Figure Collector**",
+        "name": "Action Figure Collector",
         "definition": "Buys various action figures, sometimes repeatedly."
       },
       {
-        "name": "**Doll Acquirer**",
+        "name": "Doll Acquirer",
         "definition": "Purchases multiple dolls in different colors or styles."
       },
       {
-        "name": "**Board Game Player**",
+        "name": "Board Game Player",
         "definition": "Buys several board games, often with repeated purchases."
       },
       {
-        "name": "**Mouse User**",
+        "name": "Mouse User",
         "definition": "Purchases multiple mice, often the same model."
       },
       {
-        "name": "**Sunscreen Buyer**",
+        "name": "Sunscreen Buyer",
         "definition": "Buys sunscreen, sometimes repeatedly."
       },
       {
-        "name": "**Fitness Equipment User**",
+        "name": "Fitness Equipment User",
         "definition": "Purchases dumbbells, yoga mats, or cycling helmets."
       },
       {
-        "name": "**E-book Reader**",
+        "name": "E-book Reader",
         "definition": "Buys multiple e-books, often the same title."
       },
       {
-        "name": "**Lipstick Buyer**",
+        "name": "Lipstick Buyer",
         "definition": "Purchases lipstick, sometimes repeatedly."
       },
       {
-        "name": "**Hoodie Owner**",
+        "name": "Hoodie Owner",
         "definition": "Buys hoodies, often in bulk."
       },
       {
-        "name": "**Conditioner/Shampoo User**",
+        "name": "Conditioner/Shampoo User",
         "definition": "Purchases haircare products, sometimes repeatedly."
       },
       {
-        "name": "**Paperback Reader**",
+        "name": "Paperback Reader",
         "definition": "Buys multiple paperbacks, often the same title."
       },
       {
-        "name": "**Tennis Racket Owner**",
+        "name": "Tennis Racket Owner",
         "definition": "Purchases tennis rackets, sometimes repeatedly."
       },
       {
-        "name": "**Water Bottle User**",
+        "name": "Water Bottle User",
         "definition": "Buys water bottles, often the same model."
       },
       {
-        "name": "**Serum/Moisturizer User**",
+        "name": "Serum/Moisturizer User",
         "definition": "Purchases skincare products like serums or moisturizers."
       },
       {
-        "name": "**Vacuum Owner**",
+        "name": "Vacuum Owner",
         "definition": "Buys vacuum cleaners, sometimes repeatedly."
       },
       {
-        "name": "**Puzzle Solver**",
+        "name": "Puzzle Solver",
         "definition": "Purchases puzzles, sometimes repeatedly."
       },
       {
-        "name": "**Lamp Buyer**",
+        "name": "Lamp Buyer",
         "definition": "Buys lamps, sometimes repeatedly."
       }
     ],
@@ -1551,83 +1551,83 @@
     "iter": 18,
     "personas": [
       {
-        "name": "**Frequent Sunscreen Buyer**",
+        "name": "Frequent Sunscreen Buyer",
         "definition": "Purchases sunscreen 2+ times, often with other casual items."
       },
       {
-        "name": "**Hardcover Book Enthusiast**",
+        "name": "Hardcover Book Enthusiast",
         "definition": "Buys multiple hardcover books (often 2+), sometimes with e-books."
       },
       {
-        "name": "**Single-Product Buyer**",
+        "name": "Single-Product Buyer",
         "definition": "Purchases only one unique product, typically clothing or accessories."
       },
       {
-        "name": "**Cycing Helmet Lover**",
+        "name": "Cycing Helmet Lover",
         "definition": "Buys cycling helmets 2+ times, often with fitness gear."
       },
       {
-        "name": "**Action Figure Collector**",
+        "name": "Action Figure Collector",
         "definition": "Purchases action figures 1+ times, sometimes with board games."
       },
       {
-        "name": "**Lipstick & Skincare Shopper**",
+        "name": "Lipstick & Skincare Shopper",
         "definition": "Buys lipsticks or moisturizers 2+ times, often with cosmetics."
       },
       {
-        "name": "**Building Blocks Buyer**",
+        "name": "Building Blocks Buyer",
         "definition": "Purchases building blocks 1+ times, often with children’s toys."
       },
       {
-        "name": "**E-Book Devourer**",
+        "name": "E-Book Devourer",
         "definition": "Buys e-books 2+ times, sometimes with paperbacks."
       },
       {
-        "name": "**T-Shirt Repeater**",
+        "name": "T-Shirt Repeater",
         "definition": "Purchases the same t-shirt 3+ times or multiple t-shirts."
       },
       {
-        "name": "**Dress & Accessory Buyer**",
+        "name": "Dress & Accessory Buyer",
         "definition": "Buys dresses 1+ times, often with jewelry or cosmetics."
       },
       {
-        "name": "**Fitness Gear Shopper**",
+        "name": "Fitness Gear Shopper",
         "definition": "Purchases dumbbells, yoga mats, or tennis rackets 1+ times."
       },
       {
-        "name": "**Puzzle & Game Player**",
+        "name": "Puzzle & Game Player",
         "definition": "Buys puzzles or board games 1+ times, sometimes with casual toys."
       },
       {
-        "name": "**Toaster & Kitchenware Buyer**",
+        "name": "Toaster & Kitchenware Buyer",
         "definition": "Purchases toasters or cookware 1+ times, often with appliances."
       },
       {
-        "name": "**Blender Enthusiast**",
+        "name": "Blender Enthusiast",
         "definition": "Buys blenders 1+ times, sometimes with kitchen gadgets."
       },
       {
-        "name": "**Smartwatch & Tech User**",
+        "name": "Smartwatch & Tech User",
         "definition": "Purchases smartwatches 1+ times, often with tech accessories."
       },
       {
-        "name": "**Cosmetic & Haircare Buyer**",
+        "name": "Cosmetic & Haircare Buyer",
         "definition": "Buys conditioners, shampoos, or serums 1+ times."
       },
       {
-        "name": "**Water Bottle Collector**",
+        "name": "Water Bottle Collector",
         "definition": "Purchases water bottles 1+ times, sometimes with fitness gear."
       },
       {
-        "name": "**Paperback Reader**",
+        "name": "Paperback Reader",
         "definition": "Buys paperbacks 1+ times, sometimes with e-books or hardcovers."
       },
       {
-        "name": "**Jacket & Outerwear Buyer**",
+        "name": "Jacket & Outerwear Buyer",
         "definition": "Purchases jackets 1+ times, often with clothing items."
       },
       {
-        "name": "**Diverse Product Explorer**",
+        "name": "Diverse Product Explorer",
         "definition": "Buys 5+ unique products across varied categories."
       }
     ],
@@ -1637,83 +1637,83 @@
     "iter": 19,
     "personas": [
       {
-        "name": "**Frequent Book Buyer**",
+        "name": "Frequent Book Buyer",
         "definition": "Purchases paperback or hardcover books 2+ times."
       },
       {
-        "name": "**Doll Collector**",
+        "name": "Doll Collector",
         "definition": "Buys 2+ unique dolls, often in different colors."
       },
       {
-        "name": "**Blender Enthusiast**",
+        "name": "Blender Enthusiast",
         "definition": "Purchases a blender 3+ times."
       },
       {
-        "name": "**Sunscreen Buyer**",
+        "name": "Sunscreen Buyer",
         "definition": "Buys sunscreen 1+ times, often with other categories."
       },
       {
-        "name": "**T-shirt Frequentist**",
+        "name": "T-shirt Frequentist",
         "definition": "Purchases a single t-shirt 3+ times."
       },
       {
-        "name": "**E-book Explorer**",
+        "name": "E-book Explorer",
         "definition": "Buys 2+ unique e-books, often in different colors."
       },
       {
-        "name": "**Board Game Player**",
+        "name": "Board Game Player",
         "definition": "Purchases 1+ board games, often with other categories."
       },
       {
-        "name": "**Skincare Enthusiast**",
+        "name": "Skincare Enthusiast",
         "definition": "Buys 2+ skincare items (serum, moisturizer, or conditioner)."
       },
       {
-        "name": "**Toaster Buyer**",
+        "name": "Toaster Buyer",
         "definition": "Purchases 1+ toasters, often in different colors."
       },
       {
-        "name": "**Lipstick Collector**",
+        "name": "Lipstick Collector",
         "definition": "Buys 2+ unique lipsticks, often in different colors."
       },
       {
-        "name": "**Puzzle Solver**",
+        "name": "Puzzle Solver",
         "definition": "Purchases 1+ puzzles, often with other categories."
       },
       {
-        "name": "**Dumbbell Buyer**",
+        "name": "Dumbbell Buyer",
         "definition": "Purchases a dumbbell 3+ times."
       },
       {
-        "name": "**Coffee Maker User**",
+        "name": "Coffee Maker User",
         "definition": "Buys 1+ coffee makers, often in different colors."
       },
       {
-        "name": "**Jeans Buyer**",
+        "name": "Jeans Buyer",
         "definition": "Purchases 1+ pairs of jeans, often in different colors."
       },
       {
-        "name": "**Hoodie Buyer**",
+        "name": "Hoodie Buyer",
         "definition": "Purchases 1+ hoodies, often in different colors."
       },
       {
-        "name": "**Yoga Enthusiast**",
+        "name": "Yoga Enthusiast",
         "definition": "Buys 1+ yoga mats."
       },
       {
-        "name": "**Vacuum Buyer**",
+        "name": "Vacuum Buyer",
         "definition": "Purchases 1+ vacuums, often in different colors."
       },
       {
-        "name": "**Sneaker Buyer**",
+        "name": "Sneaker Buyer",
         "definition": "Purchases 1+ sneakers, often in different colors."
       },
       {
-        "name": "**Action Figure Collector**",
+        "name": "Action Figure Collector",
         "definition": "Buys 1+ action figures, often in different colors."
       },
       {
-        "name": "**Single-Item Buyer**",
+        "name": "Single-Item Buyer",
         "definition": "Purchases only 1 unique product."
       }
     ],
@@ -1723,83 +1723,83 @@
     "iter": 20,
     "personas": [
       {
-        "name": "**Single-Category Shopper**",
+        "name": "Single-Category Shopper",
         "definition": "Buys only one unique product category (e.g., Building Blocks, Shampoo)."
       },
       {
-        "name": "**Book Enthusiast**",
+        "name": "Book Enthusiast",
         "definition": "Focuses on purchasing multiple E-book or Hardcover titles."
       },
       {
-        "name": "**Beauty Routine Builder**",
+        "name": "Beauty Routine Builder",
         "definition": "Combines purchases of Moisturizer, Serum, and Shampoo/Conditioner."
       },
       {
-        "name": "**Home Appliance Collector**",
+        "name": "Home Appliance Collector",
         "definition": "Acquires diverse kitchen appliances like Toaster, Coffee Maker, or Air Fryer."
       },
       {
-        "name": "**Fitness Gear User**",
+        "name": "Fitness Gear User",
         "definition": "Buys Yoga Mats, Dumbbells, or Cycling Helmets for workout routines."
       },
       {
-        "name": "**Children’s Toy Shopper**",
+        "name": "Children’s Toy Shopper",
         "definition": "Prioritizes Dolls, Building Blocks, or Action Figures for kids."
       },
       {
-        "name": "**Tech Accessory Buyer**",
+        "name": "Tech Accessory Buyer",
         "definition": "Selects SSD, Mouse, Keyboard, or Webcam for computing needs."
       },
       {
-        "name": "**Apparel Specialist**",
+        "name": "Apparel Specialist",
         "definition": "Focuses on Dresses, Hoodies, or Jackets for wardrobe updates."
       },
       {
-        "name": "**Repeat Item Buyer**",
+        "name": "Repeat Item Buyer",
         "definition": "Repurchases the same product multiple times (e.g., Lamp, Serum)."
       },
       {
-        "name": "**Hybrid Shopper**",
+        "name": "Hybrid Shopper",
         "definition": "Mixes purchases across unrelated categories (e.g., Books + Electronics + Apparel)."
       },
       {
-        "name": "**Seasonal Item Collector**",
+        "name": "Seasonal Item Collector",
         "definition": "Acquires Sunscreen, Lipstick, or Seasonal-colored products."
       },
       {
-        "name": "**Electronics Upgrader**",
+        "name": "Electronics Upgrader",
         "definition": "Focuses on SSD, Mouse, or Keyboard upgrades for devices."
       },
       {
-        "name": "**Paper Product Reader**",
+        "name": "Paper Product Reader",
         "definition": "Prefers Physical Books (Paperback/Hardcover) over digital formats."
       },
       {
-        "name": "**Occasional Gadget Buyer**",
+        "name": "Occasional Gadget Buyer",
         "definition": "Makes sporadic purchases of niche items like Webcam or Tennis Racket."
       },
       {
-        "name": "**Household Supply Manager**",
+        "name": "Household Supply Manager",
         "definition": "Stocks up on Cookware, Vacuum, or Cleaning supplies."
       },
       {
-        "name": "**Minimalist Shopper**",
+        "name": "Minimalist Shopper",
         "definition": "Buys very few unique products (1–2) with no recurring purchases."
       },
       {
-        "name": "**Color-Coordinated Buyer**",
+        "name": "Color-Coordinated Buyer",
         "definition": "Matches product colors across categories (e.g., PeachPuff SSD + Dress)."
       },
       {
-        "name": "**Wellness Routine Follower**",
+        "name": "Wellness Routine Follower",
         "definition": "Combines Serum, Moisturizer, and Sunscreen for skincare."
       },
       {
-        "name": "**Game/Novelty Collector**",
+        "name": "Game/Novelty Collector",
         "definition": "Focuses on Board Games, Puzzles, or Action Figures."
       },
       {
-        "name": "**Electronics + Books Hybrid**",
+        "name": "Electronics + Books Hybrid",
         "definition": "Combines SSD/E-book purchases with Physical Books."
       }
     ],
@@ -1809,83 +1809,83 @@
     "iter": 21,
     "personas": [
       {
-        "name": "**Book Collector**",
+        "name": "Book Collector",
         "definition": "Purchases multiple hardcover or paperback books, often in bulk."
       },
       {
-        "name": "**Skincare Enthusiast**",
+        "name": "Skincare Enthusiast",
         "definition": "Buys moisturizers, serums, or sunscreens, sometimes repeatedly."
       },
       {
-        "name": "**Fitness Buff**",
+        "name": "Fitness Buff",
         "definition": "Purchases yoga mats, dumbbells, or cycling helmets for active lifestyles."
       },
       {
-        "name": "**Fashion Accessory Shopper**",
+        "name": "Fashion Accessory Shopper",
         "definition": "Buys hoodies, jeans, or dresses, often in single purchases."
       },
       {
-        "name": "**Electronics Upgrader**",
+        "name": "Electronics Upgrader",
         "definition": "Acquires blenders, monitors, or keyboards for home gadgets."
       },
       {
-        "name": "**Beauty Minimalist**",
+        "name": "Beauty Minimalist",
         "definition": "Buys single beauty items like lipstick or lipstick-focused purchases."
       },
       {
-        "name": "**E-book Reader**",
+        "name": "E-book Reader",
         "definition": "Purchases multiple e-books, often with varied genres or colors."
       },
       {
-        "name": "**Homeware Explorer**",
+        "name": "Homeware Explorer",
         "definition": "Buys cookware, lamps, or coffee makers for household needs."
       },
       {
-        "name": "**Child-Centric Shopper**",
+        "name": "Child-Centric Shopper",
         "definition": "Purchases building blocks, dolls, or puzzles for children."
       },
       {
-        "name": "**Wellness Advocate**",
+        "name": "Wellness Advocate",
         "definition": "Buys water bottles, shampoo, or conditioners for health routines."
       },
       {
-        "name": "**Casual Tech User**",
+        "name": "Casual Tech User",
         "definition": "Acquires headphones, mice, or smartwatches for basic tech needs."
       },
       {
-        "name": "**Hobbyist Gamer**",
+        "name": "Hobbyist Gamer",
         "definition": "Purchases board games or action figures for leisure activities."
       },
       {
-        "name": "**Apparel Repeater**",
+        "name": "Apparel Repeater",
         "definition": "Buys the same hoodie or jeans multiple times."
       },
       {
-        "name": "**Serum Devotee**",
+        "name": "Serum Devotee",
         "definition": "Purchases specific serums repeatedly, sometimes in bulk."
       },
       {
-        "name": "**Single-Item Buyer**",
+        "name": "Single-Item Buyer",
         "definition": "Makes only one purchase, often a niche product."
       },
       {
-        "name": "**Diverse DIYer**",
+        "name": "Diverse DIYer",
         "definition": "Buys a mix of unconnected items (e.g., vacuum, tennis racket)."
       },
       {
-        "name": "**Color-Conscious Buyer**",
+        "name": "Color-Conscious Buyer",
         "definition": "Purchases items in specific colors (e.g., \"HotPink\" hoodies)."
       },
       {
-        "name": "**Bulk Board Game Fan**",
+        "name": "Bulk Board Game Fan",
         "definition": "Buys the same board game 4+ times."
       },
       {
-        "name": "**Hydration Focused**",
+        "name": "Hydration Focused",
         "definition": "Purchases multiple water bottles, sometimes repeatedly."
       },
       {
-        "name": "**Action Figure Collector**",
+        "name": "Action Figure Collector",
         "definition": "Buys multiple action figures, often in bulk."
       }
     ],
@@ -1895,83 +1895,83 @@
     "iter": 22,
     "personas": [
       {
-        "name": "**E-book Enthusiast**",
+        "name": "E-book Enthusiast",
         "definition": "Frequently purchases multiple e-books, often with repeated titles."
       },
       {
-        "name": "**Beauty Routine Seeker**",
+        "name": "Beauty Routine Seeker",
         "definition": "Buys skincare items like moisturizers and serums, often in bulk."
       },
       {
-        "name": "**Fitness Gear Collector**",
+        "name": "Fitness Gear Collector",
         "definition": "Purchases workout accessories like dumbbells, yoga mats, and cycling helmets."
       },
       {
-        "name": "**Book Collector**",
+        "name": "Book Collector",
         "definition": "Buys hardcover or paperback books, often in various colors/styles."
       },
       {
-        "name": "**Home Appliance User**",
+        "name": "Home Appliance User",
         "definition": "Focuses on household items like coffee makers, vacuums, and blenders."
       },
       {
-        "name": "**Casual Fashion Shopper**",
+        "name": "Casual Fashion Shopper",
         "definition": "Purchases t-shirts, jeans, and dresses in small quantities."
       },
       {
-        "name": "**Puzzle Lover**",
+        "name": "Puzzle Lover",
         "definition": "Buys multiple puzzle games, often repeating favorites."
       },
       {
-        "name": "**Child-Focused Buyer**",
+        "name": "Child-Focused Buyer",
         "definition": "Purchases toys like dolls, building blocks, and action figures."
       },
       {
-        "name": "**Electronics Explorer**",
+        "name": "Electronics Explorer",
         "definition": "Acquires tech items like monitors, mice, and SSDs."
       },
       {
-        "name": "**Colorful Clothing Enthusiast**",
+        "name": "Colorful Clothing Enthusiast",
         "definition": "Buys clothing (dresses, t-shirts) in bright or unique colors."
       },
       {
-        "name": "**Single-Item Specialist**",
+        "name": "Single-Item Specialist",
         "definition": "Makes one-off purchases of specific products (e.g., tennis rackets, socks)."
       },
       {
-        "name": "**Beauty Minimalist**",
+        "name": "Beauty Minimalist",
         "definition": "Buys one or two beauty items like lipstick or shampoo."
       },
       {
-        "name": "**Gift-Oriented Shopper**",
+        "name": "Gift-Oriented Shopper",
         "definition": "Purchases diverse items (books, puzzles, toys) likely for gifting."
       },
       {
-        "name": "**Seasonal Product Buyer**",
+        "name": "Seasonal Product Buyer",
         "definition": "Acquires items like sunscreen, hoodies, or lamps in small quantities."
       },
       {
-        "name": "**Brand-Loyal Appliance User**",
+        "name": "Brand-Loyal Appliance User",
         "definition": "Repeatedly buys the same appliance (e.g., coffee maker, vacuum)."
       },
       {
-        "name": "**Literary Explorer**",
+        "name": "Literary Explorer",
         "definition": "Purchases a variety of hardcover and paperback books sporadically."
       },
       {
-        "name": "**Health & Wellness User**",
+        "name": "Health & Wellness User",
         "definition": "Buys skincare, fitness, and wellness items in small batches."
       },
       {
-        "name": "**DIY Hobbyist**",
+        "name": "DIY Hobbyist",
         "definition": "Acquires tools, puzzles, and building blocks for creative projects."
       },
       {
-        "name": "**Tech-Accessory Collector**",
+        "name": "Tech-Accessory Collector",
         "definition": "Focuses on peripherals like keyboards, mice, and webcams."
       },
       {
-        "name": "**Diverse Interest Shopper**",
+        "name": "Diverse Interest Shopper",
         "definition": "Purchases a wide range of unrelated items across categories."
       }
     ],
@@ -1981,83 +1981,83 @@
     "iter": 23,
     "personas": [
       {
-        "name": "**E-book Enthusiast**",
+        "name": "E-book Enthusiast",
         "definition": "Frequently purchases multiple e-books across various genres."
       },
       {
-        "name": "**Fitness Gear User**",
+        "name": "Fitness Gear User",
         "definition": "Buys cycling helmets, dumbbells, yoga mats, or sneakers."
       },
       {
-        "name": "**Beauty Routine Shopper**",
+        "name": "Beauty Routine Shopper",
         "definition": "Purchases moisturizers, serums, conditioners, or lipsticks."
       },
       {
-        "name": "**Hardcover Book Collector**",
+        "name": "Hardcover Book Collector",
         "definition": "Repeatedly buys hardcover books, often in bulk."
       },
       {
-        "name": "**Puzzle Solver**",
+        "name": "Puzzle Solver",
         "definition": "Regularly purchases puzzles, sometimes in multiple quantities."
       },
       {
-        "name": "**Casual Fashion Buyer**",
+        "name": "Casual Fashion Buyer",
         "definition": "Buys single clothing items like hoodies, t-shirts, or dresses."
       },
       {
-        "name": "**Kids/Toys Collector**",
+        "name": "Kids/Toys Collector",
         "definition": "Purchases building blocks, dolls, or action figures."
       },
       {
-        "name": "**Home Appliance User**",
+        "name": "Home Appliance User",
         "definition": "Buys kitchen appliances like blenders, toasters, or air fryers."
       },
       {
-        "name": "**Sunscreen Advocate**",
+        "name": "Sunscreen Advocate",
         "definition": "Frequently repurchases sunscreen, sometimes in bulk."
       },
       {
-        "name": "**Paperback Reader**",
+        "name": "Paperback Reader",
         "definition": "Buys paperback books, often multiple copies."
       },
       {
-        "name": "**Single-Item Shopper**",
+        "name": "Single-Item Shopper",
         "definition": "Makes only one purchase, typically a unique product."
       },
       {
-        "name": "**Action Figure Fan**",
+        "name": "Action Figure Fan",
         "definition": "Repeatedly buys the same or multiple action figures."
       },
       {
-        "name": "**Lipstick Lover**",
+        "name": "Lipstick Lover",
         "definition": "Frequently purchases lipstick in various shades."
       },
       {
-        "name": "**Water Bottle User**",
+        "name": "Water Bottle User",
         "definition": "Buys water bottles, sometimes multiple types."
       },
       {
-        "name": "**Gaming/Leisure Buyer**",
+        "name": "Gaming/Leisure Buyer",
         "definition": "Purchases board games, puzzles, or video game accessories."
       },
       {
-        "name": "**Tennis Enthusiast**",
+        "name": "Tennis Enthusiast",
         "definition": "Buys tennis rackets, sometimes in bulk."
       },
       {
-        "name": "**E-book + Clothing Hybrid**",
+        "name": "E-book + Clothing Hybrid",
         "definition": "Buys e-books and clothing (hoodies, t-shirts)."
       },
       {
-        "name": "**Vacuum Cleaner User**",
+        "name": "Vacuum Cleaner User",
         "definition": "Purchases vacuum cleaners, sometimes multiple models."
       },
       {
-        "name": "**Skincare + Haircare Buyer**",
+        "name": "Skincare + Haircare Buyer",
         "definition": "Buys moisturizers, serums, conditioners, or shampoos."
       },
       {
-        "name": "**Diverse Category Explorer**",
+        "name": "Diverse Category Explorer",
         "definition": "Purchases from 5+ distinct product categories without repetition."
       }
     ],
@@ -2067,83 +2067,83 @@
     "iter": 24,
     "personas": [
       {
-        "name": "**Single-Product Specialist**",
+        "name": "Single-Product Specialist",
         "definition": "Buys only one unique product (e.g., a lamp or webcam)."
       },
       {
-        "name": "**Minimalist Mixer**",
+        "name": "Minimalist Mixer",
         "definition": "Purchases 2–3 distinct products in different categories (e.g., moisturizer + water bottle)."
       },
       {
-        "name": "**Frequency-Driven Buyer**",
+        "name": "Frequency-Driven Buyer",
         "definition": "Repeatedly buys the same item (e.g., 4 cycling helmets or 3 board games)."
       },
       {
-        "name": "**Health & Beauty Enthusiast**",
+        "name": "Health & Beauty Enthusiast",
         "definition": "Focuses on skincare (conditioner, moisturizer, sunscreen, serum)."
       },
       {
-        "name": "**Home Appliances Collector**",
+        "name": "Home Appliances Collector",
         "definition": "Buys multiple kitchen/gadget items (e.g., air fryer, vacuum, coffee maker)."
       },
       {
-        "name": "**Fitness Gear User**",
+        "name": "Fitness Gear User",
         "definition": "Purchases fitness-related products (yoga mat, dumbbell, water bottle)."
       },
       {
-        "name": "**Book & Puzzle Lover**",
+        "name": "Book & Puzzle Lover",
         "definition": "Buys books (hardcover/paperback) and puzzles frequently."
       },
       {
-        "name": "**Electronics & Tech Buyer**",
+        "name": "Electronics & Tech Buyer",
         "definition": "Prioritizes gadgets (webcam, smartwatch, mouse, SSD)."
       },
       {
-        "name": "**Kids & Toys Shopper**",
+        "name": "Kids & Toys Shopper",
         "definition": "Purchases toys (building blocks, dolls, action figures)."
       },
       {
-        "name": "**Fashion & Apparel Buyer**",
+        "name": "Fashion & Apparel Buyer",
         "definition": "Buys clothing (dresses, t-shirts, jeans, sneakers)."
       },
       {
-        "name": "**Cosmetics Explorer**",
+        "name": "Cosmetics Explorer",
         "definition": "Tries different lipstick or skincare variants."
       },
       {
-        "name": "**Board Game Aficionado**",
+        "name": "Board Game Aficionado",
         "definition": "Buys multiple board games, often in bulk."
       },
       {
-        "name": "**Variety-Seeking Shopper**",
+        "name": "Variety-Seeking Shopper",
         "definition": "Buys 5+ diverse products across categories (e.g., coffee maker + lamp + mouse)."
       },
       {
-        "name": "**Skincare & Haircare Specialist**",
+        "name": "Skincare & Haircare Specialist",
         "definition": "Focuses on shampoo, conditioner, and moisturizer."
       },
       {
-        "name": "**Gadget & Accessory Buyer**",
+        "name": "Gadget & Accessory Buyer",
         "definition": "Purchases tech accessories (keyboard, mouse, SSD)."
       },
       {
-        "name": "**Diverse Book Reader**",
+        "name": "Diverse Book Reader",
         "definition": "Buys multiple paperback or e-book titles."
       },
       {
-        "name": "**Puzzle & Game Collector**",
+        "name": "Puzzle & Game Collector",
         "definition": "Buys puzzles and board games in bulk."
       },
       {
-        "name": "**Home & Lifestyle Enthusiast**",
+        "name": "Home & Lifestyle Enthusiast",
         "definition": "Buys home decor (lamps, cookware) and lifestyle items."
       },
       {
-        "name": "**Sneaker & Apparel Fan**",
+        "name": "Sneaker & Apparel Fan",
         "definition": "Purchases sneakers and clothing."
       },
       {
-        "name": "**Luxury & Unique Item Buyer**",
+        "name": "Luxury & Unique Item Buyer",
         "definition": "Buys one high-value or distinctive product (e.g., a single smartwatch or toaster)."
       }
     ],
@@ -2153,83 +2153,83 @@
     "iter": 25,
     "personas": [
       {
-        "name": "**Diverse Book Lover**",
+        "name": "Diverse Book Lover",
         "definition": "Frequently purchases multiple hardcovers or paperbacks, often across different genres."
       },
       {
-        "name": "**Action Figure Collector**",
+        "name": "Action Figure Collector",
         "definition": "Buys 2+ distinct action figures, sometimes with repeated purchases of specific models."
       },
       {
-        "name": "**Board Game Enthusiast**",
+        "name": "Board Game Enthusiast",
         "definition": "Makes 3+ board game purchases, often including multiple colors/styles of the same game type."
       },
       {
-        "name": "**Frequent Skincare Buyer**",
+        "name": "Frequent Skincare Buyer",
         "definition": "Purchases multiple moisturizers/serums, sometimes with repeated buys of the same product."
       },
       {
-        "name": "**Electronics Upgrader**",
+        "name": "Electronics Upgrader",
         "definition": "Buys varied tech accessories like mice, SSDs, keyboards, or monitors with occasional repeats."
       },
       {
-        "name": "**Fashion Minimalist**",
+        "name": "Fashion Minimalist",
         "definition": "Makes 1-2 clothing/shoe purchases (hoodies, jackets, sneakers) without category repetition."
       },
       {
-        "name": "**Home Appliance Shopper**",
+        "name": "Home Appliance Shopper",
         "definition": "Buys 2+ home goods like vacuums, toasters, or coffee makers from different categories."
       },
       {
-        "name": "**Book-Specific Reader**",
+        "name": "Book-Specific Reader",
         "definition": "Purchases only paperbacks or e-books (1-4 items) without crossover to other categories."
       },
       {
-        "name": "**Toy Diversity Seeker**",
+        "name": "Toy Diversity Seeker",
         "definition": "Buys distinct toys (dolls, building blocks, puzzles) but avoids category repetition."
       },
       {
-        "name": "**Health & Beauty Regular**",
+        "name": "Health & Beauty Regular",
         "definition": "Makes 2+ purchases in personal care (lipstick, sunscreen, conditioner) with occasional repeats."
       },
       {
-        "name": "**Fitness Gear Buyer**",
+        "name": "Fitness Gear Buyer",
         "definition": "Purchases yoga mats, dumbbells, or cycling helmets without other health-related items."
       },
       {
-        "name": "**Single-Category Shopper**",
+        "name": "Single-Category Shopper",
         "definition": "Makes only 1 purchase in any category (e.g., only a jacket or only an e-book)."
       },
       {
-        "name": "**Children's Toy Buyer**",
+        "name": "Children's Toy Buyer",
         "definition": "Focuses on dolls, building blocks, or puzzles, often with color variations."
       },
       {
-        "name": "**Hobbyist Gamer**",
+        "name": "Hobbyist Gamer",
         "definition": "Buys 1-2 board games or puzzles alongside unrelated items like books or toys."
       },
       {
-        "name": "**Tech Accessory Collector**",
+        "name": "Tech Accessory Collector",
         "definition": "Acquires multiple mice, lamps, or other gadgets with 1-2 repeat purchases."
       },
       {
-        "name": "**Occasional Reader**",
+        "name": "Occasional Reader",
         "definition": "Buys 1-2 paperbacks/e-books without other literary purchases."
       },
       {
-        "name": "**Lipstick Devotee**",
+        "name": "Lipstick Devotee",
         "definition": "Purchases 3+ lipsticks in different shades, often with no other beauty products."
       },
       {
-        "name": "**Puzzle Completionist**",
+        "name": "Puzzle Completionist",
         "definition": "Buys 2-3 puzzles, sometimes repeating the same type or theme."
       },
       {
-        "name": "**E-Book Hoarder**",
+        "name": "E-Book Hoarder",
         "definition": "Accumulates 3+ e-books across various titles without paperback purchases."
       },
       {
-        "name": "**Multipurpose Shopper**",
+        "name": "Multipurpose Shopper",
         "definition": "Buys 1 item from 5+ distinct categories (e.g., a hoodie, sunscreen, e-book, puzzle, and jacket)."
       }
     ],
@@ -2239,83 +2239,83 @@
     "iter": 26,
     "personas": [
       {
-        "name": "**Building Blocks Enthusiast**",
+        "name": "Building Blocks Enthusiast",
         "definition": "Frequently buys multiple Building Blocks variants, often in bulk."
       },
       {
-        "name": "**Diverse E-book Reader**",
+        "name": "Diverse E-book Reader",
         "definition": "Purchases a wide range of E-books across genres, often in small quantities."
       },
       {
-        "name": "**Paperback Collector**",
+        "name": "Paperback Collector",
         "definition": "Buys multiple Paperback titles, sometimes with repeated purchases of the same color/style."
       },
       {
-        "name": "**Yoga & Fitness Gear User**",
+        "name": "Yoga & Fitness Gear User",
         "definition": "Purchases Yoga Mats, Dumbbells, or related fitness items."
       },
       {
-        "name": "**Doll & Toy Lover**",
+        "name": "Doll & Toy Lover",
         "definition": "Regularly buys Dolls, Puzzles, or other toys, often in single purchases."
       },
       {
-        "name": "**Hardcover Book Hoarder**",
+        "name": "Hardcover Book Hoarder",
         "definition": "Buys multiple Hardcover books, sometimes with repeated purchases of the same title."
       },
       {
-        "name": "**Single-Category Shopper**",
+        "name": "Single-Category Shopper",
         "definition": "Focuses on one product category (e.g., only 1–2 unique items purchased)."
       },
       {
-        "name": "**Kitchen Appliance Buyer**",
+        "name": "Kitchen Appliance Buyer",
         "definition": "Purchases Air Fryers, Blenders, Coffee Makers, or Toasters."
       },
       {
-        "name": "**Beauty & Grooming User**",
+        "name": "Beauty & Grooming User",
         "definition": "Buys Moisturizers, Shampoos, Sunscreens, or Lipsticks."
       },
       {
-        "name": "**Action Figure Collector**",
+        "name": "Action Figure Collector",
         "definition": "Frequently purchases Action Figures, sometimes in bulk."
       },
       {
-        "name": "**Tech Accessory Shopper**",
+        "name": "Tech Accessory Shopper",
         "definition": "Buys SSDs, Monitors, Keyboards, or Mice."
       },
       {
-        "name": "**Clothing & Apparel Buyer**",
+        "name": "Clothing & Apparel Buyer",
         "definition": "Purchases T-shirts, Hoodies, or Jeans."
       },
       {
-        "name": "**Board Game & Puzzle Fan**",
+        "name": "Board Game & Puzzle Fan",
         "definition": "Buys Board Games or Puzzles, often in small quantities."
       },
       {
-        "name": "**Serum & Skincare User**",
+        "name": "Serum & Skincare User",
         "definition": "Purchases Serums, Conditioners, or related skincare products."
       },
       {
-        "name": "**Lamp & Lighting Enthusiast**",
+        "name": "Lamp & Lighting Enthusiast",
         "definition": "Buys multiple Lamps, sometimes with repeated purchases of the same style."
       },
       {
-        "name": "**Frequent Socks Buyer**",
+        "name": "Frequent Socks Buyer",
         "definition": "Purchases multiple pairs of Socks, often in bulk."
       },
       {
-        "name": "**Water Bottle & Fitness Accessory User**",
+        "name": "Water Bottle & Fitness Accessory User",
         "definition": "Buys Water Bottles or Dumbbells."
       },
       {
-        "name": "**Vacuum & Cleaning Product Buyer**",
+        "name": "Vacuum & Cleaning Product Buyer",
         "definition": "Purchases Vacuums or related cleaning items."
       },
       {
-        "name": "**E-book Heavy Reader**",
+        "name": "E-book Heavy Reader",
         "definition": "Buys the same E-book title multiple times or reads intensively."
       },
       {
-        "name": "**Multi-Product Tester**",
+        "name": "Multi-Product Tester",
         "definition": "Purchases 4–7 unique items across diverse categories without clear dominance."
       }
     ],
@@ -2325,83 +2325,83 @@
     "iter": 27,
     "personas": [
       {
-        "name": "**Coffee Maker Enthusiast**",
+        "name": "Coffee Maker Enthusiast",
         "definition": "Repeatedly purchases coffee makers, often in multiple colors."
       },
       {
-        "name": "**Doll Collector**",
+        "name": "Doll Collector",
         "definition": "Buys multiple dolls, frequently in distinct color variants."
       },
       {
-        "name": "**Building Blocks Buyer**",
+        "name": "Building Blocks Buyer",
         "definition": "Purchases several building block sets, often with repeated orders."
       },
       {
-        "name": "**E-book Reader**",
+        "name": "E-book Reader",
         "definition": "Buys multiple e-books, sometimes with repeated titles or frequent purchases."
       },
       {
-        "name": "**Paperback Aficionado**",
+        "name": "Paperback Aficionado",
         "definition": "Regularly buys paperbacks, often in varied titles or colors."
       },
       {
-        "name": "**Fitness Gear Shopper**",
+        "name": "Fitness Gear Shopper",
         "definition": "Purchases yoga mats, dumbbells, or cycling helmets."
       },
       {
-        "name": "**Beauty Product User**",
+        "name": "Beauty Product User",
         "definition": "Buys moisturizers, shampoos, or lipsticks."
       },
       {
-        "name": "**Appliance Replacer**",
+        "name": "Appliance Replacer",
         "definition": "Replaces household items like toasters or vacuums, often in bulk."
       },
       {
-        "name": "**Clothing Accessory Buyer**",
+        "name": "Clothing Accessory Buyer",
         "definition": "Purchases jeans, t-shirts, or socks, sometimes in sets."
       },
       {
-        "name": "**Gaming/Entertainment Fan**",
+        "name": "Gaming/Entertainment Fan",
         "definition": "Buys puzzles, board games, or action figures."
       },
       {
-        "name": "**Tech-Savvy Consumer**",
+        "name": "Tech-Savvy Consumer",
         "definition": "Purchases smartwatches, monitors, or webcams."
       },
       {
-        "name": "**Frequent Hoodie Buyer**",
+        "name": "Frequent Hoodie Buyer",
         "definition": "Buys hoodies repeatedly, often in chartreuse or sienna."
       },
       {
-        "name": "**Serum User**",
+        "name": "Serum User",
         "definition": "Purchases skincare serums, sometimes in multiple colors."
       },
       {
-        "name": "**Book Hoarder**",
+        "name": "Book Hoarder",
         "definition": "Buys hardcovers and paperbacks in bulk or repeated titles."
       },
       {
-        "name": "**Sports Enthusiast**",
+        "name": "Sports Enthusiast",
         "definition": "Purchases tennis rackets, cycling helmets, or sneakers."
       },
       {
-        "name": "**Color-Centric Shopper**",
+        "name": "Color-Centric Shopper",
         "definition": "Buys multiple items in the same color (e.g., pale green tennis rackets)."
       },
       {
-        "name": "**Single-Product Buyer**",
+        "name": "Single-Product Buyer",
         "definition": "Purchases only one unique item per transaction."
       },
       {
-        "name": "**Laundry/Daily Essentials User**",
+        "name": "Laundry/Daily Essentials User",
         "definition": "Buys socks, water bottles, or laundry-related items."
       },
       {
-        "name": "**DIY/Home Decorator**",
+        "name": "DIY/Home Decorator",
         "definition": "Purchases lamps, vacuums, or building blocks for home use."
       },
       {
-        "name": "**Miscellaneous Bulk Buyer**",
+        "name": "Miscellaneous Bulk Buyer",
         "definition": "Buys diverse items in bulk (e.g., 4+ of the same product)."
       }
     ],
@@ -2411,83 +2411,83 @@
     "iter": 28,
     "personas": [
       {
-        "name": "**Frequent Grocery Buyer**",
+        "name": "Frequent Grocery Buyer",
         "definition": "Purchases skincare (moisturizer, sunscreen) and household items (cookware) in small quantities."
       },
       {
-        "name": "**Fitness Enthusiast**",
+        "name": "Fitness Enthusiast",
         "definition": "Buys multiple fitness-related items (dumbbell, yoga mat, water bottle) with high purchase frequency."
       },
       {
-        "name": "**Bookworm**",
+        "name": "Bookworm",
         "definition": "Purchases e-books or hardcovers, often in bulk (2+ times) and across multiple categories."
       },
       {
-        "name": "**Kid-Focused Shopper**",
+        "name": "Kid-Focused Shopper",
         "definition": "Buys building blocks, dolls, or puzzles, often in single quantities."
       },
       {
-        "name": "**Appliance Upgrader**",
+        "name": "Appliance Upgrader",
         "definition": "Purchases multiple home appliances (blender, coffee maker, vacuum) in one-off buys."
       },
       {
-        "name": "**Fashion & Accessory Buyer**",
+        "name": "Fashion & Accessory Buyer",
         "definition": "Buys clothing (jeans, dress, sneakers) and jewelry (lipstick) in small quantities."
       },
       {
-        "name": "**Lipstick Lover**",
+        "name": "Lipstick Lover",
         "definition": "Purchases lipstick 2+ times, often with other skincare or fashion items."
       },
       {
-        "name": "**Gadget Collector**",
+        "name": "Gadget Collector",
         "definition": "Buys tech items (smartwatch, monitor, ssd) in single quantities."
       },
       {
-        "name": "**Puzzle & Game Enthusiast**",
+        "name": "Puzzle & Game Enthusiast",
         "definition": "Purchases puzzles or board games 2+ times, often with other leisure items."
       },
       {
-        "name": "**Serum & Shampoo User**",
+        "name": "Serum & Shampoo User",
         "definition": "Buys serums, shampoos, or conditioners in single quantities, often with other skincare."
       },
       {
-        "name": "**Tennis & Sports Equipment Buyer**",
+        "name": "Tennis & Sports Equipment Buyer",
         "definition": "Purchases tennis rackets 2+ times, often with other sports gear."
       },
       {
-        "name": "**Hoodie & Jacket Enthusiast**",
+        "name": "Hoodie & Jacket Enthusiast",
         "definition": "Buys hoodies or jackets in single quantities, often with other apparel."
       },
       {
-        "name": "**High-Frequency E-Book Reader**",
+        "name": "High-Frequency E-Book Reader",
         "definition": "Purchases the same e-book 2+ times, often with other digital content."
       },
       {
-        "name": "**Doll Collector**",
+        "name": "Doll Collector",
         "definition": "Buys multiple dolls in single quantities, often with other kid-related items."
       },
       {
-        "name": "**Lamp & Decor Buyer**",
+        "name": "Lamp & Decor Buyer",
         "definition": "Purchases lamps 2+ times, often with other home decor."
       },
       {
-        "name": "**Action Figure Enthusiast**",
+        "name": "Action Figure Enthusiast",
         "definition": "Buys action figures in single quantities, often with other collectibles."
       },
       {
-        "name": "**T-Shirt & Apparel Buyer**",
+        "name": "T-Shirt & Apparel Buyer",
         "definition": "Purchases t-shirts 2+ times, often with other casual wear."
       },
       {
-        "name": "**Toaster & Kitchenware Buyer**",
+        "name": "Toaster & Kitchenware Buyer",
         "definition": "Buys toasters 2+ times, often with other small kitchen appliances."
       },
       {
-        "name": "**Webcam & Tech Buyer**",
+        "name": "Webcam & Tech Buyer",
         "definition": "Purchases webcams or tech accessories in single quantities."
       },
       {
-        "name": "**Miscellaneous Buyer**",
+        "name": "Miscellaneous Buyer",
         "definition": "Purchases 1-2 unique, non-repeating items across categories (e.g., hardcover, sunscreen, mouse)."
       }
     ],
@@ -2497,83 +2497,83 @@
     "iter": 29,
     "personas": [
       {
-        "name": "**Frequent Paperback Buyer**",
+        "name": "Frequent Paperback Buyer",
         "definition": "Purchases paperback books 2+ times, often with other book formats."
       },
       {
-        "name": "**Doll Enthusiast**",
+        "name": "Doll Enthusiast",
         "definition": "Buys multiple dolls, often in different colors, with occasional non-doll items."
       },
       {
-        "name": "**Lipstick Collector**",
+        "name": "Lipstick Collector",
         "definition": "Purchases 3+ lipsticks, often in distinct shades, with minimal other products."
       },
       {
-        "name": "**E-Book Subscriber**",
+        "name": "E-Book Subscriber",
         "definition": "Buys 2+ e-books, often in diverse genres, with few other categories."
       },
       {
-        "name": "**Hoodie & Dress Buyer**",
+        "name": "Hoodie & Dress Buyer",
         "definition": "Purchases hoodies and dresses, often in unique color combinations."
       },
       {
-        "name": "**Dumbbell & Fitness Gear User**",
+        "name": "Dumbbell & Fitness Gear User",
         "definition": "Buys 2+ dumbbells or fitness items, with occasional other products."
       },
       {
-        "name": "**Skincare & Haircare User**",
+        "name": "Skincare & Haircare User",
         "definition": "Purchases moisturizers, shampoos, or sunscreens, often in single instances."
       },
       {
-        "name": "**Board Game & Puzzle Player**",
+        "name": "Board Game & Puzzle Player",
         "definition": "Buys 2+ board games or puzzles, with minimal other categories."
       },
       {
-        "name": "**Lamp & Home Decor Buyer**",
+        "name": "Lamp & Home Decor Buyer",
         "definition": "Purchases 2+ lamps, often in different styles, with few other items."
       },
       {
-        "name": "**Serum & Moisturizer User**",
+        "name": "Serum & Moisturizer User",
         "definition": "Buys 2+ serums or moisturizers, often in repeated purchases."
       },
       {
-        "name": "**T-Shirt & Apparel Buyer**",
+        "name": "T-Shirt & Apparel Buyer",
         "definition": "Purchases 1+ t-shirts, often in unique colors, with other apparel."
       },
       {
-        "name": "**Single-Item Buyer**",
+        "name": "Single-Item Buyer",
         "definition": "Purchases only one product, typically a book, fitness item, or accessory."
       },
       {
-        "name": "**Conditioner & Shampoo User**",
+        "name": "Conditioner & Shampoo User",
         "definition": "Buys 2+ conditioners or shampoos, often in repeated purchases."
       },
       {
-        "name": "**Water Bottle & Hydration Enthusiast**",
+        "name": "Water Bottle & Hydration Enthusiast",
         "definition": "Purchases 2+ water bottles, often in different colors."
       },
       {
-        "name": "**Action Figure & Toy Collector**",
+        "name": "Action Figure & Toy Collector",
         "definition": "Buys 1+ action figures, often with other toys or books."
       },
       {
-        "name": "**Jeans & Apparel Buyer**",
+        "name": "Jeans & Apparel Buyer",
         "definition": "Purchases 1+ pairs of jeans, often with other clothing or accessories."
       },
       {
-        "name": "**Webcam & Tech User**",
+        "name": "Webcam & Tech User",
         "definition": "Buys 1+ webcams, often with other tech or home items."
       },
       {
-        "name": "**Vacuum & Home Appliance Buyer**",
+        "name": "Vacuum & Home Appliance Buyer",
         "definition": "Purchases 1+ vacuums, often with other home or child items."
       },
       {
-        "name": "**Yoga Mat & Wellness User**",
+        "name": "Yoga Mat & Wellness User",
         "definition": "Buys 1+ yoga mats, often with other fitness or apparel."
       },
       {
-        "name": "**Sunscreen & Outdoor Prepper**",
+        "name": "Sunscreen & Outdoor Prepper",
         "definition": "Purchases 1+ sunscreens, often with other outdoor or skincare items."
       }
     ],
@@ -2583,83 +2583,83 @@
     "iter": 30,
     "personas": [
       {
-        "name": "**Diverse Generalist**",
+        "name": "Diverse Generalist",
         "definition": "Purchases 5+ unique products across 3+ categories."
       },
       {
-        "name": "**E-book Enthusiast**",
+        "name": "E-book Enthusiast",
         "definition": "Buys 3+ e-books, often with no other product type."
       },
       {
-        "name": "**Frequent Board Gamer**",
+        "name": "Frequent Board Gamer",
         "definition": "Purchases 1+ board games, with 1+ game bought 2+ times."
       },
       {
-        "name": "**Lipstick Collector**",
+        "name": "Lipstick Collector",
         "definition": "Buys 2+ lipsticks, with 1+ lipstick purchased 2+ times."
       },
       {
-        "name": "**Single-Item Buyer**",
+        "name": "Single-Item Buyer",
         "definition": "Purchases only 1 product, with no purchase history beyond that."
       },
       {
-        "name": "**Health & Fitness**",
+        "name": "Health & Fitness",
         "definition": "Buys 1+ fitness items (dumbbell, yoga mat, or water bottle)."
       },
       {
-        "name": "**Book Lovers**",
+        "name": "Book Lovers",
         "definition": "Purchases 2+ hardcovers or paperbacks, with 1+ book bought 2+ times."
       },
       {
-        "name": "**Kid-Focused**",
+        "name": "Kid-Focused",
         "definition": "Buys 1+ child-related items (building blocks, doll, or action figure)."
       },
       {
-        "name": "**Appliance User**",
+        "name": "Appliance User",
         "definition": "Purchases 1+ home appliances (coffee maker, toaster, or air fryer)."
       },
       {
-        "name": "**Skincare & Hygiene**",
+        "name": "Skincare & Hygiene",
         "definition": "Buys 1+ shampoo, conditioner, or serum."
       },
       {
-        "name": "**Fashion & Apparel**",
+        "name": "Fashion & Apparel",
         "definition": "Purchases 1+ clothing/shoes (jeans, t-shirt, sneakers, or jacket)."
       },
       {
-        "name": "**Tech Gadget Fan**",
+        "name": "Tech Gadget Fan",
         "definition": "Buys 1+ electronics (monitor, mouse, SSD, or keyboard)."
       },
       {
-        "name": "**Repetitive Buyer**",
+        "name": "Repetitive Buyer",
         "definition": "Purchases the same product 3+ times (regardless of category)."
       },
       {
-        "name": "**Home Maintenance**",
+        "name": "Home Maintenance",
         "definition": "Buys 1+ vacuum or lamp."
       },
       {
-        "name": "**Beauty Buff**",
+        "name": "Beauty Buff",
         "definition": "Purchases 1+ lipstick, moisturizer, or serum."
       },
       {
-        "name": "**Color-Conscious Shopper**",
+        "name": "Color-Conscious Shopper",
         "definition": "Buys multiple products with matching color codes (e.g., \"LightGray\")."
       },
       {
-        "name": "**Seasonal Accessory Buyer**",
+        "name": "Seasonal Accessory Buyer",
         "definition": "Purchases sunscreen or seasonal clothing (hoodie, jacket)."
       },
       {
-        "name": "**Puzzle & Games Enthusiast**",
+        "name": "Puzzle & Games Enthusiast",
         "definition": "Buys 1+ puzzle or board game (with no overlap from Board Gamer)."
       },
       {
-        "name": "**Discount Hunter**",
+        "name": "Discount Hunter",
         "definition": "Buys 2+ products from the same category but different variants (e.g., multiple e-books)."
       },
       {
-        "name": "**Hardcover Specialist**",
+        "name": "Hardcover Specialist",
         "definition": "Purchases only hardcovers (1+ unique titles)."
       }
     ],
@@ -2669,83 +2669,83 @@
     "iter": 31,
     "personas": [
       {
-        "name": "**Single-Category Specialist**",
+        "name": "Single-Category Specialist",
         "definition": "Buys only one unique product category (e.g., Conditioner, Paperback)."
       },
       {
-        "name": "**Beauty Basics Shopper**",
+        "name": "Beauty Basics Shopper",
         "definition": "Purchases moisturizers and lipsticks occasionally (1–2 times)."
       },
       {
-        "name": "**Book Collector**",
+        "name": "Book Collector",
         "definition": "Focuses on buying multiple unique paperbacks/e-books with occasional repeats."
       },
       {
-        "name": "**Action Figure Enthusiast**",
+        "name": "Action Figure Enthusiast",
         "definition": "Acquires multiple action figures with occasional repeats (2–4 times)."
       },
       {
-        "name": "**Yoga Mat Loyalist**",
+        "name": "Yoga Mat Loyalist",
         "definition": "Repeats purchases of yoga mats (2–4 times) alongside diverse fitness gear."
       },
       {
-        "name": "**Puzzle Repeat Buyer**",
+        "name": "Puzzle Repeat Buyer",
         "definition": "Frequently purchases puzzles (2–4 times) across different titles."
       },
       {
-        "name": "**Electronics Explorer**",
+        "name": "Electronics Explorer",
         "definition": "Buys varied electronics (monitors, keyboards, SSDs) once each."
       },
       {
-        "name": "**Skincare Repeat User**",
+        "name": "Skincare Repeat User",
         "definition": "Repeats moisturizers or conditioners (3–4 times) with occasional skincare additions."
       },
       {
-        "name": "**Hoodie Collector**",
+        "name": "Hoodie Collector",
         "definition": "Acquires multiple hoodies (1–4 times) in varied styles/colors."
       },
       {
-        "name": "**Generalist Shopper**",
+        "name": "Generalist Shopper",
         "definition": "Buys 5–7 diverse products once each across categories (books, toys, fitness)."
       },
       {
-        "name": "**Health & Fitness Bundle Buyer**",
+        "name": "Health & Fitness Bundle Buyer",
         "definition": "Combines dumbbells, yoga mats, and cycling helmets (1–4 times)."
       },
       {
-        "name": "**Home Essentials User**",
+        "name": "Home Essentials User",
         "definition": "Purchases cookware, vacuums, or lamps once each with occasional repeats."
       },
       {
-        "name": "**Occasional Dress Shopper**",
+        "name": "Occasional Dress Shopper",
         "definition": "Buys dresses or jeans once alongside unrelated items."
       },
       {
-        "name": "**Book-Heavy Hybrid**",
+        "name": "Book-Heavy Hybrid",
         "definition": "Focuses on books (e-books/paperbacks) but adds 1–2 unrelated products."
       },
       {
-        "name": "**Cosmetics Occasionalist**",
+        "name": "Cosmetics Occasionalist",
         "definition": "Buys lipsticks or serums once alongside non-beauty items."
       },
       {
-        "name": "**Toy & Kid Gear Buyer**",
+        "name": "Toy & Kid Gear Buyer",
         "definition": "Acquires dolls, puzzles, or building blocks once each."
       },
       {
-        "name": "**Sports Gear Collector**",
+        "name": "Sports Gear Collector",
         "definition": "Combines cycling helmets, tennis rackets, or dumbbells once each."
       },
       {
-        "name": "**Tech Accessory Buyer**",
+        "name": "Tech Accessory Buyer",
         "definition": "Purchases keyboards, mice, or smartwatches once alongside varied items."
       },
       {
-        "name": "**Beauty & Books Hybrid**",
+        "name": "Beauty & Books Hybrid",
         "definition": "Mixes moisturizers/lipsticks with books (e-books/paperbacks)."
       },
       {
-        "name": "**Low-Frequency Multi-Category Buyer**",
+        "name": "Low-Frequency Multi-Category Buyer",
         "definition": "Buys 8–12 unique products once each across unrelated categories."
       }
     ],
@@ -2755,83 +2755,83 @@
     "iter": 32,
     "personas": [
       {
-        "name": "**Single-Category Minimalist**",
+        "name": "Single-Category Minimalist",
         "definition": "Purchases only one product in a single category (e.g., moisturizer, lamp)."
       },
       {
-        "name": "**Diverse Single-Item Buyer**",
+        "name": "Diverse Single-Item Buyer",
         "definition": "Buys one product but with multiple color/version options (e.g., 2+ different water bottles)."
       },
       {
-        "name": "**Frequent Sneaker Enthusiast**",
+        "name": "Frequent Sneaker Enthusiast",
         "definition": "Purchases sneakers 3+ times, often with other apparel."
       },
       {
-        "name": "**Hoodie Repurchaser**",
+        "name": "Hoodie Repurchaser",
         "definition": "Buys the same hoodie 2+ times, with 1-2 other miscellaneous items."
       },
       {
-        "name": "**Action Figure Collector**",
+        "name": "Action Figure Collector",
         "definition": "Purchases 2+ different action figures, often with non-toy items."
       },
       {
-        "name": "**Bookworm**",
+        "name": "Bookworm",
         "definition": "Buys 2+ hardcovers or paperbacks, sometimes with non-book items."
       },
       {
-        "name": "**Gadget Tinkerer**",
+        "name": "Gadget Tinkerer",
         "definition": "Purchases 1-2 tech items (e.g., webcam, SSD) with 1-2 non-tech items."
       },
       {
-        "name": "**Fitness Enthusiast**",
+        "name": "Fitness Enthusiast",
         "definition": "Buys 1+ fitness items (e.g., yoga mat, dumbbell) with 1-2 non-fitness items."
       },
       {
-        "name": "**Building Block Buyer**",
+        "name": "Building Block Buyer",
         "definition": "Purchases 1-2 building blocks, often with 1-2 non-toy items."
       },
       {
-        "name": "**Beauty Minimalist**",
+        "name": "Beauty Minimalist",
         "definition": "Buys 1-2 beauty items (e.g., lipstick, moisturizer) with 0-1 non-beauty items."
       },
       {
-        "name": "**Kids’ Toy Buyer**",
+        "name": "Kids’ Toy Buyer",
         "definition": "Purchases 1-2 dolls or plush toys, sometimes with non-toy items."
       },
       {
-        "name": "**Home Appliance Shopper**",
+        "name": "Home Appliance Shopper",
         "definition": "Buys 1-2 home appliances (e.g., coffee maker, blender) with 0-1 other items."
       },
       {
-        "name": "**Frequent Puzzle Solver**",
+        "name": "Frequent Puzzle Solver",
         "definition": "Purchases puzzles 2+ times, often with 1-2 non-puzzle items."
       },
       {
-        "name": "**E-Book Reader**",
+        "name": "E-Book Reader",
         "definition": "Buys 1-2 e-books, sometimes with 1-2 non-digital items."
       },
       {
-        "name": "**Clothing Variety Buyer**",
+        "name": "Clothing Variety Buyer",
         "definition": "Purchases 2+ different clothing items (e.g., jeans, t-shirt, jacket)."
       },
       {
-        "name": "**Hair/Skin Care Buyer**",
+        "name": "Hair/Skin Care Buyer",
         "definition": "Buys 1-2 hair (shampoo/conditioner) or skin (serum/moisturizer) items."
       },
       {
-        "name": "**Gaming/Entertainment Enthusiast**",
+        "name": "Gaming/Entertainment Enthusiast",
         "definition": "Purchases 1+ board games/puzzles with 1-2 other items."
       },
       {
-        "name": "**T-Shirt Lover**",
+        "name": "T-Shirt Lover",
         "definition": "Buys 1-2 t-shirts, often with 1-2 non-clothing items."
       },
       {
-        "name": "**Mixed-Category Shopper**",
+        "name": "Mixed-Category Shopper",
         "definition": "Purchases 3+ items across 3+ distinct categories."
       },
       {
-        "name": "**Frequent Repurchaser**",
+        "name": "Frequent Repurchaser",
         "definition": "Buys the same item 3+ times, with 0-2 other items."
       }
     ],
@@ -2841,83 +2841,83 @@
     "iter": 33,
     "personas": [
       {
-        "name": "**E-book Enthusiast**",
+        "name": "E-book Enthusiast",
         "definition": "Buys multiple e-books, often with repeated purchases of the same or similar titles."
       },
       {
-        "name": "**Fitness Equipment Buyer**",
+        "name": "Fitness Equipment Buyer",
         "definition": "Purchases dumbbells, yoga mats, or other fitness-related items."
       },
       {
-        "name": "**Skincare & Beauty User**",
+        "name": "Skincare & Beauty User",
         "definition": "Buys moisturizers, shampoos, or serums, often in repeated combinations."
       },
       {
-        "name": "**Kid-Focused Shopper**",
+        "name": "Kid-Focused Shopper",
         "definition": "Purchases building blocks, dolls, or puzzles, typically for children."
       },
       {
-        "name": "**Book Collector**",
+        "name": "Book Collector",
         "definition": "Buys hardcovers or paperbacks, often in small quantities with diverse titles."
       },
       {
-        "name": "**Home Appliance Purchaser**",
+        "name": "Home Appliance Purchaser",
         "definition": "Buys coffee makers, air fryers, or ssd storage, often in single or few transactions."
       },
       {
-        "name": "**Frequent Single-Item Buyer**",
+        "name": "Frequent Single-Item Buyer",
         "definition": "Purchases only one unique product per transaction, with no patterns."
       },
       {
-        "name": "**Fashion & Apparel Buyer**",
+        "name": "Fashion & Apparel Buyer",
         "definition": "Buys t-shirts, hoodies, or dresses, often in single or small batches."
       },
       {
-        "name": "**Gadget & Accessory Buyer**",
+        "name": "Gadget & Accessory Buyer",
         "definition": "Purchases mice, keyboards, or webcams, often in single-item transactions."
       },
       {
-        "name": "**Gaming & Toy Enthusiast**",
+        "name": "Gaming & Toy Enthusiast",
         "definition": "Buys action figures, puzzles, or board games, often in small clusters."
       },
       {
-        "name": "**Lipstick Repeater**",
+        "name": "Lipstick Repeater",
         "definition": "Purchases the same or similar lipstick multiple times, often in high frequency."
       },
       {
-        "name": "**Diverse Health & Wellness User**",
+        "name": "Diverse Health & Wellness User",
         "definition": "Buys sunscreens, serums, and shampoos, often in mixed categories."
       },
       {
-        "name": "**Coffee Maker Frequentist**",
+        "name": "Coffee Maker Frequentist",
         "definition": "Buys the same coffee maker model multiple times, often in high volume."
       },
       {
-        "name": "**Vacuum & Cleaning Enthusiast**",
+        "name": "Vacuum & Cleaning Enthusiast",
         "definition": "Purchases vacuums or blenders, often in small or medium batches."
       },
       {
-        "name": "**Sneaker & Footwear Buyer**",
+        "name": "Sneaker & Footwear Buyer",
         "definition": "Buys sneakers or water bottles, often in single or few transactions."
       },
       {
-        "name": "**Lamp & Houseware Purchaser**",
+        "name": "Lamp & Houseware Purchaser",
         "definition": "Buys lamps or cookware, often in small, unconnected sets."
       },
       {
-        "name": "**Doll Collector**",
+        "name": "Doll Collector",
         "definition": "Purchases multiple dolls, often in different colors or models."
       },
       {
-        "name": "**High-Frequency E-book Buyer**",
+        "name": "High-Frequency E-book Buyer",
         "definition": "Buys the same e-book title multiple times, often in high volume."
       },
       {
-        "name": "**Toaster & Kitchenware Buyer**",
+        "name": "Toaster & Kitchenware Buyer",
         "definition": "Purchases toasters or other kitchen items, often in small clusters."
       },
       {
-        "name": "**Headphone & Audio User**",
+        "name": "Headphone & Audio User",
         "definition": "Buys headphones or speakers, often in single or few transactions."
       }
     ],
@@ -2927,83 +2927,83 @@
     "iter": 34,
     "personas": [
       {
-        "name": "**E-book Enthusiast**",
+        "name": "E-book Enthusiast",
         "definition": "Purchases multiple e-books, often with high frequency."
       },
       {
-        "name": "**Frequent Puzzle Buyer**",
+        "name": "Frequent Puzzle Buyer",
         "definition": "Buys puzzles frequently, often in combination with other items."
       },
       {
-        "name": "**Single-Item Shopper**",
+        "name": "Single-Item Shopper",
         "definition": "Purchases only one unique product, typically in a single transaction."
       },
       {
-        "name": "**Skincare & Beauty Collector**",
+        "name": "Skincare & Beauty Collector",
         "definition": "Buys moisturizers, serums, and lipsticks."
       },
       {
-        "name": "**Fitness & Wellness Seeker**",
+        "name": "Fitness & Wellness Seeker",
         "definition": "Purchases fitness gear (dumbbells, yoga mats) and wellness items."
       },
       {
-        "name": "**Dress & Apparel Shopper**",
+        "name": "Dress & Apparel Shopper",
         "definition": "Buys clothing (dresses, jackets, sneakers) as primary categories."
       },
       {
-        "name": "**Home & Kitchen Appliance Buyer**",
+        "name": "Home & Kitchen Appliance Buyer",
         "definition": "Purchases kitchen appliances (toasters, blenders, coffee makers)."
       },
       {
-        "name": "**Action Figure Collector**",
+        "name": "Action Figure Collector",
         "definition": "Buys multiple action figures, often with high frequency."
       },
       {
-        "name": "**Building Blocks & Toy Enthusiast**",
+        "name": "Building Blocks & Toy Enthusiast",
         "definition": "Purchases building blocks and children’s toys."
       },
       {
-        "name": "**Water Bottle & Hydration User**",
+        "name": "Water Bottle & Hydration User",
         "definition": "Buys water bottles, often in multiple colors or styles."
       },
       {
-        "name": "**Sunscreen & Outdoor Prepper**",
+        "name": "Sunscreen & Outdoor Prepper",
         "definition": "Purchases sunscreen and outdoor gear (cycling helmets, water bottles)."
       },
       {
-        "name": "**Mouse & Peripheral Buyer**",
+        "name": "Mouse & Peripheral Buyer",
         "definition": "Buys computer mice, often in high frequency."
       },
       {
-        "name": "**Vacuum & Cleaning Appliance User**",
+        "name": "Vacuum & Cleaning Appliance User",
         "definition": "Purchases vacuums and cleaning tools."
       },
       {
-        "name": "**Diverse Book Reader**",
+        "name": "Diverse Book Reader",
         "definition": "Buys a variety of books (paperbacks, hardcovers, e-books)."
       },
       {
-        "name": "**Tennis Racket & Sports Gear Enthusiast**",
+        "name": "Tennis Racket & Sports Gear Enthusiast",
         "definition": "Purchases tennis rackets and related sports items."
       },
       {
-        "name": "**Eco & Minimalist Buyer**",
+        "name": "Eco & Minimalist Buyer",
         "definition": "Purchases a small, eclectic mix of non-repeating items."
       },
       {
-        "name": "**Frequent E-book & Single-Item Buyer**",
+        "name": "Frequent E-book & Single-Item Buyer",
         "definition": "Buys 1–2 e-books and one other non-digital item."
       },
       {
-        "name": "**Doll & Children’s Toy Collector**",
+        "name": "Doll & Children’s Toy Collector",
         "definition": "Purchases dolls and similar children’s items."
       },
       {
-        "name": "**Hoodie & Apparel Enthusiast**",
+        "name": "Hoodie & Apparel Enthusiast",
         "definition": "Buys multiple hoodies and related apparel."
       },
       {
-        "name": "**Lipstick & Cosmetic Buyer**",
+        "name": "Lipstick & Cosmetic Buyer",
         "definition": "Purchases multiple lipsticks, often in high frequency."
       }
     ],
@@ -3013,83 +3013,83 @@
     "iter": 35,
     "personas": [
       {
-        "name": "**Frequent Book Buyer**",
+        "name": "Frequent Book Buyer",
         "definition": "Purchases multiple hardcover or paperback books, often with repeat purchases."
       },
       {
-        "name": "**Sunscreen Enthusiast**",
+        "name": "Sunscreen Enthusiast",
         "definition": "Buys sunscreen repeatedly, often in bulk or with multiple colors/brands."
       },
       {
-        "name": "**E-book Reader**",
+        "name": "E-book Reader",
         "definition": "Primarily purchases e-books, sometimes with multiple genres or colors."
       },
       {
-        "name": "**Puzzle Collector**",
+        "name": "Puzzle Collector",
         "definition": "Frequently buys puzzles, often in different colors or designs."
       },
       {
-        "name": "**Action Figure Enthusiast**",
+        "name": "Action Figure Enthusiast",
         "definition": "Buys action figures repeatedly, often with multiple colors or styles."
       },
       {
-        "name": "**Building Blocks Shopper**",
+        "name": "Building Blocks Shopper",
         "definition": "Purchases building blocks, sometimes in bulk or with multiple colors."
       },
       {
-        "name": "**Shampoo & Conditioner Buyer**",
+        "name": "Shampoo & Conditioner Buyer",
         "definition": "Buys shampoo or conditioner, sometimes with multiple variants."
       },
       {
-        "name": "**Doll Collector**",
+        "name": "Doll Collector",
         "definition": "Frequently buys dolls, often in different colors or designs."
       },
       {
-        "name": "**Fitness Gear Enthusiast**",
+        "name": "Fitness Gear Enthusiast",
         "definition": "Purchases fitness-related items like dumbbells, yoga mats, or sneakers."
       },
       {
-        "name": "**Kitchen Appliance Buyer**",
+        "name": "Kitchen Appliance Buyer",
         "definition": "Buys kitchen appliances like toasters, blenders, or coffee makers."
       },
       {
-        "name": "**Lipstick & Moisturizer Buyer**",
+        "name": "Lipstick & Moisturizer Buyer",
         "definition": "Purchases lipsticks or moisturizers, sometimes with multiple colors."
       },
       {
-        "name": "**Electronics Enthusiast**",
+        "name": "Electronics Enthusiast",
         "definition": "Buys electronics like monitors, keyboards, or SSDs."
       },
       {
-        "name": "**Clothing & Apparel Shopper**",
+        "name": "Clothing & Apparel Shopper",
         "definition": "Purchases jackets, jeans, hoodies, or t-shirts."
       },
       {
-        "name": "**Board Game & Puzzle Lover**",
+        "name": "Board Game & Puzzle Lover",
         "definition": "Buys board games and puzzles, often with repeat purchases."
       },
       {
-        "name": "**Vacuum & Cleaning Product Buyer**",
+        "name": "Vacuum & Cleaning Product Buyer",
         "definition": "Purchases vacuums or cleaning-related items."
       },
       {
-        "name": "**Socks & Accessory Collector**",
+        "name": "Socks & Accessory Collector",
         "definition": "Buys socks or small accessories like water bottles."
       },
       {
-        "name": "**Cosmetic & Skincare Buyer**",
+        "name": "Cosmetic & Skincare Buyer",
         "definition": "Purchases serums, moisturizers, or conditioners."
       },
       {
-        "name": "**Single-Product Specialist**",
+        "name": "Single-Product Specialist",
         "definition": "Buys only one unique product per transaction."
       },
       {
-        "name": "**Multi-Category Shopper**",
+        "name": "Multi-Category Shopper",
         "definition": "Purchases from 3+ distinct product categories in one transaction."
       },
       {
-        "name": "**Repeat Brand Loyalist**",
+        "name": "Repeat Brand Loyalist",
         "definition": "Buys the same product multiple times, often with high frequency."
       }
     ],
@@ -3099,83 +3099,83 @@
     "iter": 36,
     "personas": [
       {
-        "name": "**E-Book Enthusiast**",
+        "name": "E-Book Enthusiast",
         "definition": "Purchases multiple e-books (1+), often in different categories."
       },
       {
-        "name": "**Frequent Puzzle Buyer**",
+        "name": "Frequent Puzzle Buyer",
         "definition": "Purchases puzzles (1+), with at least one repeated (2+ times)."
       },
       {
-        "name": "**Hoodie Loyalist**",
+        "name": "Hoodie Loyalist",
         "definition": "Purchases hoodies (1+), with at least one repeated (2+ times)."
       },
       {
-        "name": "**Sneaker Collector**",
+        "name": "Sneaker Collector",
         "definition": "Purchases sneakers (1+), often in different colors."
       },
       {
-        "name": "**Doll & Toy Enthusiast**",
+        "name": "Doll & Toy Enthusiast",
         "definition": "Purchases dolls, action figures, or building blocks (1+)."
       },
       {
-        "name": "**Skincare & Cosmetic Buyer**",
+        "name": "Skincare & Cosmetic Buyer",
         "definition": "Purchases lipsticks, moisturizers, or serums (1+)."
       },
       {
-        "name": "**Appliance & Kitchenware Shopper**",
+        "name": "Appliance & Kitchenware Shopper",
         "definition": "Purchases kitchen appliances (e.g., toaster, blender) or cookware (1+)."
       },
       {
-        "name": "**Fitness & Wellness Seeker**",
+        "name": "Fitness & Wellness Seeker",
         "definition": "Purchases yoga mats, dumbbells, or sunscreen (1+)."
       },
       {
-        "name": "**Bookworm (Printed Books)**",
+        "name": "Bookworm (Printed Books)",
         "definition": "Purchases hardcovers or paperbacks (1+)."
       },
       {
-        "name": "**Board Game & Puzzle Aficionado**",
+        "name": "Board Game & Puzzle Aficionado",
         "definition": "Purchases board games (1+) and/or puzzles (1+)."
       },
       {
-        "name": "**Fashion & Apparel Shopper**",
+        "name": "Fashion & Apparel Shopper",
         "definition": "Purchases clothing (e.g., t-shirts, jeans, dresses) (1+)."
       },
       {
-        "name": "**Water Bottle & Accessory Buyer**",
+        "name": "Water Bottle & Accessory Buyer",
         "definition": "Purchases water bottles (1+), often in different colors."
       },
       {
-        "name": "**Single-Item Minimalist**",
+        "name": "Single-Item Minimalist",
         "definition": "Purchases only one unique product."
       },
       {
-        "name": "**Conditioner & Haircare Buyer**",
+        "name": "Conditioner & Haircare Buyer",
         "definition": "Purchases conditioner or shampoo (1+), with at least one repeated (2+ times)."
       },
       {
-        "name": "**Technology & Electronics Enthusiast**",
+        "name": "Technology & Electronics Enthusiast",
         "definition": "Purchases SSDs, webcams, or headphones (1+)."
       },
       {
-        "name": "**Frequent Jeans Buyer**",
+        "name": "Frequent Jeans Buyer",
         "definition": "Purchases jeans (1+), often in different colors."
       },
       {
-        "name": "**Gadget & Home Appliance User**",
+        "name": "Gadget & Home Appliance User",
         "definition": "Purchases air fryers, vacuums, or coffee makers (1+)."
       },
       {
-        "name": "**Frequent Moisturizer Buyer**",
+        "name": "Frequent Moisturizer Buyer",
         "definition": "Purchases moisturizers (1+), with at least one repeated (2+ times)."
       },
       {
-        "name": "**Diversified General Shopper**",
+        "name": "Diversified General Shopper",
         "definition": "Purchases 4+ unique items from different categories."
       },
       {
-        "name": "**Frequent Building Block Buyer**",
+        "name": "Frequent Building Block Buyer",
         "definition": "Purchases building blocks (1+), with at least one repeated (2+ times)."
       }
     ],
@@ -3185,83 +3185,83 @@
     "iter": 37,
     "personas": [
       {
-        "name": "**Frequent Jeans Buyer**",
+        "name": "Frequent Jeans Buyer",
         "definition": "Purchases jeans 3+ times, often in dark or bold colors."
       },
       {
-        "name": "**E-book Enthusiast**",
+        "name": "E-book Enthusiast",
         "definition": "Buys 2+ e-books, often in neutral or light colors."
       },
       {
-        "name": "**Puzzle Collector**",
+        "name": "Puzzle Collector",
         "definition": "Purchases 3+ puzzles, often in pastel or sea-themed colors."
       },
       {
-        "name": "**Sunscreen Repeater**",
+        "name": "Sunscreen Repeater",
         "definition": "Buys sunscreen 3+ times, often in warm or earthy tones."
       },
       {
-        "name": "**Lipstick Dabbler**",
+        "name": "Lipstick Dabbler",
         "definition": "Purchases 1-2 lipsticks, often in metallic or bright shades."
       },
       {
-        "name": "**Single-Item Tech Buyer**",
+        "name": "Single-Item Tech Buyer",
         "definition": "Buys 1 tech item (SSD, mouse, keyboard, or monitor)."
       },
       {
-        "name": "**Fitness Gear User**",
+        "name": "Fitness Gear User",
         "definition": "Purchases 1+ fitness items (dumbbell, yoga mat, or water bottle)."
       },
       {
-        "name": "**Hoodie Occasionalist**",
+        "name": "Hoodie Occasionalist",
         "definition": "Buys 1-2 hoodies, often in light or pastel colors."
       },
       {
-        "name": "**Doll Enthusiast**",
+        "name": "Doll Enthusiast",
         "definition": "Purchases 3+ dolls, often in dark or vibrant colors."
       },
       {
-        "name": "**Action Figure Collector**",
+        "name": "Action Figure Collector",
         "definition": "Buys 2+ action figures, often in primary or bright colors."
       },
       {
-        "name": "**Skincare Minimalist**",
+        "name": "Skincare Minimalist",
         "definition": "Purchases 1-2 skincare items (moisturizer, conditioner, or serum)."
       },
       {
-        "name": "**Board Game Player**",
+        "name": "Board Game Player",
         "definition": "Buys 1+ board games, often in blue or earthy tones."
       },
       {
-        "name": "**Booklight Reader**",
+        "name": "Booklight Reader",
         "definition": "Purchases 1+ hardcover or paperback books, often in light colors."
       },
       {
-        "name": "**Vacuum Buyer**",
+        "name": "Vacuum Buyer",
         "definition": "Purchases 1-2 vacuums, often in warm or neutral tones."
       },
       {
-        "name": "**Sock Repeater**",
+        "name": "Sock Repeater",
         "definition": "Buys 4+ socks, often in bright or light colors."
       },
       {
-        "name": "**Jacket Occasionalist**",
+        "name": "Jacket Occasionalist",
         "definition": "Purchases 1-2 jackets, often in bold or dark colors."
       },
       {
-        "name": "**Dress Buyer**",
+        "name": "Dress Buyer",
         "definition": "Buys 1-2 dresses, often in green or magenta hues."
       },
       {
-        "name": "**Cookware User**",
+        "name": "Cookware User",
         "definition": "Purchases 1+ cookware items, often in dark or metallic finishes."
       },
       {
-        "name": "**Building Block Buyer**",
+        "name": "Building Block Buyer",
         "definition": "Buys 1-2 building blocks, often in warm or pastel colors."
       },
       {
-        "name": "**Tennis Racket Enthusiast**",
+        "name": "Tennis Racket Enthusiast",
         "definition": "Purchases 1+ tennis rackets, often in light or steel-blue tones."
       }
     ],
@@ -3271,83 +3271,83 @@
     "iter": 38,
     "personas": [
       {
-        "name": "**Single-Category Shopper**",
+        "name": "Single-Category Shopper",
         "definition": "Buys only one unique product type (e.g., serum, helmet, conditioner)."
       },
       {
-        "name": "**Book Enthusiast**",
+        "name": "Book Enthusiast",
         "definition": "Purchases multiple paperback/hardcover/e-book titles across genres."
       },
       {
-        "name": "**Beauty Collector**",
+        "name": "Beauty Collector",
         "definition": "Buys cosmetics (lipstick, moisturizer) and skincare (serum, sunscreen)."
       },
       {
-        "name": "**Fitness Gear User**",
+        "name": "Fitness Gear User",
         "definition": "Focuses on workout equipment (dumbbell, yoga mat, cycling helmet)."
       },
       {
-        "name": "**Kids’ Toy Buyer**",
+        "name": "Kids’ Toy Buyer",
         "definition": "Purchases building blocks, dolls, or puzzles for children."
       },
       {
-        "name": "**Home Appliance Tester**",
+        "name": "Home Appliance Tester",
         "definition": "Buys diverse small appliances (coffee maker, blender, toaster)."
       },
       {
-        "name": "**Frequent Replenisher**",
+        "name": "Frequent Replenisher",
         "definition": "Repurchases the same item 2–4 times (e.g., cookware, lamps, yoga mats)."
       },
       {
-        "name": "**Tech Accessory Lover**",
+        "name": "Tech Accessory Lover",
         "definition": "Buys electronics like monitors, webcams, or mice."
       },
       {
-        "name": "**Fashion Minimalist**",
+        "name": "Fashion Minimalist",
         "definition": "Purchases select clothing or footwear (jeans, sneakers, dresses)."
       },
       {
-        "name": "**E-Book Devotee**",
+        "name": "E-Book Devotee",
         "definition": "Buys multiple e-books on varied topics."
       },
       {
-        "name": "**Board Game Collector**",
+        "name": "Board Game Collector",
         "definition": "Purchases board games as a primary category."
       },
       {
-        "name": "**Action Figure Fan**",
+        "name": "Action Figure Fan",
         "definition": "Buys action figures, often paired with other toys."
       },
       {
-        "name": "**Cosmetic Variety Seeker**",
+        "name": "Cosmetic Variety Seeker",
         "definition": "Purchases different lipstick/serum/sunscreen formulas."
       },
       {
-        "name": "**Paperback Reader**",
+        "name": "Paperback Reader",
         "definition": "Buys only paperback books, often in bulk."
       },
       {
-        "name": "**Appliance-Hobbyist Hybrid**",
+        "name": "Appliance-Hobbyist Hybrid",
         "definition": "Combines kitchen appliances with niche items (e.g., air fryer + building blocks)."
       },
       {
-        "name": "**Lipstick Connoisseur**",
+        "name": "Lipstick Connoisseur",
         "definition": "Buys multiple lipstick shades/brands."
       },
       {
-        "name": "**Sunscreen Reliant**",
+        "name": "Sunscreen Reliant",
         "definition": "Repurchases sunscreen 3–4 times."
       },
       {
-        "name": "**Doll Collector**",
+        "name": "Doll Collector",
         "definition": "Buys dolls in varied colors/styles."
       },
       {
-        "name": "**Water Bottle Enthusiast**",
+        "name": "Water Bottle Enthusiast",
         "definition": "Purchases multiple water bottles or repurchases one."
       },
       {
-        "name": "**Miscellaneous Buyer**",
+        "name": "Miscellaneous Buyer",
         "definition": "Purchases 5+ unconnected items across categories (e.g., hoodie, puzzle, tennis racket)."
       }
     ],
@@ -3357,83 +3357,83 @@
     "iter": 39,
     "personas": [
       {
-        "name": "**Diverse Book Lovers**",
+        "name": "Diverse Book Lovers",
         "definition": "Purchases 2+ e-books or paperbacks, often with one category repeated."
       },
       {
-        "name": "**Frequent Board Gamers**",
+        "name": "Frequent Board Gamers",
         "definition": "Buys 2+ unique board games, with at least one repeated."
       },
       {
-        "name": "**Doll Collectors**",
+        "name": "Doll Collectors",
         "definition": "Purchases 2+ unique dolls, with at least one repeated."
       },
       {
-        "name": "**Fitness Enthusiasts**",
+        "name": "Fitness Enthusiasts",
         "definition": "Buys 1+ fitness items (dumbbell, yoga mat, sunscreen, or water bottle)."
       },
       {
-        "name": "**Skincare & Grooming Shoppers**",
+        "name": "Skincare & Grooming Shoppers",
         "definition": "Purchases 2+ skincare items (serum, moisturizer, or shampoo)."
       },
       {
-        "name": "**Frequent Mouse Buyers**",
+        "name": "Frequent Mouse Buyers",
         "definition": "Buys 1+ mice, with at least one repeated."
       },
       {
-        "name": "**Coffee Maker Aficionados**",
+        "name": "Coffee Maker Aficionados",
         "definition": "Purchases 1+ coffee makers, with at least one repeated."
       },
       {
-        "name": "**E-Book Addicts**",
+        "name": "E-Book Addicts",
         "definition": "Buys 1+ e-books, with at least one repeated."
       },
       {
-        "name": "**Sneaker & Apparel Shoppers**",
+        "name": "Sneaker & Apparel Shoppers",
         "definition": "Purchases 1+ sneakers, hoodies, or t-shirts."
       },
       {
-        "name": "**Hardcover & Book Enthusiasts**",
+        "name": "Hardcover & Book Enthusiasts",
         "definition": "Buys 1+ hardcovers, with at least one repeated."
       },
       {
-        "name": "**Tennis Racket Frequentists**",
+        "name": "Tennis Racket Frequentists",
         "definition": "Purchases 1+ tennis rackets, with at least one repeated."
       },
       {
-        "name": "**Building Block Buyers**",
+        "name": "Building Block Buyers",
         "definition": "Buys 1+ building blocks, with at least one repeated."
       },
       {
-        "name": "**Lipstick & Cosmetic Shoppers**",
+        "name": "Lipstick & Cosmetic Shoppers",
         "definition": "Purchases 1+ lipsticks, with at least one repeated."
       },
       {
-        "name": "**Vacuum & Home Appliance Buyers**",
+        "name": "Vacuum & Home Appliance Buyers",
         "definition": "Purchases 1+ vacuums or toasters."
       },
       {
-        "name": "**Action Figure Collectors**",
+        "name": "Action Figure Collectors",
         "definition": "Buys 1+ action figures, with at least one repeated."
       },
       {
-        "name": "**Dress & Apparel Shoppers**",
+        "name": "Dress & Apparel Shoppers",
         "definition": "Purchases 1+ dresses."
       },
       {
-        "name": "**Puzzle & Game Lovers**",
+        "name": "Puzzle & Game Lovers",
         "definition": "Buys 1+ puzzles, with at least one repeated."
       },
       {
-        "name": "**Jacket & Outerwear Buyers**",
+        "name": "Jacket & Outerwear Buyers",
         "definition": "Purchases 1+ jackets."
       },
       {
-        "name": "**SSD & Tech Shoppers**",
+        "name": "SSD & Tech Shoppers",
         "definition": "Buys 1+ SSDs."
       },
       {
-        "name": "**Miscellaneous Shoppers**",
+        "name": "Miscellaneous Shoppers",
         "definition": "Purchases 1-2 unique items from unrelated categories."
       }
     ],

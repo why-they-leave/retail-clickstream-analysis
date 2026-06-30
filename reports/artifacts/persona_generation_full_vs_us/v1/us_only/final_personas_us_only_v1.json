@@ -1,82 +1,82 @@
 [
   {
-    "name": "**Frequent Repurchaser**",
+    "name": "Frequent Repurchaser",
     "definition": "Buys the same item 3+ times, with 0–2 other items."
   },
   {
-    "name": "**Book Enthusiast**",
+    "name": "Book Enthusiast",
     "definition": "Frequently purchases multiple hardcover/paperback books."
   },
   {
-    "name": "**Fitness Gear User**",
+    "name": "Fitness Gear User",
     "definition": "Purchases fitness-related products (yoga mat, dumbbell, water bottle)."
   },
   {
-    "name": "**Beauty & Skincare Enthusiast**",
+    "name": "Beauty & Skincare Enthusiast",
     "definition": "Buys cosmetics (lipsticks) and skincare (serums, moisturizers, sunscreen)."
   },
   {
-    "name": "**Kids & Toy Shopper**",
+    "name": "Kids & Toy Shopper",
     "definition": "Purchases toys (building blocks, dolls, action figures, plush toys)."
   },
   {
-    "name": "**Fashion & Apparel Buyer**",
+    "name": "Fashion & Apparel Buyer",
     "definition": "Buys clothing (dresses, t-shirts, jeans, sneakers) in varied colors."
   },
   {
-    "name": "**Single-Product Specialist**",
+    "name": "Single-Product Specialist",
     "definition": "Purchases only one unique product (e.g., lamp, webcam, dress, or puzzle)."
   },
   {
-    "name": "**Variety-Seeking Shopper**",
+    "name": "Variety-Seeking Shopper",
     "definition": "Buys 4–7+ diverse products across categories."
   },
   {
-    "name": "**Electronics & Tech Buyer**",
+    "name": "Electronics & Tech Buyer",
     "definition": "Prioritizes gadgets (webcam, smartwatch, SSD) and accessories."
   },
   {
-    "name": "**Puzzle & Game Lover**",
+    "name": "Puzzle & Game Lover",
     "definition": "Buys puzzles, board games, or similar leisure items."
   },
   {
-    "name": "**Home & Lifestyle Enthusiast**",
+    "name": "Home & Lifestyle Enthusiast",
     "definition": "Buys home decor (lamps, cookware) and appliances (vacuum, coffee maker)."
   },
   {
-    "name": "**Gadget & Accessory Buyer**",
+    "name": "Gadget & Accessory Buyer",
     "definition": "Purchases tech accessories (keyboard, mouse, SSD) in bulk or multiple variants."
   },
   {
-    "name": "**Diverse Book Reader**",
+    "name": "Diverse Book Reader",
     "definition": "Buys multiple paperback or e-book titles, sometimes with repeats."
   },
   {
-    "name": "**Mixed-Category Shopper**",
+    "name": "Mixed-Category Shopper",
     "definition": "Purchases 3+ items across 3+ distinct categories."
   },
   {
-    "name": "**Frequent Replenisher**",
+    "name": "Frequent Replenisher",
     "definition": "Repurchases the same item 2–5+ times (e.g., moisturizer, hoodie, sunscreen)."
   },
   {
-    "name": "**Lipstick Collector**",
+    "name": "Lipstick Collector",
     "definition": "Buys multiple lipstick shades or frequently."
   },
   {
-    "name": "**Kitchen & Home Appliance Buyer**",
+    "name": "Kitchen & Home Appliance Buyer",
     "definition": "Purchases small appliances (coffee makers, blenders) and home items."
   },
   {
-    "name": "**E-Book & Paperback Reader**",
+    "name": "E-Book & Paperback Reader",
     "definition": "Purchases e-books and paperbacks (1–4+ times) across genres."
   },
   {
-    "name": "**Doll & Toy Collector**",
+    "name": "Doll & Toy Collector",
     "definition": "Purchases dolls, building blocks, or puzzles, often in diverse colors/styles."
   },
   {
-    "name": "**Action Figure Enthusiast**",
+    "name": "Action Figure Enthusiast",
     "definition": "Purchases action figures (3+ times) with minimal other category overlap."
   }
 ]

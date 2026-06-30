@@ -28,7 +28,7 @@ shapely>=2.0
 # 설정·환경
 pyyaml>=6.0
 python-dotenv>=1.0
-openai>=1.0
+openai>=1,<2
 
 # 개발 도구
 pytest>=7.4
