@@ -6,7 +6,7 @@ Step 2 (8회):  5세트(100개) 샘플링  → LLM → 정제된 20개
 Step 3 (1회):  8세트(160개)         → LLM → 최종 20개 페르소나
 
 실행: python3 generation.py
-결과: ../data/funnel_persona_gen/ 폴더에 저장
+결과: --config에서 지정한 paths.output_dir에 저장
 """
 
 import json
@@ -113,9 +113,8 @@ def parse_persona_list(text):
 
 def sample_user_descriptions(grouped_df, user_ids, n=100, seed=None):
     """n명 랜덤 샘플의 구매이력을 자연어로 변환."""
-    if seed is not None:
-        random.seed(seed)
-    sampled = random.sample(list(user_ids), min(n, len(user_ids)))
+    rng = random.Random(seed)
+    sampled = rng.sample(list(user_ids), min(n, len(user_ids)))
     descs = [describe_user(uid, grouped_df) for uid in sampled]
     return "\n\n".join(descs)
 
