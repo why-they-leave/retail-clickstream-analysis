@@ -71,3 +71,6 @@ htmlcov/
 # ruff / black 캐시
 .ruff_cache/
 
+# 로컬 실행 설정
+configs/**/run_local*.yaml
+
