@@ -1,0 +1,33 @@
+Here are the 20 most representative and distinct personas selected from the 160, prioritizing frequency across sets and broad user coverage:
+
+1. **Frequent Repurchaser** - Buys the same item 3+ times, with 0–2 other items.  
+2. **Book Enthusiast** - Frequently purchases multiple hardcover/paperback books.  
+3. **Fitness Gear User** - Purchases fitness-related products (yoga mat, dumbbell, water bottle).  
+4. **Beauty & Skincare Enthusiast** - Buys cosmetics (lipsticks) and skincare (serums, moisturizers, sunscreen).  
+5. **Kids & Toy Shopper** - Purchases toys (building blocks, dolls, action figures, plush toys).  
+6. **Fashion & Apparel Buyer** - Buys clothing (dresses, t-shirts, jeans, sneakers) in varied colors.  
+7. **Single-Product Specialist** - Purchases only one unique product (e.g., lamp, webcam, dress, or puzzle).  
+8. **Variety-Seeking Shopper** - Buys 4–7+ diverse products across categories.  
+9. **Electronics & Tech Buyer** - Prioritizes gadgets (webcam, smartwatch, SSD) and accessories.  
+10. **Puzzle & Game Lover** - Buys puzzles, board games, or similar leisure items.  
+11. **Home & Lifestyle Enthusiast** - Buys home decor (lamps, cookware) and appliances (vacuum, coffee maker).  
+12. **Gadget & Accessory Buyer** - Purchases tech accessories (keyboard, mouse, SSD) in bulk or multiple variants.  
+13. **Diverse Book Reader** - Buys multiple paperback or e-book titles, sometimes with repeats.  
+14. **Mixed-Category Shopper** - Purchases 3+ items across 3+ distinct categories.  
+15. **Frequent Replenisher** - Repurchases the same item 2–5+ times (e.g., moisturizer, hoodie, sunscreen).  
+16. **Lipstick Collector** - Buys multiple lipstick shades or frequently.  
+17. **Kitchen & Home Appliance Buyer** - Purchases small appliances (coffee makers, blenders) and home items.  
+18. **E-Book & Paperback Reader** - Purchases e-books and paperbacks (1–4+ times) across genres.  
+19. **Doll & Toy Collector** - Purchases dolls, building blocks, or puzzles, often in diverse colors/styles.  
+20. **Action Figure Enthusiast** - Purchases action figures (3+ times) with minimal other category overlap.  
+
+### Rationale:  
+- **Frequent Repurchaser**, **Book Enthusiast**, **Fitness Gear User**, and **Beauty & Skincare Enthusiast** recur in 3+ sets.  
+- **Single-Product Specialist** and **Variety-Seeking Shopper** represent opposite ends of purchase behavior.  
+- **Kids & Toy Shopper** and **Fashion & Apparel Buyer** cover key demographic and lifestyle needs.  
+- **Electronics & Tech Buyer** and **Gadget & Accessory Buyer** reflect modern tech consumption.  
+- **Mixed-Category Shopper** and **Diverse Book Reader** highlight cross-category and media diversity.  
+- **Frequent Replenisher** and **Lipstick Collector** capture repeat-buying patterns.  
+- **Doll & Toy Collector** and **Action Figure Enthusiast** represent niche but frequent categories.  
+
+Excluded personas (e.g., "Frequent Toaster Buyer" or "Color-Centric Shopper") were less common or too specific.

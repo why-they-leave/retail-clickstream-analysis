@@ -28,6 +28,8 @@ dependencies = [
     "pyyaml>=6.0",
     "python-dotenv>=1.0",
     "implicit>=0.7.3",
+    # LLM API
+    "openai>=1,<2",
 ]
 
 [project.optional-dependencies]
@@ -56,6 +58,9 @@ target-version = "py311"
 [tool.ruff.lint]
 select = ["E", "F", "I", "W"]
 ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["datasets", "llm_connector", "persona"]
 
 [tool.ruff.lint.per-file-ignores]
 "src/baselines/**" = ["E", "F", "W"]

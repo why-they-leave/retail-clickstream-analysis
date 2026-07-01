@@ -16,6 +16,7 @@ build/
 venv/
 env/
 ENV/
+retail-clickstream-analysis/
 
 # 환경변수 / 시크릿
 .env
@@ -73,5 +74,6 @@ htmlcov/
 # ruff / black 캐시
 .ruff_cache/
 
-# 문서 / 설계 산출물
-docs/
+# 로컬 실행 설정
+configs/**/run_local*.yaml
+

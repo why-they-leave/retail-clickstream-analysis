@@ -1,0 +1,26 @@
+sample:
+  ratio: 0.025
+  random_state: 42
+
+paths:
+  input: data/interim/funnel_627_mba.csv
+  output_dir: data/interim/funnel_persona_gen
+  persona: data/interim/funnel_persona_gen/final_personas.json
+  customer_features: data/processed/customer_features_all_customers.csv
+
+llm:
+  model: solar-pro
+  max_tokens: 2000
+  temperature: 0.7
+  max_retries: 3
+  max_workers: 1
+
+persona:
+  n_personas: 20
+  n_iterations: 40
+  step2_iterations: 8
+  sets_per_step2_sample: 5
+  users_per_iteration: 100
+  train_ratio: 0.8
+  max_per_user: 5
+  batch_size: 100
