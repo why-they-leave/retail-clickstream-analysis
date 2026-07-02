@@ -1,0 +1,25 @@
+# # 데이터마트 생성
+# python src/datasets/make_als_mart.py
+
+# # 학습
+# python src/baselines/ALS/als_model.py --dataset full
+# python src/baselines/ALS/als_model.py --dataset us
+
+# # 평가 (params.yaml의 k_list 사용)
+# python src/baselines/ALS/als_evaluate.py --dataset full
+
+# # 평가 (K 직접 지정)
+# python src/baselines/ALS/als_evaluate.py --dataset full --k 5 10 20 50
+
+split_date: "2025-08-01"
+cold_threshold: 10
+top_n: 100          # 유저당 저장할 최대 추천 수 (평가 시 k 조정 가능)
+
+als:
+  factors: 64
+  iterations: 20
+  alpha: 1          # total_score에 가중치가 반영되어 있으므로 1부터 시작
+  random_state: 42
+
+eval:
+  k_list: [5, 10, 20]
