@@ -10,6 +10,7 @@
 
 ### 기타
 
+- CodeRabbit 리뷰 트리거용 빈 커밋 (#15) ([ead6f4a](https://github.com/JungYeoni/da-template/commit/ead6f4a8b1c3847290e402876d00f235579a6295))
 - 코덱스 설정 업데이트 ([6d7727b](https://github.com/JungYeoni/da-template/commit/6d7727b6c642d44cb1e7c9f0837dce96787b1975))
 - 불필요한 패키지 삭제 및 패키지 추가 (#8) ([cf0c7c6](https://github.com/JungYeoni/da-template/commit/cf0c7c6ea0bed5913289d68b6b054ac3ff1a3b13))
 - Gitignore에 로컬 실행 설정 파일 추가 (#8) ([092d24e](https://github.com/JungYeoni/da-template/commit/092d24e447961db2c08540ca7dc341569c030117))
@@ -27,6 +28,9 @@
 
 ### 문서
 
+- 페르소나 라벨링 시 LLM 입력 방식 추가 (#15) ([6b3580d](https://github.com/JungYeoni/da-template/commit/6b3580d9f2b0c1ab48ea16e39168784ec0d1a11f))
+- 파생 피처 EDA 후 report 업데이트 (#15) ([2d943a9](https://github.com/JungYeoni/da-template/commit/2d943a9f0e9fe70ecabd83f38ff72e4337b1c753))
+- CHANGELOG 자동 업데이트 [skip ci] ([5fdfeda](https://github.com/JungYeoni/da-template/commit/5fdfeda01f46d54e9abdf275e0e02875eab05eb7))
 - CHANGELOG 자동 업데이트 [skip ci] ([90b0b76](https://github.com/JungYeoni/da-template/commit/90b0b76860e435cc92059432d5ef7a9307d88616))
 - Full vs US 페르소나 생성 EDA 추가 #4 ([c23fe47](https://github.com/JungYeoni/da-template/commit/c23fe47d0f6c5eb9df8196484707dcbf0366c170))
 - CHANGELOG 자동 업데이트 [skip ci] ([dbadaa8](https://github.com/JungYeoni/da-template/commit/dbadaa833b63c519198ffaca2d39251c851b2737))
@@ -51,6 +55,7 @@
 
 ### 버그 수정
 
+- 피드백 반영 후 레포트 업데이트 (#15) ([a847d79](https://github.com/JungYeoni/da-template/commit/a847d7961955b5cec8d0ddd64d1748078a415545))
 - CodeRabbit 리뷰 반영 #4 ([1773f1b](https://github.com/JungYeoni/da-template/commit/1773f1bcaf33940cbcb85d0cd510a8172a65f1db))
 - LLM 실행 의존성 추가 #4 ([6fef7a2](https://github.com/JungYeoni/da-template/commit/6fef7a29111d42adce2ec6f7fb7e80652f22e4f6))
 - LLM 실행 시 dotenv 로드 #4 ([302bf29](https://github.com/JungYeoni/da-template/commit/302bf29ed3aa2139da640307d5b81995de8d4166))
@@ -68,6 +73,7 @@
 
 ### 새 기능
 
+- 세그먼트를 위한 파생피처 생성 후 EDA (#15) ([e1e8e8c](https://github.com/JungYeoni/da-template/commit/e1e8e8c367d93b6fb9d0531995d475f74787a568))
 - 전체 데이터 vs US-only 페르소나 설정 추가 #4 ([5aa617a](https://github.com/JungYeoni/da-template/commit/5aa617ae711b01f363f65e273e633197df0e3b3d))
 - Llm conector test 구현 (#8) ([3902d5e](https://github.com/JungYeoni/da-template/commit/3902d5edf5d75ff9040a8cec07ad87d516f940ca))
 - 현재 구현된 코드에 맞게 라이브러리 및 경로 수정 (#8) ([9a3387f](https://github.com/JungYeoni/da-template/commit/9a3387f13d54271c767ca68816f0ee87a31dceb6))
