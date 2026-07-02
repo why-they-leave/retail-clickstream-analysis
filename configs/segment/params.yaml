@@ -1,0 +1,16 @@
+segment_assignment:
+  method: kmeans
+  n_clusters: 6
+  random_state: 42
+  n_init: 20
+  input_features:
+    - page_view_count
+    - atc_rate
+    - order_count
+    - purchase_per_session
+    - total_spend_log
+    - recency_session_days
+    - recency_order_days
+    - view_purchase_category_match
+    - dominant_view_category_ratio
+    - dominant_purchase_category_ratio
