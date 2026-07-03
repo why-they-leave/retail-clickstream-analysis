@@ -31,7 +31,9 @@ def generate_user_item_events():
 
     unmapped_types = events.loc[events["score"].isnull(), "event_type"].unique()
     if len(unmapped_types) > 0:
-        logger.warning(f"score_map에 없는 event_type 발견, score가 NaN으로 저장됨: {list(unmapped_types)}")
+        logger.warning(
+            f"score_map에 없는 event_type 발견, score가 NaN으로 저장됨: {list(unmapped_types)}"
+        )
 
     # checkout/purchase의 product_id 복원용 세션별 장바구니 상품 목록
     # 검증 근거: checkout이 있는 전체 세션(44,909개)에서 add_to_cart qty 합 == cart_size 100% 일치.
