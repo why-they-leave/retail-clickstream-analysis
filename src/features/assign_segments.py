@@ -21,7 +21,9 @@ from pathlib import Path
 
 import pandas as pd
 import yaml
+from segment_common import fill_clustering_features
 from sklearn.cluster import KMeans
+from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s:%(name)s:%(message)s")
@@ -86,67 +88,36 @@ def load_segment_config(config_path: Path = CONFIG_PATH) -> dict:
     return config
 
 
-def _fill_clustering_features(
-    df: pd.DataFrame,
-    reference: pd.DataFrame,
-    input_features: list[str],
-) -> pd.DataFrame:
-    """클러스터링 입력 피처 결측을 동일 규칙으로 대체한다."""
-    missing_cols = sorted(set(input_features) - set(df.columns))
-    if missing_cols:
-        raise ValueError(f"segment feature table에 필요한 컬럼이 없습니다: {missing_cols}")
+def fit_segment_model(df_all: pd.DataFrame, config: dict) -> Pipeline:
+    """전체 고객 기준으로 scaler와 KMeans pipeline을 학습한다."""
+    x_all = fill_clustering_features(df_all, df_all, config["input_features"])
 
-    result = df[input_features].copy()
-
-    zero_fill_cols = [
-        "page_view_count",
-        "atc_rate",
-        "order_count",
-        "purchase_per_session",
-        "total_spend_log",
-        "view_purchase_category_match",
-        "dominant_view_category_ratio",
-        "dominant_purchase_category_ratio",
-    ]
-    zero_fill_cols = [col for col in zero_fill_cols if col in result.columns]
-    result[zero_fill_cols] = result[zero_fill_cols].fillna(0)
-
-    for col in ["recency_session_days", "recency_order_days"]:
-        if col not in result.columns:
-            continue
-        max_value = reference[col].dropna().max()
-        fill_value = max_value + 1 if pd.notna(max_value) else 0
-        result[col] = result[col].fillna(fill_value)
-
-    return result
-
-
-def fit_segment_model(df_all: pd.DataFrame, config: dict):
-    """전체 고객 기준으로 scaler와 KMeans를 학습한다."""
-    x_all = _fill_clustering_features(df_all, df_all, config["input_features"])
-
-    scaler = StandardScaler()
-    x_scaled = scaler.fit_transform(x_all)
-
-    model = KMeans(
-        n_clusters=config["n_clusters"],
-        n_init=config["n_init"],
-        random_state=config["random_state"],
+    pipeline = Pipeline(
+        steps=[
+            ("scaler", StandardScaler()),
+            (
+                "kmeans",
+                KMeans(
+                    n_clusters=config["n_clusters"],
+                    n_init=config["n_init"],
+                    random_state=config["random_state"],
+                ),
+            ),
+        ]
     )
-    model.fit(x_scaled)
-    return scaler, model
+    pipeline.fit(x_all)
+    return pipeline
 
 
 def assign_segment_ids(
     df: pd.DataFrame,
     reference_df: pd.DataFrame,
-    scaler: StandardScaler,
-    model: KMeans,
+    pipeline: Pipeline,
     input_features: list[str],
 ) -> pd.DataFrame:
-    """학습된 scaler/model로 customer_id별 segment_id를 부여한다."""
-    x = _fill_clustering_features(df, reference_df, input_features)
-    segment_ids = model.predict(scaler.transform(x))
+    """학습된 pipeline으로 customer_id별 segment_id를 부여한다."""
+    x = fill_clustering_features(df, reference_df, input_features)
+    segment_ids = pipeline.predict(x)
 
     result = df.copy()
     result["segment_id"] = segment_ids
@@ -266,13 +237,11 @@ def main() -> None:
     df_all = pd.read_csv(SEGMENT_FEATURE_PATHS["all_customers"])
     df_us = pd.read_csv(SEGMENT_FEATURE_PATHS["us_customers"])
 
-    scaler, model = fit_segment_model(df_all, config)
+    pipeline = fit_segment_model(df_all, config)
 
     assigned = {
-        "all_customers": assign_segment_ids(
-            df_all, df_all, scaler, model, config["input_features"]
-        ),
-        "us_customers": assign_segment_ids(df_us, df_all, scaler, model, config["input_features"]),
+        "all_customers": assign_segment_ids(df_all, df_all, pipeline, config["input_features"]),
+        "us_customers": assign_segment_ids(df_us, df_all, pipeline, config["input_features"]),
     }
 
     for label, result in assigned.items():

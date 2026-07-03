@@ -134,8 +134,8 @@ def _purchase_category_features(order_details: pd.DataFrame) -> pd.DataFrame:
 
 def add_segment_features(
     customer_features: pd.DataFrame,
-    session_events: pd.DataFrame,
-    order_details: pd.DataFrame,
+    dominant_view_ratio: pd.DataFrame,
+    purchase_category_features: pd.DataFrame,
 ) -> pd.DataFrame:
     """확정된 segment feature schema에 맞게 파생 피처를 추가한다."""
     df = customer_features.copy()
@@ -161,8 +161,8 @@ def add_segment_features(
     )
     df["view_purchase_category_match"] = (view_notna & purchase_notna & category_same).astype(int)
 
-    df = df.merge(_dominant_view_ratio(session_events), on="customer_id", how="left").merge(
-        _purchase_category_features(order_details), on="customer_id", how="left"
+    df = df.merge(dominant_view_ratio, on="customer_id", how="left").merge(
+        purchase_category_features, on="customer_id", how="left"
     )
 
     return df[COLUMN_ORDER]
@@ -181,7 +181,11 @@ def validate_segment_features(df: pd.DataFrame, label: str) -> None:
     ]:
         if df[col].isna().any():
             errors.append(f"{col} 결측 존재")
-    for col in ["atc_rate", "dominant_view_category_ratio", "dominant_purchase_category_ratio"]:
+    atc_values = df["atc_rate"].dropna()
+    if atc_values.lt(0).any() or np.isinf(atc_values).any():
+        errors.append("atc_rate 범위 오류")
+
+    for col in ["dominant_view_category_ratio", "dominant_purchase_category_ratio"]:
         values = df[col].dropna()
         if values.lt(0).any() or values.gt(1).any():
             errors.append(f"{col} 범위 오류")
@@ -197,10 +201,14 @@ def main() -> None:
 
     session_events = pd.read_csv(INTERIM_DIR / "sessions_events_products.csv")
     order_details = pd.read_csv(INTERIM_DIR / "orders_items_products.csv")
+    dominant_view_ratio = _dominant_view_ratio(session_events)
+    purchase_category_features = _purchase_category_features(order_details)
 
     for label, input_path in CUSTOMER_FEATURE_PATHS.items():
         customer_features = pd.read_csv(input_path)
-        segment_features = add_segment_features(customer_features, session_events, order_details)
+        segment_features = add_segment_features(
+            customer_features, dominant_view_ratio, purchase_category_features
+        )
         validate_segment_features(segment_features, label)
 
         output_path = OUTPUT_PATHS[label]

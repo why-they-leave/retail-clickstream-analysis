@@ -14,8 +14,10 @@ from pathlib import Path
 
 import pandas as pd
 from assign_segments import load_segment_config
+from segment_common import fill_clustering_features
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
+from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s:%(name)s:%(message)s")
@@ -31,40 +33,6 @@ SIZE_PATH = PROCESSED_DIR / "segment_cluster_sizes.csv"
 K_RANGE = range(3, 10)
 
 
-def _fill_clustering_features(
-    df: pd.DataFrame,
-    input_features: list[str],
-) -> pd.DataFrame:
-    """assign_segments.py와 같은 기준으로 cluster input 결측을 대체한다."""
-    missing_cols = sorted(set(input_features) - set(df.columns))
-    if missing_cols:
-        raise ValueError(f"segment feature table에 필요한 컬럼이 없습니다: {missing_cols}")
-
-    result = df[input_features].copy()
-
-    zero_fill_cols = [
-        "page_view_count",
-        "atc_rate",
-        "order_count",
-        "purchase_per_session",
-        "total_spend_log",
-        "view_purchase_category_match",
-        "dominant_view_category_ratio",
-        "dominant_purchase_category_ratio",
-    ]
-    zero_fill_cols = [col for col in zero_fill_cols if col in result.columns]
-    result[zero_fill_cols] = result[zero_fill_cols].fillna(0)
-
-    for col in ["recency_session_days", "recency_order_days"]:
-        if col not in result.columns:
-            continue
-        max_value = result[col].dropna().max()
-        fill_value = max_value + 1 if pd.notna(max_value) else 0
-        result[col] = result[col].fillna(fill_value)
-
-    return result
-
-
 def evaluate_k_candidates(
     df: pd.DataFrame,
     input_features: list[str],
@@ -73,15 +41,21 @@ def evaluate_k_candidates(
     random_state: int = 42,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """후보 k별 inertia, silhouette, segment size balance를 계산한다."""
-    x = _fill_clustering_features(df, input_features)
-    x_scaled = StandardScaler().fit_transform(x)
+    x = fill_clustering_features(df, df, input_features)
 
     evaluation_records = []
     size_records = []
 
     for k in k_range:
-        model = KMeans(n_clusters=k, n_init=n_init, random_state=random_state)
-        labels = model.fit_predict(x_scaled)
+        pipeline = Pipeline(
+            steps=[
+                ("scaler", StandardScaler()),
+                ("kmeans", KMeans(n_clusters=k, n_init=n_init, random_state=random_state)),
+            ]
+        )
+        labels = pipeline.fit_predict(x)
+        x_scaled = pipeline.named_steps["scaler"].transform(x)
+        kmeans = pipeline.named_steps["kmeans"]
 
         label_counts = pd.Series(labels, name="segment_id").value_counts().sort_index()
         label_ratios = label_counts / len(labels)
@@ -90,7 +64,7 @@ def evaluate_k_candidates(
         evaluation_records.append(
             {
                 "k": k,
-                "inertia": model.inertia_,
+                "inertia": kmeans.inertia_,
                 "silhouette": silhouette,
                 "min_segment_count": int(label_counts.min()),
                 "max_segment_count": int(label_counts.max()),
