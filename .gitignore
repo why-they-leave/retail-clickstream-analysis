@@ -21,6 +21,7 @@ retail-clickstream-analysis/
 # 환경변수 / 시크릿
 .env
 .env.*
+!.env.example
 secrets/
 credentials/
 

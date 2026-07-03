@@ -131,6 +131,30 @@ Windows PowerShell에서는 가상환경을 다음처럼 활성화합니다.
 .venv\Scripts\Activate.ps1
 ```
 
+커밋 전 lint/format이 자동으로 돌도록 pre-commit 훅을 설치합니다 (최초 1회).
+
+```bash
+uv run pre-commit install
+```
+
+---
+
+## 환경 변수
+
+`src/persona/`(페르소나 생성·라벨링) 스크립트는 Upstage API를 호출하므로 `.env` 설정이 필요합니다. 그 외 파이프라인(ALS, segment 등)은 `.env` 없이 동작합니다.
+
+```bash
+cp .env.example .env
+```
+
+`.env`에 아래 값을 채웁니다.
+
+| 변수 | 설명 |
+|------|------|
+| `UPSTAGE_API_KEY` | [console.upstage.ai](https://console.upstage.ai)에서 발급. `src/persona/generation.py`, `src/persona/labeling.py`에서 사용 |
+
+> `configs/` 아래 yaml 파일(`base.yaml`, `dev.yaml`, `prod.yaml`, `persona/*.yaml`, `segment/params.yaml`)은 전부 상대경로·공유 파라미터라 로컬에서 따로 수정할 값은 없습니다.
+
 ---
 
 ## 품질 확인
