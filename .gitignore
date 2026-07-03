@@ -29,18 +29,21 @@ credentials/
 data/raw/
 data/interim/
 data/processed/
-!data/raw/.gitkeep
-!data/interim/.gitkeep
-!data/processed/.gitkeep
+data/outputs/ALS/*
 
-# 모델 아티팩트
-models/
+# 모델 아티팩트 (가중치 파일)
 *.pkl
 *.joblib
 *.h5
 *.pt
 *.pth
 mlruns/
+
+# 로그 파일
+*.log
+
+# .gitkeep은 모든 ignore 규칙을 override — 반드시 파일 맨 끝에 위치
+!**/.gitkeep
 
 # 결과 / 산출물
 results/
