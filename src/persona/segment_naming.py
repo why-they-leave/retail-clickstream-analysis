@@ -213,8 +213,11 @@ def validate_naming_response(parsed, expected_segment_id: int) -> list[str]:
 
 
 def check_demographic_language(parsed: dict) -> list[str]:
-    """segment_name/description에 demographic/lifestyle 표현이 있는지 소프트 체크한다."""
-    text = f"{parsed.get('segment_name', '')} {parsed.get('description', '')}".lower()
+    """LLM 출력 문자열 필드에 demographic/lifestyle 표현이 있는지 소프트 체크한다."""
+    fields = [parsed.get("segment_name", ""), parsed.get("description", "")]
+    fields.extend(parsed.get("evidence", []))
+    fields.extend(parsed.get("cautions", []))
+    text = " ".join(str(value) for value in fields).lower()
     return [kw for kw in DEMOGRAPHIC_KEYWORDS if kw in text]
 
 
@@ -380,6 +383,7 @@ def main() -> None:
     client = OpenAI(
         api_key=get_required_env("UPSTAGE_API_KEY"),
         base_url="https://api.upstage.ai/v1",
+        timeout=60,
     )
 
     for i in range(1, args.n_runs + 1):
