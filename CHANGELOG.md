@@ -2,8 +2,15 @@
 
 ## 미출시 변경사항
 
+### add
+
+- #7 ALS 성능 개선 및 threshold 검증 리포트 ([49da580](https://github.com/JungYeoni/da-template/commit/49da58030ef5d5d0989af71f649ee861a9a095b9))
+- #7 ALS 하이퍼파리미터 튜닝 및 성능 향상 분석, cold 유저 threshold 실험 ([eb4f116](https://github.com/JungYeoni/da-template/commit/eb4f11690198dfac4be39cea189d0b778d177e19))
+- #7 코드 설명 주석 추가 ([1725993](https://github.com/JungYeoni/da-template/commit/1725993d74a74918797931a07891155c1eed4d4b))
+
 ### style
 
+- Ruff format 적용 (#7) ([92070e3](https://github.com/JungYeoni/da-template/commit/92070e3aad89b5b9de267c7b2b1378c22a09a3c6))
 - Ruff import 정렬 수정 #5 ([edd97fe](https://github.com/JungYeoni/da-template/commit/edd97fedd875dd593607c6c78e21e0082224fa60))
 - Ruff format 재적용 #1 ([fb19d42](https://github.com/JungYeoni/da-template/commit/fb19d423b8bbf23878774a5ac355678f8056dfac))
 - Ruff format 적용 #1 ([cee6110](https://github.com/JungYeoni/da-template/commit/cee6110e42a9a69fe5361adaaee587fbfaa467cd))
@@ -28,10 +35,15 @@
 
 ### 리팩터링
 
+- #7 ALS 하이퍼파리미터 수정 및 파이프라인 오류, 피드백 반영 ([236b6d4](https://github.com/JungYeoni/da-template/commit/236b6d43d86a5680d8384654de049c05ead90566))
+- #7 전반적인 경로 수정 및 데이터마트 생성 로직, 테스트용 GT 수정, 병렬처리 등 포함 - 확정 커밋 아니고, 아직 수정이 필요한 커밋입니다. 노트북에서 작업을 이어가기 위해서 커밋합니다 ([3d30154](https://github.com/JungYeoni/da-template/commit/3d3015472a287773ae1e1e8bf14b52f74b22515d))
 - Segment assignment 리뷰 반영 (#16) ([2fce1d3](https://github.com/JungYeoni/da-template/commit/2fce1d31aae62e3069dfc1b5fe95c847818a31e8))
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([bd247cb](https://github.com/JungYeoni/da-template/commit/bd247cbb84ba923bf726bf431aa933576efed99a))
+- .env.example 추가 및 로컬 환경 세팅 가이드 보강 ([a35916f](https://github.com/JungYeoni/da-template/commit/a35916faf97b0f3bcee0e89a0e78625420ab95fa))
+- CHANGELOG 자동 업데이트 [skip ci] ([8896349](https://github.com/JungYeoni/da-template/commit/8896349f97fc083c38585c0d0d34ab823a9c2069))
 - Segment cluster k 비교 결과 기록 (#16) ([a644855](https://github.com/JungYeoni/da-template/commit/a6448553b3a3443825dc71ef81cd5f3481b6a1e5))
 - CHANGELOG 자동 업데이트 [skip ci] ([919b9b3](https://github.com/JungYeoni/da-template/commit/919b9b373c89cc2952baadd3958c0fd895073df2))
 - 페르소나 라벨링 시 LLM 입력 방식 추가 (#15) ([6b3580d](https://github.com/JungYeoni/da-template/commit/6b3580d9f2b0c1ab48ea16e39168784ec0d1a11f))
@@ -61,6 +73,7 @@
 
 ### 버그 수정
 
+- #7 github action CI 테스트 오류 수정 ([a3838ad](https://github.com/JungYeoni/da-template/commit/a3838adc55b112df7e69d6e27195c59dc117f5a4))
 - Reference에 recency 컬럼 없을 때 명시적 ValueError 반환 (#16) ([e5cf0d7](https://github.com/JungYeoni/da-template/commit/e5cf0d7a42ae79684241caa63093dec749bbe5af))
 - 피드백 반영 후 레포트 업데이트 (#15) ([a847d79](https://github.com/JungYeoni/da-template/commit/a847d7961955b5cec8d0ddd64d1748078a415545))
 - CodeRabbit 리뷰 반영 #4 ([1773f1b](https://github.com/JungYeoni/da-template/commit/1773f1bcaf33940cbcb85d0cd510a8172a65f1db))
@@ -80,6 +93,10 @@
 
 ### 새 기능
 
+- #20 이슈 검증 (#7) ([2560420](https://github.com/JungYeoni/da-template/commit/25604207823195284d8a0da5c2fe1a59476e2fbc))
+- Gitignore 경로 수정. 필요한 디렉토리 경로 추가 ([e7868e0](https://github.com/JungYeoni/da-template/commit/e7868e0e73e4a9363e1570275b8c4056b74c0685))
+- #7 ALS 학습 및 평가 코드(평가지표: HR@K, NDCG@K, Recall@K) ([cd1de63](https://github.com/JungYeoni/da-template/commit/cd1de63ab0e852a60d7565dab7ada3a702e83701))
+- #7 ALS 데이터마트 생성 코드 ([3baffa5](https://github.com/JungYeoni/da-template/commit/3baffa597933d7124d7e07fccbb2c761f5b7cb38))
 - Clustering 기반 segment assignment 추가 (#16) ([5059633](https://github.com/JungYeoni/da-template/commit/505963328b56f42fbc60b582db8b9f3ba90ec5a1))
 - Segment 입력 피처 생성 추가 (#16) ([15cbc63](https://github.com/JungYeoni/da-template/commit/15cbc63f56144c09fb40e7782d4902c9d5db7394))
 - 세그먼트를 위한 파생피처 생성 후 EDA (#15) ([e1e8e8c](https://github.com/JungYeoni/da-template/commit/e1e8e8c367d93b6fb9d0531995d475f74787a568))
