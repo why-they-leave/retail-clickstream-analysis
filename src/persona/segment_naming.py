@@ -247,7 +247,9 @@ def label_segment(
             response = call_llm(client, SEGMENT_NAMING_SYS, user_prompt, model=model)
         except Exception as e:
             last_errors = [f"LLM 호출 실패: {e}"]
-            logger.error("[segment %s] 시도 %d/%d 호출 실패: %s", segment_id, attempt, total_attempts, e)
+            logger.error(
+                "[segment %s] 시도 %d/%d 호출 실패: %s", segment_id, attempt, total_attempts, e
+            )
             continue
 
         parsed, errors = parse_naming_response(response, segment_id)
