@@ -3,7 +3,7 @@ sample:
   random_state: 42
 
 paths:
-  input: data/interim/funnel_627_mba.csv
+  input: data/interim/funnel_mba_format.csv
   output_dir: data/interim/funnel_persona_gen
   persona: data/interim/funnel_persona_gen/final_personas.json
   customer_features: data/processed/customer_features_all_customers.csv
