@@ -7,11 +7,13 @@ Issue #16에서는 Issue #15에서 확정한 고객 단위 피처를 사용해 c
 전체 흐름은 아래와 같다.
 
 ```text
-customer_features_*.csv
-→ segment_features_*.csv
-→ customer_segments_*.csv
-→ segment_summary_*.csv
+customer_features_all_customers.csv
+→ segment_features_all_customers.csv
+→ customer_segments_all_customers.csv
+→ segment_summary_all_customers.csv
 ```
+
+> **Issue #23 반영**: #16 초기 구현은 Full(all_customers)과 US-only(us_customers)를 병행 생성했지만, #4에서 이미 "Full과 US-only 간 유의미한 차이 없음"이 확인되어 #23에서 US-only 트랙을 제거했다. 이후 파이프라인은 Full 데이터 단일 트랙으로만 동작한다.
 
 ## Config 관리 범위
 
@@ -48,7 +50,6 @@ segment_assignment:
 
 ```text
 data/processed/customer_features_all_customers.csv
-data/processed/customer_features_us_customers.csv
 data/processed/segment_features_all_customers.csv
 data/processed/customer_segments_all_customers.csv
 data/processed/segment_summary_all_customers.csv

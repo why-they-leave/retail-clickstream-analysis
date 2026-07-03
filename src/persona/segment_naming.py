@@ -6,9 +6,10 @@ v1(persona/generation.py, persona/labeling.py)과 달리 LLM은 persona taxonomy
 집계 통계(segment_summary_*.csv)만 근거로 사용해, 사람이 읽을 수 있는
 이름/설명을 붙이는 라벨러 역할로 제한한다.
 
-입력 (--dataset 로 선택):
-    data/processed/segment_summary_all_customers.csv (기본값)
-    data/processed/segment_summary_us_customers.csv
+Full 데이터 단일 트랙 (Issue #23 — US-only 트랙 제거).
+
+입력:
+    data/processed/segment_summary_all_customers.csv
 
 실험/채택 흐름:
     매 실행은 experiments/segment_naming_v2/run_<날짜>_<순번>/segment_personas.json에
@@ -17,16 +18,8 @@ v1(persona/generation.py, persona/labeling.py)과 달리 LLM은 persona taxonomy
     experiments/segment_naming_v2/CHOICES.md에 채택 사유를 기록한 뒤,
     --promote RUN_LABEL로 canonical 파일에 반영한다.
 
-    --dataset all → data/processed/segment_personas_v2.json
-    --dataset us  → data/processed/segment_personas_v2_us_customers.json
-
-설계 메모:
-    Full/US customer segments는 #16에서 같은 KMeans pipeline으로 정의되어
-    segment_id가 동일 클러스터를 가리킨다(docs/SEGMENT_ASSIGNMENT_DESIGN.md).
-    기본값(all)으로 naming하면 US customer_segments에도 segment_id 기준으로
-    그대로 병합해서 재사용할 수 있다(merge_personas_with_customers 참고).
-    US 고객군만의 통계 차이를 반영한 별도 이름이 필요할 때만 --dataset us로
-    US summary 기준 naming을 추가로 돌린다.
+출력:
+    data/processed/segment_personas_v2.json
 """
 
 import json
@@ -50,15 +43,8 @@ ROOT_DIR = Path(__file__).resolve().parents[2]
 PROCESSED_DIR = ROOT_DIR / "data" / "processed"
 EXPERIMENTS_DIR = ROOT_DIR / "experiments" / "segment_naming_v2"
 
-SEGMENT_SUMMARY_PATHS = {
-    "all": PROCESSED_DIR / "segment_summary_all_customers.csv",
-    "us": PROCESSED_DIR / "segment_summary_us_customers.csv",
-}
-
-OUTPUT_PATHS = {
-    "all": PROCESSED_DIR / "segment_personas_v2.json",
-    "us": PROCESSED_DIR / "segment_personas_v2_us_customers.json",
-}
+SEGMENT_SUMMARY_PATH = PROCESSED_DIR / "segment_summary_all_customers.csv"
+OUTPUT_PATH = PROCESSED_DIR / "segment_personas_v2.json"
 
 REQUIRED_KEYS = ["segment_id", "segment_name", "description", "evidence", "cautions"]
 
@@ -328,31 +314,20 @@ def save_experiment_run(results: list[dict], run_label: str | None = None) -> Pa
     return output_path
 
 
-def promote_run(run_label: str, dataset: str) -> Path:
+def promote_run(run_label: str) -> Path:
     """검토를 마친 run을 canonical 파일로 승격한다. API 호출 없음."""
     src = EXPERIMENTS_DIR / run_label / "segment_personas.json"
     if not src.exists():
         raise FileNotFoundError(f"run을 찾을 수 없음: {src}")
 
-    dst = OUTPUT_PATHS[dataset]
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
-    shutil.copy(src, dst)
-    logger.info("[%s] 승격 완료: %s -> %s", dataset, src, dst)
-    return dst
+    shutil.copy(src, OUTPUT_PATH)
+    logger.info("승격 완료: %s -> %s", src, OUTPUT_PATH)
+    return OUTPUT_PATH
 
 
 def parse_args():
     parser = ArgumentParser(description="Segment summary 기반 LLM naming (Issue #17).")
-    parser.add_argument(
-        "--dataset",
-        choices=["all", "us"],
-        default="all",
-        help=(
-            "naming에 사용할 segment_summary 기준. "
-            "'all'(기본값)은 전체 고객 summary로 1회 naming하고 결과를 US에도 재사용 가능하다. "
-            "'us'는 US 고객 summary만으로 별도 naming한다."
-        ),
-    )
     parser.add_argument(
         "--n-runs",
         type=int,
@@ -375,11 +350,10 @@ def main() -> None:
     args = parse_args()
 
     if args.promote:
-        promote_run(args.promote, args.dataset)
+        promote_run(args.promote)
         return
 
-    summary_path = SEGMENT_SUMMARY_PATHS[args.dataset]
-    df = pd.read_csv(summary_path).sort_values("segment_id")
+    df = pd.read_csv(SEGMENT_SUMMARY_PATH).sort_values("segment_id")
     client = OpenAI(
         api_key=get_required_env("UPSTAGE_API_KEY"),
         base_url="https://api.upstage.ai/v1",
@@ -390,8 +364,7 @@ def main() -> None:
         results = [label_segment(client, row) for _, row in df.iterrows()]
         failed = [r for r in results if r.get("status") == "NAMING_FAILED"]
         logger.info(
-            "[%s] naming 완료 (%d/%d): 성공 %d / 실패 %d",
-            args.dataset,
+            "naming 완료 (%d/%d): 성공 %d / 실패 %d",
             i,
             args.n_runs,
             len(results) - len(failed),
