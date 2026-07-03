@@ -1,6 +1,10 @@
 """
 고객 단위 집계 파이프라인 진입점.
 
+Full 데이터 단일 트랙 (Issue #23 — US-only 트랙 제거).
+#4에서 Full과 US-only 간 유의미한 차이가 확인되지 않아, 이후 파이프라인은
+전체 고객(Full) 기준으로만 집계한다.
+
 실행 순서:
     1. preprocess_joins   — raw → 중간 조인 테이블 (data/interim/)
     2. build_customer_features — 중간 테이블 → 집계 피처 (data/processed/)
@@ -43,16 +47,6 @@ def main():
     validate(df_all, expected_rows=len(customers), label="전체")
     df_all.to_csv(OUTPUT_DIR / "customer_features_all_customers.csv", index=False)
     print(f"  저장: {OUTPUT_DIR / 'customer_features_all_customers.csv'}")
-
-    # ── Step 4: US 고객 기준 집계 ────────────────────────────────────────────
-    print("\n=== Step 4: US-only 피처 생성 ===")
-    us_ids = customers.loc[
-        customers["country"] == "US", "customer_id"
-    ]  # customers 테이블 기준으로 country 필터링
-    df_us = build_customer_features(us_ids, session_events, order_details)
-    validate(df_us, expected_rows=len(us_ids), label="US-only")  # US 고객 수 하드코딩 x
-    df_us.to_csv(OUTPUT_DIR / "customer_features_us_customers.csv", index=False)
-    print(f"  저장: {OUTPUT_DIR / 'customer_features_us_customers.csv'}")
 
     print("\n=== 완료 ===")
 

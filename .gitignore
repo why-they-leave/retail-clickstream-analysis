@@ -31,11 +31,10 @@ data/interim/
 data/processed/*
 data/outputs/ALS/*
 
-# Issue #17/#18: segment naming 산출물은 #18 비교 리포트 입력으로 재사용되어 예외 추적
+# Issue #17: segment naming 산출물은 #18 비교 리포트 입력으로 재사용되어 예외 추적
+# Issue #23: US-only 트랙 제거 — Full 산출물만 예외 추적
 !data/processed/segment_summary_all_customers.csv
-!data/processed/segment_summary_us_customers.csv
 !data/processed/segment_personas_v2.json
-!data/processed/segment_personas_v2_us_customers.json
 
 # 모델 아티팩트 (가중치 파일)
 *.pkl

@@ -1,19 +1,16 @@
 """
 segment feature table을 기반으로 clustering segment_id와 segment summary를 생성한다.
 
-설계:
-    - all_customers 기준으로 imputer/scaler/KMeans를 fit한다.
-    - us_customers에는 같은 모델을 predict하여 Full/US segment definition을 맞춘다.
+Full 데이터 단일 트랙 (Issue #23 — US-only 트랙 제거).
+#4에서 Full과 US-only 간 유의미한 차이가 확인되지 않아, 전체 고객(Full) 기준으로만
+scaler/KMeans를 fit하고 segment_id를 부여한다.
 
 입력:
     data/processed/segment_features_all_customers.csv
-    data/processed/segment_features_us_customers.csv
 
 출력:
     data/processed/customer_segments_all_customers.csv
-    data/processed/customer_segments_us_customers.csv
     data/processed/segment_summary_all_customers.csv
-    data/processed/segment_summary_us_customers.csv
 """
 
 import logging
@@ -33,20 +30,9 @@ ROOT_DIR = Path(__file__).resolve().parents[2]
 PROCESSED_DIR = ROOT_DIR / "data" / "processed"
 CONFIG_PATH = ROOT_DIR / "configs" / "segment" / "params.yaml"
 
-SEGMENT_FEATURE_PATHS = {
-    "all_customers": PROCESSED_DIR / "segment_features_all_customers.csv",
-    "us_customers": PROCESSED_DIR / "segment_features_us_customers.csv",
-}
-
-CUSTOMER_SEGMENT_PATHS = {
-    "all_customers": PROCESSED_DIR / "customer_segments_all_customers.csv",
-    "us_customers": PROCESSED_DIR / "customer_segments_us_customers.csv",
-}
-
-SEGMENT_SUMMARY_PATHS = {
-    "all_customers": PROCESSED_DIR / "segment_summary_all_customers.csv",
-    "us_customers": PROCESSED_DIR / "segment_summary_us_customers.csv",
-}
+SEGMENT_FEATURE_PATH = PROCESSED_DIR / "segment_features_all_customers.csv"
+CUSTOMER_SEGMENT_PATH = PROCESSED_DIR / "customer_segments_all_customers.csv"
+SEGMENT_SUMMARY_PATH = PROCESSED_DIR / "segment_summary_all_customers.csv"
 
 DEFAULT_SEGMENT_CONFIG = {
     "method": "kmeans",
@@ -88,9 +74,9 @@ def load_segment_config(config_path: Path = CONFIG_PATH) -> dict:
     return config
 
 
-def fit_segment_model(df_all: pd.DataFrame, config: dict) -> Pipeline:
+def fit_segment_model(df: pd.DataFrame, config: dict) -> Pipeline:
     """전체 고객 기준으로 scaler와 KMeans pipeline을 학습한다."""
-    x_all = fill_clustering_features(df_all, df_all, config["input_features"])
+    x = fill_clustering_features(df, df, config["input_features"])
 
     pipeline = Pipeline(
         steps=[
@@ -105,18 +91,17 @@ def fit_segment_model(df_all: pd.DataFrame, config: dict) -> Pipeline:
             ),
         ]
     )
-    pipeline.fit(x_all)
+    pipeline.fit(x)
     return pipeline
 
 
 def assign_segment_ids(
     df: pd.DataFrame,
-    reference_df: pd.DataFrame,
     pipeline: Pipeline,
     input_features: list[str],
 ) -> pd.DataFrame:
     """학습된 pipeline으로 customer_id별 segment_id를 부여한다."""
-    x = fill_clustering_features(df, reference_df, input_features)
+    x = fill_clustering_features(df, df, input_features)
     segment_ids = pipeline.predict(x)
 
     result = df.copy()
@@ -234,27 +219,17 @@ def main() -> None:
         config["n_init"],
     )
 
-    df_all = pd.read_csv(SEGMENT_FEATURE_PATHS["all_customers"])
-    df_us = pd.read_csv(SEGMENT_FEATURE_PATHS["us_customers"])
+    df = pd.read_csv(SEGMENT_FEATURE_PATH)
+    pipeline = fit_segment_model(df, config)
+    result = assign_segment_ids(df, pipeline, config["input_features"])
+    validate_assignments(result, "all_customers", config["n_clusters"])
 
-    pipeline = fit_segment_model(df_all, config)
+    result.to_csv(CUSTOMER_SEGMENT_PATH, index=False)
+    logger.info("[all_customers] 저장: %s", CUSTOMER_SEGMENT_PATH)
 
-    assigned = {
-        "all_customers": assign_segment_ids(df_all, df_all, pipeline, config["input_features"]),
-        "us_customers": assign_segment_ids(df_us, df_all, pipeline, config["input_features"]),
-    }
-
-    for label, result in assigned.items():
-        validate_assignments(result, label, config["n_clusters"])
-
-        customer_segment_path = CUSTOMER_SEGMENT_PATHS[label]
-        result.to_csv(customer_segment_path, index=False)
-        logger.info("[%s] 저장: %s", label, customer_segment_path)
-
-        summary = build_segment_summary(result)
-        summary_path = SEGMENT_SUMMARY_PATHS[label]
-        summary.to_csv(summary_path, index=False)
-        logger.info("[%s] 저장: %s", label, summary_path)
+    summary = build_segment_summary(result)
+    summary.to_csv(SEGMENT_SUMMARY_PATH, index=False)
+    logger.info("[all_customers] 저장: %s", SEGMENT_SUMMARY_PATH)
 
 
 if __name__ == "__main__":

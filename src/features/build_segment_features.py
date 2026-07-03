@@ -1,15 +1,15 @@
 """
 고객 단위 집계 피처를 기반으로 segment assignment 입력 피처를 생성한다.
 
+Full 데이터 단일 트랙 (Issue #23 — US-only 트랙 제거).
+
 입력:
     data/processed/customer_features_all_customers.csv
-    data/processed/customer_features_us_customers.csv
     data/interim/sessions_events_products.csv
     data/interim/orders_items_products.csv
 
 출력:
     data/processed/segment_features_all_customers.csv
-    data/processed/segment_features_us_customers.csv
 """
 
 import logging
@@ -25,15 +25,8 @@ ROOT_DIR = Path(__file__).resolve().parents[2]
 INTERIM_DIR = ROOT_DIR / "data" / "interim"
 PROCESSED_DIR = ROOT_DIR / "data" / "processed"
 
-CUSTOMER_FEATURE_PATHS = {
-    "all_customers": PROCESSED_DIR / "customer_features_all_customers.csv",
-    "us_customers": PROCESSED_DIR / "customer_features_us_customers.csv",
-}
-
-OUTPUT_PATHS = {
-    "all_customers": PROCESSED_DIR / "segment_features_all_customers.csv",
-    "us_customers": PROCESSED_DIR / "segment_features_us_customers.csv",
-}
+CUSTOMER_FEATURE_PATH = PROCESSED_DIR / "customer_features_all_customers.csv"
+OUTPUT_PATH = PROCESSED_DIR / "segment_features_all_customers.csv"
 
 COLUMN_ORDER = [
     "customer_id",
@@ -204,16 +197,14 @@ def main() -> None:
     dominant_view_ratio = _dominant_view_ratio(session_events)
     purchase_category_features = _purchase_category_features(order_details)
 
-    for label, input_path in CUSTOMER_FEATURE_PATHS.items():
-        customer_features = pd.read_csv(input_path)
-        segment_features = add_segment_features(
-            customer_features, dominant_view_ratio, purchase_category_features
-        )
-        validate_segment_features(segment_features, label)
+    customer_features = pd.read_csv(CUSTOMER_FEATURE_PATH)
+    segment_features = add_segment_features(
+        customer_features, dominant_view_ratio, purchase_category_features
+    )
+    validate_segment_features(segment_features, "all_customers")
 
-        output_path = OUTPUT_PATHS[label]
-        segment_features.to_csv(output_path, index=False)
-        logger.info("[%s] 저장: %s", label, output_path)
+    segment_features.to_csv(OUTPUT_PATH, index=False)
+    logger.info("[all_customers] 저장: %s", OUTPUT_PATH)
 
 
 if __name__ == "__main__":
