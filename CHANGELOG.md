@@ -32,6 +32,8 @@
 
 ### 문서
 
+- .env.example 추가 및 로컬 환경 세팅 가이드 보강 ([a35916f](https://github.com/JungYeoni/da-template/commit/a35916faf97b0f3bcee0e89a0e78625420ab95fa))
+- CHANGELOG 자동 업데이트 [skip ci] ([8896349](https://github.com/JungYeoni/da-template/commit/8896349f97fc083c38585c0d0d34ab823a9c2069))
 - Segment cluster k 비교 결과 기록 (#16) ([a644855](https://github.com/JungYeoni/da-template/commit/a6448553b3a3443825dc71ef81cd5f3481b6a1e5))
 - CHANGELOG 자동 업데이트 [skip ci] ([919b9b3](https://github.com/JungYeoni/da-template/commit/919b9b373c89cc2952baadd3958c0fd895073df2))
 - 페르소나 라벨링 시 LLM 입력 방식 추가 (#15) ([6b3580d](https://github.com/JungYeoni/da-template/commit/6b3580d9f2b0c1ab48ea16e39168784ec0d1a11f))
