@@ -327,6 +327,113 @@ Behavioral context:
 
 ---
 
+## 3. Segment Naming (v2 — Issue #17)
+
+> **관련 파일**: `src/persona/segment_naming.py`
+> **입력**: `data/processed/segment_summary_all_customers.csv` (Issue #16 산출물)
+> **모델**: Upstage Solar Pro (`solar-pro`), `temperature=0` (재현성 확보를 위해 고정 — 10회 반복 실행 안정성 검증 결과는 `reports/[ML]_Segment_Naming_v2_LLM_라벨링_2026-07-03.md` 참고)
+> **실험 버전 관리**: `experiments/segment_naming_v2/` (run별 산출물 + `CHOICES.md` 채택 기록), `--promote`로 canonical 파일 반영
+
+v1과의 핵심 차이: LLM은 persona taxonomy를 만들거나 개별 고객을 분류하지 않는다.
+KMeans가 이미 확정한 segment_id별 집계 통계만 보고 이름/설명을 붙이는
+라벨러 역할로 제한된다. 개별 고객 row, raw 상품명, raw log는 입력에 넣지 않는다.
+
+**시스템 프롬프트**
+
+```text
+You are naming customer behavior segments for an ecommerce analytics system.
+You act strictly as a labeler: you translate already-computed segment
+statistics into a human-readable name and description. You are not analyzing
+individual customers and you are not inventing a persona taxonomy.
+```
+
+**번역**
+
+```text
+당신은 이커머스 분석 시스템의 고객 행동 세그먼트에 이름을 붙이는 역할입니다.
+당신은 엄격히 라벨러로서, 이미 계산된 세그먼트 통계를 사람이 읽을 수 있는
+이름과 설명으로 번역합니다. 개별 고객을 분석하거나 페르소나 체계를
+새로 만들어내지 않습니다.
+```
+
+---
+
+**유저 프롬프트** (`build_user_prompt()` 출력)
+
+```text
+Take a deep breath and work according to the instructions step by step.
+
+{format_segment_summary() 출력 — Segment N summary 통계 블록}
+
+Task:
+Create a concise segment name and description using only the evidence above.
+
+Rules:
+- Use only the statistics given above. Do not use raw product names, individual
+customer records, or any data not shown in this summary.
+- Do not infer income, age, occupation, family status, or lifestyle. These are not
+observable in the data.
+- Prefer observable behavior-based phrasing (e.g. High-Intent, Repeat,
+Non-Purchasing, Browsing-Only) over demographic/lifestyle phrasing (e.g. Young,
+Urban, Affluent, Family, Professional).
+- This segment was produced by KMeans clustering with generally low silhouette
+scores, so treat it as a behavior-based approximation, not a sharply separated
+natural group. Avoid overconfident or marketing-style labels.
+- Every item in "evidence" must restate a specific field/value from the summary
+above. Do not add evidence that isn't in the summary.
+- If a field above is "none", do not claim behavior about it.
+- Return valid JSON only. No markdown. No explanation.
+
+Output JSON schema:
+{
+  "segment_id": <integer, must equal N>,
+  "segment_name": "<string>",
+  "description": "<string>",
+  "evidence": ["<string>", ...],
+  "cautions": ["<string>", ...]
+}
+```
+
+**번역**
+
+```text
+천천히 숨을 고르고 지시에 따라 단계별로 작업하세요.
+
+{세그먼트 통계 블록}
+
+목표: 위 근거만 사용해 간결한 세그먼트 이름과 설명을 작성하세요.
+
+규칙:
+- 위에 주어진 통계만 사용하세요. raw 상품명, 개별 고객 기록, 요약에 없는
+  데이터는 사용하지 마세요.
+- 소득, 연령, 직업, 가족 상태, 라이프스타일을 추론하지 마세요. 데이터로
+  관측되지 않습니다.
+- 데모그래픽/라이프스타일 표현(Young, Urban, Affluent, Family, Professional)보다
+  관측 가능한 행동 기반 표현(High-Intent, Repeat, Non-Purchasing, Browsing-Only)을
+  우선하세요.
+- 이 세그먼트는 실루엣 스코어가 대체로 낮은 KMeans clustering 결과이므로,
+  명확히 분리된 자연 군집이 아니라 행동 기반 근사치로 취급하세요. 과신하는
+  라벨이나 마케팅 문구를 피하세요.
+- "evidence"의 각 항목은 위 요약의 구체적 필드/값을 그대로 반영해야 합니다.
+  요약에 없는 근거를 추가하지 마세요.
+- 위 필드가 "none"이면 그 항목에 대해 행동을 단정하지 마세요.
+- 유효한 JSON만 출력하세요. 마크다운 없음. 설명 없음.
+```
+
+---
+
+**Segment summary → 텍스트 변환 규칙** (`format_segment_summary()`)
+
+| 항목 | 규칙 |
+|------|------|
+| 비율 값(`*_ratio`, `*_rate`) | 퍼센트 소수점 1자리, 결측 시 `none` |
+| 평균 값(`avg_*`) | 소수점 2자리(recency는 1자리), 결측 시 `none` |
+| 카테고리 분포(`top_*_categories`) | 이미 `"Books: 20.2%; Beauty: 19.0%"` 형태 문자열, 결측/빈 문자열이면 `none` |
+
+이 규칙은 v1의 `describe_user()` 결측값 처리 관례(§3)를 그대로 따른다.
+
+---
+
 ## 4. 주의사항
 
 | 문제 | 방지 방법 |
