@@ -29,6 +29,10 @@ def generate_user_item_events():
     score_map = {"page_view": 1, "add_to_cart": 3, "checkout": 4, "purchase": 5}
     events["score"] = events["event_type"].map(score_map)
 
+    unmapped_types = events.loc[events["score"].isnull(), "event_type"].unique()
+    if len(unmapped_types) > 0:
+        logger.warning(f"score_map에 없는 event_type 발견, score가 NaN으로 저장됨: {list(unmapped_types)}")
+
     # checkout/purchase의 product_id 복원용 세션별 장바구니 상품 목록
     # 검증 근거: checkout이 있는 전체 세션(44,909개)에서 add_to_cart qty 합 == cart_size 100% 일치.
     # 같은 세션에서 동일 상품이 qty만 다르게 두 번 기록되는 케이스(82건)가 있으므로
@@ -40,8 +44,11 @@ def generate_user_item_events():
         .reset_index()
     )
 
-    item_events = events[events["product_id"].notnull()].copy()
-    session_events = events[events["product_id"].isnull()].copy()
+    # product_id가 null인 이벤트는 checkout/purchase뿐이지만(DATA_CATALOG_raw.md 참고),
+    # 암묵적 null 체크 대신 event_type을 명시해 의도를 드러낸다.
+    cart_restore_types = ["checkout", "purchase"]
+    item_events = events[~events["event_type"].isin(cart_restore_types)].copy()
+    session_events = events[events["event_type"].isin(cart_restore_types)].copy()
 
     session_events = session_events.drop(columns=["product_id"])
     session_events_expanded = pd.merge(session_events, cart_items, on="session_id", how="inner")

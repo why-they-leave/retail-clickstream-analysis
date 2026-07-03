@@ -19,6 +19,7 @@ import numpy as np
 import pandas as pd
 import scipy.sparse as sparse
 import yaml
+from implicit.nearest_neighbours import bm25_weight, tfidf_weight
 
 # ============================================================
 # 경로 설정 (--dataset 인자에 따라 자동 결정)
@@ -134,6 +135,36 @@ def build_sparse_matrix(train_agg: pd.DataFrame, logger: logging.Logger):
     return matrix, user_enc, item_enc, user_dec, item_dec
 
 
+# 5-1. (선택) 신뢰도 행렬 재가중치 — train_agg 기반 matrix에만 적용, test 미접촉
+def apply_weighting(
+    matrix: sparse.csr_matrix,
+    method: str,
+    logger: logging.Logger,
+    K1: float = 100,
+    B: float = 0.8,
+) -> sparse.csr_matrix:
+    """
+    build_sparse_matrix()가 만든 train-only 행렬에 재가중치를 적용한다.
+    row=user(document), col=item(term) 방향을 그대로 사용한다 — implicit의
+    BM25Recommender.fit()처럼 .T로 전치할 필요가 없다. 전치는 그쪽이 아이템-아이템
+    유사도 계산을 위해 반대 방향(item-user)을 요구하기 때문이며, 우리 matrix는
+    이미 AlternatingLeastSquares.fit()이 기대하는 user_items 방향과 일치해
+    bm25_weight()의 row(=문서=유저) 길이정규화 / col(=단어=아이템) IDF 가정이
+    바로 들어맞는다.
+    """
+    if method == "none":
+        return matrix
+    if method == "tfidf":
+        weighted = tfidf_weight(matrix).tocsr()
+        logger.info("[가중치] TF-IDF 적용")
+        return weighted
+    if method == "bm25":
+        weighted = bm25_weight(matrix, K1=K1, B=B).tocsr()
+        logger.info(f"[가중치] BM25 적용 (K1={K1}, B={B})")
+        return weighted
+    raise ValueError(f"알 수 없는 weighting.method: {method}")
+
+
 # 6. ALS 학습
 def train_als(matrix: sparse.csr_matrix, params: dict, logger: logging.Logger):
     als_params = params["als"]
@@ -141,12 +172,14 @@ def train_als(matrix: sparse.csr_matrix, params: dict, logger: logging.Logger):
         factors=als_params["factors"],
         iterations=als_params["iterations"],
         alpha=als_params["alpha"],
+        regularization=als_params["regularization"],
         random_state=als_params["random_state"],
     )
     model.fit(matrix)
     logger.info(
         f"[ALS] 학습 완료 | factors={als_params['factors']}, "
-        f"iterations={als_params['iterations']}, alpha={als_params['alpha']}"
+        f"iterations={als_params['iterations']}, alpha={als_params['alpha']}, "
+        f"regularization={als_params['regularization']}"
     )
     return model
 
@@ -161,13 +194,17 @@ def generate_heavy_recommendations(
     top_n: int,
     logger: logging.Logger,
 ) -> pd.DataFrame:
-    """Heavy 유저 ALS 추천 — 배치 처리(recommend_all)로 일괄 추천"""
+    """Heavy 유저 ALS 추천 — 배치 처리(recommend)로 일괄 추천"""
     valid_users = [u for u in heavy_users if u in user_enc]
     user_indices = [user_enc[u] for u in valid_users]
 
+    # model.recommend_all()은 implicit>=0.6부터 deprecated이며 scores 없이 ids만 반환해
+    # (ids, scores) 언패킹이 실패한다. model.recommend(userid, user_items, ...)를 사용해야 한다.
+    # userid에는 sub_matrix의 로컬 행 순서(0..k-1)가 아니라 학습 시점의 인코딩 인덱스를
+    # 그대로 넘겨야 한다 — model.user_factors는 그 인덱스로 색인되기 때문이다.
     sub_matrix = matrix[user_indices]
-    all_item_indices, all_scores = model.recommend_all(
-        sub_matrix, N=top_n, filter_already_liked_items=True
+    all_item_indices, all_scores = model.recommend(
+        user_indices, sub_matrix, N=top_n, filter_already_liked_items=True
     )
 
     records = []
@@ -291,6 +328,13 @@ if __name__ == "__main__":
 
     # 5. 희소행렬
     matrix, user_enc, item_enc, user_dec, item_dec = build_sparse_matrix(train_agg, logger)
+
+    # 5-1. (선택) 신뢰도 행렬 재가중치 — params.yaml에 weighting 키가 없으면 no-op(method="none")
+    weighting_cfg = params.get("weighting", {"method": "none"})
+    matrix = apply_weighting(
+        matrix, weighting_cfg.get("method", "none"), logger,
+        K1=weighting_cfg.get("K1", 100), B=weighting_cfg.get("B", 0.8),
+    )
 
     # 6. ALS 학습
     model = train_als(matrix, params, logger)

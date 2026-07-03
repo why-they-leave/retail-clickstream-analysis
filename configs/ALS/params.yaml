@@ -15,10 +15,13 @@ split_date: "2025-08-01"
 cold_threshold: 10
 top_n: 100          # 유저당 저장할 최대 추천 수 (평가 시 k 조정 가능)
 
+# als 하이퍼파라미터: notebooks/20260703_ML_als_hyperparameter_tuning.ipynb 그리드서치 결과 반영 (2026-07-03)
+# 주의: test set 기반 탐색적 튜닝 결과이므로 잠정치. 확정 전 validation split 재검증 필요.
 als:
-  factors: 64
+  factors: 16
   iterations: 20
-  alpha: 1          # total_score에 가중치가 반영되어 있으므로 1부터 시작
+  alpha: 0.5        # total_score에 가중치가 반영되어 있어 낮은 alpha가 유리했음 (그리드서치 결과)
+  regularization: 10.0
   random_state: 42
 
 eval:
