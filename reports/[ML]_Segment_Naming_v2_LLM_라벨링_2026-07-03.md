@@ -44,26 +44,29 @@ segment_summary_all_customers.csv
 |------|-----|
 | schema 검증 통과율 | 6/6 (100.0%) |
 | 재시도 발생 횟수 | 0회 (전부 1차 시도 성공) |
-| demographic/lifestyle 키워드 경고 | 0건 |
-| customer_segments 병합 결측 | all 0/20,000행, us 0/3,648행 |
+| demographic/lifestyle 키워드 경고 | 0건 (오탐 1건 확인 — 아래 "실험" 절 참고) |
+| naming 안정성 (10회 반복, temperature=0) | 4/6 세그먼트 10/10 일치, 2/6 세그먼트 9/10 일치 |
+| evidence-summary 기계 대조 불일치 | 0건 (채택된 `run_2026-07-03_1` 기준) |
 
 ## 분석 결과
 
 **핵심 발견:**
-- 6개 세그먼트 모두 데모그래픽/라이프스타일 표현 없이 행동 기반 이름으로 생성됨 (예: `Browsing-Only with High Add-to-Cart`, `Inactive Frequent Purchasers`)
-- 구매전환율 100%인 segment 4·5도 `view_purchase_category_match_rate`가 0.0%로 나와, "구매는 하지만 조회 카테고리와 구매 카테고리가 전혀 겹치지 않는" 패턴이 LLM 설명에도 정확히 반영됨
-- segment_id 기준 병합이 Full/US 두 데이터셋 모두에서 결측 없이 성공 — 후속 Streamlit 연동에 바로 사용 가능한 상태
+- 6개 세그먼트 모두 데모그래픽/라이프스타일 표현 없이 행동 기반 이름으로 생성됨 (예: `Non-Purchasing Browsers`, `High-Engagement Non-Matching Purchasers`)
+- 구매전환율 100%인 segment 4·5도 `view_purchase_category_match_rate`가 0.0%로 나와, "구매는 하지만 조회 카테고리와 구매 카테고리가 전혀 겹치지 않는" 패턴이 LLM 설명에도 정확히 반영됨 — 10회 반복 재현 검증과 evidence 기계 대조로 이 결과가 우연이 아님을 확인함
+- `segment_id` 기준 `customer_segments` 테이블 병합(`merge_personas_with_customers()`)은 함수만 구현되어 있고 실제 파이프라인 어디에서도 호출되지 않음 — Full/US 산출물에 `segment_name`/`description` 컬럼이 아직 없음. 후속 작업 필요(아래 "권장 다음 단계" 참고)
 
 **수치 요약:**
 
 | segment_id | customer_count | customer_ratio | purchaser_ratio | segment_name |
 |---:|---:|---:|---:|---|
-| 0 | 2,572 | 12.9% | 100.0% | Frequent-Viewing Purchasers with Diverse Interests |
-| 1 | 3,726 | 18.6% | 0.0% | Browsing-Only with High Add-to-Cart |
-| 2 | 1,758 | 8.8% | 99.7% | High-Engagement Low-Frequency Shoppers |
-| 3 | 2,805 | 14.0% | 100.0% | Frequent-Viewing Purchasers with Narrow Category Focus |
-| 4 | 4,639 | 23.2% | 100.0% | Inactive Frequent Purchasers |
+| 0 | 2,572 | 12.9% | 100.0% | High-Engagement Loyalists |
+| 1 | 3,726 | 18.6% | 0.0% | Non-Purchasing Browsers |
+| 2 | 1,758 | 8.8% | 99.7% | High-Engagement Low-Frequency Purchasers |
+| 3 | 2,805 | 14.0% | 100.0% | Frequent Viewers with Consistent Purchases |
+| 4 | 4,639 | 23.2% | 100.0% | High-Engagement Non-Matching Purchasers |
 | 5 | 4,500 | 22.5% | 100.0% | Low-Frequency Purchasers with Narrow Purchase Focus |
+
+(위 `segment_name`은 `experiments/segment_naming_v2/run_2026-07-03_1` 채택본 기준. 최초 실행본과 이름이 다른 세그먼트가 있는 건 naming 자체의 LLM 비결정성 때문이며, `segment_id`가 가리키는 실제 고객 그룹(customer_count)은 동일하다.)
 
 **해석:** 구매전환율(0% vs ~100%)이 segment를 가장 크게 가르는 축으로 보이며, 구매전환이 100%인 segment 내에서는 order_count·recency·category 집중도로 세분화되는 양상이다. 다만 아래 "한계점"에서 언급하듯 silhouette score가 낮아 이 구분을 뚜렷한 자연 군집으로 과잉 해석하면 안 된다.
 
@@ -87,7 +90,7 @@ segment_summary_all_customers.csv
 | 4 | High-Engagement Non-Matching Purchasers | 10/10 |
 | 5 | Low-Frequency Purchasers with Narrow Purchase Focus | 9/10 |
 
-`run_2026-07-03_1`이 6개 세그먼트 모두에서 다수 의견과 일치해 채택 심사 대상 1순위로 선정했다. 이 run의 `evidence` 항목 전체를 `segment_summary_all_customers.csv` 원본 수치와 기계적으로 대조한 결과, 근거 없는 숫자(할루시네이션) 0건·demographic/lifestyle 키워드 0건으로 확인됨. 다만 이는 사전 스크리닝일 뿐이며, `CHOICES.md`에 정의된 사람 검토(이름의 broad/marketing 톤 여부 등)를 거쳐야 최종 채택된다.
+`run_2026-07-03_1`이 6개 세그먼트 모두에서 다수 의견과 일치해 채택 심사 대상 1순위로 선정했다. 이 run의 `evidence` 항목 전체를 `segment_summary_all_customers.csv` 원본 수치와 `format_segment_summary()` 기준으로 기계적으로 대조한 결과, 근거 없는 숫자(할루시네이션) 0건으로 확인됨(일부 세그먼트에서 `dominant view category ratio` 1개 필드 누락은 있었으나 오류는 아님). demographic/lifestyle 키워드는 1건 검출(segment 3 "family status")됐으나, 실제 문장은 "family status에 대한 근거 없음"이라는 면책 문구라 위반이 아닌 것으로 판단했다. 이름 6개 전부 행동 기반 표현이고 broad/marketing 톤이 없어, `CHOICES.md` 채택 기준을 통과했다. **`run_2026-07-03_1`을 `--promote`로 canonical `data/processed/segment_personas_v2.json`에 최종 반영 완료.**
 
 ## 핵심 가정 및 방법론적 제약
 
@@ -106,7 +109,7 @@ segment_summary_all_customers.csv
 - `src/persona/segment_naming.py`
 - `src/llm_connector/client.py` (`call_llm` temperature 지원 추가)
 - `docs/PROMPT_CATALOG.md` (§3 Segment Naming v2)
-- `data/processed/segment_personas_v2.json` (canonical 채택본 — 최초 실행 결과, 승격 대기 중)
+- `data/processed/segment_personas_v2.json` (canonical 채택본 — `run_2026-07-03_1` 반영 완료)
 - `data/processed/segment_summary_{all,us}_customers.csv`
 - `data/processed/customer_segments_{all,us}_customers.csv`
 - `experiments/segment_naming_v2/run_2026-07-03_{1..10}/segment_personas.json` (안정성 검증용 반복 실행 결과)
@@ -114,7 +117,8 @@ segment_summary_all_customers.csv
 
 ## 권장 다음 단계
 
-- (@JungYeoni) `experiments/segment_naming_v2/run_2026-07-03_1` 정성 검토 → `CHOICES.md`에 채택 기록 → `--promote run_2026-07-03_1`로 canonical 파일 갱신
-- PR #22 리뷰/머지 진행 (이슈 #17에 `Closes #17`로 연결됨)
-- Streamlit 데모에 `segment_name`/`description` 노출 연동 검토 (`docs/SEGMENT_ASSIGNMENT_DESIGN.md`의 향후 DB 확장 계획과 연결)
-- README 프로젝트 구조 설명에 `experiments/` 디렉터리 반영 (아직 미반영)
+- [x] `experiments/segment_naming_v2/run_2026-07-03_1` 정성 검토 → `CHOICES.md`에 채택 기록 → `--promote run_2026-07-03_1`로 canonical 파일 갱신 (완료)
+- [ ] `merge_personas_with_customers()`를 실제로 호출하는 스크립트/CLI 옵션 추가 — 지금은 정의만 있고 `customer_segments_{all,us}_customers.csv`에 `segment_name`/`description`이 병합된 적이 없음. **#18이 이름 붙은 세그먼트 단위 비교를 하려면 선행 필요**
+- [ ] PR #22 리뷰/머지 진행 (이슈 #17에 `Closes #17`로 연결됨)
+- [ ] Streamlit 데모에 `segment_name`/`description` 노출 연동 검토 (`docs/SEGMENT_ASSIGNMENT_DESIGN.md`의 향후 DB 확장 계획과 연결)
+- [ ] README 프로젝트 구조 설명에 `experiments/` 디렉터리 반영 (아직 미반영)
