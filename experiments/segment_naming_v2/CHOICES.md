@@ -17,4 +17,4 @@ Issue #17 LLM naming 실험의 run별 채택 여부를 기록한다.
 
 | 날짜 | run | 채택 여부 | 사유 | 채택자 |
 |---|---|---|---|---|
-| 2026-07-03 | run_2026-07-03_1 | 사전 체크 통과, 최종 채택 대기 | `temperature=0`, 10회 반복 중 6개 세그먼트 전부 다수 의견과 일치. evidence 전량 `segment_summary_all_customers.csv` 수치와 기계 대조 완료(불일치 0건), demographic/lifestyle 키워드 0건. 정성 검토(broad/marketing 톤 여부)는 아직 미완료 | (사전 체크: Claude) |
+| 2026-07-03 | run_2026-07-03_1 | **최종 채택** | `temperature=0`, 10회 반복 중 6개 세그먼트 전부 다수 의견과 일치(4개 10/10, segment 3·5는 9/10). evidence 전량 `segment_summary_all_customers.csv` 수치와 `format_segment_summary()` 기준 기계 대조 완료 — 허구 수치 0건(일부 세그먼트에서 `dominant view category ratio` 1개 필드 누락은 있으나 오류는 아님). demographic/lifestyle 키워드 검출 1건(segment 3 "family status")은 실제로는 "관련 근거 없음"이라는 면책 문장이라 위반 아님. segment_name 전부 행동 기반 표현으로 broad/marketing 톤 없음. `--promote run_2026-07-03_1`로 canonical 반영 완료 | JungYeoni |
