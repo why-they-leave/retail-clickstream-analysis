@@ -26,8 +26,14 @@
 - ERD 이미지 추가 ([ab0fac9](https://github.com/JungYeoni/da-template/commit/ab0fac941ba050ef65d948a7cc6010075994298d))
 - 프로젝트 초기 세팅 ([94590af](https://github.com/JungYeoni/da-template/commit/94590af1759bdbbf39316d8e574ccabeda4960b3))
 
+### 리팩터링
+
+- Segment assignment 리뷰 반영 (#16) ([2fce1d3](https://github.com/JungYeoni/da-template/commit/2fce1d31aae62e3069dfc1b5fe95c847818a31e8))
+
 ### 문서
 
+- Segment cluster k 비교 결과 기록 (#16) ([a644855](https://github.com/JungYeoni/da-template/commit/a6448553b3a3443825dc71ef81cd5f3481b6a1e5))
+- CHANGELOG 자동 업데이트 [skip ci] ([919b9b3](https://github.com/JungYeoni/da-template/commit/919b9b373c89cc2952baadd3958c0fd895073df2))
 - 페르소나 라벨링 시 LLM 입력 방식 추가 (#15) ([6b3580d](https://github.com/JungYeoni/da-template/commit/6b3580d9f2b0c1ab48ea16e39168784ec0d1a11f))
 - 파생 피처 EDA 후 report 업데이트 (#15) ([2d943a9](https://github.com/JungYeoni/da-template/commit/2d943a9f0e9fe70ecabd83f38ff72e4337b1c753))
 - CHANGELOG 자동 업데이트 [skip ci] ([5fdfeda](https://github.com/JungYeoni/da-template/commit/5fdfeda01f46d54e9abdf275e0e02875eab05eb7))
@@ -55,6 +61,7 @@
 
 ### 버그 수정
 
+- Reference에 recency 컬럼 없을 때 명시적 ValueError 반환 (#16) ([e5cf0d7](https://github.com/JungYeoni/da-template/commit/e5cf0d7a42ae79684241caa63093dec749bbe5af))
 - 피드백 반영 후 레포트 업데이트 (#15) ([a847d79](https://github.com/JungYeoni/da-template/commit/a847d7961955b5cec8d0ddd64d1748078a415545))
 - CodeRabbit 리뷰 반영 #4 ([1773f1b](https://github.com/JungYeoni/da-template/commit/1773f1bcaf33940cbcb85d0cd510a8172a65f1db))
 - LLM 실행 의존성 추가 #4 ([6fef7a2](https://github.com/JungYeoni/da-template/commit/6fef7a29111d42adce2ec6f7fb7e80652f22e4f6))
@@ -73,6 +80,8 @@
 
 ### 새 기능
 
+- Clustering 기반 segment assignment 추가 (#16) ([5059633](https://github.com/JungYeoni/da-template/commit/505963328b56f42fbc60b582db8b9f3ba90ec5a1))
+- Segment 입력 피처 생성 추가 (#16) ([15cbc63](https://github.com/JungYeoni/da-template/commit/15cbc63f56144c09fb40e7782d4902c9d5db7394))
 - 세그먼트를 위한 파생피처 생성 후 EDA (#15) ([e1e8e8c](https://github.com/JungYeoni/da-template/commit/e1e8e8c367d93b6fb9d0531995d475f74787a568))
 - 전체 데이터 vs US-only 페르소나 설정 추가 #4 ([5aa617a](https://github.com/JungYeoni/da-template/commit/5aa617ae711b01f363f65e273e633197df0e3b3d))
 - Llm conector test 구현 (#8) ([3902d5e](https://github.com/JungYeoni/da-template/commit/3902d5edf5d75ff9040a8cec07ad87d516f940ca))
