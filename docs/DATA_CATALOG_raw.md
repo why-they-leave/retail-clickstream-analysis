@@ -190,6 +190,6 @@ customers (20,000)
 ## 주의사항
 
 - **합성 데이터**: 실제 시장/고객/상품에 대한 결론으로 일반화하지 않는다.
-- **`checkout`·`purchase` 이벤트**: `product_id`가 null이므로 구매 상품 분석에 사용 불가.
+- **`checkout`·`purchase` 이벤트**: `product_id`가 null. `checkout`은 같은 세션의 `add_to_cart` 로그로 복원 가능(Issue #20, 위 `events` 절 참고). `purchase` 상품 분석은 `orders`/`order_items`를 사용한다.
 - **`total_usd` 중복 주의**: `order_items`와 조인 후 `total_usd`를 집계할 때 반드시 `order_id` 기준 dedup 필요.
 - **US cohort 정의**: US 분석은 `customers.country == 'US'` 기준이며, `sessions.country`나 `orders.country`로 필터링하지 않는다.
