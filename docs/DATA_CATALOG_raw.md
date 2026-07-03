@@ -74,7 +74,7 @@ US 고객 분석은 반드시 `customers.country == 'US'` 기준으로 cohort를
 | `session_id` | int | 없음 | FK → sessions |
 | `timestamp` | str | 없음 | 이벤트 발생 시각 (ISO 8601) |
 | `event_type` | str | 없음 | 이벤트 유형 |
-| `product_id` | float | 78,489 | FK → products (`checkout`, `purchase`는 null) |
+| `product_id` | float | 78,489 | FK → products (`checkout`, `purchase`는 null. `checkout`은 복원 가능 — 아래 참고) |
 | `qty` | float | 617,832 | 수량 (`add_to_cart`만 존재) |
 | `cart_size` | float | 716,049 | 장바구니 내 상품 수 (`checkout`만 존재) |
 | `payment` | str | 727,378 | 결제 수단 (`purchase`만 존재) |
@@ -83,7 +83,12 @@ US 고객 분석은 반드시 `customers.country == 'US'` 기준으로 cohort를
 
 **주요 통계**
 - event_type: page_view(70.9%), add_to_cart(18.8%), checkout(5.9%), purchase(4.4%)
-- `checkout`, `purchase` 이벤트는 `product_id`가 null — 구매 상품 분석에는 사용 불가
+- `checkout`, `purchase` 이벤트는 `product_id`가 null
+
+**`checkout` product_id 복원 (Issue #20 검증, `notebooks/EDA.ipynb`)**  
+`remove_from_cart` 이벤트가 존재하지 않아, 같은 `session_id`의 `add_to_cart` 상품 목록이 checkout 시점까지 그대로 유지된다. checkout이 있는 전체 세션(44,909개)에서 `add_to_cart` qty 합과 `cart_size`가 100% 일치함을 확인했다 — `add_to_cart` 로그로 checkout 상품을 복원할 수 있다(`src/datasets/make_als_mart.py` 적용 사례). 단, checkout 이후 타임스탬프로 찍히는 `add_to_cart`가 일부 세션(306개)에 존재하므로 시간순 필터링 없이 세션 전체의 `add_to_cart`를 사용해야 한다.
+
+`purchase` 이벤트는 별도 검증된 복원 방법이 없다 — 구매 상품 분석에는 `orders`/`order_items`(둘 다 `product_id` 결측 없음)를 사용한다.
 
 ---
 
