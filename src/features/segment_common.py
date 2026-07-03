@@ -34,6 +34,8 @@ def fill_clustering_features(
     for col in RECENCY_CLUSTERING_COLS:
         if col not in result.columns:
             continue
+        if col not in reference.columns:
+            raise ValueError(f"reference에 필요한 컬럼이 없습니다: {col}")
         max_value = reference[col].dropna().max()
         fill_value = max_value + 1 if pd.notna(max_value) else 0
         result[col] = result[col].fillna(fill_value)
