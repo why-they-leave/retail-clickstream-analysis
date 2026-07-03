@@ -11,6 +11,7 @@
 ### style
 
 - Ruff format 적용 (#7) ([92070e3](https://github.com/JungYeoni/da-template/commit/92070e3aad89b5b9de267c7b2b1378c22a09a3c6))
+- Ruff format 적용 (#17) ([b1e9521](https://github.com/JungYeoni/da-template/commit/b1e9521959b34c855b44cad2c95ecdd70cb2f5c3))
 - Ruff import 정렬 수정 #5 ([edd97fe](https://github.com/JungYeoni/da-template/commit/edd97fedd875dd593607c6c78e21e0082224fa60))
 - Ruff format 재적용 #1 ([fb19d42](https://github.com/JungYeoni/da-template/commit/fb19d423b8bbf23878774a5ac355678f8056dfac))
 - Ruff format 적용 #1 ([cee6110](https://github.com/JungYeoni/da-template/commit/cee6110e42a9a69fe5361adaaee587fbfaa467cd))
@@ -41,8 +42,13 @@
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([c2c2c67](https://github.com/JungYeoni/da-template/commit/c2c2c671f9abc318781c44056da1cf03f02c99a6))
 - CHANGELOG 자동 업데이트 [skip ci] ([bd247cb](https://github.com/JungYeoni/da-template/commit/bd247cbb84ba923bf726bf431aa933576efed99a))
 - .env.example 추가 및 로컬 환경 세팅 가이드 보강 ([a35916f](https://github.com/JungYeoni/da-template/commit/a35916faf97b0f3bcee0e89a0e78625420ab95fa))
+- 리포트에 최종 채택 결과 반영 (#17) ([56cf84c](https://github.com/JungYeoni/da-template/commit/56cf84c413eb8ccac018df54957a829a6fed2bf2))
+- DATA_CATALOG_raw.md에 checkout product_id 복원 방법 반영 (#20) (#17) ([0a5f73d](https://github.com/JungYeoni/da-template/commit/0a5f73d38973c08ef6ddae384df35f107bc62e68))
+- 데이터카탈로그 업데이트 (#17) ([0ff4a84](https://github.com/JungYeoni/da-template/commit/0ff4a8489f41cb42d24362a8804bf0fedddb25c1))
+- 프롬프트 카탈로그 문서 업데이트 ([3211722](https://github.com/JungYeoni/da-template/commit/32117221e989ef1807378b80f9a4b6ed9e321d21))
 - CHANGELOG 자동 업데이트 [skip ci] ([8896349](https://github.com/JungYeoni/da-template/commit/8896349f97fc083c38585c0d0d34ab823a9c2069))
 - Segment cluster k 비교 결과 기록 (#16) ([a644855](https://github.com/JungYeoni/da-template/commit/a6448553b3a3443825dc71ef81cd5f3481b6a1e5))
 - CHANGELOG 자동 업데이트 [skip ci] ([919b9b3](https://github.com/JungYeoni/da-template/commit/919b9b373c89cc2952baadd3958c0fd895073df2))
@@ -93,10 +99,15 @@
 
 ### 새 기능
 
+- Demographic/lifestyle 금지어 소프트체크 범위 확장 (#17) ([a1bff38](https://github.com/JungYeoni/da-template/commit/a1bff382dffb3ac599713b7004deb2e914f9d342))
 - #20 이슈 검증 (#7) ([2560420](https://github.com/JungYeoni/da-template/commit/25604207823195284d8a0da5c2fe1a59476e2fbc))
 - Gitignore 경로 수정. 필요한 디렉토리 경로 추가 ([e7868e0](https://github.com/JungYeoni/da-template/commit/e7868e0e73e4a9363e1570275b8c4056b74c0685))
 - #7 ALS 학습 및 평가 코드(평가지표: HR@K, NDCG@K, Recall@K) ([cd1de63](https://github.com/JungYeoni/da-template/commit/cd1de63ab0e852a60d7565dab7ada3a702e83701))
 - #7 ALS 데이터마트 생성 코드 ([3baffa5](https://github.com/JungYeoni/da-template/commit/3baffa597933d7124d7e07fccbb2c761f5b7cb38))
+- Segment naming v2 최종 채택 — run_2026-07-03_1 (#17) ([3cbbf76](https://github.com/JungYeoni/da-template/commit/3cbbf769bf1ff85c33590f3a419421e137a62cf9))
+- Naming temperature 고정 및 실험 버전 관리 도입 (#17) ([da88f5c](https://github.com/JungYeoni/da-template/commit/da88f5c5946e98dbd6dc6e99a9741cf7ca9aa39b))
+- Segment naming 산출물 추적 및 재생성 (#17) ([ab83ed0](https://github.com/JungYeoni/da-template/commit/ab83ed0dbefc012f78aae1552c1bee170a378e69))
+- 페르소나명 라벨링 ([558b453](https://github.com/JungYeoni/da-template/commit/558b453e6597d5976ef7dd4155937c09e841ffb6))
 - Clustering 기반 segment assignment 추가 (#16) ([5059633](https://github.com/JungYeoni/da-template/commit/505963328b56f42fbc60b582db8b9f3ba90ec5a1))
 - Segment 입력 피처 생성 추가 (#16) ([15cbc63](https://github.com/JungYeoni/da-template/commit/15cbc63f56144c09fb40e7782d4902c9d5db7394))
 - 세그먼트를 위한 파생피처 생성 후 EDA (#15) ([e1e8e8c](https://github.com/JungYeoni/da-template/commit/e1e8e8c367d93b6fb9d0531995d475f74787a568))
