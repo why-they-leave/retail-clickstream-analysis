@@ -331,7 +331,8 @@ Behavioral context:
 
 > **관련 파일**: `src/persona/segment_naming.py`
 > **입력**: `data/processed/segment_summary_all_customers.csv` (Issue #16 산출물)
-> **모델**: Upstage Solar Pro (`solar-pro`)
+> **모델**: Upstage Solar Pro (`solar-pro`), `temperature=0` (재현성 확보를 위해 고정 — 10회 반복 실행 안정성 검증 결과는 `reports/[ML]_Segment_Naming_v2_LLM_라벨링_2026-07-03.md` 참고)
+> **실험 버전 관리**: `experiments/segment_naming_v2/` (run별 산출물 + `CHOICES.md` 채택 기록), `--promote`로 canonical 파일 반영
 
 v1과의 핵심 차이: LLM은 persona taxonomy를 만들거나 개별 고객을 분류하지 않는다.
 KMeans가 이미 확정한 segment_id별 집계 통계만 보고 이름/설명을 붙이는

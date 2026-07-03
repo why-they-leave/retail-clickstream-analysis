@@ -12,14 +12,22 @@ except ImportError:
         return iterable
 
 
-def call_llm(client, sys_prompt: str, user_prompt: str, model: str = "solar-pro") -> str:
-    """단일 LLM 호출."""
+def call_llm(
+    client,
+    sys_prompt: str,
+    user_prompt: str,
+    model: str = "solar-pro",
+    temperature: float | None = None,
+) -> str:
+    """단일 LLM 호출. temperature를 None으로 두면 API 기본값을 사용한다."""
+    kwargs = {} if temperature is None else {"temperature": temperature}
     completion = client.chat.completions.create(
         model=model,
         messages=[
             {"role": "system", "content": sys_prompt},
             {"role": "user", "content": user_prompt},
         ],
+        **kwargs,
     )
     return completion.choices[0].message.content
 

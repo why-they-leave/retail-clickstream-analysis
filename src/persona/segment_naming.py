@@ -10,7 +10,13 @@ v1(persona/generation.py, persona/labeling.py)과 달리 LLM은 persona taxonomy
     data/processed/segment_summary_all_customers.csv (기본값)
     data/processed/segment_summary_us_customers.csv
 
-출력:
+실험/채택 흐름:
+    매 실행은 experiments/segment_naming_v2/run_<날짜>_<순번>/segment_personas.json에
+    저장된다 (canonical 파일은 건드리지 않음). 후보들 중 evidence가 segment_summary
+    수치와 정확히 일치하고 demographic/lifestyle 표현이 없는 run을 사람이 검토해
+    experiments/segment_naming_v2/CHOICES.md에 채택 사유를 기록한 뒤,
+    --promote RUN_LABEL로 canonical 파일에 반영한다.
+
     --dataset all → data/processed/segment_personas_v2.json
     --dataset us  → data/processed/segment_personas_v2_us_customers.json
 
@@ -25,7 +31,9 @@ v1(persona/generation.py, persona/labeling.py)과 달리 LLM은 persona taxonomy
 
 import json
 import logging
+import shutil
 from argparse import ArgumentParser
+from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
@@ -40,6 +48,7 @@ logger = logging.getLogger(__name__)
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
 PROCESSED_DIR = ROOT_DIR / "data" / "processed"
+EXPERIMENTS_DIR = ROOT_DIR / "experiments" / "segment_naming_v2"
 
 SEGMENT_SUMMARY_PATHS = {
     "all": PROCESSED_DIR / "segment_summary_all_customers.csv",
@@ -227,6 +236,7 @@ def parse_naming_response(response: str, expected_segment_id: int) -> tuple[dict
 
 
 DEFAULT_MODEL = "solar-pro"
+DEFAULT_TEMPERATURE = 0
 DEFAULT_MAX_RETRIES = 2
 
 
@@ -234,9 +244,13 @@ def label_segment(
     client,
     row: pd.Series,
     model: str = DEFAULT_MODEL,
+    temperature: float = DEFAULT_TEMPERATURE,
     max_retries: int = DEFAULT_MAX_RETRIES,
 ) -> dict:
-    """세그먼트 하나에 대해 LLM naming을 호출·검증하고, 실패 시 재시도한다."""
+    """세그먼트 하나에 대해 LLM naming을 호출·검증하고, 실패 시 재시도한다.
+
+    temperature=0으로 고정해 재현성을 높인다(완전한 결정성은 보장되지 않음).
+    """
     segment_id = int(row["segment_id"])
     user_prompt = build_user_prompt(row)
     total_attempts = max_retries + 1
@@ -244,7 +258,9 @@ def label_segment(
 
     for attempt in range(1, total_attempts + 1):
         try:
-            response = call_llm(client, SEGMENT_NAMING_SYS, user_prompt, model=model)
+            response = call_llm(
+                client, SEGMENT_NAMING_SYS, user_prompt, model=model, temperature=temperature
+            )
         except Exception as e:
             last_errors = [f"LLM 호출 실패: {e}"]
             logger.error(
@@ -280,6 +296,48 @@ def merge_personas_with_customers(
     )
 
 
+def next_run_label(date_str: str | None = None) -> str:
+    """오늘 날짜 기준 다음 run 번호를 자동 부여한다 (run_YYYY-MM-DD_N)."""
+    if date_str is None:
+        date_str = datetime.now().strftime("%Y-%m-%d")
+    prefix = f"run_{date_str}_"
+    existing_nums = [
+        int(p.name[len(prefix) :])
+        for p in EXPERIMENTS_DIR.glob(f"{prefix}*")
+        if p.is_dir() and p.name[len(prefix) :].isdigit()
+    ]
+    return f"{prefix}{max(existing_nums, default=0) + 1}"
+
+
+def save_experiment_run(results: list[dict], run_label: str | None = None) -> Path:
+    """naming 결과를 experiments/segment_naming_v2/run_X/segment_personas.json에 저장한다.
+
+    canonical 파일(data/processed/segment_personas_v2*.json)은 건드리지 않는다 —
+    채택 여부는 사람이 CHOICES.md에 기록한 뒤 --promote로 반영한다.
+    """
+    label = run_label or next_run_label()
+    run_dir = EXPERIMENTS_DIR / label
+    run_dir.mkdir(parents=True, exist_ok=True)
+    output_path = run_dir / "segment_personas.json"
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False, indent=2)
+    logger.info("실험 저장: %s", output_path)
+    return output_path
+
+
+def promote_run(run_label: str, dataset: str) -> Path:
+    """검토를 마친 run을 canonical 파일로 승격한다. API 호출 없음."""
+    src = EXPERIMENTS_DIR / run_label / "segment_personas.json"
+    if not src.exists():
+        raise FileNotFoundError(f"run을 찾을 수 없음: {src}")
+
+    dst = OUTPUT_PATHS[dataset]
+    PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    shutil.copy(src, dst)
+    logger.info("[%s] 승격 완료: %s -> %s", dataset, src, dst)
+    return dst
+
+
 def parse_args():
     parser = ArgumentParser(description="Segment summary 기반 LLM naming (Issue #17).")
     parser.add_argument(
@@ -292,31 +350,50 @@ def parse_args():
             "'us'는 US 고객 summary만으로 별도 naming한다."
         ),
     )
+    parser.add_argument(
+        "--n-runs",
+        type=int,
+        default=1,
+        help="같은 설정으로 반복 실행할 실험 횟수. 매 실행은 별도 run 폴더에 저장된다.",
+    )
+    parser.add_argument(
+        "--promote",
+        metavar="RUN_LABEL",
+        default=None,
+        help=(
+            "지정한 run(예: run_2026-07-03_3)의 결과를 canonical 파일로 승격한다. "
+            "API 호출 없이 파일 복사만 수행한다."
+        ),
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
-    summary_path = SEGMENT_SUMMARY_PATHS[args.dataset]
-    output_path = OUTPUT_PATHS[args.dataset]
 
-    df = pd.read_csv(summary_path)
+    if args.promote:
+        promote_run(args.promote, args.dataset)
+        return
+
+    summary_path = SEGMENT_SUMMARY_PATHS[args.dataset]
+    df = pd.read_csv(summary_path).sort_values("segment_id")
     client = OpenAI(
         api_key=get_required_env("UPSTAGE_API_KEY"),
         base_url="https://api.upstage.ai/v1",
     )
 
-    results = [label_segment(client, row) for _, row in df.sort_values("segment_id").iterrows()]
-
-    failed = [r for r in results if r.get("status") == "NAMING_FAILED"]
-    logger.info(
-        "[%s] naming 완료: 성공 %d / 실패 %d", args.dataset, len(results) - len(failed), len(failed)
-    )
-
-    PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(results, f, ensure_ascii=False, indent=2)
-    logger.info("[%s] 저장: %s", args.dataset, output_path)
+    for i in range(1, args.n_runs + 1):
+        results = [label_segment(client, row) for _, row in df.iterrows()]
+        failed = [r for r in results if r.get("status") == "NAMING_FAILED"]
+        logger.info(
+            "[%s] naming 완료 (%d/%d): 성공 %d / 실패 %d",
+            args.dataset,
+            i,
+            args.n_runs,
+            len(results) - len(failed),
+            len(failed),
+        )
+        save_experiment_run(results)
 
 
 if __name__ == "__main__":
