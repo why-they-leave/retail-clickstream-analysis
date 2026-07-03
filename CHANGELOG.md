@@ -42,6 +42,7 @@
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([f342eec](https://github.com/JungYeoni/da-template/commit/f342eecefc8bc44e849b6932e83aca0ea1c69121))
 - CHANGELOG 자동 업데이트 [skip ci] ([c2c2c67](https://github.com/JungYeoni/da-template/commit/c2c2c671f9abc318781c44056da1cf03f02c99a6))
 - CHANGELOG 자동 업데이트 [skip ci] ([bd247cb](https://github.com/JungYeoni/da-template/commit/bd247cbb84ba923bf726bf431aa933576efed99a))
 - .env.example 추가 및 로컬 환경 세팅 가이드 보강 ([a35916f](https://github.com/JungYeoni/da-template/commit/a35916faf97b0f3bcee0e89a0e78625420ab95fa))
@@ -99,6 +100,7 @@
 
 ### 새 기능
 
+- US-only 분석 트랙 제거 — Full 데이터로 통합 #23 ([a0d0c1d](https://github.com/JungYeoni/da-template/commit/a0d0c1df5accf1598f38dadf798d24e02f59f8eb))
 - Demographic/lifestyle 금지어 소프트체크 범위 확장 (#17) ([a1bff38](https://github.com/JungYeoni/da-template/commit/a1bff382dffb3ac599713b7004deb2e914f9d342))
 - #20 이슈 검증 (#7) ([2560420](https://github.com/JungYeoni/da-template/commit/25604207823195284d8a0da5c2fe1a59476e2fbc))
 - Gitignore 경로 수정. 필요한 디렉토리 경로 추가 ([e7868e0](https://github.com/JungYeoni/da-template/commit/e7868e0e73e4a9363e1570275b8c4056b74c0685))
