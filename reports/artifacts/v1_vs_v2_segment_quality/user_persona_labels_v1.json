@@ -1,0 +1,3423 @@
+{
+  "sample_size": 406,
+  "total_users": 16268,
+  "sample_ratio": 0.025,
+  "random_state": 42,
+  "persona_source": "/Users/leeyonghyek/Desktop/tobigs_conference/무제/data/interim/funnel_persona_gen/final_personas.json",
+  "labels": [
+    {
+      "customer_id": 12915,
+      "personas": [
+        "Diverse General Shopper",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2235,
+      "personas": [
+        "Single-Item Shopper",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 509,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14973,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5525,
+      "personas": [
+        "Diverse General Shopper",
+        "Puzzle & Game Enthusiast",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4911,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4474,
+      "personas": [
+        "Bookworm",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2785,
+      "personas": [
+        "Fitness Enthusiast",
+        "Outdoor & Casual Gear Buyer",
+        "Repetitive Purchaser"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14858,
+      "personas": [
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2064,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "E-book Enthusiast",
+        "Beauty & Skincare Enthusiast",
+        "Fitness Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13668,
+      "personas": [
+        "E-book Enthusiast",
+        "Diverse General Shopper",
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14953,
+      "personas": [
+        "Diverse General Shopper",
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "E-book Enthusiast",
+        "Apparel & Footwear Buyer",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17988,
+      "personas": [
+        "Bookworm",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10998,
+      "personas": [
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1750,
+      "personas": [
+        "Diverse General Shopper",
+        "Puzzle & Game Enthusiast",
+        "Kid-Focused Shopper",
+        "E-book Enthusiast",
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11908,
+      "personas": [
+        "Diverse General Shopper",
+        "Miscellaneous Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8482,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 653,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 611,
+      "personas": [
+        "Fitness Enthusiast",
+        "Repetitive Purchaser"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1882,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Lipstick Collector"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4384,
+      "personas": [
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4663,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10176,
+      "personas": [
+        "Outdoor & Casual Gear Buyer",
+        "Health & Wellness Seeker"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12140,
+      "personas": [
+        "Lipstick Collector",
+        "Diverse General Shopper",
+        "Miscellaneous Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 542,
+      "personas": [
+        "Diverse General Shopper",
+        "Miscellaneous Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11311,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3984,
+      "personas": [
+        "Bookworm",
+        "Skincare & Haircare User",
+        "Kid-Focused Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14444,
+      "personas": [],
+      "status": "unrepresentable"
+    },
+    {
+      "customer_id": 13129,
+      "personas": [
+        "Bookworm",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14153,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Outdoor & Casual Gear Buyer",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Repetitive Purchaser"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10990,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8431,
+      "personas": [
+        "Bookworm",
+        "Repetitive Purchaser",
+        "Gadget & Tech User",
+        "Skincare & Haircare User",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4419,
+      "personas": [
+        "Diverse General Shopper",
+        "Kid-Focused Shopper",
+        "Home Appliance Shopper",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9044,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11883,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper",
+        "Outdoor & Casual Gear Buyer",
+        "Gadget & Tech User",
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5585,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16333,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Frequent Toy Buyer",
+        "Repetitive Purchaser"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17530,
+      "personas": [
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 138,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15311,
+      "personas": [
+        "Frequent Toy Buyer",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16261,
+      "personas": [
+        "Fitness Enthusiast",
+        "Bookworm",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3186,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14097,
+      "personas": [
+        "Diverse General Shopper",
+        "Kid-Focused Shopper",
+        "Outdoor & Casual Gear Buyer",
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8495,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Frequent Toy Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 6838,
+      "personas": [
+        "Diverse General Shopper",
+        "Skincare & Haircare User",
+        "Gadget & Tech User",
+        "Kid-Focused Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5580,
+      "personas": [
+        "Bookworm",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3098,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4310,
+      "personas": [
+        "Single-Item Shopper",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19264,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Frequent Toy Buyer",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15405,
+      "personas": [
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 6758,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Gadget & Tech User",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2058,
+      "personas": [
+        "Home Appliance Shopper",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1858,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 7645,
+      "personas": [
+        "Fitness Enthusiast",
+        "Outdoor & Casual Gear Buyer",
+        "Color-Specific Collector",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1944,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 7210,
+      "personas": [],
+      "status": "unrepresentable"
+    },
+    {
+      "customer_id": 17097,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 6911,
+      "personas": [
+        "E-book Enthusiast",
+        "Puzzle & Game Enthusiast",
+        "Gadget & Tech User",
+        "Repetitive Purchaser",
+        "Frequent Toy Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12176,
+      "personas": [],
+      "status": "unrepresentable"
+    },
+    {
+      "customer_id": 5300,
+      "personas": [
+        "Gadget & Tech User",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16286,
+      "personas": [
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Outdoor & Casual Gear Buyer",
+        "Puzzle & Game Enthusiast",
+        "Fitness Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 886,
+      "personas": [
+        "Lipstick Collector",
+        "Frequent Toy Buyer",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14722,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9247,
+      "personas": [
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10804,
+      "personas": [
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Diverse General Shopper",
+        "Repetitive Purchaser",
+        "Skincare & Haircare User",
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2494,
+      "personas": [
+        "Gadget & Tech User",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19593,
+      "personas": [
+        "Diverse General Shopper",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18587,
+      "personas": [
+        "E-book Enthusiast",
+        "Lipstick Collector",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 7617,
+      "personas": [
+        "Skincare & Haircare User",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1590,
+      "personas": [
+        "Miscellaneous Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11126,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5878,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16728,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12699,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12492,
+      "personas": [
+        "Diverse General Shopper",
+        "Apparel & Footwear Buyer",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17855,
+      "personas": [
+        "E-book Enthusiast",
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17383,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Bookworm",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 7265,
+      "personas": [
+        "Gadget & Tech User",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11631,
+      "personas": [
+        "Diverse General Shopper",
+        "Bookworm",
+        "Kid-Focused Shopper",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3855,
+      "personas": [
+        "Bookworm",
+        "Skincare & Haircare User",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14225,
+      "personas": [
+        "Diverse General Shopper",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1399,
+      "personas": [
+        "Diverse General Shopper",
+        "Kid-Focused Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 930,
+      "personas": [
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13358,
+      "personas": [
+        "Single-Item Shopper",
+        "Frequent Toy Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4567,
+      "personas": [
+        "Skincare & Haircare User",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15596,
+      "personas": [
+        "Outdoor & Casual Gear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5801,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Lipstick Collector",
+        "Skincare & Haircare User",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19837,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 1612,
+      "personas": [
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17252,
+      "personas": [
+        "Home Appliance Shopper",
+        "Repetitive Purchaser"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4666,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17470,
+      "personas": [
+        "E-book Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2032,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 7648,
+      "personas": [
+        "Diverse General Shopper",
+        "Outdoor & Casual Gear Buyer",
+        "Home Appliance Shopper",
+        "Gadget & Tech User",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5582,
+      "personas": [
+        "Home Appliance Shopper",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9125,
+      "personas": [
+        "Bookworm",
+        "Lipstick Collector",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12843,
+      "personas": [
+        "Diverse General Shopper",
+        "Outdoor & Casual Gear Buyer",
+        "Fitness Enthusiast",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16828,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Repetitive Purchaser"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 7337,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3248,
+      "personas": [
+        "Fitness Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 7453,
+      "personas": [
+        "E-book Enthusiast",
+        "Fitness Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 7131,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Skincare & Haircare User",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4194,
+      "personas": [
+        "Diverse General Shopper",
+        "Bookworm",
+        "Gadget & Tech User",
+        "Kid-Focused Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13539,
+      "personas": [
+        "E-book Enthusiast",
+        "Bookworm",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5354,
+      "personas": [
+        "E-book Enthusiast",
+        "Bookworm",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14162,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Outdoor & Casual Gear Buyer",
+        "Lipstick Collector",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18870,
+      "personas": [
+        "Diverse General Shopper",
+        "Home Appliance Shopper",
+        "Fitness Enthusiast",
+        "Beauty & Skincare Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13803,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Lipstick Collector",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13089,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1440,
+      "personas": [
+        "Home Appliance Shopper",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12296,
+      "personas": [
+        "Gadget & Tech User",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12826,
+      "personas": [
+        "Single-Item Shopper",
+        "Kid-Focused Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3423,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 10762,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Skincare & Haircare User",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14713,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 4908,
+      "personas": [
+        "Diverse General Shopper",
+        "Puzzle & Game Enthusiast",
+        "Kid-Focused Shopper",
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3262,
+      "personas": [
+        "Diverse General Shopper",
+        "Puzzle & Game Enthusiast",
+        "Bookworm",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9306,
+      "personas": [
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 7636,
+      "personas": [
+        "Frequent Toy Buyer",
+        "Kid-Focused Shopper",
+        "Repetitive Purchaser"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5413,
+      "personas": [
+        "Outdoor & Casual Gear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19931,
+      "personas": [
+        "Diverse General Shopper",
+        "Puzzle & Game Enthusiast",
+        "Apparel & Footwear Buyer",
+        "E-book Enthusiast",
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18650,
+      "personas": [
+        "Diverse General Shopper",
+        "Outdoor & Casual Gear Buyer",
+        "Gadget & Tech User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12926,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13896,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Frequent Toy Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11223,
+      "personas": [],
+      "status": "unrepresentable"
+    },
+    {
+      "customer_id": 4403,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Skincare & Haircare User",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Health & Wellness Seeker"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13823,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 6518,
+      "personas": [
+        "Diverse General Shopper",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16999,
+      "personas": [],
+      "status": "unrepresentable"
+    },
+    {
+      "customer_id": 15501,
+      "personas": [
+        "Diverse General Shopper",
+        "Bookworm",
+        "Gadget & Tech User",
+        "Home Appliance Shopper",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15653,
+      "personas": [
+        "E-book Enthusiast",
+        "Gadget & Tech User",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1137,
+      "personas": [
+        "Home Appliance Shopper",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4591,
+      "personas": [],
+      "status": "unrepresentable"
+    },
+    {
+      "customer_id": 16574,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 658,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Color-Specific Collector"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16245,
+      "personas": [
+        "Diverse General Shopper",
+        "Apparel & Footwear Buyer",
+        "Gadget & Tech User",
+        "E-book Enthusiast",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 6344,
+      "personas": [
+        "E-book Enthusiast",
+        "Lipstick Collector",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8058,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5370,
+      "personas": [
+        "Diverse General Shopper",
+        "Outdoor & Casual Gear Buyer",
+        "Home Appliance Shopper",
+        "Kid-Focused Shopper",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1334,
+      "personas": [
+        "Outdoor & Casual Gear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4222,
+      "personas": [
+        "E-book Enthusiast",
+        "Bookworm",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18398,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18985,
+      "personas": [
+        "Diverse General Shopper",
+        "Bookworm",
+        "Gadget & Tech User",
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11429,
+      "personas": [
+        "Bookworm",
+        "E-book Enthusiast",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17670,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14486,
+      "personas": [
+        "E-book Enthusiast",
+        "Gadget & Tech User",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 6325,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Bookworm",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4257,
+      "personas": [
+        "Beauty & Skincare Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13237,
+      "personas": [
+        "Diverse General Shopper",
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Lipstick Collector",
+        "Gadget & Tech User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10053,
+      "personas": [
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 7951,
+      "personas": [
+        "Lipstick Collector",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Puzzle & Game Enthusiast",
+        "Outdoor & Casual Gear Buyer",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17840,
+      "personas": [
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Skincare & Haircare User",
+        "Health & Wellness Seeker"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18426,
+      "personas": [
+        "Gadget & Tech User",
+        "Repetitive Purchaser",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12983,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9235,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Apparel & Footwear Buyer",
+        "Outdoor & Casual Gear Buyer",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2851,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 5306,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2787,
+      "personas": [
+        "Bookworm",
+        "Kid-Focused Shopper",
+        "Skincare & Haircare User",
+        "Gadget & Tech User",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4948,
+      "personas": [
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15037,
+      "personas": [
+        "Single-Item Shopper",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11313,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10857,
+      "personas": [
+        "Diverse General Shopper",
+        "E-book Enthusiast",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5262,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Frequent Toy Buyer",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15079,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Lipstick Collector",
+        "Puzzle & Game Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11787,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8619,
+      "personas": [
+        "Diverse General Shopper",
+        "Puzzle & Game Enthusiast",
+        "Fitness Enthusiast",
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18095,
+      "personas": [
+        "Bookworm",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11763,
+      "personas": [
+        "E-book Enthusiast",
+        "Gadget & Tech User",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8020,
+      "personas": [],
+      "status": "unrepresentable"
+    },
+    {
+      "customer_id": 7271,
+      "personas": [
+        "E-book Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4398,
+      "personas": [
+        "Diverse General Shopper",
+        "Puzzle & Game Enthusiast",
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2762,
+      "personas": [
+        "E-book Enthusiast",
+        "Bookworm",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10262,
+      "personas": [
+        "Bookworm",
+        "Kid-Focused Shopper",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9940,
+      "personas": [
+        "Bookworm",
+        "E-book Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1822,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15252,
+      "personas": [
+        "Bookworm",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 955,
+      "personas": [
+        "Frequent Toy Buyer",
+        "Kid-Focused Shopper",
+        "Repetitive Purchaser"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17372,
+      "personas": [
+        "Skincare & Haircare User",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2203,
+      "personas": [
+        "Diverse General Shopper",
+        "Apparel & Footwear Buyer",
+        "Skincare & Haircare User",
+        "E-book Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3043,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12672,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 3192,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15977,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Fitness Enthusiast",
+        "Outdoor & Casual Gear Buyer",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13745,
+      "personas": [],
+      "status": "unrepresentable"
+    },
+    {
+      "customer_id": 8486,
+      "personas": [
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12032,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Frequent Toy Buyer",
+        "Repetitive Purchaser"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1283,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 7735,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 7674,
+      "personas": [
+        "Fitness Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12022,
+      "personas": [
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9420,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Single-Item Shopper",
+        "Frequent Toy Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10664,
+      "personas": [
+        "E-book Enthusiast",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5040,
+      "personas": [
+        "Diverse General Shopper",
+        "Kid-Focused Shopper",
+        "Fitness Enthusiast",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19556,
+      "personas": [
+        "Diverse General Shopper",
+        "Puzzle & Game Enthusiast",
+        "E-book Enthusiast",
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11150,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 17367,
+      "personas": [
+        "Diverse General Shopper",
+        "Outdoor & Casual Gear Buyer",
+        "Skincare & Haircare User",
+        "Gadget & Tech User",
+        "Fitness Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18977,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 231,
+      "personas": [
+        "Single-Item Shopper",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13740,
+      "personas": [
+        "Diverse General Shopper",
+        "Home Appliance Shopper",
+        "Fitness Enthusiast",
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14545,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2295,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Frequent Toy Buyer",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13770,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17843,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10818,
+      "personas": [
+        "Fitness Enthusiast",
+        "Skincare & Haircare User",
+        "Lipstick Collector",
+        "Bookworm",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15158,
+      "personas": [
+        "Bookworm",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5348,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15506,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper",
+        "Apparel & Footwear Buyer",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12943,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 6837,
+      "personas": [
+        "E-book Enthusiast",
+        "Skincare & Haircare User",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2238,
+      "personas": [
+        "Frequent Toy Buyer",
+        "Lipstick Collector"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5885,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8744,
+      "personas": [
+        "Home Appliance Shopper",
+        "Repetitive Purchaser",
+        "Color-Specific Collector"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3156,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9131,
+      "personas": [
+        "Outdoor & Casual Gear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 64,
+      "personas": [
+        "Bookworm",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19203,
+      "personas": [
+        "Diverse General Shopper",
+        "Home Appliance Shopper",
+        "Outdoor & Casual Gear Buyer",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14571,
+      "personas": [
+        "Lipstick Collector"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17658,
+      "personas": [
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14525,
+      "personas": [
+        "Diverse General Shopper",
+        "Apparel & Footwear Buyer",
+        "Bookworm",
+        "Skincare & Haircare User",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5277,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19570,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10080,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Lipstick Collector"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15375,
+      "personas": [
+        "Bookworm",
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3579,
+      "personas": [
+        "Fitness Enthusiast",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10224,
+      "personas": [
+        "Bookworm",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18389,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2138,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Skincare & Haircare User",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17556,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Home Appliance Shopper",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Skincare & Haircare User",
+        "Health & Wellness Seeker"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12631,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5993,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16978,
+      "personas": [
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Apparel & Footwear Buyer",
+        "Fitness Enthusiast",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12907,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12293,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3986,
+      "personas": [
+        "Frequent Toy Buyer",
+        "Kid-Focused Shopper",
+        "Repetitive Purchaser"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 7529,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15385,
+      "personas": [
+        "Diverse General Shopper",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3225,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10868,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Outdoor & Casual Gear Buyer",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19197,
+      "personas": [
+        "Lipstick Collector",
+        "Kid-Focused Shopper",
+        "Outdoor & Casual Gear Buyer",
+        "Bookworm",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15703,
+      "personas": [
+        "Diverse General Shopper",
+        "E-book Enthusiast",
+        "Apparel & Footwear Buyer",
+        "Gadget & Tech User",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18591,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Frequent Toy Buyer",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10684,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Frequent Toy Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18508,
+      "personas": [
+        "Fitness Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10,
+      "personas": [
+        "Diverse General Shopper",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12083,
+      "personas": [
+        "Diverse General Shopper",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 6512,
+      "personas": [
+        "Single-Item Shopper",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9835,
+      "personas": [
+        "Repetitive Purchaser",
+        "Home Appliance Shopper",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 397,
+      "personas": [
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2244,
+      "personas": [
+        "Diverse General Shopper",
+        "Apparel & Footwear Buyer",
+        "Gadget & Tech User",
+        "Kid-Focused Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18725,
+      "personas": [],
+      "status": "unrepresentable"
+    },
+    {
+      "customer_id": 7298,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17717,
+      "personas": [
+        "Miscellaneous Shopper",
+        "Puzzle & Game Enthusiast",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19839,
+      "personas": [
+        "Outdoor & Casual Gear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16775,
+      "personas": [
+        "Single-Item Shopper",
+        "Frequent Toy Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16280,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 6175,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 4794,
+      "personas": [
+        "E-book Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Repetitive Purchaser",
+        "Skincare & Haircare User",
+        "Fitness Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1176,
+      "personas": [
+        "E-book Enthusiast",
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4824,
+      "personas": [
+        "Frequent Toy Buyer",
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17703,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11432,
+      "personas": [
+        "Lipstick Collector"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19067,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1589,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Kid-Focused Shopper",
+        "Frequent Toy Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1725,
+      "personas": [
+        "Bookworm",
+        "Puzzle & Game Enthusiast",
+        "Lipstick Collector",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14767,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9783,
+      "personas": [
+        "Bookworm",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16460,
+      "personas": [
+        "Diverse General Shopper",
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Fitness Enthusiast",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1393,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19690,
+      "personas": [
+        "Diverse General Shopper",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Puzzle & Game Enthusiast",
+        "Kid-Focused Shopper",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15350,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Miscellaneous Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10734,
+      "personas": [
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Repetitive Purchaser",
+        "Home Appliance Shopper",
+        "Skincare & Haircare User",
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15452,
+      "personas": [
+        "Frequent Toy Buyer",
+        "Fitness Enthusiast",
+        "Skincare & Haircare User",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2512,
+      "personas": [
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Diverse General Shopper",
+        "Puzzle & Game Enthusiast",
+        "Kid-Focused Shopper",
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2570,
+      "personas": [
+        "Diverse General Shopper",
+        "E-book Enthusiast",
+        "Fitness Enthusiast",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13327,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 9563,
+      "personas": [
+        "Bookworm",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19066,
+      "personas": [
+        "Bookworm",
+        "E-book Enthusiast",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11083,
+      "personas": [
+        "Bookworm",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3298,
+      "personas": [
+        "Frequent Toy Buyer",
+        "Fitness Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5310,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Frequent Toy Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10634,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17593,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Repetitive Purchaser",
+        "Skincare & Haircare User",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12241,
+      "personas": [
+        "Single-Item Shopper",
+        "Miscellaneous Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8505,
+      "personas": [
+        "Diverse General Shopper",
+        "Apparel & Footwear Buyer",
+        "Skincare & Haircare User",
+        "Gadget & Tech User",
+        "Kid-Focused Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19422,
+      "personas": [
+        "E-book Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4239,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18721,
+      "personas": [
+        "Bookworm",
+        "Skincare & Haircare User",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10864,
+      "personas": [
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 15243,
+      "personas": [
+        "Diverse General Shopper",
+        "Bookworm",
+        "Apparel & Footwear Buyer",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14728,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13931,
+      "personas": [
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4037,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "E-book Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14387,
+      "personas": [
+        "Skincare & Haircare User",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 6265,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 8014,
+      "personas": [
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Lipstick Collector",
+        "Gadget & Tech User",
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13566,
+      "personas": [
+        "Lipstick Collector"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 7519,
+      "personas": [
+        "Gadget & Tech User",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8808,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 18133,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10425,
+      "personas": [
+        "Diverse General Shopper",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9089,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2421,
+      "personas": [
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Repetitive Purchaser",
+        "Skincare & Haircare User",
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4971,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4502,
+      "personas": [
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1293,
+      "personas": [
+        "Single-Item Shopper",
+        "Kid-Focused Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 6793,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Bookworm",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 426,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11864,
+      "personas": [
+        "Home Appliance Shopper",
+        "Repetitive Purchaser",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11164,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4611,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11867,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Lipstick Collector",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4414,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 151,
+      "personas": [
+        "Single-Item Shopper",
+        "Gadget & Tech User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1431,
+      "personas": [
+        "E-book Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14293,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Diverse General Shopper",
+        "Outdoor & Casual Gear Buyer",
+        "Frequent Toy Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 12748,
+      "personas": [
+        "E-book Enthusiast",
+        "Bookworm",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1193,
+      "personas": [
+        "Bookworm",
+        "Apparel & Footwear Buyer",
+        "Repetitive Purchaser"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4589,
+      "personas": [
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1356,
+      "personas": [
+        "Bookworm",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18247,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 646,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 17339,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 6635,
+      "personas": [
+        "Diverse General Shopper",
+        "Miscellaneous Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1425,
+      "personas": [
+        "E-book Enthusiast",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10358,
+      "personas": [
+        "E-book Enthusiast",
+        "Bookworm",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4767,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Beauty & Skincare Enthusiast",
+        "Bookworm",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5591,
+      "personas": [
+        "E-book Enthusiast",
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13515,
+      "personas": [
+        "Diverse General Shopper",
+        "Apparel & Footwear Buyer",
+        "E-book Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9771,
+      "personas": [
+        "Diverse General Shopper",
+        "Miscellaneous Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4292,
+      "personas": [
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Apparel & Footwear Buyer",
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10863,
+      "personas": [
+        "Gadget & Tech User",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2645,
+      "personas": [
+        "Fitness Enthusiast",
+        "Gadget & Tech User",
+        "Bookworm",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14598,
+      "personas": [
+        "Diverse General Shopper",
+        "Miscellaneous Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18846,
+      "personas": [
+        "Fitness Enthusiast",
+        "Outdoor & Casual Gear Buyer",
+        "Health & Wellness Seeker"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17789,
+      "personas": [
+        "Diverse General Shopper",
+        "Apparel & Footwear Buyer",
+        "Fitness Enthusiast",
+        "Skincare & Haircare User",
+        "Kid-Focused Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11501,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 11610,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9514,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4869,
+      "personas": [],
+      "status": "unrepresentable"
+    },
+    {
+      "customer_id": 15821,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 9519,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Bookworm",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16294,
+      "personas": [
+        "E-book Enthusiast",
+        "Fitness Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8180,
+      "personas": [
+        "E-book Enthusiast",
+        "Beauty & Skincare Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3818,
+      "personas": [
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Outdoor & Casual Gear Buyer",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1893,
+      "personas": [
+        "Bookworm",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1948,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper",
+        "Bookworm",
+        "Skincare & Haircare User",
+        "Gadget & Tech User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13311,
+      "personas": [
+        "Diverse General Shopper",
+        "Kid-Focused Shopper",
+        "Outdoor & Casual Gear Buyer",
+        "Home Appliance Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8671,
+      "personas": [
+        "Diverse General Shopper",
+        "Puzzle & Game Enthusiast",
+        "Kid-Focused Shopper",
+        "Beauty & Skincare Enthusiast",
+        "Apparel & Footwear Buyer",
+        "Skincare & Haircare User",
+        "Health & Wellness Seeker"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 7113,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Beauty & Skincare Enthusiast",
+        "Fitness Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8513,
+      "personas": [
+        "Diverse General Shopper",
+        "Outdoor & Casual Gear Buyer",
+        "Skincare & Haircare User",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8264,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Frequent Toy Buyer",
+        "Repetitive Purchaser"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9398,
+      "personas": [
+        "Frequent Toy Buyer",
+        "Fitness Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17424,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14712,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Outdoor & Casual Gear Buyer",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1102,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper",
+        "Gadget & Tech User",
+        "Puzzle & Game Enthusiast",
+        "Repetitive Purchaser"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13602,
+      "personas": [
+        "Lipstick Collector",
+        "Diverse General Shopper",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13198,
+      "personas": [
+        "E-book Enthusiast",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19816,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 13051,
+      "personas": [
+        "Diverse General Shopper",
+        "Apparel & Footwear Buyer",
+        "Skincare & Haircare User",
+        "Kid-Focused Shopper",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1973,
+      "personas": [
+        "Diverse General Shopper",
+        "Home Appliance Shopper",
+        "Skincare & Haircare User",
+        "Puzzle & Game Enthusiast",
+        "E-book Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1226,
+      "personas": [
+        "Diverse General Shopper",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Skincare & Haircare User",
+        "Home Appliance Shopper",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8087,
+      "personas": [
+        "Fitness Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 14692,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 6821,
+      "personas": [
+        "Bookworm",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16149,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17382,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2196,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 4985,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3839,
+      "personas": [
+        "Diverse General Shopper",
+        "Kid-Focused Shopper",
+        "Home Appliance Shopper",
+        "Skincare & Haircare User",
+        "Lipstick Collector"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3814,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 10806,
+      "personas": [
+        "Diverse General Shopper",
+        "Apparel & Footwear Buyer",
+        "E-book Enthusiast",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9032,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 2798,
+      "personas": [
+        "Diverse General Shopper",
+        "Outdoor & Casual Gear Buyer",
+        "Puzzle & Game Enthusiast",
+        "Home Appliance Shopper",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 3677,
+      "personas": [
+        "E-book Enthusiast",
+        "Bookworm",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5592,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 9314,
+      "personas": [
+        "Single-Item Shopper",
+        "Gadget & Tech User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 5006,
+      "personas": [
+        "Diverse General Shopper",
+        "Bookworm",
+        "Home Appliance Shopper",
+        "Puzzle & Game Enthusiast",
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17635,
+      "personas": [
+        "Bookworm",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18604,
+      "personas": [
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1517,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 8921,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Kid-Focused Shopper",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16305,
+      "personas": [
+        "Bookworm",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17376,
+      "personas": [
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17269,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 11094,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1965,
+      "personas": [
+        "Lipstick Collector",
+        "Beauty & Skincare Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1022,
+      "personas": [],
+      "status": "unrepresentable"
+    },
+    {
+      "customer_id": 13173,
+      "personas": [
+        "Bookworm",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 10892,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 16863,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 298,
+      "personas": [
+        "Puzzle & Game Enthusiast",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 19520,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Puzzle & Game Enthusiast",
+        "Bookworm"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1871,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18668,
+      "personas": [],
+      "status": "unrepresentable"
+    },
+    {
+      "customer_id": 15206,
+      "personas": [
+        "Bookworm",
+        "Apparel & Footwear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 17120,
+      "personas": [
+        "Frequent Repurchaser (Skincare/Apparel)",
+        "Outdoor & Casual Gear Buyer"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4735,
+      "personas": [],
+      "status": "unparseable"
+    },
+    {
+      "customer_id": 3322,
+      "personas": [
+        "Bookworm",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8165,
+      "personas": [
+        "Kid-Focused Shopper",
+        "Home Appliance Shopper",
+        "Miscellaneous Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9775,
+      "personas": [
+        "Beauty & Skincare Enthusiast",
+        "Frequent Repurchaser (Skincare/Apparel)"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 9688,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Single-Item Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 4280,
+      "personas": [],
+      "status": "unrepresentable"
+    },
+    {
+      "customer_id": 17437,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Puzzle & Game Enthusiast"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 8055,
+      "personas": [
+        "E-book Enthusiast",
+        "Kid-Focused Shopper"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 18189,
+      "personas": [
+        "Diverse General Shopper",
+        "Home Appliance Shopper",
+        "Skincare & Haircare User"
+      ],
+      "status": "ok"
+    },
+    {
+      "customer_id": 1189,
+      "personas": [
+        "Apparel & Footwear Buyer",
+        "Fitness Enthusiast",
+        "Diverse General Shopper"
+      ],
+      "status": "ok"
+    }
+  ]
+}

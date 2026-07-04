@@ -1,0 +1,3 @@
+method,n_groups,sample_size,total_population,coverage_of_sample,coverage_of_total_population,entropy,normalized_entropy,top1_concentration,top2_concentration,min_group_ratio,max_group_ratio,avg_labels_per_user,note
+v1 (LLM 직접 생성),20,406,16268,0.9138,0.0228,4.0054,0.9268,0.1412,0.229,0.003,0.1412,2.7305,multi-label(유저당 최대 5개 persona) — ratio는 전체 배정 수 기준 정규화
+v2 (KMeans + LLM naming),6,20000,20000,1.0,1.0,2.5112,0.9715,0.2319,0.4569,0.0879,0.2319,1.0,single-label(고객당 segment_id 1개) — KMeans predict()로 전원 배정
