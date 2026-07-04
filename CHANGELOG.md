@@ -42,6 +42,9 @@
 
 ### 문서
 
+- 신규 데이터 유입 시 segment 불안정 가능성 기록 (#18) ([3685567](https://github.com/JungYeoni/da-template/commit/3685567b2d80c0c8fd424feac0b2c4f01ad9575a))
+- V2 세그먼트 방식 적합성 설명 추가 (#18) ([b16a3f3](https://github.com/JungYeoni/da-template/commit/b16a3f34ca81e00b1a6551b815881abfa311f519))
+- CHANGELOG 자동 업데이트 [skip ci] ([87761da](https://github.com/JungYeoni/da-template/commit/87761dafdf0d656b87f235e6356d026c66cd975f))
 - CHANGELOG 자동 업데이트 [skip ci] ([f342eec](https://github.com/JungYeoni/da-template/commit/f342eecefc8bc44e849b6932e83aca0ea1c69121))
 - CHANGELOG 자동 업데이트 [skip ci] ([c2c2c67](https://github.com/JungYeoni/da-template/commit/c2c2c671f9abc318781c44056da1cf03f02c99a6))
 - CHANGELOG 자동 업데이트 [skip ci] ([bd247cb](https://github.com/JungYeoni/da-template/commit/bd247cbb84ba923bf726bf431aa933576efed99a))
@@ -100,6 +103,7 @@
 
 ### 새 기능
 
+- V1 vs v2 세그먼트 품질 비교 리포트 (#18) ([ddd7173](https://github.com/JungYeoni/da-template/commit/ddd7173b0ce7677046c330afd25298d9805bc775))
 - US-only 분석 트랙 제거 — Full 데이터로 통합 #23 ([a0d0c1d](https://github.com/JungYeoni/da-template/commit/a0d0c1df5accf1598f38dadf798d24e02f59f8eb))
 - Demographic/lifestyle 금지어 소프트체크 범위 확장 (#17) ([a1bff38](https://github.com/JungYeoni/da-template/commit/a1bff382dffb3ac599713b7004deb2e914f9d342))
 - #20 이슈 검증 (#7) ([2560420](https://github.com/JungYeoni/da-template/commit/25604207823195284d8a0da5c2fe1a59476e2fbc))
