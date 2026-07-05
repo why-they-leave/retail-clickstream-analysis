@@ -18,10 +18,11 @@ from pathlib import Path
 
 import pandas as pd
 import yaml
-from segment_common import fill_clustering_features
 from sklearn.cluster import KMeans
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
+
+from src.features.segment_common import fill_clustering_features
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s:%(name)s:%(message)s")
 logger = logging.getLogger(__name__)
