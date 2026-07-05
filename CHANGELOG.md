@@ -42,6 +42,9 @@
 
 ### 문서
 
+- 리포트에 실행 방법 및 재실행 시 과금 주의사항 추가 (#31) ([6eb1f6c](https://github.com/JungYeoni/da-template/commit/6eb1f6cba4658233baf4c904d9f859dd03333890))
+- LightGCN 운영 시 세그먼트 drift 반영 방식 리포트에 추가 (#31) ([ebe76d6](https://github.com/JungYeoni/da-template/commit/ebe76d69975b42883126d6917ef24d809f6e999d))
+- CHANGELOG 자동 업데이트 [skip ci] ([f3068b9](https://github.com/JungYeoni/da-template/commit/f3068b9fb83c48d40e211614a418222a5882b2e1))
 - 프로젝트에서 세그먼트를 도입한 배경과 목적 정리 ([dc01432](https://github.com/JungYeoni/da-template/commit/dc01432e8970573876303307509bd4640592f7ff))
 - CHANGELOG 자동 업데이트 [skip ci] ([d442d25](https://github.com/JungYeoni/da-template/commit/d442d25302ce50a16e6a7cdec5e46922e1c23fa5))
 - 리포트에 단위 테스트 및 import 경로 수정 반영 (#26) ([306c5d1](https://github.com/JungYeoni/da-template/commit/306c5d1d7c15d06ed57b4cc1dd6ca99bb4bdcb0a))
@@ -88,6 +91,7 @@
 
 ### 버그 수정
 
+- Assign_segments.py의 segment_common import 경로 수정 (#31) ([0afd7ca](https://github.com/JungYeoni/da-template/commit/0afd7cad6d811fd3a5bfabdf1ce71523e3722593))
 - Segment_naming.py의 llm_connector import 경로 수정 (#26) ([8649c67](https://github.com/JungYeoni/da-template/commit/8649c6753df078cc82b0debb2076bb74d09f249c))
 - #7 github action CI 테스트 오류 수정 ([a3838ad](https://github.com/JungYeoni/da-template/commit/a3838adc55b112df7e69d6e27195c59dc117f5a4))
 - Reference에 recency 컬럼 없을 때 명시적 ValueError 반환 (#16) ([e5cf0d7](https://github.com/JungYeoni/da-template/commit/e5cf0d7a42ae79684241caa63093dec749bbe5af))
@@ -109,6 +113,7 @@
 
 ### 새 기능
 
+- LightGCN용 train 전용 세그먼트 재계산 파이프라인 추가 (#31) ([01a3052](https://github.com/JungYeoni/da-template/commit/01a3052b03b73ebb15c08d4283986d97c260be59))
 - 고객별 세그먼트 라벨 테이블 생성 #26 ([0496817](https://github.com/JungYeoni/da-template/commit/0496817da6a0f74eb749695d3ea4500189507119))
 - 세그먼트 병합 시 evidence/cautions/status/erros 보존 (#26) ([8246585](https://github.com/JungYeoni/da-template/commit/8246585b6f228f9c07f1c105e0841a6449779901))
 - V1 vs v2 세그먼트 품질 비교 리포트 (#18) ([ddd7173](https://github.com/JungYeoni/da-template/commit/ddd7173b0ce7677046c330afd25298d9805bc775))
