@@ -42,6 +42,8 @@
 
 ### 문서
 
+- 프로젝트에서 세그먼트를 도입한 배경과 목적 정리 ([dc01432](https://github.com/JungYeoni/da-template/commit/dc01432e8970573876303307509bd4640592f7ff))
+- CHANGELOG 자동 업데이트 [skip ci] ([d442d25](https://github.com/JungYeoni/da-template/commit/d442d25302ce50a16e6a7cdec5e46922e1c23fa5))
 - 리포트에 단위 테스트 및 import 경로 수정 반영 (#26) ([306c5d1](https://github.com/JungYeoni/da-template/commit/306c5d1d7c15d06ed57b4cc1dd6ca99bb4bdcb0a))
 - 고객별 세그먼트 라벨 테이블 산출물 리포트 반영 (#26) ([9c708a9](https://github.com/JungYeoni/da-template/commit/9c708a99ee6ad0619f92db72d918f444d8eba67e))
 - CHANGELOG 자동 업데이트 [skip ci] ([655952f](https://github.com/JungYeoni/da-template/commit/655952fd7dd9c4bf555aefbf89933d2be959501b))
