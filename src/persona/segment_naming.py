@@ -32,9 +32,9 @@ from pathlib import Path
 import pandas as pd
 from openai import OpenAI
 
-from llm_connector.client import call_llm
-from llm_connector.env import get_required_env
-from llm_connector.parser import _parse_json_block
+from src.llm_connector.client import call_llm
+from src.llm_connector.env import get_required_env
+from src.llm_connector.parser import _parse_json_block
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s:%(name)s:%(message)s")
 logger = logging.getLogger(__name__)
