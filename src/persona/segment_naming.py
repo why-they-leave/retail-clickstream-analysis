@@ -45,6 +45,8 @@ EXPERIMENTS_DIR = ROOT_DIR / "experiments" / "segment_naming_v2"
 
 SEGMENT_SUMMARY_PATH = PROCESSED_DIR / "segment_summary_all_customers.csv"
 OUTPUT_PATH = PROCESSED_DIR / "segment_personas_v2.json"
+CUSTOMER_SEGMENTS_PATH = PROCESSED_DIR / "customer_segments_all_customers.csv"
+LABELED_OUTPUT_PATH = PROCESSED_DIR / "customer_segments_labeled_all_customers.csv"
 
 REQUIRED_KEYS = ["segment_id", "segment_name", "description", "evidence", "cautions"]
 
@@ -299,6 +301,34 @@ def merge_personas_with_customers(
     return customer_segments.merge(personas_df[PERSONA_MERGE_COLUMNS], on="segment_id", how="left")
 
 
+def validate_merged_segments(
+    merged: pd.DataFrame, customer_segments: pd.DataFrame, personas: list[dict]
+) -> None:
+    """병합 결과를 검증한다. 실패 시 ValueError를 발생시킨다."""
+    errors = []
+
+    if len(merged) != len(customer_segments):
+        errors.append(f"병합 후 row 수 불일치: 원본={len(customer_segments)}, 병합후={len(merged)}")
+
+    missing_mask = merged["segment_name"].isna()
+    if missing_mask.any():
+        missing_ids = sorted(merged.loc[missing_mask, "segment_id"].unique())
+        errors.append(
+            f"segment_name이 비어있는 row {missing_mask.sum()}개 (segment_id: {missing_ids})"
+        )
+
+    persona_segment_count = len({p["segment_id"] for p in personas})
+    customer_segment_count = customer_segments["segment_id"].nunique()
+    if persona_segment_count != customer_segment_count:
+        errors.append(
+            f"segment 수 불일치: personas={persona_segment_count}, "
+            f"customer_segments={customer_segment_count}"
+        )
+
+    if errors:
+        raise ValueError("세그먼트 병합 검증 실패:\n" + "\n".join(errors))
+
+
 def next_run_label(date_str: str | None = None) -> str:
     """오늘 날짜 기준 다음 run 번호를 자동 부여한다 (run_YYYY-MM-DD_N)."""
     if date_str is None:
@@ -340,6 +370,24 @@ def promote_run(run_label: str) -> Path:
     return OUTPUT_PATH
 
 
+def merge_customer_segments() -> Path:
+    """customer_segments_all_customers.csv와 segment_personas_v2.json을 병합해 저장한다.
+
+    API 호출 없이 파일 병합만 수행한다 (Issue #26).
+    """
+    customer_segments = pd.read_csv(CUSTOMER_SEGMENTS_PATH)
+    with open(OUTPUT_PATH, encoding="utf-8") as f:
+        personas = json.load(f)
+
+    merged = merge_personas_with_customers(customer_segments, personas)
+    validate_merged_segments(merged, customer_segments, personas)
+
+    PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    merged.to_csv(LABELED_OUTPUT_PATH, index=False)
+    logger.info("고객별 세그먼트 라벨 테이블 저장: %s", LABELED_OUTPUT_PATH)
+    return LABELED_OUTPUT_PATH
+
+
 def parse_args():
     parser = ArgumentParser(description="Segment summary 기반 LLM naming (Issue #17).")
     parser.add_argument(
@@ -357,6 +405,14 @@ def parse_args():
             "API 호출 없이 파일 복사만 수행한다."
         ),
     )
+    parser.add_argument(
+        "--merge-customers",
+        action="store_true",
+        help=(
+            f"{CUSTOMER_SEGMENTS_PATH.name}와 {OUTPUT_PATH.name}을 segment_id 기준으로 병합해 "
+            f"{LABELED_OUTPUT_PATH.name}을 생성한다 (Issue #26). API 호출 없음."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -365,6 +421,10 @@ def main() -> None:
 
     if args.promote:
         promote_run(args.promote)
+        return
+
+    if args.merge_customers:
+        merge_customer_segments()
         return
 
     df = pd.read_csv(SEGMENT_SUMMARY_PATH).sort_values("segment_id")
