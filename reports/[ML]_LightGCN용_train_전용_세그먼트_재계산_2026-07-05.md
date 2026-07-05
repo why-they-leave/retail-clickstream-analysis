@@ -30,6 +30,14 @@ sessions_events_products.csv / orders_items_products.csv
 
 **부수적으로 발견/수정한 사전 존재 버그:** `assign_segments.py`가 `from segment_common import ...`처럼 `src.` 접두어 없이 import해서, 이 스크립트를 다른 모듈에서 import하면 `ModuleNotFoundError`가 났다 (#26 작업 때 `segment_naming.py`에서 찾은 것과 같은 종류의 버그). `src.features.segment_common`으로 수정했다.
 
+**실행 방법 및 주의사항:**
+
+```bash
+uv run python -m src.features.build_train_only_segments
+```
+
+`PYTHONPATH` 설정 없이 위 명령으로 바로 실행된다. **단, 재실행할 때마다 Upstage LLM API를 세그먼트 수만큼(현재 6회) 호출해 과금이 발생한다.** 이미 산출물(`customer_segments_labeled_train_only.csv` 등)이 존재하므로 지금 다시 실행할 필요는 없고, 이후 원본 데이터가 바뀌어 재계산이 필요할 때만 다시 실행하면 된다.
+
 ## 평가 지표
 
 표준 지도학습 평가가 아니므로, 파이프라인 무결성과 재계산 전후 비교로 신뢰도를 확인했다.
