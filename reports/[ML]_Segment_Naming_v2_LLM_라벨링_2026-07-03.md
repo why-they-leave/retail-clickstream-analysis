@@ -55,6 +55,8 @@ segment_summary_all_customers.csv
 - 구매전환율 100%인 segment 4·5도 `view_purchase_category_match_rate`가 0.0%로 나와, "구매는 하지만 조회 카테고리와 구매 카테고리가 전혀 겹치지 않는" 패턴이 LLM 설명에도 정확히 반영됨 — 10회 반복 재현 검증과 evidence 기계 대조로 이 결과가 우연이 아님을 확인함
 - `segment_id` 기준 `customer_segments` 테이블 병합(`merge_personas_with_customers()`)은 함수만 구현되어 있고 실제 파이프라인 어디에서도 호출되지 않음 — Full/US 산출물에 `segment_name`/`description` 컬럼이 아직 없음. 후속 작업 필요(아래 "권장 다음 단계" 참고)
 
+> **업데이트 (2026-07-05, Issue #26)**: `merge_personas_with_customers()`가 `evidence`/`cautions`/`status`/`errors`까지 보존하도록 확장되고, `--merge-customers` CLI 옵션으로 실행 가능해졌다. 산출물: `data/processed/customer_segments_labeled_all_customers.csv`.
+
 **수치 요약:**
 
 | segment_id | customer_count | customer_ratio | purchaser_ratio | segment_name |
@@ -112,13 +114,14 @@ segment_summary_all_customers.csv
 - `data/processed/segment_personas_v2.json` (canonical 채택본 — `run_2026-07-03_1` 반영 완료)
 - `data/processed/segment_summary_{all,us}_customers.csv`
 - `data/processed/customer_segments_{all,us}_customers.csv`
+- `data/processed/customer_segments_labeled_all_customers.csv` (Issue #26 — 고객별 세그먼트 라벨 테이블, gitignore 대상 로컬 산출물)
 - `experiments/segment_naming_v2/run_2026-07-03_{1..10}/segment_personas.json` (안정성 검증용 반복 실행 결과)
 - `experiments/segment_naming_v2/CHOICES.md` (채택 기준·기록)
 
 ## 권장 다음 단계
 
 - [x] `experiments/segment_naming_v2/run_2026-07-03_1` 정성 검토 → `CHOICES.md`에 채택 기록 → `--promote run_2026-07-03_1`로 canonical 파일 갱신 (완료)
-- [ ] `merge_personas_with_customers()`를 실제로 호출하는 스크립트/CLI 옵션 추가 — 지금은 정의만 있고 `customer_segments_{all,us}_customers.csv`에 `segment_name`/`description`이 병합된 적이 없음. **#18이 이름 붙은 세그먼트 단위 비교를 하려면 선행 필요**
+- [x] `merge_personas_with_customers()`를 실제로 호출하는 스크립트/CLI 옵션 추가 (완료, Issue #26) — `--merge-customers` 옵션으로 `evidence`/`cautions`/`status`/`errors`까지 보존한 `customer_segments_labeled_all_customers.csv` 생성
 - [ ] PR #22 리뷰/머지 진행 (이슈 #17에 `Closes #17`로 연결됨)
 - [ ] Streamlit 데모에 `segment_name`/`description` 노출 연동 검토 (`docs/SEGMENT_ASSIGNMENT_DESIGN.md`의 향후 DB 확장 계획과 연결)
 - [ ] README 프로젝트 구조 설명에 `experiments/` 디렉터리 반영 (아직 미반영)
