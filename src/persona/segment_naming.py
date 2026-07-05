@@ -48,6 +48,17 @@ OUTPUT_PATH = PROCESSED_DIR / "segment_personas_v2.json"
 
 REQUIRED_KEYS = ["segment_id", "segment_name", "description", "evidence", "cautions"]
 
+# 상수 추가
+PERSONA_MERGE_COLUMNS = [
+    "segment_id",
+    "segment_name",
+    "description",
+    "evidence",
+    "cautions",
+    "status",
+    "errors",
+]
+
 # 하드 실패 기준은 아니고, 결과에 남겨 사람이 검토하도록 하는 소프트 경고 목록이다.
 # "Single-Category Specialist"처럼 행동 기반 표현에도 등장하는 단어(single 등)가
 # 있어 자동 거부는 오탐이 많다 — 완료 기준은 "prompt에 금지 규칙이 포함되는 것"이지
@@ -277,12 +288,15 @@ def merge_personas_with_customers(
 ) -> pd.DataFrame:
     """segment_id 기준으로 naming 결과를 customer segment 테이블에 병합한다."""
     personas_df = pd.DataFrame(personas)
-    for col in ["segment_name", "description"]:
+    for col in PERSONA_MERGE_COLUMNS:
         if col not in personas_df.columns:
             personas_df[col] = pd.NA
-    return customer_segments.merge(
-        personas_df[["segment_id", "segment_name", "description"]], on="segment_id", how="left"
-    )
+
+    for col in ["evidence", "cautions"]:
+        personas_df[col] = personas_df[col].apply(
+            lambda v: json.dumps(v, ensure_ascii=False) if isinstance(v, list) else v
+        )
+    return customer_segments.merge(personas_df[PERSONA_MERGE_COLUMNS], on="segment_id", how="left")
 
 
 def next_run_label(date_str: str | None = None) -> str:
