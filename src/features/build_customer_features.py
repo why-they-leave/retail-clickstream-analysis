@@ -34,7 +34,9 @@ COLUMN_ORDER = [
 ]
 
 
-def _session_features(customer_ids: pd.Series, session_events: pd.DataFrame) -> pd.DataFrame:
+def _session_features(
+    customer_ids: pd.Series, session_events: pd.DataFrame, analysis_date: pd.Timestamp
+) -> pd.DataFrame:
     """recency_session_days, session_count 집계."""
     df = session_events[session_events["customer_id"].isin(customer_ids)].copy()
     df["start_time"] = pd.to_datetime(df["start_time"])
@@ -44,7 +46,7 @@ def _session_features(customer_ids: pd.Series, session_events: pd.DataFrame) -> 
         .agg(last_session=("start_time", "max"), session_count=("session_id", "nunique"))
         .reset_index()
     )
-    agg["recency_session_days"] = (ANALYSIS_DATE - agg["last_session"]).dt.days
+    agg["recency_session_days"] = (analysis_date - agg["last_session"]).dt.days
     return agg[["customer_id", "recency_session_days", "session_count"]]
 
 
@@ -77,7 +79,9 @@ def _event_features(customer_ids: pd.Series, session_events: pd.DataFrame) -> pd
     return counts.merge(top_view, on="customer_id", how="left")
 
 
-def _order_features(customer_ids: pd.Series, order_details: pd.DataFrame) -> pd.DataFrame:
+def _order_features(
+    customer_ids: pd.Series, order_details: pd.DataFrame, analysis_date: pd.Timestamp
+) -> pd.DataFrame:
     """recency_order_days, order_count, total_spend, avg_order_value, top_purchase_category 집계."""
     df = order_details[order_details["customer_id"].isin(customer_ids)].copy()
     df["order_time"] = pd.to_datetime(df["order_time"])
@@ -93,7 +97,7 @@ def _order_features(customer_ids: pd.Series, order_details: pd.DataFrame) -> pd.
         )
         .reset_index()
     )
-    order_agg["recency_order_days"] = (ANALYSIS_DATE - order_agg["last_order"]).dt.days
+    order_agg["recency_order_days"] = (analysis_date - order_agg["last_order"]).dt.days
     order_agg["avg_order_value"] = order_agg["total_spend"] / order_agg["order_count"]
 
     top_purchase = (
@@ -123,14 +127,23 @@ def build_customer_features(
     customer_ids: pd.Series,
     session_events: pd.DataFrame,
     order_details: pd.DataFrame,
+    analysis_date: pd.Timestamp = ANALYSIS_DATE,
 ) -> pd.DataFrame:
     """customer_ids 기준으로 고객 단위 집계 피처 테이블을 생성한다."""
     base = pd.DataFrame({"customer_id": customer_ids})
 
     result = (
-        base.merge(_session_features(customer_ids, session_events), on="customer_id", how="left")
+        base.merge(
+            _session_features(customer_ids, session_events, analysis_date),
+            on="customer_id",
+            how="left",
+        )
         .merge(_event_features(customer_ids, session_events), on="customer_id", how="left")
-        .merge(_order_features(customer_ids, order_details), on="customer_id", how="left")
+        .merge(
+            _order_features(customer_ids, order_details, analysis_date),
+            on="customer_id",
+            how="left",
+        )
     )
 
     result["session_count"] = result["session_count"].fillna(0).astype(int)
