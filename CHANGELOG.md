@@ -42,6 +42,9 @@
 
 ### 문서
 
+- 리포트에 단위 테스트 및 import 경로 수정 반영 (#26) ([306c5d1](https://github.com/JungYeoni/da-template/commit/306c5d1d7c15d06ed57b4cc1dd6ca99bb4bdcb0a))
+- 고객별 세그먼트 라벨 테이블 산출물 리포트 반영 (#26) ([9c708a9](https://github.com/JungYeoni/da-template/commit/9c708a99ee6ad0619f92db72d918f444d8eba67e))
+- CHANGELOG 자동 업데이트 [skip ci] ([655952f](https://github.com/JungYeoni/da-template/commit/655952fd7dd9c4bf555aefbf89933d2be959501b))
 - 신규 데이터 유입 시 segment 불안정 가능성 기록 (#18) ([3685567](https://github.com/JungYeoni/da-template/commit/3685567b2d80c0c8fd424feac0b2c4f01ad9575a))
 - V2 세그먼트 방식 적합성 설명 추가 (#18) ([b16a3f3](https://github.com/JungYeoni/da-template/commit/b16a3f34ca81e00b1a6551b815881abfa311f519))
 - CHANGELOG 자동 업데이트 [skip ci] ([87761da](https://github.com/JungYeoni/da-template/commit/87761dafdf0d656b87f235e6356d026c66cd975f))
@@ -83,6 +86,7 @@
 
 ### 버그 수정
 
+- Segment_naming.py의 llm_connector import 경로 수정 (#26) ([8649c67](https://github.com/JungYeoni/da-template/commit/8649c6753df078cc82b0debb2076bb74d09f249c))
 - #7 github action CI 테스트 오류 수정 ([a3838ad](https://github.com/JungYeoni/da-template/commit/a3838adc55b112df7e69d6e27195c59dc117f5a4))
 - Reference에 recency 컬럼 없을 때 명시적 ValueError 반환 (#16) ([e5cf0d7](https://github.com/JungYeoni/da-template/commit/e5cf0d7a42ae79684241caa63093dec749bbe5af))
 - 피드백 반영 후 레포트 업데이트 (#15) ([a847d79](https://github.com/JungYeoni/da-template/commit/a847d7961955b5cec8d0ddd64d1748078a415545))
@@ -103,6 +107,8 @@
 
 ### 새 기능
 
+- 고객별 세그먼트 라벨 테이블 생성 #26 ([0496817](https://github.com/JungYeoni/da-template/commit/0496817da6a0f74eb749695d3ea4500189507119))
+- 세그먼트 병합 시 evidence/cautions/status/erros 보존 (#26) ([8246585](https://github.com/JungYeoni/da-template/commit/8246585b6f228f9c07f1c105e0841a6449779901))
 - V1 vs v2 세그먼트 품질 비교 리포트 (#18) ([ddd7173](https://github.com/JungYeoni/da-template/commit/ddd7173b0ce7677046c330afd25298d9805bc775))
 - US-only 분석 트랙 제거 — Full 데이터로 통합 #23 ([a0d0c1d](https://github.com/JungYeoni/da-template/commit/a0d0c1df5accf1598f38dadf798d24e02f59f8eb))
 - Demographic/lifestyle 금지어 소프트체크 범위 확장 (#17) ([a1bff38](https://github.com/JungYeoni/da-template/commit/a1bff382dffb3ac599713b7004deb2e914f9d342))
@@ -132,5 +138,9 @@
 - 고객 단위 집계 파이프라인 구축 (전체 / US-only 공용) #5 ([3c4d703](https://github.com/JungYeoni/da-template/commit/3c4d70317f6bd3fba8f0b588ad3dafc6ba44d457))
 - 데이터 불러오기 코드 주석 처리 #2 ([3493967](https://github.com/JungYeoni/da-template/commit/349396708b1bda7b156c7f386abae7dc559b14e8))
 - @eric010314-sys 작업 내용 transfer #1 ([37fae63](https://github.com/JungYeoni/da-template/commit/37fae630bbc760e447f35c1d7f6f3d9510d4930a))
+
+### 테스트
+
+- 세그먼트 병합/검증 로직 단위 테스트 추가 (#26) ([35114fd](https://github.com/JungYeoni/da-template/commit/35114fd1981d2a6202d39763487aab667115ff84))
 
 
