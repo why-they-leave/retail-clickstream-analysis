@@ -8,6 +8,10 @@
 - #7 ALS 하이퍼파리미터 튜닝 및 성능 향상 분석, cold 유저 threshold 실험 ([eb4f116](https://github.com/JungYeoni/da-template/commit/eb4f11690198dfac4be39cea189d0b778d177e19))
 - #7 코드 설명 주석 추가 ([1725993](https://github.com/JungYeoni/da-template/commit/1725993d74a74918797931a07891155c1eed4d4b))
 
+### data
+
+- V1 GPLR 페르소나 canonical 산출물 공유 (final_personas.json) ([d66df61](https://github.com/JungYeoni/da-template/commit/d66df6197c0743c6530023f902cdcb6c5bc4e70e))
+
 ### style
 
 - Ruff format 적용 (#7) ([92070e3](https://github.com/JungYeoni/da-template/commit/92070e3aad89b5b9de267c7b2b1378c22a09a3c6))
@@ -42,6 +46,7 @@
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([dbcc904](https://github.com/JungYeoni/da-template/commit/dbcc9047376eff7a631ea280b72ae07d63052f30))
 - 페르소나/세그먼트 실행 커맨드 문서 추가 (#29) ([c2c1505](https://github.com/JungYeoni/da-template/commit/c2c1505e412248aeede8fa410fddb0df8803c1f6))
 - LightGCN tri-graph 데이터 파이프라인 구축 리포트 작성 (#29) ([2a6dfad](https://github.com/JungYeoni/da-template/commit/2a6dfada9200e407dfefdb553d5d0d532b3f7efe))
 - CHANGELOG 자동 업데이트 [skip ci] ([f45df5e](https://github.com/JungYeoni/da-template/commit/f45df5e1cf09cebff58ecf9e63d16f7259bab66e))
