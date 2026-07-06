@@ -27,7 +27,7 @@ credentials/
 
 # 데이터 (원본 데이터는 추적하지 않음)
 data/raw/
-data/interim/
+data/interim/*
 data/processed/*
 data/outputs/ALS/*
 
@@ -35,6 +35,15 @@ data/outputs/ALS/*
 # Issue #23: US-only 트랙 제거 — Full 산출물만 예외 추적
 !data/processed/segment_summary_all_customers.csv
 !data/processed/segment_personas_v2.json
+
+# v1 GPLR 페르소나 생성 결과 — LLM temperature=0.7이라 실행할 때마다 결과가 달라짐.
+# 팀원마다 재생성하지 않고 canonical 산출물만 공유하기 위해 예외 추적 (v2와 동일한 패턴)
+!data/interim/funnel_persona_gen/
+!data/interim/funnel_persona_gen_us/
+data/interim/funnel_persona_gen/*
+data/interim/funnel_persona_gen_us/*
+!data/interim/funnel_persona_gen/final_personas.json
+!data/interim/funnel_persona_gen_us/final_personas.json
 
 # 모델 아티팩트 (가중치 파일)
 *.pkl
