@@ -46,6 +46,8 @@
 
 ### 문서
 
+- V1/v2 페르소나 canonical 공유 방식 문서화 ([b926ccc](https://github.com/JungYeoni/da-template/commit/b926ccc0dd02dfa1ec67b69f064514608cddcdbd))
+- CHANGELOG 자동 업데이트 [skip ci] ([2dc6be3](https://github.com/JungYeoni/da-template/commit/2dc6be372a320f35fa8a2f29294f54e399d6b22c))
 - CHANGELOG 자동 업데이트 [skip ci] ([dbcc904](https://github.com/JungYeoni/da-template/commit/dbcc9047376eff7a631ea280b72ae07d63052f30))
 - 페르소나/세그먼트 실행 커맨드 문서 추가 (#29) ([c2c1505](https://github.com/JungYeoni/da-template/commit/c2c1505e412248aeede8fa410fddb0df8803c1f6))
 - LightGCN tri-graph 데이터 파이프라인 구축 리포트 작성 (#29) ([2a6dfad](https://github.com/JungYeoni/da-template/commit/2a6dfada9200e407dfefdb553d5d0d532b3f7efe))
