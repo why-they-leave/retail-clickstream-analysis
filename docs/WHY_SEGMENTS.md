@@ -16,6 +16,8 @@
 
 문제는 이 데이터셋의 상품명이 `SSD MediumBlue 149`, `Lipstick LightBlue`, `Paperback Olive`처럼 **synthetic 데이터 생성기가 만든 더미 텍스트**라는 점이다. LLM은 이 상품명에서 실제로는 존재하지 않는 라이프스타일/취향을 그럴듯하게 추론해버렸고(#14), 그 결과 페르소나가 중복되거나 synthetic 텍스트의 우연한 패턴을 반영하는 문제가 있었다.
 
+**재현성 문제와 canonical 파일 공유 (2026-07-07)**: 이 단계(`src/persona/generation.py`)는 `configs/persona/params.yaml`의 `temperature: 0.7`로 LLM(solar-pro)을 호출한다. 유저 샘플링 자체는 고정 시드(`seed=i*7` 등)라 재현되지만, temperature>0인 LLM 응답은 그렇지 않아 **같은 코드를 실행해도 사람마다 다른 페르소나가 생성된다.** 그래서 팀원마다 각자 재생성하지 않고, 한 번 생성한 산출물(`data/interim/funnel_persona_gen/final_personas.json`, `funnel_persona_gen_us/final_personas.json`)만 canonical 버전으로 `.gitignore` 예외 처리해 git에 커밋하고 공유한다 — v2의 `segment_personas_v2.json`과 동일한 방식이다.
+
 ## v2: 먼저 클러스터링, LLM은 이름만 붙임 (지금 쓰는 방식)
 
 그래서 순서를 바꿨다.

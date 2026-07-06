@@ -91,5 +91,5 @@ Streamlit raw data input
 
 ## 알려진 제약사항
 
-- **신규 데이터 유입 시 segment_id/segment_name 불안정 가능성**: 현재 파이프라인은 실행할 때마다 `KMeans`를 새로 `fit()`한다. 신규 고객이 추가되어 재학습하면 (1) 클러스터 경계 자체가 달라지거나 (2) `segment_id` 번호(0~5)가 가리키는 그룹이 뒤바뀔 수 있다. 또한 LLM naming은 `temperature=0`이어도 완전한 결정성은 아니라서(10회 반복 시 6개 중 2개는 9/10 일치, `experiments/segment_naming_v2/`), 같은 세그먼트라도 이름이 재실행마다 달라질 수 있다.
+- **신규 데이터 유입 시 segment_id/segment_name 불안정 가능성**: 현재 파이프라인은 실행할 때마다 `KMeans`를 새로 `fit()`한다. 신규 고객이 추가되어 재학습하면 (1) 클러스터 경계 자체가 달라지거나 (2) `segment_id` 번호(0~5)가 가리키는 그룹이 뒤바뀔 수 있다. 또한 LLM naming은 `temperature=0`이어도 완전한 결정성은 아니라서(10회 반복 시 6개 중 2개는 9/10 일치, `experiments/segment_naming_v2/`), 같은 세그먼트라도 이름이 재실행마다 달라질 수 있다. 이 문제 때문에 각자 재실행하지 않고 canonical 산출물(`segment_personas_v2.json`)만 `.gitignore` 예외로 공유한다 — v1 GPLR 페르소나 생성(`temperature=0.7`)도 동일한 이유로 같은 방식을 쓴다 (`docs/WHY_SEGMENTS.md` 참고).
 - 아직 이 프로젝트에는 주기적 재학습을 트리거하는 운영 파이프라인이 없어 지금 단계에서 모델 버전 관리·drift 감지 체계를 구현하지는 않는다. 실제 추천시스템 연동(#14) 단계에서 재학습 주기가 정해지면, 그때 (a) 학습된 KMeans pipeline을 버전 파일로 저장해 신규 데이터에는 `predict()`만 적용하고 (b) 세그먼트 정의가 실제로 바뀔 때만 naming을 재실험·재채택하는 방식을 검토한다.
