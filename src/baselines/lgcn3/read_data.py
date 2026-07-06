@@ -40,8 +40,14 @@ def read_data_tri(path_u2t, path_t2p, path_u2p,):
         for persona in u2p_data[user]:
             interactions_u2p.append((user, persona))
     for item in range(item_num):
-        for persona in t2p_data[item]:
-            interactions_t2p.append((item, persona))
+        for entry in t2p_data[item]:
+            # Issue #29: entry는 persona_id(기존) 또는 [persona_id, lift_weight](신규, item-segment
+            # lift 가중치 지원)를 모두 지원한다.
+            if isinstance(entry, (list, tuple)):
+                persona, weight = entry[0], entry[1]
+                interactions_t2p.append((item, persona, weight))
+            else:
+                interactions_t2p.append((item, entry))
 
     # shuffle for randomness
     rd.shuffle(interactions_u2t) # [TODO] uncontrolled shuffle
@@ -76,7 +82,8 @@ def read_all_data_tri(all_para, approximate=False):
     [hypergraph_embeddings, graph_embeddings, propagation_embeddings, sparse_propagation_matrix] = [0, 0, 0, 0]
 
     ## Paths of data
-    DIR = '../../../data/'
+    # data/ 최상위가 아니라 data/processed/를 가리키도록 수정 (Issue #29 — 프로젝트 데이터 폴더 관례 준수)
+    DIR = '../../../data/processed/'
 
     ## Load data
     ## load training data
