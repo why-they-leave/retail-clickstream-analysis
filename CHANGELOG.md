@@ -42,6 +42,9 @@
 
 ### 문서
 
+- 페르소나/세그먼트 실행 커맨드 문서 추가 (#29) ([c2c1505](https://github.com/JungYeoni/da-template/commit/c2c1505e412248aeede8fa410fddb0df8803c1f6))
+- LightGCN tri-graph 데이터 파이프라인 구축 리포트 작성 (#29) ([2a6dfad](https://github.com/JungYeoni/da-template/commit/2a6dfada9200e407dfefdb553d5d0d532b3f7efe))
+- CHANGELOG 자동 업데이트 [skip ci] ([f45df5e](https://github.com/JungYeoni/da-template/commit/f45df5e1cf09cebff58ecf9e63d16f7259bab66e))
 - 리포트에 실행 방법 및 재실행 시 과금 주의사항 추가 (#31) ([6eb1f6c](https://github.com/JungYeoni/da-template/commit/6eb1f6cba4658233baf4c904d9f859dd03333890))
 - LightGCN 운영 시 세그먼트 drift 반영 방식 리포트에 추가 (#31) ([ebe76d6](https://github.com/JungYeoni/da-template/commit/ebe76d69975b42883126d6917ef24d809f6e999d))
 - CHANGELOG 자동 업데이트 [skip ci] ([f3068b9](https://github.com/JungYeoni/da-template/commit/f3068b9fb83c48d40e211614a418222a5882b2e1))
@@ -113,6 +116,9 @@
 
 ### 새 기능
 
+- LightGCN용 tri-graph 데이터 파이프라인 구축 (#29) ([81ec74a](https://github.com/JungYeoni/da-template/commit/81ec74a8cbb29f97513fba17af216b04833ca234))
+- LightGCN tri-graph에 item-segment lift 가중치 지원 추가 (#29) ([dec323f](https://github.com/JungYeoni/da-template/commit/dec323f8a283797635bd3bec45dd465654a0fe1a))
+- User_id/item_id 인덱스 인코딩 공용 유틸 추가 (#29) ([9ea307f](https://github.com/JungYeoni/da-template/commit/9ea307f364b637595f7138f1c6d88746f305a3e1))
 - LightGCN용 train 전용 세그먼트 재계산 파이프라인 추가 (#31) ([01a3052](https://github.com/JungYeoni/da-template/commit/01a3052b03b73ebb15c08d4283986d97c260be59))
 - 고객별 세그먼트 라벨 테이블 생성 #26 ([0496817](https://github.com/JungYeoni/da-template/commit/0496817da6a0f74eb749695d3ea4500189507119))
 - 세그먼트 병합 시 evidence/cautions/status/erros 보존 (#26) ([8246585](https://github.com/JungYeoni/da-template/commit/8246585b6f228f9c07f1c105e0841a6449779901))
@@ -148,6 +154,7 @@
 
 ### 테스트
 
+- Tri-graph 매핑 로직 단위 테스트 추가 (#29) ([46193fb](https://github.com/JungYeoni/da-template/commit/46193fb09481355b27d6e8c9ac7e6bc8f7ad02b8))
 - 세그먼트 병합/검증 로직 단위 테스트 추가 (#26) ([35114fd](https://github.com/JungYeoni/da-template/commit/35114fd1981d2a6202d39763487aab667115ff84))
 
 
