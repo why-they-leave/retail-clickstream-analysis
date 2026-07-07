@@ -1,0 +1,164 @@
+[
+  {
+    "segment_id": 0,
+    "segment_name": "Frequent Viewers with Consistent Purchases",
+    "description": "A segment of customers who frequently view and add items to cart, consistently purchase across sessions, and show high category alignment between views and purchases. They exhibit moderate order frequency and spend, with a strong preference for dominant categories.",
+    "evidence": [
+      "Customers: 3,901 (19.5% of all customers)",
+      "Avg page views: 26.64",
+      "Avg add-to-cart count: 6.86",
+      "Avg add-to-cart rate: 25.8%",
+      "Purchaser ratio: 100.0%",
+      "Avg order count: 1.63",
+      "Avg purchase per session: 0.29",
+      "Avg total spend (log-scale): 4.88",
+      "Avg days since last session: 276.1",
+      "Avg days since last order: 799.2",
+      "Avg purchase category diversity: 1.90",
+      "Avg dominant view category ratio: 34.6%",
+      "Avg dominant purchase category ratio: 75.9%",
+      "View-purchase category match rate: 100.0%",
+      "Top view categories: Books: 27.4%; Beauty: 23.0%; Toys: 14.9%",
+      "Top purchase categories: Books: 27.4%; Beauty: 23.0%; Toys: 14.9%"
+    ],
+    "cautions": [
+      "Segment derived from KMeans clustering with low silhouette scores; behavior patterns are approximate and not sharply defined.",
+      "No demographic or lifestyle inferences can be made from the data."
+    ]
+  },
+  {
+    "segment_id": 1,
+    "segment_name": "Non-Purchasing Browsers",
+    "description": "A segment of customers who frequently browse and add items to cart but never complete purchases, with a high average number of page views and add-to-cart actions, but zero purchasing activity. Their sessions are concentrated in specific categories like Books, Beauty, and Toys, with no purchase history or spending data.",
+    "evidence": [
+      "Customers: 2,975 (14.9% of all customers)",
+      "Avg page views: 20.50",
+      "Avg add-to-cart count: 4.80",
+      "Avg add-to-cart rate: 23.6%",
+      "Purchaser ratio: 0.0%",
+      "Avg order count: 0.00",
+      "Avg purchase per session: 0.00",
+      "Avg total spend (log-scale): 0.00",
+      "Avg days since last session: 292.4",
+      "Avg days since last order: none",
+      "Avg purchase category diversity: none",
+      "Avg dominant purchase category ratio: none",
+      "View-purchase category match rate: 0.0%",
+      "Top view categories: Books: 21.4%; Beauty: 19.5%; Toys: 13.6%",
+      "Top purchase categories: none"
+    ],
+    "cautions": [
+      "This segment was produced by KMeans clustering with generally low silhouette scores, so it should be treated as a behavior-based approximation, not a sharply separated natural group.",
+      "Avoid overconfident or marketing-style labels due to the clustering method's limitations."
+    ]
+  },
+  {
+    "segment_id": 2,
+    "segment_name": "Low-Engagement Non-Purchasers",
+    "description": "A small segment of customers with minimal purchasing activity, characterized by low add-to-cart rates, no completed orders, and long inactivity periods. They exhibit moderate browsing behavior across diverse categories but never convert views to purchases.",
+    "evidence": [
+      "Customers: 1,051 (5.3% of all customers)",
+      "Avg page views: 9.20",
+      "Avg add-to-cart count: 1.87",
+      "Avg add-to-cart rate: 19.2%",
+      "Purchaser ratio: 0.2%",
+      "Avg order count: 0.00",
+      "Avg purchase per session: 0.00",
+      "Avg total spend (log-scale): 0.00",
+      "Avg days since last session: 986.2",
+      "Avg days since last order: 1839.0",
+      "Avg purchase category diversity: 1.00",
+      "Avg dominant purchase category ratio: 100.0%",
+      "View-purchase category match rate: 0.0%",
+      "Top view categories: Beauty: 17.7%; Books: 17.6%; Toys: 15.0%",
+      "Top purchase categories: Books: 50.0%; Fashion: 50.0%"
+    ],
+    "cautions": [
+      "Segment produced by KMeans clustering with low silhouette scores - represents behavior-based approximation, not sharply separated group",
+      "Purchase statistics (0.00 values) indicate no completed transactions despite add-to-cart activity",
+      "Dominant purchase category ratio (100.0%) reflects single category but purchase count is zero",
+      "Days since last order (1839.0) exceeds days since last session (986.2) due to no orders ever being placed"
+    ]
+  },
+  {
+    "segment_id": 3,
+    "segment_name": "Frequent Browsers with Occasional Purchases",
+    "description": "A large segment of customers who frequently browse multiple categories but make infrequent, concentrated purchases in dominant categories, with no overlap between viewed and purchased categories. All customers in this segment have made at least one purchase, but their purchasing activity is sporadic and highly category-specific.",
+    "evidence": [
+      "Customers: 6,019 (30.1% of all customers)",
+      "Avg page views: 26.53",
+      "Avg add-to-cart count: 6.61",
+      "Avg add-to-cart rate: 25.0%",
+      "Purchaser ratio: 100.0%",
+      "Avg order count: 1.42",
+      "Avg purchase per session: 0.25",
+      "Avg total spend (log-scale): 4.74",
+      "Avg days since last session: 295.8",
+      "Avg days since last order: 884.6",
+      "Avg purchase category diversity: 1.86",
+      "Avg dominant view category ratio: 32.0%",
+      "Avg dominant purchase category ratio: 73.7%",
+      "View-purchase category match rate: 0.0%",
+      "Top view categories: Books: 18.6%; Beauty: 16.2%; Toys: 15.5%",
+      "Top purchase categories: Books: 22.0%; Beauty: 21.5%; Toys: 15.1%"
+    ],
+    "cautions": [
+      "Segment was produced by KMeans clustering with low silhouette scores, indicating behavior-based approximation rather than sharply separated natural group",
+      "No demographic or lifestyle inferences can be made from the data"
+    ]
+  },
+  {
+    "segment_id": 4,
+    "segment_name": "High-Engagement Occasional Purchasers",
+    "description": "A segment of customers who exhibit high engagement with the site, frequently view and add items to cart, and consistently make purchases, though their activity is spread out over time. They show moderate category diversity in both views and purchases, with a notable tendency to purchase items from the same categories they view most often. Their spending is concentrated in Books, Beauty, and Toys.",
+    "evidence": [
+      "Customers: 1,979 (9.9% of all customers)",
+      "Avg page views: 14.20",
+      "Avg add-to-cart count: 4.88",
+      "Avg add-to-cart rate: 34.9%",
+      "Purchaser ratio: 100.0%",
+      "Avg order count: 1.63",
+      "Avg purchase per session: 0.53",
+      "Avg total spend (log-scale): 4.98",
+      "Avg days since last session: 741.8",
+      "Avg days since last order: 1003.6",
+      "Avg purchase category diversity: 2.07",
+      "Avg dominant purchase category ratio: 72.0%",
+      "View-purchase category match rate: 52.5%",
+      "Top view categories: Books: 23.4%; Beauty: 18.5%; Toys: 16.4%",
+      "Top purchase categories: Books: 26.8%; Beauty: 22.8%; Toys: 14.8%"
+    ],
+    "cautions": [
+      "Segment was produced by KMeans clustering with generally low silhouette scores, indicating it is a behavior-based approximation, not a sharply separated natural group",
+      "Avoid overconfident or marketing-style labels due to clustering uncertainty"
+    ]
+  },
+  {
+    "segment_id": 5,
+    "segment_name": "High-Engagement Repeat Purchasers",
+    "description": "A large segment of customers who consistently purchase across diverse categories, with high engagement metrics but infrequent recent activity. They exhibit strong browsing and cart-addition behavior, though their purchase patterns don't tightly align with browsing preferences.",
+    "evidence": [
+      "Customers: 4,075 (20.4% of all customers)",
+      "Avg page views: 37.55",
+      "Avg add-to-cart count: 10.84",
+      "Avg add-to-cart rate: 29.4%",
+      "Purchaser ratio: 100.0%",
+      "Avg order count: 3.42",
+      "Avg purchase per session: 0.46",
+      "Avg total spend (log-scale): 6.00",
+      "Avg days since last session: 211.0",
+      "Avg days since last order: 401.5",
+      "Avg purchase category diversity: 3.76",
+      "Avg dominant view category ratio: 29.3%",
+      "Avg dominant purchase category ratio: 46.7%",
+      "View-purchase category match rate: 29.5%",
+      "Top view categories: Books: 22.7%; Beauty: 18.1%; Toys: 17.0%",
+      "Top purchase categories: Books: 25.7%; Beauty: 23.9%; Toys: 15.4%"
+    ],
+    "cautions": [
+      "Segment derived from KMeans clustering with low silhouette scores - represents behavioral approximation, not distinct natural group",
+      "Purchase behavior doesn't strongly correlate with browsing behavior (29.5% match rate)",
+      "Long inactivity periods (211 days since last session, 401.5 days since last order)"
+    ]
+  }
+]
