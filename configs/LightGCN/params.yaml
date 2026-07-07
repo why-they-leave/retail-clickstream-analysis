@@ -13,3 +13,5 @@ lr: 0.005
 lamda: 0.02
 layer: 2
 top_n: 100          # 유저당 저장할 최대 추천 수 (ALS와 동일 관례, configs/ALS/params.yaml 참고)
+
+eval_k_list: [5, 10, 20]   # evaluate_lightgcn.py — ALS(configs/ALS/params.yaml eval.k_list)와 동일 기준
