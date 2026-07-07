@@ -1,0 +1,15 @@
+# LightGCN_tri 학습 설정 (Issue #30)
+#
+# 실행:
+#   python3 src/baselines/lgcn3/run_lightgcn.py --epoch 300
+#   python3 src/baselines/lgcn3/run_lightgcn.py --epoch 2   # 스모크 테스트용
+#
+# lr/lamda/layer 기본값은 parse.py의 원 논문 기본값을 그대로 따른다.
+# 스모크 테스트(reports/[ML]_LightGCN_tri_모델_구현_및_스모크테스트_2026-07-07.md)에서
+# epoch당 약 12.7초 확인 — epoch=300이면 약 1시간 예상.
+
+epoch: 300
+lr: 0.005
+lamda: 0.02
+layer: 2
+top_n: 100          # 유저당 저장할 최대 추천 수 (ALS와 동일 관례, configs/ALS/params.yaml 참고)

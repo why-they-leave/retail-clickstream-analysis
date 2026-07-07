@@ -96,7 +96,9 @@ class model_LightGCN_tri(object):
         # 상위 top_k개를 뽑는다. items_in_train_data로 이미 학습에서 본 상품을 순위 밖으로 밀어낸다.
         self.all_ratings = tf.matmul(self.u_embeddings, self.item_all_embeddings, transpose_b=True)
         self.all_ratings += self.items_in_train_data
-        self.top_items = tf.nn.top_k(self.all_ratings, k=self.top_k, sorted=True).indices
+        _top_k = tf.nn.top_k(self.all_ratings, k=self.top_k, sorted=True)
+        self.top_items = _top_k.indices
+        self.top_scores = _top_k.values  # run_lightgcn.py의 CSV 저장(score 컬럼)에 필요
 
         self.loss = self.bpr_loss(self.pos_scores, self.neg_scores)
         # 세그먼트 임베딩도 정규화 대상에 포함 — 안 그러면 세그먼트 쪽만 무한정 커질 수 있음

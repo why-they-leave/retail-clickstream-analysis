@@ -47,8 +47,8 @@ class TestModelLightGCNTri:
 
         with tf.compat.v1.Session() as sess:
             sess.run(tf.compat.v1.global_variables_initializer())
-            top_items = sess.run(
-                model.top_items,
+            top_items, top_scores = sess.run(
+                [model.top_items, model.top_scores],
                 feed_dict={
                     model.users: [0, 1],
                     model.items_in_train_data: np.zeros((2, n_items), dtype=np.float32),
@@ -56,6 +56,9 @@ class TestModelLightGCNTri:
                 },
             )
             assert top_items.shape == (2, 2)
+            # top_k(sorted=True)라 각 유저 행 내에서 점수가 내림차순이어야 함 —
+            # run_lightgcn.py가 이 순서를 그대로 rank로 쓰기 때문에 중요한 속성
+            assert (top_scores[:, 0] >= top_scores[:, 1]).all()
 
     def test_zero_personas_supported(self):
         """bipartite 모드(#35)는 n_personas=0에 가까운 상태로 넘어올 수 있다."""

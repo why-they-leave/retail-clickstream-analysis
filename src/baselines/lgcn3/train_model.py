@@ -98,4 +98,7 @@ def train_model(para, data, path_excel, results_save_path=''):
         test_model_store(sess, model, para_test, results_save_path)
         print('Well saved.')
 
-    return F1_max
+    # Issue #30: run_lightgcn.py가 학습 직후 전체 유저 추천(top_items/top_scores)을
+    # 뽑으려면 학습된 그래프가 살아있는 sess/model이 필요하다. sess는 with 블록 없이
+    # 열려있어 함수 밖에서도 안전하게 쓸 수 있다 (기존 동작 그대로, 반환값만 추가).
+    return F1_max, sess, model
