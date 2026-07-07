@@ -10,6 +10,7 @@
 
 ### data
 
+- LightGCN용 train-only 세그먼트 이름/정의 canonical 공유 (#31) ([9a0c8fd](https://github.com/JungYeoni/da-template/commit/9a0c8fd03278c2f1ffb237570f484b16b4503585))
 - V1 GPLR 페르소나 canonical 산출물 공유 (final_personas.json) ([d66df61](https://github.com/JungYeoni/da-template/commit/d66df6197c0743c6530023f902cdcb6c5bc4e70e))
 
 ### style
@@ -46,6 +47,7 @@
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([acbd92e](https://github.com/JungYeoni/da-template/commit/acbd92ea77e9da065c3896e58a26e63cabe160f4))
 - V1/v2 페르소나 canonical 공유 방식 문서화 ([b926ccc](https://github.com/JungYeoni/da-template/commit/b926ccc0dd02dfa1ec67b69f064514608cddcdbd))
 - CHANGELOG 자동 업데이트 [skip ci] ([2dc6be3](https://github.com/JungYeoni/da-template/commit/2dc6be372a320f35fa8a2f29294f54e399d6b22c))
 - CHANGELOG 자동 업데이트 [skip ci] ([dbcc904](https://github.com/JungYeoni/da-template/commit/dbcc9047376eff7a631ea280b72ae07d63052f30))
