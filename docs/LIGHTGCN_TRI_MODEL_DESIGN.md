@@ -1,5 +1,7 @@
 # LightGCN_tri Model Design
 
+> **구현 완료 (2026-07-07)**: 아래 설계대로 `model_LightGCN_tri`를 구현했고, 실제 데이터(유저 20,000/상품 1,197/세그먼트 6)로 스모크 테스트까지 통과했다. 실행 결과와 과정에서 추가로 발견한 legacy 코드 버그 4개는 `reports/[ML]_LightGCN_tri_모델_구현_및_스모크테스트_2026-07-07.md` 참고.
+
 ## 목적
 
 Issue #30(LightGCN 모델 실행 환경 구축·평가)을 진행하려면 `model_LightGCN_tri` 클래스가 필요한데, 확인 결과 **이 클래스는 코드베이스에 존재하지 않는다**. `src/baselines/lgcn3/train_model.py`가 `MODEL == 'LightGCN_tri'`일 때 이 클래스를 호출하지만 어디에도 정의·임포트돼 있지 않다. 이 문서는 이 클래스를 어떻게 새로 작성할지 설계한다.
