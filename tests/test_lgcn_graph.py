@@ -1,4 +1,4 @@
-"""LightGCN용 tri-graph 매핑 로직 단위 테스트 (Issue #29)."""
+"""LightGCN용 그래프 매핑 로직 단위 테스트 (tri: Issue #29, bipartite: Issue #35)."""
 
 import pandas as pd
 import pytest
@@ -6,6 +6,7 @@ import pytest
 from src.datasets.make_lgcn_graph import (
     LIFT_THRESHOLD,
     MIN_PURCHASE_COUNT,
+    build_empty_mapping,
     build_t2p_mapping,
     build_u2p_mapping,
     build_u2t_mapping,
@@ -119,3 +120,17 @@ class TestBuildT2pMapping:
         result = build_t2p_mapping(orders, item_enc, segment_labeled_balanced)
         assert LIFT_THRESHOLD > 1.0
         assert result[0] == []
+
+
+# ── build_empty_mapping (Issue #35 — bipartite 모드의 u2p/t2p) ─────────────────
+
+
+class TestBuildEmptyMapping:
+    def test_all_keys_present_with_empty_lists(self):
+        """bipartite 모드에서는 u2p/t2p를 계산하지 않고, 키만 전부 채운 빈 매핑을 만든다."""
+        result = build_empty_mapping(3)
+        assert result == {0: [], 1: [], 2: []}
+
+    def test_zero_count_returns_empty_dict(self):
+        result = build_empty_mapping(0)
+        assert result == {}
