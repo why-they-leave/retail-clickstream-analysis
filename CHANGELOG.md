@@ -47,6 +47,8 @@
 
 ### 문서
 
+- LightGCN bipartite 그래프 데이터 준비 설계/결과 문서화 (#35) ([37ceb1a](https://github.com/JungYeoni/da-template/commit/37ceb1abec0bf61a2936a59c2131e4763994b615))
+- CHANGELOG 자동 업데이트 [skip ci] ([f1c4bc3](https://github.com/JungYeoni/da-template/commit/f1c4bc38657465f6620c7375b5dd2feb5acf7c66))
 - CHANGELOG 자동 업데이트 [skip ci] ([acbd92e](https://github.com/JungYeoni/da-template/commit/acbd92ea77e9da065c3896e58a26e63cabe160f4))
 - V1/v2 페르소나 canonical 공유 방식 문서화 ([b926ccc](https://github.com/JungYeoni/da-template/commit/b926ccc0dd02dfa1ec67b69f064514608cddcdbd))
 - CHANGELOG 자동 업데이트 [skip ci] ([2dc6be3](https://github.com/JungYeoni/da-template/commit/2dc6be372a320f35fa8a2f29294f54e399d6b22c))
@@ -125,6 +127,7 @@
 
 ### 새 기능
 
+- LightGCN bipartite(u2t만) 그래프 데이터 생성 모드 추가 (#35) ([ce45a95](https://github.com/JungYeoni/da-template/commit/ce45a95e5fbe864072d3181e84b2a01d721613bd))
 - LightGCN용 tri-graph 데이터 파이프라인 구축 (#29) ([81ec74a](https://github.com/JungYeoni/da-template/commit/81ec74a8cbb29f97513fba17af216b04833ca234))
 - LightGCN tri-graph에 item-segment lift 가중치 지원 추가 (#29) ([dec323f](https://github.com/JungYeoni/da-template/commit/dec323f8a283797635bd3bec45dd465654a0fe1a))
 - User_id/item_id 인덱스 인코딩 공용 유틸 추가 (#29) ([9ea307f](https://github.com/JungYeoni/da-template/commit/9ea307f364b637595f7138f1c6d88746f305a3e1))
