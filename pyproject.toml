@@ -20,6 +20,7 @@ dependencies = [
     "xgboost>=2.0",
     "lightgbm>=4.0",
     "tensorflow>=2.16",  # LightGCN(#28) — src/baselines/lgcn3/, tf.compat.v1 그래프 모드 사용
+    "openpyxl>=3.1",  # LightGCN(#28) — src/baselines/lgcn3/print_save.py의 엑셀 결과 저장용
     # 시각화
     "matplotlib>=3.8",
     "seaborn>=0.13",

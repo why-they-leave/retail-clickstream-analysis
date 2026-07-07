@@ -47,6 +47,10 @@ class model_LightGCN_tri(object):
         # 실제 마스킹 값은 호출하는 쪽(run_lightgcn.py)이 채워 넣는다, 이 클래스는 자리만 정의.
         self.items_in_train_data = tf.compat.v1.placeholder(tf.float32, shape=(None, None))
         self.top_k = tf.compat.v1.placeholder(tf.int32, shape=())
+        # 이 모델은 dropout을 안 쓰지만, train_model.py/test_model.py가 모델 종류와 무관하게
+        # feed_dict에 model.keep_prob를 항상 넣기 때문에 placeholder 자체는 있어야 한다
+        # (값은 실제로 아무 데도 안 쓰임 — 순수 호환용).
+        self.keep_prob = tf.compat.v1.placeholder(tf.float32, shape=(None))
 
         self.user_embeddings = tf.Variable(
             tf.random.normal([n_users, emb_dim], mean=0.01, stddev=0.02, dtype=tf.float32),

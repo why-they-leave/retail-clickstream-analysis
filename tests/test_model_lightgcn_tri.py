@@ -110,7 +110,12 @@ class TestModelLightGCNTri:
             assert np.isfinite(loss)
 
     def test_one_training_step_reduces_loss_or_stays_finite(self):
-        """updates op을 한 번 돌려도 그래프가 안 깨지는지 (실제 수렴 여부는 확인 안 함)."""
+        """updates op을 한 번 돌려도 그래프가 안 깨지는지 (실제 수렴 여부는 확인 안 함).
+
+        train_model.py/test_model.py는 모델 종류와 무관하게 feed_dict에
+        model.keep_prob를 항상 넣는다 — 이 모델이 dropout을 안 쓰더라도
+        placeholder 자체는 있어야 그 공용 코드가 안 깨진다.
+        """
         n_users, n_items, n_personas = 4, 4, 2
         sparse_graph = make_identity_sparse_graph(n_users + n_items + n_personas)
         model = model_LightGCN_tri(
@@ -127,7 +132,12 @@ class TestModelLightGCNTri:
 
         with tf.compat.v1.Session() as sess:
             sess.run(tf.compat.v1.global_variables_initializer())
-            feed = {model.users: [0, 1], model.pos_items: [0, 1], model.neg_items: [2, 3]}
+            feed = {
+                model.users: [0, 1],
+                model.pos_items: [0, 1],
+                model.neg_items: [2, 3],
+                model.keep_prob: 1,
+            }
             _, loss = sess.run([model.updates, model.loss], feed_dict=feed)
             assert np.isfinite(loss)
 

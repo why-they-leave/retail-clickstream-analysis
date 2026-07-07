@@ -78,7 +78,9 @@ def read_bases1(path, fre, _if_norm = False):
 
 def read_all_data_tri(all_para, approximate=False):
     # approximate=True will read the approximated ver of tri_graph_uidx2pidx
-    [_, DATASET, MODEL, _, _, _, EMB_DIM, _, _, _, IF_PRETRAIN, TEST_VALIDATION, _, FREQUENCY_USER, FREQUENCY_ITEM, FREQUENCY, _, _, GRAPH_CONV, _, _, _, _, _, _, _, PROP_DIM, PROP_EMB, IF_NORM] = all_para
+    # Issue #30: params.py의 all_para는 30개(마지막 AFD_ALPHA 포함)인데 언패킹 목록이 29개뿐이라
+    # "too many values to unpack"으로 터지던 기존 버그 — 끝에 _ 하나 추가해 맞춤
+    [_, DATASET, MODEL, _, _, _, EMB_DIM, _, _, _, IF_PRETRAIN, TEST_VALIDATION, _, FREQUENCY_USER, FREQUENCY_ITEM, FREQUENCY, _, _, GRAPH_CONV, _, _, _, _, _, _, _, PROP_DIM, PROP_EMB, IF_NORM, _] = all_para
     [hypergraph_embeddings, graph_embeddings, propagation_embeddings, sparse_propagation_matrix] = [0, 0, 0, 0]
 
     ## Paths of data
@@ -103,7 +105,9 @@ def read_all_data_tri(all_para, approximate=False):
     test_data = read_data_tri(test_vali_path, path_t2p, path_u2p)[0]
 
     if DATASET == 'MBA':
-        persona_num = 20 # 20, for MBA
+        # v1 20-persona(#14) 시절 값이었으나, 지금 tri_graph_uidx2pidx.json/tidx2pidx.json은
+        # v2 6-segment(configs/segment/params.yaml의 n_clusters=6) 기준이라 6이어야 한다 (Issue #30).
+        persona_num = 6
     elif DATASET == 'Instacart':
         persona_num = 51 # 51, fixed for Instacart
     elif DATASET == 'Instacart_full':

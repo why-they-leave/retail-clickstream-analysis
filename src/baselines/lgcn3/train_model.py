@@ -7,6 +7,7 @@ import tensorflow as tf
 import test_model
 from model_LGCN_afd_tri import model_LGCN_afd_tri  # LGCN AFD tri-partite version
 from model_LGCN_tri import model_LGCN_tri  # LGCN tri-partite version
+from model_LightGCN_tri import model_LightGCN_tri  # 표준 LightGCN tri-partite version (Issue #30)
 from print_save import save_value
 from test_model import test_model, test_model_store
 from tqdm import tqdm
@@ -34,7 +35,8 @@ def train_model(para, data, path_excel, results_save_path=''):
     if MODEL == 'LGCN': model = model_LGCN(n_users=user_num, n_items=item_num, lr=LR, lamda=LAMDA, emb_dim=EMB_DIM, layer=LAYER, pre_train_latent_factor=pre_train_feature, graph_embeddings=graph_embeddings, graph_conv = GRAPH_CONV, prediction = PREDICTION, loss_function=LOSS_FUNCTION, generalization = GENERALIZATION, optimization=OPTIMIZATION, if_pretrain=IF_PRETRAIN, if_transformation=IF_TRASFORMATION, activation=ACTIVATION, pooling=POOLING)
     if MODEL == 'SGNN': model = model_SGNN(n_users=user_num, n_items=item_num, lr=LR, lamda=LAMDA, emb_dim=EMB_DIM, layer=LAYER, pre_train_latent_factor=pre_train_feature, propagation_embeddings=propagation_embeddings, if_pretrain=IF_PRETRAIN, prop_emb=PROP_EMB)
     if MODEL == 'LGCN_tri': model = model_LGCN_tri(n_users=user_num, n_items=item_num, n_personas=persona_num, lr=LR, lamda=LAMDA, emb_dim=EMB_DIM, layer=LAYER, pre_train_latent_factor=pre_train_feature, graph_embeddings=graph_embeddings, graph_conv = GRAPH_CONV, prediction = PREDICTION, loss_function=LOSS_FUNCTION, generalization = GENERALIZATION, optimization=OPTIMIZATION, if_pretrain=IF_PRETRAIN, if_transformation=IF_TRASFORMATION, activation=ACTIVATION, pooling=POOLING)
-    if MODEL == 'LightGCN_tri': model = model_LightGCN_tri(layer=LAYER, n_users=user_num, n_items=item_num, n_personas=persona_num, emb_dim=EMB_DIM, lr=LR, lamda=LAMDA, pre_train_latent_factor=pre_train_feature, if_pretrain=IF_PRETRAIN, sparse_graph=sparse_propagation_matrix, optimization=OPTIMIZATION)
+    # 표준 LightGCN이라 pre_train_latent_factor/if_pretrain 등 spectral 전용 인자가 없음 (Issue #30)
+    if MODEL == 'LightGCN_tri': model = model_LightGCN_tri(n_users=user_num, n_items=item_num, n_personas=persona_num, lr=LR, lamda=LAMDA, emb_dim=EMB_DIM, layer=LAYER, sparse_graph=sparse_propagation_matrix, optimization=OPTIMIZATION)
     if MODEL == 'LightRGCN': model = model_LightRGCN(layer=LAYER, n_users=user_num, n_items=item_num, n_personas=persona_num, emb_dim=EMB_DIM, lr=LR, lamda=LAMDA, pre_train_latent_factor=pre_train_feature, if_pretrain=IF_PRETRAIN, sparse_graph=sparse_propagation_matrix)
     if MODEL == 'LightGCN_AFD': model = model_LightGCN_afd(layer=LAYER, n_users=user_num, n_items=item_num, emb_dim=EMB_DIM, lr=LR, lamda=LAMDA, pre_train_latent_factor=pre_train_feature, if_pretrain=IF_PRETRAIN, sparse_graph=sparse_propagation_matrix, afd_alpha=AFD_ALPHA)
     if MODEL == 'LightGCN_AFD_tri': model = model_LightGCN_afd_tri(layer=LAYER, n_users=user_num, n_items=item_num, n_personas=persona_num, emb_dim=EMB_DIM, lr=LR, lamda=LAMDA, pre_train_latent_factor=pre_train_feature, if_pretrain=IF_PRETRAIN, sparse_graph=sparse_propagation_matrix, optimization=OPTIMIZATION, afd_alpha=AFD_ALPHA)
