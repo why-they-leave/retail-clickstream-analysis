@@ -42,6 +42,13 @@ data/outputs/ALS/*
 # 요청 범위 밖이라 제외 — 필요해지면 그때 예외 추가.
 !data/processed/segment_personas_train_only.json
 
+# Issue #30: tri-graph의 uidx/tidx <-> user_id/product_id 매핑. build_id_encoding()이
+# customers.csv/products.csv 순서로 결정적으로 만드는 값이라 재생성해도 항상 같지만,
+# 팀원들이 직접 코드 안 돌리고 바로 조회할 수 있게 공유 (pidx는 segment_id 그 자체라
+# 별도 인코딩 불필요 — segment_personas_train_only.json 참고).
+!data/processed/uidx_user_id_mapping.csv
+!data/processed/tidx_product_id_mapping.csv
+
 # v1 GPLR 페르소나 생성 결과 — LLM temperature=0.7이라 실행할 때마다 결과가 달라짐.
 # 팀원마다 재생성하지 않고 canonical 산출물만 공유하기 위해 예외 추적 (v2와 동일한 패턴)
 !data/interim/funnel_persona_gen/
