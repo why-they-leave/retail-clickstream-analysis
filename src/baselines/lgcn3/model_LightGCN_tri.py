@@ -26,8 +26,10 @@ _LAYER_WEIGHT_SCHEMES = {
     # 표준 LightGCN: 모든 레이어(0~layer)에 동일한 가중치 1/(layer+1)
     "uniform": lambda layer: [1 / (layer + 1)] * (layer + 1),
     # 레이어 인덱스가 커질수록 가중치가 줄어듦(1/(l+1)) — 원본 임베딩(레이어0)에
-    # 편중된 방식. 원래 uniform 대신 실수로 쓰였던 공식이지만, 이 프로젝트
-    # 데이터에서 uniform보다 성능이 나아 정식 비교 대상으로 남겨둔다 (#37).
+    # 편중된 방식. 원래 uniform 대신 실수로 쓰였던 공식(#30 CodeRabbit 지적).
+    # 버그 상태(seed 고정 전) 1회 실행에서 uniform보다 좋게 관측된 적이 있어 정식
+    # 비교 대상으로 남겼지만, seed 고정 후 재검증(#37 5-1)에서는 uniform이 근소하게
+    # 더 좋았다 — 그 1회 관측은 노이즈였을 가능성이 높다. 기본값은 uniform.
     "decay": lambda layer: [1 / (l + 1) for l in range(layer + 1)],
 }
 
