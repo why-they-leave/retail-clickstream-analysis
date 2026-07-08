@@ -10,6 +10,7 @@
 
 ### data
 
+- Tri-graph uidx/tidx <-> user_id/product_id 매핑 CSV 공유 (#30) ([60b3f81](https://github.com/JungYeoni/da-template/commit/60b3f816b671b69e16803c88924faf9909e0733b))
 - LightGCN용 train-only 세그먼트 이름/정의 canonical 공유 (#31) ([9a0c8fd](https://github.com/JungYeoni/da-template/commit/9a0c8fd03278c2f1ffb237570f484b16b4503585))
 - V1 GPLR 페르소나 canonical 산출물 공유 (final_personas.json) ([d66df61](https://github.com/JungYeoni/da-template/commit/d66df6197c0743c6530023f902cdcb6c5bc4e70e))
 
@@ -47,6 +48,7 @@
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([8fc60fd](https://github.com/JungYeoni/da-template/commit/8fc60fd717f28ce5e78877d0d96d4d27e6abb7ee))
 - LightGCN bipartite 그래프 데이터 준비 설계/결과 문서화 (#35) ([37ceb1a](https://github.com/JungYeoni/da-template/commit/37ceb1abec0bf61a2936a59c2131e4763994b615))
 - CHANGELOG 자동 업데이트 [skip ci] ([f1c4bc3](https://github.com/JungYeoni/da-template/commit/f1c4bc38657465f6620c7375b5dd2feb5acf7c66))
 - CHANGELOG 자동 업데이트 [skip ci] ([acbd92e](https://github.com/JungYeoni/da-template/commit/acbd92ea77e9da065c3896e58a26e63cabe160f4))
