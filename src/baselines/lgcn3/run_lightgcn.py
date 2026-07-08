@@ -133,14 +133,39 @@ def main():
         help="tri만 지원 (bipartite는 #34에서 연동 예정)",
     )
     parser.add_argument("--epoch", type=int, default=None, help="미지정 시 params.yaml 값 사용")
+    parser.add_argument(
+        "--lr", type=float, default=None, help="미지정 시 params.yaml 값 사용 (#30 튜닝 실험용)"
+    )
+    parser.add_argument(
+        "--emb-dim",
+        type=int,
+        default=None,
+        help="임베딩 차원(parse.py의 --pred_dim). 미지정 시 params.yaml의 emb_dim 사용 (#30 튜닝 실험용)",
+    )
+    parser.add_argument(
+        "--lamda", type=float, default=None, help="L2 정규화 강도. 미지정 시 params.yaml 값 사용 (#30 튜닝 실험용)"
+    )
+    parser.add_argument(
+        "--neg-samples",
+        type=int,
+        default=None,
+        help="양성 1개당 무작위 음성 샘플 개수(parse.py의 --sample_rate). 미지정 시 1 (#30 실험용)",
+    )
     args = parser.parse_args()
 
     params_cfg = load_params(PARAMS_PATH)
     epoch = args.epoch if args.epoch is not None else params_cfg["epoch"]
+    lr = args.lr if args.lr is not None else params_cfg["lr"]
+    emb_dim = args.emb_dim if args.emb_dim is not None else params_cfg.get("emb_dim", 128)
+    lamda = args.lamda if args.lamda is not None else params_cfg["lamda"]
+    neg_samples = args.neg_samples if args.neg_samples is not None else params_cfg.get("neg_samples", 1)
     top_n = params_cfg["top_n"]
 
     logger = setup_logging(LOG_DIR)
-    logger.info(f"===== LightGCN_tri 학습 시작 | graph_mode={args.graph_mode}, epoch={epoch} =====")
+    logger.info(
+        f"===== LightGCN_tri 학습 시작 | graph_mode={args.graph_mode}, epoch={epoch}, "
+        f"lr={lr}, emb_dim={emb_dim}, lamda={lamda}, neg_samples={neg_samples} ====="
+    )
 
     # params.py는 임포트 시점에 sys.argv를 읽으므로, 여기서 명시적으로 구성한다
     # (model=LightGCN_tri, dataset=MBA로 고정 — 이 스크립트의 존재 이유 자체가 이 조합).
@@ -155,11 +180,15 @@ def main():
         "--epoch",
         str(epoch),
         "--lr",
-        str(params_cfg["lr"]),
+        str(lr),
         "--lamda",
-        str(params_cfg["lamda"]),
+        str(lamda),
         "--layer",
         str(params_cfg["layer"]),
+        "--pred_dim",
+        str(emb_dim),
+        "--sample_rate",
+        str(neg_samples),
     ]
     import params
     import read_data

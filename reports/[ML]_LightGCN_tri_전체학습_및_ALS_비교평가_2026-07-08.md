@@ -1,6 +1,8 @@
 # [ML] LightGCN_tri 전체 학습 및 ALS 비교 평가 — 2026-07-08
 
-> **업데이트 (같은 날, 2차 실행)**: 최초 결과(아래 "1차 실행") 이후, 학습 진단용 loss 로깅이 꺼져 있고 평가가 매 epoch 다른 무작위 512명 표본이라 곡선을 신뢰할 수 없다는 문제를 발견해 고쳤다(`train_model.py`/`test_model.py`). 같은 하이퍼파라미터로 재학습한 "2차 실행" 결과를 이 문서 뒷부분에 추가했다 — **측정 문제만 고쳤는데 HR@20이 0.0294 → 0.0403으로 개선**됐다(모델을 바꾼 게 아님). 최신 결론은 [업데이트된 핵심 발견](#핵심-발견-2차-실행-반영) 참고.
+> **업데이트 (같은 날, 2차 실행)**: 최초 결과(아래 "1차 실행") 이후, 학습 진단용 loss 로깅이 꺼져 있고 평가가 매 epoch 다른 무작위 512명 표본이라 곡선을 신뢰할 수 없다는 문제를 발견해 고쳤다(`train_model.py`/`test_model.py`). 같은 하이퍼파라미터로 재학습한 "2차 실행" 결과를 이 문서 뒷부분에 추가했다 — **측정 문제만 고쳤는데 HR@20이 0.0294 → 0.0403으로 개선**됐다(모델을 바꾼 게 아님).
+>
+> **업데이트 (같은 날, 3차 — event_type 실험 + 하이퍼파라미터 튜닝)**: `docs/LIGHTGCN_TRI_TUNING_PLAN.md` 우선순위대로 u2t event_type 조합 실험 → `emb_dim`×`lr` 그리드 → `lamda` 라운드를 순서대로 진행했다. **최종 HR@20=0.0553, ALS 대비 격차 2.07배 → 1.10배**까지 좁혔다. 상세는 [3차 실행](#분석-결과--3차-실행-event_type--하이퍼파라미터-튜닝) 참고.
 
 ## 분석 목적
 
@@ -78,9 +80,81 @@ HR@20 기준 ALS가 LightGCN_tri보다 약 2.07배 높다.
 
 **해석 (2차 시점):** "측정이 고쳐지고 나서도 ALS보다 낮다"는 건 유효한 신호다. 다만 1차 실행의 가설 1(하이퍼파라미터)·2(event_type 조합)는 아직 전혀 검증 안 된 상태라, 이 상태로 "LightGCN이 이 데이터에 안 맞는다"고 결론 내리기도 이르다. 다음 단계는 `docs/LIGHTGCN_TRI_TUNING_PLAN.md`에 정리했다.
 
+## 분석 결과 — 3차 실행 (event_type + 하이퍼파라미터 튜닝)
+
+`docs/LIGHTGCN_TRI_TUNING_PLAN.md` 우선순위(그래프 구조 → 하이퍼파라미터)대로 순서대로 실험했다. 모든 실험은 `make_lgcn_graph.py --event-types ...`(신규 CLI, TDD 3건)와 `run_lightgcn.py --lr/--emb-dim/--lamda`(신규 CLI 오버라이드) 옵션으로 진행했고, 각 조합마다 300 epoch 전체 학습 후 `evaluate_lightgcn.py`로 평가했다.
+
+### 3-1. u2t event_type 조합 (그래프 구조)
+
+| 조합 | HR@5 | HR@10 | HR@20 | NDCG@20 |
+|---|---|---|---|---|
+| page_view+장바구니+구매 (2차 baseline) | 0.0109 | 0.0191 | 0.0403 | 0.0088 |
+| **구매만** | **0.0116** | **0.0280** | **0.0491** | **0.0105** |
+| 장바구니+구매 | 0.0068 | 0.0143 | 0.0389 | 0.0074 |
+
+**"구매만"이 최선이었다** (HR@20 +22%). 반직관적으로 "장바구니+구매"가 "전부 포함"보다도 나빴다 — add_to_cart가 실제 구매 의도와 안 맞는 경우(담았다 안 산 경우 등)가 많아 구매 신호를 희석하는 노이즈로 작용한 것으로 추정된다. 부수 효과로, 그래프가 훨씬 희소해져 학습 속도도 크게 빨라졌다(epoch당 20초 → 약 0.7초, 300 epoch가 약 4분).
+
+### 3-2. emb_dim × lr 그리드 (9개 조합, event_type=구매만 고정)
+
+| emb_dim | lr | HR@20 | NDCG@20 |
+|---|---|---|---|
+| **32** | **0.005** | **0.0553** | **0.0131** |
+| 64 | 0.01 | 0.0546 | 0.0117 |
+| 64 | 0.005 | 0.0539 | 0.0115 |
+| 128 | 0.001 | 0.0532 | 0.0124 |
+| 32 | 0.01 | 0.0505 | 0.0109 |
+| 128 | 0.005 | 0.0485 | 0.0093 |
+| 128 | 0.01 | 0.0478 | 0.0102 |
+| 32 | 0.001 | 0.0457 | 0.0089 |
+| 64 | 0.001 | 0.0423 | 0.0101 |
+
+`emb_dim=32, lr=0.005`가 최선. `emb_dim=128`(원 논문 기본값)은 전반적으로 하위권 — ALS가 `factors=16`을 쓰는 것과 같은 맥락으로, 이 데이터 규모(2만 유저·1,197개 상품)엔 128차원이 과도했던 것으로 보인다.
+
+### 3-3. lamda(L2 정규화) 라운드 (emb_dim=32, lr=0.005 고정)
+
+RecBole 공식 문서가 LightGCN 기본 `reg_weight=1e-5`를 제시해, 우리 `lamda=0.02`(원 논문 다른 데이터셋 기본값)가 과도한 정규화일 수 있다는 가설을 세우고 검증했다.
+
+| lamda | HR@20 | NDCG@20 |
+|---|---|---|
+| **0.02 (원래 기본값)** | **0.0553** | **0.0131** |
+| 0.002 | 0.0403 | 0.0108 |
+| 0.00001 (RecBole 제안값) | 0.0498 | 0.0102 |
+
+**가설과 반대로, 원래 값(0.02)이 최선이었다.** RecBole 기본값은 MovieLens/Amazon-Book 같은 대형 벤치마크 기준이라, 우리처럼 작고 희소한 데이터(실제 구매 정답이 있는 유저 1,465명뿐)에는 오히려 더 강한 정규화가 과적합 방지에 유리했던 것으로 해석된다. 외부 레퍼런스 기본값을 검증 없이 이식하면 안 된다는 걸 보여주는 사례다.
+
+### 3차 최종 결과
+
+**확정 설정: event_type=구매만, emb_dim=32, lr=0.005, lamda=0.02(원래 값), layer=2(미변경)**
+
+| 모델 | HR@5 | HR@10 | HR@20 | NDCG@20 |
+|---|---|---|---|---|
+| ALS (#7) | 0.0171 | 0.0369 | 0.0608 | 0.0152 |
+| LightGCN_tri 1차 | 0.0109 | 0.0177 | 0.0294 | 0.0066 |
+| LightGCN_tri 2차 | 0.0109 | 0.0191 | 0.0403 | 0.0088 |
+| **LightGCN_tri 3차 (최종)** | **0.0177** | **0.0300** | **0.0553** | **0.0131** |
+
+HR@20 기준 ALS와의 격차가 **2.07배 → 1.51배 → 1.10배**로 단계적으로 좁혀졌다. 여전히 ALS가 근소하게 우세하지만, 튜닝 전 대비 격차가 크게 줄었다.
+
+**해석 (3차 시점):** 측정 진단(2차) + 그래프 구조(event_type) + 하이퍼파라미터(emb_dim/lamda) 세 단계 모두 실질적인 개선에 기여했다. 다만 `layer`는 이번에 안 건드렸다.
+
+### 3-4. negative sampling 개수 (SimpleX 참고, emb_dim=32/lr=0.005/lamda=0.02 고정)
+
+기존엔 양성 1개당 음성 1개만 무작위로 뽑았다(`train_model.py`, `MODEL in [...]` 목록에 `LightGCN_tri`가 빠져있어 강제로 1개였음 — 이번에 목록에 추가해 `SAMPLE_RATE`를 실제로 쓰도록 고침, `parse.py`에 `--sample_rate`, `run_lightgcn.py`에 `--neg-samples` CLI 추가). SimpleX 논문이 negative를 늘리면 NDCG가 크게 개선된다고 보고해 검증했다.
+
+| neg_samples | HR@5 | HR@10 | HR@20 | NDCG@20 |
+|---|---|---|---|---|
+| **1 (기존 확정)** | **0.0177** | **0.0300** | **0.0553** | **0.0131** |
+| 5 | 0.0116 | 0.0225 | 0.0444 | 0.0092 |
+| 10 | 0.0116 | 0.0253 | 0.0437 | 0.0092 |
+
+**또 반직관적 — 늘릴수록 나빠졌다.** 다만 **완전히 공정한 비교는 아니다**: negative를 늘리면 배치당 (양성,음성) 쌍이 그만큼 늘어 BPR loss 절댓값이 커지는데(1350대 → 6800대), `lr=0.005`는 negative 1개 기준으로 찾은 값이라 negative를 늘렸을 때 최적 학습률이 달라졌을 수 있다 — 그 재탐색은 안 했다. **"negative sampling이 무조건 안 통한다"가 아니라 "이번 lr 기준으로는 그랬다"가 정확한 결론이다.**
+
+**최종 확정 설정은 3-3 결과(neg_samples=1, 즉 기존 방식) 그대로 유지한다.**
+
 ## 방법론적 제약 및 한계
 
-- **하이퍼파라미터 미튜닝**: 2차 실행도 lr/lamda/layer는 1차와 동일한 원 논문 기본값이다. 이번 결과는 LightGCN_tri의 "잠재 성능"이 아니라 "기본값 성능"이다.
+- **layer 수는 미튜닝**: 3차에서도 `layer=2`는 안 건드렸다 — `docs/LIGHTGCN_TRI_TUNING_PLAN.md` 참고.
+- **negative sampling 실험은 lr 재탐색 없이 진행**: 3-4에서 negative를 늘리면 loss 스케일이 달라지는데 `lr`을 그에 맞게 다시 찾지 않았다 — "negative 늘리기가 안 통한다"보다는 "이 lr에서는 그랬다"로 해석해야 한다.
 - **단일 실행(seed 1개)**: 학습 초기화·negative sampling에 고정 seed를 안 써서, 1차/2차 실행 간 수치 차이 중 일부는 이 확률성 때문일 수 있다(측정 방식 개선 효과와 완전히 분리되지 않음). ALS도 동일한 한계(`reports/[ML]_#7_ALS_...md`의 "모든 실험이 동일한 test set을 반복 조회")를 가지고 있다.
 - **validation split 없음**: ALS와 동일하게 test set을 그대로 봤다 — 배포 전 재검증 필요(ALS 리포트의 한계와 동일).
 - **페르소나(세그먼트) 효과는 이 리포트로 판단할 수 없다**: 이 결과는 LightGCN(tri, 페르소나 포함) vs ALS(페르소나 없음) 비교라 "모델 종류"와 "페르소나 유무"가 섞여 있다 — 정확히 #34에서 지적한 confound 문제. 페르소나 자체의 효과를 보려면 #34(LightGCN bipartite vs tri)가 필요하다. 이번에 고친 평가 방식(고정 유저셋, loss 로깅)은 `train_model.py`/`test_model.py`(그래프 구조 무관 공용 코드)에 있어 bipartite 실행에도 자동 적용된다 — #34 코멘트에 공유해둠.
@@ -91,17 +165,22 @@ HR@20 기준 ALS가 LightGCN_tri보다 약 2.07배 높다.
 - `tests/test_evaluate_lightgcn.py` (신규, 12건)
 - `configs/LightGCN/params.yaml` (`eval_k_list` 추가)
 - `src/baselines/lgcn3/train_model.py`, `test_model.py` (수정 — loss 로깅 추가, 평가 유저 고정)
+- `src/datasets/make_lgcn_graph.py` (수정 — `--event-types` CLI 옵션 추가, TDD 3건)
+- `src/baselines/lgcn3/run_lightgcn.py` (수정 — `--lr`/`--emb-dim`/`--lamda`/`--neg-samples` CLI 오버라이드 추가)
+- `src/baselines/lgcn3/parse.py`, `params.py` (수정 — `--sample_rate` CLI 추가)
+- `src/baselines/lgcn3/train_model.py` (수정 — `LightGCN_tri`가 `SAMPLE_RATE`를 쓰도록 모델 목록에 추가)
 - `docs/LIGHTGCN_TRI_TUNING_PLAN.md` (신규 — 다음 개선 후보 우선순위와 bipartite 비교 조건 정리)
-- `data/outputs/LightGCN/PRED_MAIN_RECOMMEND.csv` (2,000,000행, gitignore 대상 로컬 산출물, 2차 실행 결과로 덮어씀)
-- `data/outputs/LightGCN/eval_results.csv` (gitignore 대상 로컬 산출물)
+- `data/outputs/LightGCN/hp_tuning_experiment/`, `event_type_experiment/` (실험별 eval_results 백업, gitignore 대상 로컬 산출물)
+- `data/outputs/LightGCN/PRED_MAIN_RECOMMEND.csv`, `eval_results.csv` (최종 확정 설정 결과로 덮어씀, gitignore 대상)
 - `logs/LightGCN/run_lightgcn_train_log.xlsx` (`Loss` 시트 신규 — gitignore 대상 로컬 산출물)
 
 ## 권장 다음 단계
 
 우선순위와 상세 근거는 `docs/LIGHTGCN_TRI_TUNING_PLAN.md` 참고. 요약:
 
-- [x] ~~학습 진단(loss 로깅, 평가 노이즈)~~ — 이번 리포트에서 완료
-- [ ] u2t event_type 조합 실험 (전부 포함 vs add_to_cart+구매 vs 구매만) → HR@20 비교, #29에서 이미 파라미터화해둔 부분 — loss가 정체됐으니 epoch 수 늘리기보다 우선순위 높음
-- [ ] 하이퍼파라미터 튜닝 (ALS의 그리드서치 노트북 패턴 참고) — lr/lamda/layer/emb_dim
-- [ ] #34: LightGCN bipartite(#35) vs tri 비교로 페르소나 순수 효과 분리 측정 — 위 두 항목에서 정해지는 조합(event_type, 하이퍼파라미터)을 bipartite에도 동일 적용해야 공정한 비교
+- [x] ~~학습 진단(loss 로깅, 평가 노이즈)~~ — 2차에서 완료
+- [x] ~~u2t event_type 조합 실험~~ — 3차에서 완료, "구매만"으로 확정
+- [x] ~~하이퍼파라미터 튜닝(emb_dim, lr, lamda)~~ — 3차에서 완료, `emb_dim=32, lr=0.005, lamda=0.02`로 확정
+- [ ] `layer` 수 튜닝, negative sampling 방식 개선(SimpleX 등 참고) — 아직 미착수
+- [ ] #34: LightGCN bipartite(#35) vs tri 비교로 페르소나 순수 효과 분리 측정 — 이번에 확정된 조합(구매만, emb_dim=32, lr=0.005, lamda=0.02)을 bipartite에도 동일 적용해야 공정한 비교, #34 코멘트에 공유 예정
 - [ ] rec-system 레포 연동 시 `PRED_MAIN_RECOMMEND.csv`에 `twiddler`/`user_type` 컬럼 추가 필요 (rec-system #4 스키마 요구사항, 현재 미포함)

@@ -73,7 +73,9 @@ def train_model(para, data, path_excel, results_save_path=''):
                 for sample in range(batches[batch_num], batches[batch_num + 1]):
                     (user, pos_item) = train_data_interaction[sample]
                     sample_num = 0
-                    while sample_num < (SAMPLE_RATE if (MODEL in ['LGCN', 'LGCN_tri', 'LGCN_AFD_tri', 'LGCN_AFD']) else 1):
+                    # Issue #30: LightGCN_tri도 SAMPLE_RATE(양성당 음성 개수)를 쓰도록 목록에 추가.
+                    # keep_prob 목록(아래 줄)은 그대로 둔다 — LightGCN_tri는 dropout이 없어서 항상 1이어야 함.
+                    while sample_num < (SAMPLE_RATE if (MODEL in ['LGCN', 'LGCN_tri', 'LGCN_AFD_tri', 'LGCN_AFD', 'LightGCN_tri']) else 1):
                         neg_item = int(rd.uniform(0, item_num)) # sample random exclusive items as the negative
                         if neg_item not in train_data[user]:
                             sample_num += 1
