@@ -49,6 +49,7 @@
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([0864d7c](https://github.com/JungYeoni/da-template/commit/0864d7c609cc15e6fe6ebb13be9eaf08446c2e43))
 - CHANGELOG 자동 업데이트 [skip ci] ([fae0436](https://github.com/JungYeoni/da-template/commit/fae0436c6633ac28c7c7912a178f2a958004fb89))
 - CHANGELOG 자동 업데이트 [skip ci] ([d036e57](https://github.com/JungYeoni/da-template/commit/d036e57f8dd25b8e17d489c11cedee0b105e0c6a))
 - CHANGELOG 자동 업데이트 [skip ci] ([8fc60fd](https://github.com/JungYeoni/da-template/commit/8fc60fd717f28ce5e78877d0d96d4d27e6abb7ee))
@@ -132,6 +133,70 @@
 
 ### 새 기능
 
+- Feat/20260708_#37_LightGCN_하이퍼파라미터_튜닝_심화 (#39)
+
+* feat: run_lightgcn.py에 --layer/--opt/--batch CLI 오버라이드 추가 (#37)
+
+layer 수, optimizer 종류, batch size 튜닝 실험을 위한 CLI 확장.
+parse.py에 이미 있던 --opt/--batch를 노출만 함.
+
+* docs: layer/optimizer/batch size 튜닝(4차) 결과 리포트 반영 (#37)
+
+layer∈{1,3,4}, opt∈{SGD,RMSProp}, batch∈{1000,2000} 전부 실험 — 기존
+확정값(layer=2, Adam, batch=10000)이 세 축 모두에서 최적으로 확인됨.
+최종 확정 설정은 3차와 동일하게 유지 (HR@20=0.0553).
+
+* feat: layer_weight_scheme 튜닝 옵션 추가 (#37)
+
+CodeRabbit이 지적한 layer_weight 버그(#30에서 uniform으로 수정)가
+공교롭게도 이 데이터에선 오히려 더 나은 성능을 냈다(HR@20 0.0553 vs
+0.0444). 그렇다고 "표준 LightGCN"이라 주석 단 채로 실제로는 다른 걸
+하는 코드를 유지할 순 없어서, 대신 정식 튜닝 축으로 뺐다.
+
+- uniform(표준, 기본값): 모든 레이어 1/(layer+1) 균등
+- decay(예전 버그와 동일 공식): 레이어 인덱스별 1/(l+1), 원본 임베딩 편중
+
+all_para에 LAYER_WEIGHT_SCHEME 추가(31번째 요소) — read_data.py/
+train_model.py의 위치 기반 언패킹 목록에 맞춰 갱신.
+run_lightgcn.py에 --layer-weight-scheme CLI 추가.
+
+TDD: decay 스킴 검증, 알 수 없는 스킴 ValueError 테스트 추가 (58/58 통과).
+
+* docs: CodeRabbit 버그 수정 후 재검증(5차) 결과 리포트 반영 (#37)
+
+layer_weight_scheme(uniform/decay) 비교, negative sampling x lr
+재짝짓기 결과 정리. neg_samples=10, lr=0.002가 버그 수정 후 최고
+기록(HR@20=0.0505). 1~4차가 레이어 가중치 버그 상태에서 측정됐다는
+점을 명시하고 관련 섹션 전반에 반영.
+
+* docs: layer 재검증 결과 + 5차 최종 결론 반영 (#37)
+
+uniform 기준 layer 재검증(1이 최적, 2보다 좋음) 및 layer=1+neg=10/
+lr=0.002 조합 실험(개선 안 됨, 상호작용 확인) 결과 추가. 최종 확정
+설정을 neg_samples=10/lr=0.002로 갱신(HR@20=0.0505).
+
+* docs: neg_samples×lr 재현성 검증(5-4) 결과 반영, 관련 문서 전체 정정 (#37)
+
+3회 반복 실행 결과 neg=10/lr=0.002의 HR@20=0.0505는 이상치로 판명 —
+3회 평균 0.0453(±0.0022)으로 정정. 방향성(neg=10/lr=0.002가 uniform
+기본값보다 낫다)은 유지되나 개선폭은 +14%가 아니라 +5%대.
+
+리포트 5차 결론, 상단 배너, docs/LIGHTGCN_TRI_TUNING_PLAN.md,
+configs/LightGCN/params.yaml, model_LightGCN_tri.py의 decay 주석까지
+0.0505 언급 전체를 일관되게 정정. ALS 대비 최종 격차 1.20배 → 1.34배.
+
+추가로 리뷰 지적사항 반영: params.yaml에 최종 확정 하이퍼파라미터
+전체(neg_samples/opt/batch/layer_weight_scheme) 명시, eval_results.csv/
+PRED_MAIN_RECOMMEND.csv 관련 산출물 설명을 "덮어써질 수 있음"으로
+정정, 리포트 상단 "다음 날" 표현을 "같은 날"로 정정.
+
+* docs: decay 스킴 가중치 합이 1이 아님을 명시 (#37 PR 리뷰 반영)
+
+uniform은 가중치 합이 항상 1인데 decay는 layer=2 기준 약 1.83 —
+uniform vs decay 비교(5-1)가 레이어 가중치 분포 형태뿐 아니라
+임베딩 전체 스케일 차이도 함께 반영한 결과임을 코드 주석과
+리포트에 명시. 예전 버그 동작을 그대로 재현하려는 의도라 수치
+자체는 변경하지 않음. ([08a5347](https://github.com/JungYeoni/da-template/commit/08a534774107b57bd5aeccc76780aab9f6a8e7e5))
 - Feat/20260705_#30_LightGCN_모델_실행_환경_구축_및_평가 (#38)
 
 * feat: LightGCN용 tensorflow 의존성 추가 (#30)
