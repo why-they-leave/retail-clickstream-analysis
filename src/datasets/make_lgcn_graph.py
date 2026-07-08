@@ -237,7 +237,7 @@ def main(event_types: list[str] = DEFAULT_U2T_EVENT_TYPES, mode: str = "tri") ->
     )
 
 
-def parse_args():
+def parse_args(argv=None):
     parser = ArgumentParser(description="LightGCN용 그래프 데이터 생성 (tri 또는 bipartite).")
     parser.add_argument(
         "--mode",
@@ -245,9 +245,19 @@ def parse_args():
         default="tri",
         help="tri: u2t+u2p+t2p(페르소나 결합, 기본값) / bipartite: u2t만(페르소나 미결합, #35)",
     )
-    return parser.parse_args()
+    parser.add_argument(
+        "--event-types",
+        nargs="+",
+        default=None,
+        choices=["page_view", "add_to_cart", "purchase"],
+        help=(
+            "u2t 엣지로 쓸 event_type 조합 (Issue #30 실험용, 예: --event-types purchase). "
+            f"생략 시 기본값 {DEFAULT_U2T_EVENT_TYPES}"
+        ),
+    )
+    return parser.parse_args(argv)
 
 
 if __name__ == "__main__":
     args = parse_args()
-    main(mode=args.mode)
+    main(event_types=args.event_types or DEFAULT_U2T_EVENT_TYPES, mode=args.mode)

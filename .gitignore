@@ -30,6 +30,8 @@ data/raw/
 data/interim/*
 data/processed/*
 data/outputs/ALS/*
+# Issue #30 — PRED_MAIN_RECOMMEND.csv 등 학습 산출물, 재생성 가능
+data/outputs/LightGCN/*
 
 # Issue #17: segment naming 산출물은 #18 비교 리포트 입력으로 재사용되어 예외 추적
 # Issue #23: US-only 트랙 제거 — Full 산출물만 예외 추적
@@ -69,6 +71,8 @@ mlruns/
 
 # 로그 파일
 *.log
+# Issue #30 — legacy train_model.py의 엑셀 학습 로그, 재생성 가능
+logs/LightGCN/*.xlsx
 
 # .gitkeep은 모든 ignore 규칙을 override — 반드시 파일 맨 끝에 위치
 !**/.gitkeep

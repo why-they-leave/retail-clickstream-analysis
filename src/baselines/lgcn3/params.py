@@ -57,7 +57,7 @@ FREQUENCY_ITEM = FREQUENCY_ITEM_list[dataset]
 ## hyperparameters for LGCN
 FREQUENCY = 128
 KEEP_PORB = 0.9
-SAMPLE_RATE = 1
+SAMPLE_RATE = args.sample_rate # 양성 1개당 음성 개수, 기본값 1 (Issue #30 실험용)
 GRAPH_CONV = ['1D', '2D_graph', '2D_hyper_graph'][0] # 2
 PREDICTION = ['InnerProduct', 'MLP3'][0]
 LOSS_FUNCTION = ['BPR', 'CrossEntropy', 'MSE'][0]

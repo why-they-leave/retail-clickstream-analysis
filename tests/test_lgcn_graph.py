@@ -4,12 +4,14 @@ import pandas as pd
 import pytest
 
 from src.datasets.make_lgcn_graph import (
+    DEFAULT_U2T_EVENT_TYPES,
     LIFT_THRESHOLD,
     MIN_PURCHASE_COUNT,
     build_empty_mapping,
     build_t2p_mapping,
     build_u2p_mapping,
     build_u2t_mapping,
+    parse_args,
 )
 
 # ── 픽스처 ─────────────────────────────────────────────────────────────────────
@@ -134,3 +136,22 @@ class TestBuildEmptyMapping:
     def test_zero_count_returns_empty_dict(self):
         result = build_empty_mapping(0)
         assert result == {}
+
+
+# ── parse_args --event-types (Issue #30 — u2t event_type 조합 실험용) ──────────
+
+
+class TestParseArgsEventTypes:
+    def test_defaults_to_none_when_omitted(self):
+        """생략 시 None — main()이 DEFAULT_U2T_EVENT_TYPES를 쓰도록 판단할 신호."""
+        args = parse_args([])
+        assert args.event_types is None
+
+    def test_accepts_single_event_type(self):
+        args = parse_args(["--event-types", "purchase"])
+        assert args.event_types == ["purchase"]
+
+    def test_accepts_multiple_event_types(self):
+        args = parse_args(["--event-types", "add_to_cart", "purchase"])
+        assert args.event_types == ["add_to_cart", "purchase"]
+        assert args.event_types != DEFAULT_U2T_EVENT_TYPES

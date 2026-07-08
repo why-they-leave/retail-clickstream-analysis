@@ -1,14 +1,14 @@
 # builtin
 from datetime import datetime
 
+# external
+# import matplotlib.pyplot as plt
+import tensorflow as tf
+
 import params
 
 # internal
 import read_data
-
-# external
-# import matplotlib.pyplot as plt
-import tensorflow as tf
 import train_model
 from params import AFD_ALPHA, BATCH_SIZE, DATASET, LAMDA, LAYER, LR, MODEL, OPTIMIZATION
 

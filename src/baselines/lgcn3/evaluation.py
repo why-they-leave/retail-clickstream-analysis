@@ -1,4 +1,7 @@
-from numpy import *
+# Issue #30: `from numpy import *`가 파이썬 내장 max()/len()/set()을 numpy 버전으로
+# 가려서 `max(len(top_k_items), epsilon)`이 numpy.max(array, axis=epsilon)로 오해석돼
+# TypeError가 나던 버그. 실제로 쓰는 건 log2뿐이라 그것만 명시적으로 임포트한다.
+from numpy import log2
 
 
 def evaluation_F1(order, top_k, positive_item):
