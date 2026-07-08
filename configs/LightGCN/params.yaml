@@ -1,17 +1,25 @@
-# LightGCN_tri 학습 설정 (Issue #30)
+# LightGCN_tri 학습 설정 (Issue #30/#37)
 #
 # 실행:
 #   python3 src/baselines/lgcn3/run_lightgcn.py --epoch 300
 #   python3 src/baselines/lgcn3/run_lightgcn.py --epoch 2   # 스모크 테스트용
 #
-# lr/lamda/layer 기본값은 parse.py의 원 논문 기본값을 그대로 따른다.
-# 스모크 테스트(reports/[ML]_LightGCN_tri_모델_구현_및_스모크테스트_2026-07-07.md)에서
-# epoch당 약 12.7초 확인 — epoch=300이면 약 1시간 예상.
+# 아래 값은 #37 하이퍼파라미터 튜닝(5차, CodeRabbit 레이어가중치 버그 수정 이후) 최종 확정값이다.
+# 상세 근거: reports/[ML]_LightGCN_tri_전체학습_및_ALS_비교평가_2026-07-08.md (5차 실행 섹션)
+# HR@20≈0.0453(3회 반복 평균, negative sampling이 seed 고정 안 돼 있어 run마다 약간
+# 흔들림 — 5-4 참고. 최초 관측한 0.0505는 재현 안 되는 이상치였음). u2t event_type=구매만은 이 yaml이 아니라
+# make_lgcn_graph.py --event-types purchase로 그래프 자체를 재생성해야 반영됨 — 이 설정 기준
+# 재실행 전에 그래프가 구매만 상태인지 먼저 확인할 것.
 
 epoch: 300
-lr: 0.005
+lr: 0.002
 lamda: 0.02
 layer: 2
+emb_dim: 32
+neg_samples: 10          # 양성 1개당 무작위 음성 샘플 개수 (parse.py --sample_rate)
+opt: 3                    # 0:SGD 1:Adagrad 2:RMSProp 3:Adam(확정값)
+batch: 10000
+layer_weight_scheme: uniform   # uniform(표준, 확정) | decay(예전 버그 방식, 비교용으로만 남김)
 top_n: 100          # 유저당 저장할 최대 추천 수 (ALS와 동일 관례, configs/ALS/params.yaml 참고)
 
 eval_k_list: [5, 10, 20]   # evaluate_lightgcn.py — ALS(configs/ALS/params.yaml eval.k_list)와 동일 기준

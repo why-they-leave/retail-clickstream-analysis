@@ -14,4 +14,5 @@ def parse_args():
     parser.add_argument("--opt", type=int, default=3) # 2:RMSProp, 3:Adam
     parser.add_argument("--afd_alpha", type=float, default=1e-4) # 1e-4 for lightgcn
     parser.add_argument("--sample_rate", type=int, default=1) # 양성 1개당 음성 개수 (Issue #30 실험용)
+    parser.add_argument("--layer_weight_scheme", type=str, default="uniform") # uniform|decay (Issue #37)
     return parser.parse_args()

@@ -151,6 +151,26 @@ def main():
         default=None,
         help="양성 1개당 무작위 음성 샘플 개수(parse.py의 --sample_rate). 미지정 시 1 (#30 실험용)",
     )
+    parser.add_argument(
+        "--layer", type=int, default=None, help="GCN 레이어 수. 미지정 시 params.yaml 값 사용 (#37 튜닝 실험용)"
+    )
+    parser.add_argument(
+        "--opt",
+        type=int,
+        default=None,
+        choices=[0, 1, 2, 3],
+        help="0:SGD 1:Adagrad 2:RMSProp 3:Adam. 미지정 시 params.yaml 값(기본 3=Adam) (#37 실험용)",
+    )
+    parser.add_argument(
+        "--batch", type=int, default=None, help="배치 크기. 미지정 시 params.yaml 값(기본 10000) (#37 실험용)"
+    )
+    parser.add_argument(
+        "--layer-weight-scheme",
+        type=str,
+        default=None,
+        choices=["uniform", "decay"],
+        help="레이어 결합 가중치 방식. 미지정 시 uniform(표준 LightGCN) (#37 실험용)",
+    )
     args = parser.parse_args()
 
     params_cfg = load_params(PARAMS_PATH)
@@ -159,12 +179,21 @@ def main():
     emb_dim = args.emb_dim if args.emb_dim is not None else params_cfg.get("emb_dim", 128)
     lamda = args.lamda if args.lamda is not None else params_cfg["lamda"]
     neg_samples = args.neg_samples if args.neg_samples is not None else params_cfg.get("neg_samples", 1)
+    layer = args.layer if args.layer is not None else params_cfg["layer"]
+    opt = args.opt if args.opt is not None else params_cfg.get("opt", 3)
+    batch = args.batch if args.batch is not None else params_cfg.get("batch", 10000)
+    layer_weight_scheme = (
+        args.layer_weight_scheme
+        if args.layer_weight_scheme is not None
+        else params_cfg.get("layer_weight_scheme", "uniform")
+    )
     top_n = params_cfg["top_n"]
 
     logger = setup_logging(LOG_DIR)
     logger.info(
         f"===== LightGCN_tri 학습 시작 | graph_mode={args.graph_mode}, epoch={epoch}, "
-        f"lr={lr}, emb_dim={emb_dim}, lamda={lamda}, neg_samples={neg_samples} ====="
+        f"lr={lr}, emb_dim={emb_dim}, lamda={lamda}, neg_samples={neg_samples}, "
+        f"layer={layer}, opt={opt}, batch={batch}, layer_weight_scheme={layer_weight_scheme} ====="
     )
 
     # params.py는 임포트 시점에 sys.argv를 읽으므로, 여기서 명시적으로 구성한다
@@ -184,11 +213,17 @@ def main():
         "--lamda",
         str(lamda),
         "--layer",
-        str(params_cfg["layer"]),
+        str(layer),
         "--pred_dim",
         str(emb_dim),
         "--sample_rate",
         str(neg_samples),
+        "--opt",
+        str(opt),
+        "--batch",
+        str(batch),
+        "--layer_weight_scheme",
+        str(layer_weight_scheme),
     ]
     import params
     import read_data

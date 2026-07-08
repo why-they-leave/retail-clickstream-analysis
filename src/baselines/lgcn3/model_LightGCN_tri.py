@@ -22,12 +22,42 @@ _OPTIMIZERS = {
 }
 
 
+_LAYER_WEIGHT_SCHEMES = {
+    # 표준 LightGCN: 모든 레이어(0~layer)에 동일한 가중치 1/(layer+1)
+    "uniform": lambda layer: [1 / (layer + 1)] * (layer + 1),
+    # 레이어 인덱스가 커질수록 가중치가 줄어듦(1/(l+1)) — 원본 임베딩(레이어0)에
+    # 편중된 방식. 원래 uniform 대신 실수로 쓰였던 공식(#30 CodeRabbit 지적).
+    # 버그 상태(seed 고정 전) 1회 실행에서 uniform보다 좋게 관측된 적이 있어 정식
+    # 비교 대상으로 남겼지만, seed 고정 후 재검증(#37 5-1)에서는 uniform이 근소하게
+    # 더 좋았다 — 그 1회 관측은 노이즈였을 가능성이 높다. 기본값은 uniform.
+    #
+    # 주의(#37 리뷰 지적): uniform은 가중치 합이 항상 1이지만(예: layer=2 → 0.333×3=1.0),
+    # decay는 합이 1이 아니다(layer=2 → 1+0.5+0.333≈1.83). 즉 uniform vs decay 비교는
+    # "레이어별 가중치 분포 형태" 차이뿐 아니라 "최종 임베딩의 전체 스케일" 차이도
+    # 함께 반영된 결과다 — 예전 버그 동작을 그대로 재현하려는 의도라 정규화하지 않았지만,
+    # 두 요인이 섞여 있다는 걸 감안하고 5-1 결과를 해석해야 한다.
+    "decay": lambda layer: [1 / (l + 1) for l in range(layer + 1)],
+}
+
+
 class model_LightGCN_tri(object):
     def __init__(
-        self, n_users, n_items, n_personas, lr, lamda, emb_dim, layer, sparse_graph, optimization
+        self,
+        n_users,
+        n_items,
+        n_personas,
+        lr,
+        lamda,
+        emb_dim,
+        layer,
+        sparse_graph,
+        optimization,
+        layer_weight_scheme="uniform",
     ):
         if optimization not in _OPTIMIZERS:
             raise ValueError(f"알 수 없는 optimization: {optimization}")
+        if layer_weight_scheme not in _LAYER_WEIGHT_SCHEMES:
+            raise ValueError(f"알 수 없는 layer_weight_scheme: {layer_weight_scheme}")
 
         self.model_name = "LightGCN_tri"
         self.n_users = n_users
@@ -68,10 +98,9 @@ class model_LightGCN_tri(object):
             name="persona_embeddings",
         )
 
-        # 표준 LightGCN의 레이어 결합 방식: 모든 레이어(0~layer)에 동일한 가중치
-        # 1/(layer+1) — 학습되는 가중치 없음. (CodeRabbit 지적으로 발견: 이전엔
-        # 레이어 인덱스에 따라 1/(l+1)로 줄어들어 원본 임베딩에 편중돼 있었음)
-        self.layer_weight = [1 / (layer + 1)] * (layer + 1)
+        # 레이어 결합 가중치 — 기본은 표준 LightGCN의 균등 평균(uniform), 학습되는
+        # 가중치 없음. layer_weight_scheme으로 선택 가능 (#37, _LAYER_WEIGHT_SCHEMES 참고).
+        self.layer_weight = _LAYER_WEIGHT_SCHEMES[layer_weight_scheme](layer)
         layer_weight = self.layer_weight
         # 유저/상품/세그먼트 임베딩을 하나의 큰 행렬로 합쳐서 그래프 전파에 쓴다
         # (sparse_graph의 행/열 순서가 [유저, 상품, 세그먼트] 순으로 만들어져 있음, dense2sparse.py 참고)
