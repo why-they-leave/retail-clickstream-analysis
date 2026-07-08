@@ -65,8 +65,11 @@ class model_LightGCN_tri(object):
             name="persona_embeddings",
         )
 
-        # 레이어 평균(1/(l+1)) — 표준 LightGCN의 레이어 결합 방식, 학습되는 가중치 없음
-        layer_weight = [1 / (l + 1) for l in range(layer + 1)]
+        # 표준 LightGCN의 레이어 결합 방식: 모든 레이어(0~layer)에 동일한 가중치
+        # 1/(layer+1) — 학습되는 가중치 없음. (CodeRabbit 지적으로 발견: 이전엔
+        # 레이어 인덱스에 따라 1/(l+1)로 줄어들어 원본 임베딩에 편중돼 있었음)
+        self.layer_weight = [1 / (layer + 1)] * (layer + 1)
+        layer_weight = self.layer_weight
         # 유저/상품/세그먼트 임베딩을 하나의 큰 행렬로 합쳐서 그래프 전파에 쓴다
         # (sparse_graph의 행/열 순서가 [유저, 상품, 세그먼트] 순으로 만들어져 있음, dense2sparse.py 참고)
         embeddings = tf.concat(
@@ -118,7 +121,9 @@ class model_LightGCN_tri(object):
         self.updates = self.opt.minimize(self.loss, var_list=self.var_list)
 
     def bpr_loss(self, pos_scores, neg_scores):
-        maxi = tf.math.log(tf.nn.sigmoid(pos_scores - neg_scores))
+        # log(sigmoid(x)) 대신 수치안정적인 log_sigmoid(x)를 쓴다 — sigmoid가 0으로
+        # 포화되면 log(0)=-inf가 될 수 있음 (CodeRabbit 지적)
+        maxi = tf.math.log_sigmoid(pos_scores - neg_scores)
         return tf.negative(tf.reduce_sum(maxi))
 
     def regularization(self, reg_list):

@@ -144,6 +144,56 @@ class TestModelLightGCNTri:
             _, loss = sess.run([model.updates, model.loss], feed_dict=feed)
             assert np.isfinite(loss)
 
+    def test_bpr_loss_stays_finite_for_extreme_score_gap(self):
+        """pos-neg 점수 차가 아주 클 때 sigmoid가 0/1로 포화되면
+        log(sigmoid(x))는 -inf가 될 수 있다 — log_sigmoid로 수치안정성 확보.
+        """
+        n_users, n_items, n_personas = 3, 3, 2
+        sparse_graph = make_identity_sparse_graph(n_users + n_items + n_personas)
+        model = model_LightGCN_tri(
+            n_users=n_users,
+            n_items=n_items,
+            n_personas=n_personas,
+            lr=0.01,
+            lamda=0.01,
+            emb_dim=4,
+            layer=1,
+            sparse_graph=sparse_graph,
+            optimization="Adam",
+        )
+        # pos < neg로 점수를 완전히 뒤집어서 sigmoid가 0으로 포화되게 만든다
+        # (log(0) = -inf가 되는 조건 — sigmoid가 1로 포화되는 반대 방향은 log(1)=0이라 안전함)
+        pos = tf.constant([-100.0], dtype=tf.float32)
+        neg = tf.constant([100.0], dtype=tf.float32)
+        loss_tensor = model.bpr_loss(pos, neg)
+
+        with tf.compat.v1.Session() as sess:
+            loss = sess.run(loss_tensor)
+            assert np.isfinite(loss)
+
+    def test_layer_weight_is_uniform_average(self):
+        """표준 LightGCN의 레이어 결합은 모든 레이어에 동일한 가중치 1/(K+1)을 쓴다
+        (K=layer 수). 레이어 인덱스에 따라 가중치가 줄어드는 방식(1/(l+1))이 아니다.
+        """
+        n_users, n_items, n_personas = 3, 3, 2
+        sparse_graph = make_identity_sparse_graph(n_users + n_items + n_personas)
+        layer = 2
+        model = model_LightGCN_tri(
+            n_users=n_users,
+            n_items=n_items,
+            n_personas=n_personas,
+            lr=0.01,
+            lamda=0.01,
+            emb_dim=4,
+            layer=layer,
+            sparse_graph=sparse_graph,
+            optimization="Adam",
+        )
+
+        assert len(model.layer_weight) == layer + 1
+        expected = 1 / (layer + 1)
+        assert all(w == pytest.approx(expected) for w in model.layer_weight)
+
     def test_unknown_optimization_raises(self):
         n_users, n_items, n_personas = 3, 3, 2
         sparse_graph = make_identity_sparse_graph(n_users + n_items + n_personas)

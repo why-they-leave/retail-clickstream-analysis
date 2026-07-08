@@ -63,7 +63,11 @@ def train_model(para, data, path_excel, results_save_path=''):
     # Issue #30: 매 epoch 무작위 512명을 새로 뽑으면(기존 동작) user_num 대비 정답 있는
     # 유저 비율이 낮아 유효 평가 인원이 매번 다르고 극소수라 F1 곡선이 순수 노이즈에
     # 가까웠다. 정답이 있는 유저 전체로 고정해 epoch 간 비교가 가능하게 한다.
-    fixed_test_batch = [u for u in range(user_num) if len(test_data[u]) > 0]
+    # LightGCN_tri 전용 — 다른 레거시 모델(MF/NCF/LGCN 등)은 기존 무작위 샘플링 동작을 유지한다
+    # (CodeRabbit 지적: 원래는 모델 종류 상관없이 무조건 적용돼 있었음).
+    fixed_test_batch = (
+        [u for u in range(user_num) if len(test_data[u]) > 0] if MODEL == 'LightGCN_tri' else None
+    )
     t1 = time.perf_counter()
 
     # training loops
