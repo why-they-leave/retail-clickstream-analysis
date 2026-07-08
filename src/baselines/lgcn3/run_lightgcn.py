@@ -164,6 +164,13 @@ def main():
     parser.add_argument(
         "--batch", type=int, default=None, help="배치 크기. 미지정 시 params.yaml 값(기본 10000) (#37 실험용)"
     )
+    parser.add_argument(
+        "--layer-weight-scheme",
+        type=str,
+        default=None,
+        choices=["uniform", "decay"],
+        help="레이어 결합 가중치 방식. 미지정 시 uniform(표준 LightGCN) (#37 실험용)",
+    )
     args = parser.parse_args()
 
     params_cfg = load_params(PARAMS_PATH)
@@ -175,13 +182,18 @@ def main():
     layer = args.layer if args.layer is not None else params_cfg["layer"]
     opt = args.opt if args.opt is not None else params_cfg.get("opt", 3)
     batch = args.batch if args.batch is not None else params_cfg.get("batch", 10000)
+    layer_weight_scheme = (
+        args.layer_weight_scheme
+        if args.layer_weight_scheme is not None
+        else params_cfg.get("layer_weight_scheme", "uniform")
+    )
     top_n = params_cfg["top_n"]
 
     logger = setup_logging(LOG_DIR)
     logger.info(
         f"===== LightGCN_tri 학습 시작 | graph_mode={args.graph_mode}, epoch={epoch}, "
         f"lr={lr}, emb_dim={emb_dim}, lamda={lamda}, neg_samples={neg_samples}, "
-        f"layer={layer}, opt={opt}, batch={batch} ====="
+        f"layer={layer}, opt={opt}, batch={batch}, layer_weight_scheme={layer_weight_scheme} ====="
     )
 
     # params.py는 임포트 시점에 sys.argv를 읽으므로, 여기서 명시적으로 구성한다
@@ -210,6 +222,8 @@ def main():
         str(opt),
         "--batch",
         str(batch),
+        "--layer_weight_scheme",
+        str(layer_weight_scheme),
     ]
     import params
     import read_data

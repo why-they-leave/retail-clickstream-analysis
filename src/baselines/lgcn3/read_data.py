@@ -81,7 +81,8 @@ def read_all_data_tri(all_para, approximate=False):
     # approximate=True will read the approximated ver of tri_graph_uidx2pidx
     # Issue #30: params.py의 all_para는 30개(마지막 AFD_ALPHA 포함)인데 언패킹 목록이 29개뿐이라
     # "too many values to unpack"으로 터지던 기존 버그 — 끝에 _ 하나 추가해 맞춤
-    [_, DATASET, MODEL, _, _, _, EMB_DIM, _, _, _, IF_PRETRAIN, TEST_VALIDATION, _, FREQUENCY_USER, FREQUENCY_ITEM, FREQUENCY, _, _, GRAPH_CONV, _, _, _, _, _, _, _, PROP_DIM, PROP_EMB, IF_NORM, _] = all_para
+    # Issue #37: LAYER_WEIGHT_SCHEME이 끝에 추가돼 31개가 됨 — _ 하나 더 추가
+    [_, DATASET, MODEL, _, _, _, EMB_DIM, _, _, _, IF_PRETRAIN, TEST_VALIDATION, _, FREQUENCY_USER, FREQUENCY_ITEM, FREQUENCY, _, _, GRAPH_CONV, _, _, _, _, _, _, _, PROP_DIM, PROP_EMB, IF_NORM, _, _] = all_para
     [hypergraph_embeddings, graph_embeddings, propagation_embeddings, sparse_propagation_matrix] = [0, 0, 0, 0]
 
     ## Paths of data

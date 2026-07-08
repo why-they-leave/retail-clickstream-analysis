@@ -22,12 +22,34 @@ _OPTIMIZERS = {
 }
 
 
+_LAYER_WEIGHT_SCHEMES = {
+    # 표준 LightGCN: 모든 레이어(0~layer)에 동일한 가중치 1/(layer+1)
+    "uniform": lambda layer: [1 / (layer + 1)] * (layer + 1),
+    # 레이어 인덱스가 커질수록 가중치가 줄어듦(1/(l+1)) — 원본 임베딩(레이어0)에
+    # 편중된 방식. 원래 uniform 대신 실수로 쓰였던 공식이지만, 이 프로젝트
+    # 데이터에서 uniform보다 성능이 나아 정식 비교 대상으로 남겨둔다 (#37).
+    "decay": lambda layer: [1 / (l + 1) for l in range(layer + 1)],
+}
+
+
 class model_LightGCN_tri(object):
     def __init__(
-        self, n_users, n_items, n_personas, lr, lamda, emb_dim, layer, sparse_graph, optimization
+        self,
+        n_users,
+        n_items,
+        n_personas,
+        lr,
+        lamda,
+        emb_dim,
+        layer,
+        sparse_graph,
+        optimization,
+        layer_weight_scheme="uniform",
     ):
         if optimization not in _OPTIMIZERS:
             raise ValueError(f"알 수 없는 optimization: {optimization}")
+        if layer_weight_scheme not in _LAYER_WEIGHT_SCHEMES:
+            raise ValueError(f"알 수 없는 layer_weight_scheme: {layer_weight_scheme}")
 
         self.model_name = "LightGCN_tri"
         self.n_users = n_users
@@ -68,10 +90,9 @@ class model_LightGCN_tri(object):
             name="persona_embeddings",
         )
 
-        # 표준 LightGCN의 레이어 결합 방식: 모든 레이어(0~layer)에 동일한 가중치
-        # 1/(layer+1) — 학습되는 가중치 없음. (CodeRabbit 지적으로 발견: 이전엔
-        # 레이어 인덱스에 따라 1/(l+1)로 줄어들어 원본 임베딩에 편중돼 있었음)
-        self.layer_weight = [1 / (layer + 1)] * (layer + 1)
+        # 레이어 결합 가중치 — 기본은 표준 LightGCN의 균등 평균(uniform), 학습되는
+        # 가중치 없음. layer_weight_scheme으로 선택 가능 (#37, _LAYER_WEIGHT_SCHEMES 참고).
+        self.layer_weight = _LAYER_WEIGHT_SCHEMES[layer_weight_scheme](layer)
         layer_weight = self.layer_weight
         # 유저/상품/세그먼트 임베딩을 하나의 큰 행렬로 합쳐서 그래프 전파에 쓴다
         # (sparse_graph의 행/열 순서가 [유저, 상품, 세그먼트] 순으로 만들어져 있음, dense2sparse.py 참고)

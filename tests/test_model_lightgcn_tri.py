@@ -222,6 +222,47 @@ class TestModelLightGCNTri:
         second_run = build_and_get_initial_user_embeddings()
         assert np.allclose(first_run, second_run)
 
+    def test_layer_weight_scheme_decay_matches_1_over_l_plus_1(self):
+        """layer_weight_scheme='decay'는 레이어 인덱스가 커질수록 가중치가
+        줄어드는 1/(l+1) 방식 — 원본 임베딩(레이어0)에 편중된 예전 동작을
+        의도적 옵션으로 남겨 uniform과 정식으로 비교할 수 있게 한다 (#37).
+        """
+        n_users, n_items, n_personas = 3, 3, 2
+        sparse_graph = make_identity_sparse_graph(n_users + n_items + n_personas)
+        layer = 2
+        model = model_LightGCN_tri(
+            n_users=n_users,
+            n_items=n_items,
+            n_personas=n_personas,
+            lr=0.01,
+            lamda=0.01,
+            emb_dim=4,
+            layer=layer,
+            sparse_graph=sparse_graph,
+            optimization="Adam",
+            layer_weight_scheme="decay",
+        )
+
+        expected = [1 / (layer_idx + 1) for layer_idx in range(layer + 1)]
+        assert model.layer_weight == pytest.approx(expected)
+
+    def test_unknown_layer_weight_scheme_raises(self):
+        n_users, n_items, n_personas = 3, 3, 2
+        sparse_graph = make_identity_sparse_graph(n_users + n_items + n_personas)
+        with pytest.raises(ValueError):
+            model_LightGCN_tri(
+                n_users=n_users,
+                n_items=n_items,
+                n_personas=n_personas,
+                lr=0.01,
+                lamda=0.01,
+                emb_dim=4,
+                layer=1,
+                sparse_graph=sparse_graph,
+                optimization="Adam",
+                layer_weight_scheme="not_a_scheme",
+            )
+
     def test_unknown_optimization_raises(self):
         n_users, n_items, n_personas = 3, 3, 2
         sparse_graph = make_identity_sparse_graph(n_users + n_items + n_personas)

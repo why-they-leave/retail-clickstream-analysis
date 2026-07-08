@@ -76,7 +76,10 @@ IF_NORM = [False, True][0]
 ## parameters for afd
 AFD_ALPHA = args.afd_alpha
 
+# 레이어 결합 가중치 방식 — uniform(표준 LightGCN) | decay(레이어0 편중, Issue #37)
+LAYER_WEIGHT_SCHEME = args.layer_weight_scheme
+
 all_para = [GPU_INDEX, DATASET, MODEL, LR, LAMDA, LAYER, EMB_DIM, BATCH_SIZE, TEST_USER_BATCH, N_EPOCH, IF_PRETRAIN,
             TEST_VALIDATION, TOP_K, FREQUENCY_USER, FREQUENCY_ITEM, FREQUENCY, KEEP_PORB, SAMPLE_RATE, GRAPH_CONV,
             PREDICTION, LOSS_FUNCTION, GENERALIZATION, OPTIMIZATION, IF_TRASFORMATION, ACTIVATION, POOLING, PROP_DIM,
-            PROP_EMB, IF_NORM, AFD_ALPHA] # last 3 are ignored
+            PROP_EMB, IF_NORM, AFD_ALPHA, LAYER_WEIGHT_SCHEME] # last 3(PROP_DIM~IF_NORM) are ignored
