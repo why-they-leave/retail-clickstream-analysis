@@ -55,8 +55,14 @@ def train_model(para, data, path_excel, results_save_path=''):
     ## Training iteratively
     F1_max = 0
     F1_df = pd.DataFrame(columns=TOP_K)
-    F1_df_train = pd.DataFrame(columns=TOP_K) # to log the training loss's changes
     NDCG_df = pd.DataFrame(columns=TOP_K)
+    # Issue #30: epoch당 loss 기록(기존엔 print_value 호출이 주석 처리돼 있어 loss를
+    # 전혀 볼 수 없었음) — 학습이 실제로 수렴하는지 확인할 유일한 신호라 켜둔다.
+    loss_df = pd.DataFrame(columns=["loss"])
+    # Issue #30: 매 epoch 무작위 512명을 새로 뽑으면(기존 동작) user_num 대비 정답 있는
+    # 유저 비율이 낮아 유효 평가 인원이 매번 다르고 극소수라 F1 곡선이 순수 노이즈에
+    # 가까웠다. 정답이 있는 유저 전체로 고정해 epoch 간 비교가 가능하게 한다.
+    fixed_test_batch = [u for u in range(user_num) if len(test_data[u]) > 0]
     t1 = time.perf_counter()
 
     # training loops
@@ -74,21 +80,16 @@ def train_model(para, data, path_excel, results_save_path=''):
                             train_batch_data.append([user, pos_item, neg_item])
                 train_batch_data = np.array(train_batch_data)
                 _, loss = sess.run([model.updates, model.loss], feed_dict={model.users: train_batch_data[:, 0], model.pos_items: train_batch_data[:, 1], model.neg_items: train_batch_data[:, 2], model.keep_prob: KEEP_PORB if MODEL in ['LGCN', 'LGCN_tri', 'LGCN_AFD_tri', 'LGCN_AFD'] else 1})
-            ## test the model each epoch
-            F1, NDCG = test_model(sess, model, para_test)
+            ## test the model each epoch (고정된 유저 집합으로 평가 — 위 #30 참고)
+            F1, NDCG = test_model(sess, model, para_test, fixed_test_batch=fixed_test_batch)
             F1_max = max(F1_max, F1[0])
-            # F1_train, NDCG_train = test_model_train(sess, model, para_test)
-            ## print performance
-            # print_value([epoch + 1, loss, F1_max, F1, NDCG])
-            # if epoch % 10 == 0: print('%.5f' % (F1_max), end = ' ', flush = True)
-            pbar.set_description(f"F1_max: {F1_max :2f}")
+            pbar.set_description(f"F1_max: {F1_max:.5f} loss: {loss:.4f}")
             pbar.update(1)
             ## save performance
             F1_df.loc[epoch + 1] = F1
             NDCG_df.loc[epoch + 1] = NDCG
-            # F1_df_train.loc[epoch + 1] = F1_train
-            # save_value([[F1_df, 'F1'], [F1_df_train, 'F1_train'], [NDCG_df, 'NDCG']], path_excel, first_sheet=False)
-            save_value([[F1_df, 'F1'], [NDCG_df, 'NDCG']], path_excel, first_sheet=False)
+            loss_df.loc[epoch + 1] = [float(loss)]
+            save_value([[F1_df, 'F1'], [NDCG_df, 'NDCG'], [loss_df, 'Loss']], path_excel, first_sheet=False)
             if loss > 10 ** 10: break
     t2 = time.perf_counter()
     print('time cost:', (t2 - t1) / 200)
