@@ -62,7 +62,16 @@ select = ["E", "F", "I", "W"]
 ignore = ["E501"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["datasets", "llm_connector", "persona"]
+# src/baselines/lgcn3/의 bare 임포트 형제 모듈들 — known-first-party에 없으면
+# 로컬 pre-commit 훅과 CI의 ruff가 정렬 순서를 다르게 판단해 서로 되돌리는
+# 문제가 있었다(evaluation 모듈에서 실제 발생, #30 PR #38 CI 실패).
+known-first-party = [
+    "datasets", "llm_connector", "persona",
+    "evaluation", "dense2sparse", "read_data", "train_model", "test_model",
+    "print_save", "params", "parse", "model_LGCN_tri", "model_LGCN_afd_tri",
+    "model_LightGCN_tri", "afd_utils", "save_recommendations",
+    "run_lightgcn", "evaluate_lightgcn",
+]
 
 [tool.ruff.lint.per-file-ignores]
 "src/baselines/**" = ["E", "F", "W"]

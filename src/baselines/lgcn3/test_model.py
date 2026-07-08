@@ -2,8 +2,9 @@ import json
 import random as rd
 
 import numpy as np
-from evaluation import evaluation_F1, evaluation_NDCG
 from numpy import *
+
+from evaluation import evaluation_F1, evaluation_NDCG
 
 
 def test_one_user(user, top_item, para_test_one_user):
