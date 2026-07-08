@@ -49,6 +49,7 @@
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([9ca9b0c](https://github.com/JungYeoni/da-template/commit/9ca9b0c6157b371e9f6f2ee722fef70f3e1d98c1))
 - CHANGELOG 자동 업데이트 [skip ci] ([0864d7c](https://github.com/JungYeoni/da-template/commit/0864d7c609cc15e6fe6ebb13be9eaf08446c2e43))
 - CHANGELOG 자동 업데이트 [skip ci] ([fae0436](https://github.com/JungYeoni/da-template/commit/fae0436c6633ac28c7c7912a178f2a958004fb89))
 - CHANGELOG 자동 업데이트 [skip ci] ([d036e57](https://github.com/JungYeoni/da-template/commit/d036e57f8dd25b8e17d489c11cedee0b105e0c6a))
@@ -133,6 +134,43 @@
 
 ### 새 기능
 
+- Feat/20260706_#34_LightGCN_bipartite_페르소나_미결합_베이스라인_추가_tri_대비_페르소나_효과_분리_검증 (#40)
+
+* feat: LightGCN bipartite 그래프 로딩 지원 추가 (#34)
+
+read_data.py의 read_all_data_tri()에 graph_mode 파라미터 추가 —
+bipartite면 #35에서 준비된 bipartite_graph_*.json(u2p/t2p 전부 빈
+매핑)을 읽고 persona_num=0으로 처리한다. u2t(구매 이력)는 tri와
+동일 파일을 공유한다.
+
+run_lightgcn.py의 --graph-mode에 bipartite 선택지 추가.
+
+TDD: _resolve_graph_paths() 순수 함수로 분리해 경로/persona_num
+분기 테스트 (tri/bipartite/approximate/unknown-mode, 4건).
+
+스모크 테스트(2 epoch) 통과 확인 — persona_num=0 상태로 학습 루프,
+추천 생성까지 에러 없이 완료.
+
+* docs: bipartite vs tri 비교 리포트 초안 작성, run1 결과 반영 (#34)
+
+* docs: bipartite 3회 반복 완료, 최종 결론 반영 (#34) — tri가 bipartite보다 HR@20 +14% 우세
+
+* docs: bipartite가 tri-tuned 설정으로만 평가됐다는 한계 명시 (#34)
+
+* docs: bipartite emb_dim=64가 tri를 넘어설 가능성 발견, 재검증 중 표시 (#34)
+
+* docs: emb_dim=64 재검증으로 결론 수정 + 실험 로그 문서 작성 (#34)
+
+emb_dim=32(tri-tuned)에서는 tri가 bipartite보다 +14% 좋았지만,
+둘 다 emb_dim=64로 재검증하니 차이가 사라짐(tri 0.0505 vs
+bipartite 0.0496, 표준편차 안에서 겹침) — "페르소나가 도움된다"는
+결론이 하이퍼파라미터에 크게 좌우되는 약한 효과였음을 확인.
+
+각 실험의 정확한 조건/명령어/소요시간/결과를 별도 로그 문서로 정리.
+
+* docs: 저활동 유저 계층화 분석(탐색적, 1회) 결과 반영 (#34)
+
+* chore: model_LightGCN_tri.py 파일 상단 공백 정리 (#34) ([5eba0ce](https://github.com/JungYeoni/da-template/commit/5eba0ce8660fc86bddc56604c26fa70e597020a8))
 - Feat/20260708_#37_LightGCN_하이퍼파라미터_튜닝_심화 (#39)
 
 * feat: run_lightgcn.py에 --layer/--opt/--batch CLI 오버라이드 추가 (#37)
