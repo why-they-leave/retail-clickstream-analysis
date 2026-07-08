@@ -4,13 +4,14 @@ import time
 import numpy as np
 import pandas as pd
 import tensorflow as tf
+from tqdm import tqdm
+
 import test_model
 from model_LGCN_afd_tri import model_LGCN_afd_tri  # LGCN AFD tri-partite version
 from model_LGCN_tri import model_LGCN_tri  # LGCN tri-partite version
 from model_LightGCN_tri import model_LightGCN_tri  # 표준 LightGCN tri-partite version (Issue #30)
 from print_save import save_value
 from test_model import test_model, test_model_store
-from tqdm import tqdm
 
 
 def train_model(para, data, path_excel, results_save_path=''):

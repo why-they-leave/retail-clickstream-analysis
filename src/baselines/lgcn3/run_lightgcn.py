@@ -194,7 +194,6 @@ def main():
     import read_data
     import train_model
     from save_recommendations import save_lightgcn_recommendations
-
     from src.utils.id_encoding import build_id_encoding
 
     # 1. 데이터 로딩 (tri-graph JSON + sparse propagation matrix)

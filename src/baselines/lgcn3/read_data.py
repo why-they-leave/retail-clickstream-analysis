@@ -2,6 +2,7 @@ import json
 import random as rd
 
 import numpy as np
+
 from dense2sparse import propagation_matrix, propagation_matrix_tri
 
 
