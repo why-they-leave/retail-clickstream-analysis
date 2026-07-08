@@ -49,6 +49,7 @@
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([fae0436](https://github.com/JungYeoni/da-template/commit/fae0436c6633ac28c7c7912a178f2a958004fb89))
 - CHANGELOG 자동 업데이트 [skip ci] ([d036e57](https://github.com/JungYeoni/da-template/commit/d036e57f8dd25b8e17d489c11cedee0b105e0c6a))
 - CHANGELOG 자동 업데이트 [skip ci] ([8fc60fd](https://github.com/JungYeoni/da-template/commit/8fc60fd717f28ce5e78877d0d96d4d27e6abb7ee))
 - LightGCN bipartite 그래프 데이터 준비 설계/결과 문서화 (#35) ([37ceb1a](https://github.com/JungYeoni/da-template/commit/37ceb1abec0bf61a2936a59c2131e4763994b615))
@@ -131,6 +132,150 @@
 
 ### 새 기능
 
+- Feat/20260705_#30_LightGCN_모델_실행_환경_구축_및_평가 (#38)
+
+* feat: LightGCN용 tensorflow 의존성 추가 (#30)
+
+pyproject.toml에 tensorflow>=2.16 추가, uv.lock 동기화.
+설치 확인: tensorflow==2.21.0, dense2sparse.py/read_data.py 임포트 정상,
+기존 테스트 30/30 통과.
+
+* docs: LightGCN_tri 모델 클래스 설계 문서 작성 (#30)
+
+model_LightGCN_tri 클래스가 실제로는 존재하지 않는다는 것을 발견 —
+train_model.py가 참조만 하고 정의가 없음. 신규 구현(A안) vs 기존
+model_LGCN_tri 사전학습 경로(B안)를 비교해 A안으로 결정한 근거와
+model_LGCN_tri.py 대비 재사용/변경 범위를 기록.
+
+* feat: model_LightGCN_tri 신규 구현 — 표준 LightGCN 전파 (#30)
+
+model_LGCN_tri.py는 사전학습 frequency embedding이 필요한 spectral 방식이라
+바로 못 쓴다는 걸 확인하고(docs/LIGHTGCN_TRI_MODEL_DESIGN.md), 정규화
+인접행렬을 그대로 곱하는 표준 LightGCN 방식으로 신규 구현했다.
+
+- TDD로 진행: 그래프 빌드/순전파, n_personas=0(#35 bipartite 대비),
+  BPR loss, 학습 스텝, 잘못된 optimizer 예외 케이스 5건
+- tests/conftest.py 추가: pandas를 먼저 import한 뒤 tensorflow를 import하면
+  이 macOS 환경에서 import 자체가 멈추는 문제를 발견해, tensorflow를
+  다른 테스트보다 먼저 import하도록 고정해 해결
+
+* fix: LightGCN_tri 실행 경로 legacy 버그 수정 + 실데이터 스모크 테스트 통과 (#30)
+
+model_LightGCN_tri에 keep_prob placeholder 추가(train_model.py/test_model.py
+공용 feed_dict 호환용, TDD로 재현 후 수정). 실제 데이터(유저 20,000/상품
+1,197/세그먼트 6)로 스모크 테스트하며 아무도 실행해본 적 없던 legacy 버그
+4개를 추가로 발견해 수정했다:
+
+- read_data.py: persona_num=20 하드코딩 -> 6 (v2 6-segment)
+- read_data.py: all_para 언패킹 리스트 29개 vs 실제 30개 불일치
+- train_model 호출 시 all_para[:26]로 잘라 넘겨 17개 요구하는 언패킹 실패
+- evaluation.py: `from numpy import *`가 내장 max()를 가려 TypeError
+
+2 epoch 완주, epoch당 약 12.7초 (300 epoch 기준 약 1시간 추정, #34 시간
+예산 근거). pyproject.toml에 openpyxl 추가(print_save.py 의존성).
+
+* docs: LightGCN_tri 구현/스모크테스트 결과 리포트 작성 (#30)
+
+* feat: run_lightgcn.py CLI 작성 — 학습+전체유저 추천 저장 (#30)
+
+ALS(als_model.py) 스타일 CLI. model_LightGCN_tri에 top_scores 출력을
+추가하고(TDD), train_model()이 F1_max뿐 아니라 sess/model도 반환하도록
+확장해 학습 직후 같은 그래프로 전체 유저(샘플 아님) 추천을 뽑을 수 있게
+했다. save_recommendations.py를 재사용해 PRED_MAIN_RECOMMEND.csv 저장.
+
+이 파일에서 pandas/tensorflow 임포트 순서 데드락(tests/conftest.py와 같은
+원인)이 스크립트 실행 시에도 재현돼, import tensorflow를 최상단으로 옮겨
+해결 — ruff의 isort 자동수정이 이 순서를 되돌리려 해서 noqa로 명시 차단.
+
+실행 검증(--epoch 2): 학습 40초 + 전체 유저(20,000명) 추천 생성 10초,
+2,000,000행 CSV 정상 생성 확인. 300 epoch 기준 약 1~1.7시간 예상.
+
+configs/LightGCN/params.yaml 신규, data/outputs/LightGCN·logs/LightGCN
+gitignore 추가(ALS와 동일 패턴).
+
+* feat: evaluate_lightgcn.py 작성 + 전체 학습 결과 ALS 비교 (#30)
+
+als_evaluate.py와 동일한 구조(사전 계산된 CSV 기반, 모델 재추론 없음)로
+HR@K/Recall@K/NDCG@K 평가 스크립트 작성 (TDD, 12건).
+
+300 epoch 전체 학습 실제 실행 결과: 1시간 40분, F1_max=0.03.
+평가 결과 ALS(#7) 대비 HR@20 0.0294 vs 0.0608로 낮음 — 하이퍼파라미터
+미튜닝 상태의 1회성 비교라 다음 단계(튜닝, event_type 조합 실험)로
+재검증 필요. 리포트에 원인 후보와 다음 단계 정리.
+
+* fix: loss 로깅 + 고정 평가셋으로 학습 진단 개선 (#30)
+
+train_model.py: 주석 처리돼 있던 loss 기록을 켜서 epoch마다 저장(Loss 시트).
+test_model.py: 매 epoch 무작위 512명 재샘플링 대신(정답 있는 유저가 20,000명
+중 1,465명뿐이라 유효 표본이 평균 ~38명으로 노이즈가 컸음) 정답 있는 유저
+전체로 고정해 epoch 간 비교가 가능하게 함(fixed_test_batch 옵션 추가,
+기존 호출부는 하위 호환).
+
+같은 하이퍼파라미터로 재실행한 결과 HR@20 0.0294 → 0.0403(+37%) — 모델이
+아니라 측정 문제였음을 확인. loss는 마지막 20 epoch에서 정체(수렴 완료).
+
+docs/LIGHTGCN_TRI_TUNING_PLAN.md 신규 — 다음 개선 우선순위(event_type 조합
+→ 하이퍼파라미터 튜닝)와 bipartite(#34) 비교 조건 통일 표 정리.
+리포트에 2차 실행 결과 및 해석 반영.
+
+* feat: make_lgcn_graph.py에 --event-types 옵션 추가 (#30)
+
+u2t event_type 조합 실험용 (TDD, 3건). purchase만 / add_to_cart+purchase /
+전부(기본값) 세 가지로 실제 학습·평가한 결과, "구매만"이 HR@20 0.0403 ->
+0.0491(+22%)로 가장 좋았고 ALS와의 격차도 1.51배 -> 1.24배로 좁혀짐.
+반대로 add_to_cart+purchase 조합은 전부 포함보다도 나빴음(HR@20=0.0389) —
+장바구니 신호가 구매 의도와 안 맞는 경우가 많아 오히려 노이즈로 작용한
+것으로 추정. 상세 결과는 후속 커밋의 리포트/이슈 코멘트에 정리.
+
+* feat: 3차 튜닝(event_type/하이퍼파라미터/negative sampling) 결과 반영 (#30)
+
+event_type 조합, emb_dim×lr 9개 그리드, lamda 라운드, negative sampling
+라운드까지 순차 실험한 결과를 리포트에 통합 정리.
+
+최종 확정: event_type=구매만, emb_dim=32, lr=0.005, lamda=0.02(원래값),
+neg_samples=1(기존 방식 유지) — HR@20 0.0294(1차) -> 0.0553, ALS 대비
+격차 2.07배 -> 1.10배로 축소.
+
+negative sampling 실험용으로 parse.py/params.py에 --sample_rate 추가,
+train_model.py의 LightGCN_tri를 SAMPLE_RATE 적용 모델 목록에 포함
+(기존엔 목록에 없어서 항상 negative 1개로 강제됐음). RecBole 제안
+reg_weight, SimpleX 제안 negative 다중 샘플링 둘 다 우리 데이터에선
+반대 결과 — 원인과 재현성 한계는 리포트에 명시.
+
+* fix: lgcn3 bare 임포트 모듈을 known-first-party에 등록 (CI ruff I001) (#30)
+
+test_model.py의 import 순서가 로컬 pre-commit 훅 실행마다 로컬<->CI
+결과가 달라져 왔다갔다 했던 원인 — evaluation 모듈이 known-first-party
+목록에 없어 정렬 기준이 모호했던 것. src/baselines/lgcn3/ 내 bare
+임포트로 쓰는 형제 모듈 전체를 등록해 로컬/CI 판정을 일치시켰다.
+
+* fix: 나머지 lgcn3 파일들 import 순서 정리 (CI ruff I001) (#30)
+
+known-first-party 등록만으로는 안 잡히던 그룹 간 빈 줄 누락을
+ruff --fix로 일괄 정리. 전부 공백/순서 변경만 있고 동작 변화 없음
+(pytest 54/54 통과 재확인).
+
+* fix: CodeRabbit 지적 실버그 3건 수정 (#30)
+
+1. layer_weight가 1/(l+1)로 레이어 인덱스에 따라 줄어들어 원본 임베딩에
+   편중돼 있었음 — 표준 LightGCN처럼 모든 레이어에 균등한 1/(layer+1)로
+   수정. 지금까지의 전체 튜닝 결과가 이 버그 위에서 나온 것이라 재실험 필요.
+2. bpr_loss의 log(sigmoid(x))가 sigmoid 포화 시 -inf가 될 수 있어
+   log_sigmoid(x)로 교체 (수치안정성).
+3. train_model.py의 fixed_test_batch가 모델 종류 무관하게 전체 적용되던
+   것을 LightGCN_tri 전용으로 제한 — 다른 레거시 모델은 기존 무작위
+   샘플링 동작 유지.
+
+TDD: layer_weight 균등성, bpr_loss 유한값 테스트 추가 (56/56 통과).
+
+* fix: 임베딩 초기화에 재현성 seed 추가 (#30)
+
+tf.random.normal에 seed가 없어 user/item/persona_embeddings 초기값이
+실행마다 달라졌음 — CLAUDE.md 재현성 규칙(random_state=42) 위반
+(CodeRabbit 지적). tf.compat.v1.set_random_seed(42)로 고정.
+
+TDD: 동일 조건 2회 빌드 시 초기 임베딩이 같은지 검증하는 테스트 추가
+(57/57 통과). ([84f1c63](https://github.com/JungYeoni/da-template/commit/84f1c6327c0c77a8cc1659cc02d8ee93f2aac3e1))
 - LightGCN bipartite(u2t만) 그래프 데이터 생성 모드 추가 (#35) ([ce45a95](https://github.com/JungYeoni/da-template/commit/ce45a95e5fbe864072d3181e84b2a01d721613bd))
 - LightGCN용 tri-graph 데이터 파이프라인 구축 (#29) ([81ec74a](https://github.com/JungYeoni/da-template/commit/81ec74a8cbb29f97513fba17af216b04833ca234))
 - LightGCN tri-graph에 item-segment lift 가중치 지원 추가 (#29) ([dec323f](https://github.com/JungYeoni/da-template/commit/dec323f8a283797635bd3bec45dd465654a0fe1a))
