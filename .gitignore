@@ -38,9 +38,10 @@ data/outputs/ALS/*
 
 # Issue #31: train 기간 한정 세그먼트 이름/정의 — LightGCN(#29)이 실제로 쓰는 버전.
 # LLM naming(temperature 사용)이라 재생성하면 결과가 달라져 canonical 파일만 공유
-# (segment_personas_v2.json과 동일한 패턴). 고객별 전체 배정 CSV(27MB, customer_segments_labeled_train_only.csv)는
-# 요청 범위 밖이라 제외 — 필요해지면 그때 예외 추가.
+# (segment_personas_v2.json과 동일한 패턴).
 !data/processed/segment_personas_train_only.json
+# 고객별 전체 배정 테이블(27MB) — 팀원 요청으로 추가 공유 (#30)
+!data/processed/customer_segments_labeled_train_only.csv
 
 # Issue #30: tri-graph의 uidx/tidx <-> user_id/product_id 매핑. build_id_encoding()이
 # customers.csv/products.csv 순서로 결정적으로 만드는 값이라 재생성해도 항상 같지만,
