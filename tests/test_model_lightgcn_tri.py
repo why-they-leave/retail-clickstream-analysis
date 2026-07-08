@@ -194,6 +194,34 @@ class TestModelLightGCNTri:
         expected = 1 / (layer + 1)
         assert all(w == pytest.approx(expected) for w in model.layer_weight)
 
+    def test_embedding_init_is_reproducible_across_runs(self):
+        """CLAUDE.md 재현성 규칙(random_state=42) — 임베딩 초기값이 실행마다
+        달라지면 안 된다(CodeRabbit 지적: tf.random.normal에 seed 없었음).
+        """
+        n_users, n_items, n_personas = 3, 3, 2
+
+        def build_and_get_initial_user_embeddings():
+            tf.compat.v1.reset_default_graph()
+            sparse_graph = make_identity_sparse_graph(n_users + n_items + n_personas)
+            model = model_LightGCN_tri(
+                n_users=n_users,
+                n_items=n_items,
+                n_personas=n_personas,
+                lr=0.01,
+                lamda=0.01,
+                emb_dim=4,
+                layer=1,
+                sparse_graph=sparse_graph,
+                optimization="Adam",
+            )
+            with tf.compat.v1.Session() as sess:
+                sess.run(tf.compat.v1.global_variables_initializer())
+                return sess.run(model.user_embeddings)
+
+        first_run = build_and_get_initial_user_embeddings()
+        second_run = build_and_get_initial_user_embeddings()
+        assert np.allclose(first_run, second_run)
+
     def test_unknown_optimization_raises(self):
         n_users, n_items, n_personas = 3, 3, 2
         sparse_graph = make_identity_sparse_graph(n_users + n_items + n_personas)

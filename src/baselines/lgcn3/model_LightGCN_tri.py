@@ -52,6 +52,9 @@ class model_LightGCN_tri(object):
         # (값은 실제로 아무 데도 안 쓰임 — 순수 호환용).
         self.keep_prob = tf.compat.v1.placeholder(tf.float32, shape=(None))
 
+        # 재현성(CLAUDE.md 규칙: random_state=42) — seed 없으면 실행마다 초기 임베딩이
+        # 달라져 학습 결과를 비교할 수 없다 (CodeRabbit 지적).
+        tf.compat.v1.set_random_seed(42)
         self.user_embeddings = tf.Variable(
             tf.random.normal([n_users, emb_dim], mean=0.01, stddev=0.02, dtype=tf.float32),
             name="user_embeddings",
