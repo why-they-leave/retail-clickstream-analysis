@@ -128,9 +128,9 @@ def main():
     parser = argparse.ArgumentParser(description="LightGCN_tri 학습 + 추천 저장")
     parser.add_argument(
         "--graph-mode",
-        choices=["tri"],
+        choices=["tri", "bipartite"],
         default="tri",
-        help="tri만 지원 (bipartite는 #34에서 연동 예정)",
+        help="tri: 페르소나 결합(기본) / bipartite: 페르소나 미결합 대조군 (#34)",
     )
     parser.add_argument("--epoch", type=int, default=None, help="미지정 시 params.yaml 값 사용")
     parser.add_argument(
@@ -231,8 +231,8 @@ def main():
     from save_recommendations import save_lightgcn_recommendations
     from src.utils.id_encoding import build_id_encoding
 
-    # 1. 데이터 로딩 (tri-graph JSON + sparse propagation matrix)
-    data = read_data.read_all_data_tri(params.all_para, approximate=False)
+    # 1. 데이터 로딩 (tri/bipartite 그래프 JSON + sparse propagation matrix, Issue #34)
+    data = read_data.read_all_data_tri(params.all_para, approximate=False, graph_mode=args.graph_mode)
     train_data, user_num, item_num = data[0], data[2], data[3]
     logger.info(f"[데이터] user_num={user_num:,}, item_num={item_num:,}, persona_num={data[4]}")
 

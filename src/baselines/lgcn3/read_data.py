@@ -77,7 +77,37 @@ def read_bases1(path, fre, _if_norm = False):
             bases[i] = bases[i]/np.sqrt(np.dot(bases[i], bases[i]))
     return np.array(bases)[:, 0: fre].astype(np.float32)
 
-def read_all_data_tri(all_para, approximate=False):
+def _resolve_graph_paths(dataset, graph_mode, approximate, dir_):
+    """u2p/t2p 경로와 persona_num을 graph_mode(tri/bipartite)에 따라 결정한다 (Issue #34).
+
+    tri: 페르소나 결합 그래프(tri_graph_*.json), persona_num은 데이터셋별 고정값.
+    bipartite: 페르소나 없는 대조군 — u2p/t2p가 전부 빈 매핑인 bipartite_graph_*.json
+    (#35에서 생성됨)을 읽고 persona_num=0으로 둔다(model_LightGCN_tri가 n_personas=0을 지원).
+    """
+    if graph_mode == "bipartite":
+        return dir_ + "bipartite_graph_tidx2pidx.json", dir_ + "bipartite_graph_uidx2pidx.json", 0
+    if graph_mode != "tri":
+        raise ValueError(f"알 수 없는 graph_mode: {graph_mode}")
+
+    path_t2p = dir_ + "tri_graph_tidx2pidx.json"
+    if approximate:
+        path_u2p = dir_ + "tri_graph_uidx2pidx_app_e_0.1.json"
+    else:
+        path_u2p = dir_ + "tri_graph_uidx2pidx.json"
+
+    if dataset == "MBA":
+        # v1 20-persona(#14) 시절 값이었으나, 지금 tri_graph_uidx2pidx.json/tidx2pidx.json은
+        # v2 6-segment(configs/segment/params.yaml의 n_clusters=6) 기준이라 6이어야 한다 (Issue #30).
+        persona_num = 6
+    elif dataset in ("Instacart", "Instacart_full"):
+        persona_num = 51  # 51, fixed for Instacart
+    else:
+        raise ValueError(f"알 수 없는 dataset: {dataset}")
+
+    return path_t2p, path_u2p, persona_num
+
+
+def read_all_data_tri(all_para, approximate=False, graph_mode="tri"):
     # approximate=True will read the approximated ver of tri_graph_uidx2pidx
     # Issue #30: params.py의 all_para는 30개(마지막 AFD_ALPHA 포함)인데 언패킹 목록이 29개뿐이라
     # "too many values to unpack"으로 터지던 기존 버그 — 끝에 _ 하나 추가해 맞춤
@@ -92,28 +122,15 @@ def read_all_data_tri(all_para, approximate=False):
     ## Load data
     ## load training data
     print('Reading data...')
+    # u2t(구매 이력)는 graph_mode와 무관하게 동일값 — tri/bipartite 모두 같은 파일을 쓴다 (Issue #34).
     path_u2t = DIR + 'tri_graph_uidx2tidx_train.json'
-    path_t2p = DIR + 'tri_graph_tidx2pidx.json'
-    if approximate:
-        # path_u2p = DIR + 'tri_graph_uidx2pidx_approach.json'
-        path_u2p = DIR + 'tri_graph_uidx2pidx_app_e_0.1.json'
-    else:
-        path_u2p = DIR + 'tri_graph_uidx2pidx.json'
+    path_t2p, path_u2p, persona_num = _resolve_graph_paths(DATASET, graph_mode, approximate, DIR)
     # [train_data, train_data_interaction, user_num, item_num] = read_data_tri(path_u2t, path_t2p)
     [train_data, train_data_interaction, interactions_u2p, interactions_t2p, user_num, item_num] = read_data_tri(path_u2t, path_t2p, path_u2p)
 
     ## load test data
     test_vali_path = DIR + 'tri_graph_uidx2tidx_valid.json' if TEST_VALIDATION == 'Validation' else DIR + 'tri_graph_uidx2tidx_test.json'
     test_data = read_data_tri(test_vali_path, path_t2p, path_u2p)[0]
-
-    if DATASET == 'MBA':
-        # v1 20-persona(#14) 시절 값이었으나, 지금 tri_graph_uidx2pidx.json/tidx2pidx.json은
-        # v2 6-segment(configs/segment/params.yaml의 n_clusters=6) 기준이라 6이어야 한다 (Issue #30).
-        persona_num = 6
-    elif DATASET == 'Instacart':
-        persona_num = 51 # 51, fixed for Instacart
-    elif DATASET == 'Instacart_full':
-        persona_num = 51
 
     # graph_embeddings_2d_path = DIR + 'graph_embeddings_2d.json'                         # 2d graph embeddings
 
