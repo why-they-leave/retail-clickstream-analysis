@@ -125,10 +125,12 @@ def generate_all_user_recommendations(
 
 
 def main():
+    from save_recommendations import GRAPH_MODE_FILE_SUFFIX
+
     parser = argparse.ArgumentParser(description="LightGCN_tri 학습 + 추천 저장")
     parser.add_argument(
         "--graph-mode",
-        choices=["tri", "bipartite"],
+        choices=list(GRAPH_MODE_FILE_SUFFIX.keys()),
         default="tri",
         help="tri: 페르소나 결합(기본) / bipartite: 페르소나 미결합 대조군 (#34)",
     )

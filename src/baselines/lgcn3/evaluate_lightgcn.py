@@ -129,14 +129,14 @@ def evaluate_at_k(recs_df: pd.DataFrame, ground_truth: dict, k: int) -> dict:
 
 
 def main():
-    from save_recommendations import resolve_rec_filename
+    from save_recommendations import GRAPH_MODE_FILE_SUFFIX, resolve_rec_filename
     from src.utils.id_encoding import build_id_encoding
 
     parser = argparse.ArgumentParser(description="LightGCN_tri 추천 결과 평가")
     parser.add_argument("--k", nargs="+", type=int, default=None, help="예: --k 5 10 20")
     parser.add_argument(
         "--graph-mode",
-        choices=["tri", "bipartite"],
+        choices=list(GRAPH_MODE_FILE_SUFFIX.keys()),
         default="tri",
         help="평가할 추천 결과 파일 선택 — tri: 페르소나 결합(기본) / bipartite: 대조군 (#34)",
     )
