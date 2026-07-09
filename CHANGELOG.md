@@ -49,6 +49,7 @@
 
 ### 문서
 
+- CHANGELOG 자동 업데이트 [skip ci] ([ffe5e1a](https://github.com/JungYeoni/da-template/commit/ffe5e1a9745f4ed8ae1f0322db89f9923c954622))
 - CHANGELOG 자동 업데이트 [skip ci] ([9ca9b0c](https://github.com/JungYeoni/da-template/commit/9ca9b0c6157b371e9f6f2ee722fef70f3e1d98c1))
 - CHANGELOG 자동 업데이트 [skip ci] ([0864d7c](https://github.com/JungYeoni/da-template/commit/0864d7c609cc15e6fe6ebb13be9eaf08446c2e43))
 - CHANGELOG 자동 업데이트 [skip ci] ([fae0436](https://github.com/JungYeoni/da-template/commit/fae0436c6633ac28c7c7912a178f2a958004fb89))
@@ -112,6 +113,7 @@
 
 ### 버그 수정
 
+- LightGCN 추천 CSV 파일명을 tri/bipartite로 분리 (#41) (#42) ([3b7b80d](https://github.com/JungYeoni/da-template/commit/3b7b80dcbdada1cef5631e09ba5d8ac39deae0c2))
 - Assign_segments.py의 segment_common import 경로 수정 (#31) ([0afd7ca](https://github.com/JungYeoni/da-template/commit/0afd7cad6d811fd3a5bfabdf1ce71523e3722593))
 - Segment_naming.py의 llm_connector import 경로 수정 (#26) ([8649c67](https://github.com/JungYeoni/da-template/commit/8649c6753df078cc82b0debb2076bb74d09f249c))
 - #7 github action CI 테스트 오류 수정 ([a3838ad](https://github.com/JungYeoni/da-template/commit/a3838adc55b112df7e69d6e27195c59dc117f5a4))
