@@ -125,10 +125,12 @@ def generate_all_user_recommendations(
 
 
 def main():
+    from save_recommendations import GRAPH_MODE_FILE_SUFFIX
+
     parser = argparse.ArgumentParser(description="LightGCN_tri 학습 + 추천 저장")
     parser.add_argument(
         "--graph-mode",
-        choices=["tri", "bipartite"],
+        choices=list(GRAPH_MODE_FILE_SUFFIX.keys()),
         default="tri",
         help="tri: 페르소나 결합(기본) / bipartite: 페르소나 미결합 대조군 (#34)",
     )
@@ -258,7 +260,7 @@ def main():
     # 4. CSV 스키마 변환 + 저장 (rec-system #4 스키마, save_recommendations.py 재사용)
     user_ids = [user_dec[uidx] for uidx in range(user_num)]
     df_rec = build_recommendation_df(top_items, top_scores, user_ids, item_dec)
-    output_path = save_lightgcn_recommendations(df_rec)
+    output_path = save_lightgcn_recommendations(df_rec, graph_mode=args.graph_mode)
     logger.info(f"[저장] {output_path} ({len(df_rec):,}개 레코드)")
 
     logger.info("===== LightGCN_tri 학습 완료 =====")
