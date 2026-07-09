@@ -258,7 +258,7 @@ def main():
     # 4. CSV 스키마 변환 + 저장 (rec-system #4 스키마, save_recommendations.py 재사용)
     user_ids = [user_dec[uidx] for uidx in range(user_num)]
     df_rec = build_recommendation_df(top_items, top_scores, user_ids, item_dec)
-    output_path = save_lightgcn_recommendations(df_rec)
+    output_path = save_lightgcn_recommendations(df_rec, graph_mode=args.graph_mode)
     logger.info(f"[저장] {output_path} ({len(df_rec):,}개 레코드)")
 
     logger.info("===== LightGCN_tri 학습 완료 =====")

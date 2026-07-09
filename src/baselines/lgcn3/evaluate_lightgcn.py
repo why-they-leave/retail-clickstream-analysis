@@ -1,14 +1,16 @@
 """LightGCN_tri 추천 결과 평가 (Issue #30). als_evaluate.py와 동일한 지표/구조.
 
-사전 계산된 추천 결과(PRED_MAIN_RECOMMEND.csv) 기반 — 모델 재추론 없이 rank 컬럼으로
-K를 조정하며 평가 가능. 정답셋(test)은 tri-graph의 valid u2t(구매만, #29에서 이미
-ALS와 동일 split_date로 고정해둔 것)를 원본 id로 디코딩해서 즉석에서 만든다
-(ALS처럼 학습 시점에 별도 CSV로 저장해두지 않음 — 학습과 무관하게 매번 같은 값이라
-재계산 비용이 거의 없고, run_lightgcn.py를 다시 안 돌려도 평가만 재실행 가능).
+사전 계산된 추천 결과(PRED_MAIN_RECOMMEND_<graph_mode>.csv, #34에서 tri/bipartite
+파일명 분리) 기반 — 모델 재추론 없이 rank 컬럼으로 K를 조정하며 평가 가능.
+정답셋(test)은 tri-graph의 valid u2t(구매만, #29에서 이미 ALS와 동일 split_date로
+고정해둔 것)를 원본 id로 디코딩해서 즉석에서 만든다(ALS처럼 학습 시점에 별도 CSV로
+저장해두지 않음 — 학습과 무관하게 매번 같은 값이라 재계산 비용이 거의 없고,
+run_lightgcn.py를 다시 안 돌려도 평가만 재실행 가능).
 
 Usage (cwd: src/baselines/lgcn3/):
     python3 evaluate_lightgcn.py
     python3 evaluate_lightgcn.py --k 5 10 20 50
+    python3 evaluate_lightgcn.py --graph-mode bipartite
 """
 
 # pandas보다 먼저 임포트 — 이 macOS 환경의 임포트 순서 데드락 회피
@@ -31,7 +33,6 @@ OUTPUT_DIR = Path(__file__).resolve().parents[3] / "data" / "outputs" / "LightGC
 LOG_DIR = str(Path(__file__).resolve().parents[3] / "logs" / "LightGCN")
 PROCESSED_DIR = Path(__file__).resolve().parents[3] / "data" / "processed"
 
-REC_FILE = "PRED_MAIN_RECOMMEND.csv"
 EVAL_FILE = "eval_results.csv"
 
 
@@ -128,10 +129,17 @@ def evaluate_at_k(recs_df: pd.DataFrame, ground_truth: dict, k: int) -> dict:
 
 
 def main():
+    from save_recommendations import resolve_rec_filename
     from src.utils.id_encoding import build_id_encoding
 
     parser = argparse.ArgumentParser(description="LightGCN_tri 추천 결과 평가")
     parser.add_argument("--k", nargs="+", type=int, default=None, help="예: --k 5 10 20")
+    parser.add_argument(
+        "--graph-mode",
+        choices=["tri", "bipartite"],
+        default="tri",
+        help="평가할 추천 결과 파일 선택 — tri: 페르소나 결합(기본) / bipartite: 대조군 (#34)",
+    )
     args = parser.parse_args()
 
     with open(PARAMS_PATH, "r", encoding="utf-8") as f:
@@ -142,7 +150,7 @@ def main():
     logger.info(f"===== LightGCN_tri 평가 시작 | K={k_list} =====")
 
     # 1. 추천 결과 로드
-    rec_path = OUTPUT_DIR / REC_FILE
+    rec_path = OUTPUT_DIR / resolve_rec_filename(args.graph_mode)
     recs_df = pd.read_csv(rec_path)
     logger.info(
         f"[로드] 추천 결과: {len(recs_df):,}개 레코드 (유저 {recs_df['user_id'].nunique():,}명)"
@@ -172,10 +180,11 @@ def main():
             f"HR@{r['k']}={r['HR']:.4f}  Recall@{r['k']}={r['Recall']:.4f}  NDCG@{r['k']}={r['NDCG']:.4f}"
         )
 
-    # 4. 저장
-    eval_path = OUTPUT_DIR / EVAL_FILE
+    # 4. 저장 (파일명에 graph_mode 반영 — tri/bipartite 평가 결과가 서로 덮어쓰지 않게, #34)
+    eval_filename = EVAL_FILE.replace(".csv", f"_{args.graph_mode}.csv")
+    eval_path = OUTPUT_DIR / eval_filename
     df_results = pd.DataFrame(results)
-    df_results.insert(0, "model_type", "LightGCN")
+    df_results.insert(0, "model_type", f"LightGCN-{args.graph_mode}")
     df_results.to_csv(eval_path, index=False)
     logger.info(f"[저장] {eval_path}")
     logger.info("===== LightGCN_tri 평가 완료 =====")
